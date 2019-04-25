@@ -1,0 +1,107 @@
+
+#Características adicionales que programar#
+
+    >El programa no debe consumir CPU apreciablemente en los modos de retardo mayor o igual que 1. Para comprobar el consumo de CPU, podéis arrancar 
+        el administrador de tareas de Windows mediante la pulsación de las teclas CTRL+ALT+SUPR. Observad, no obstante, que en las aulas de informática
+         puede que esta opción esté deshabilitada.
+
+    >IMPORTANTE: Aunque no se indique explícitamente en el enunciado, parece obvio que se necesitarán objetos de sincronización en diferentes partes del programa.
+
+
+
+Circuito:
+
+   XXXX###################XXXX
+  XXXX# 60123456789012345 #XXXX
+ XXXX# 5 0 - - - - 1 - - 6 #XXXX
+XXXX# 4/                 \7 #XXXX
+XXX# 3|  ###############  \8 #XXXX      <--------------------------
+XXX# 2|  #~~~&~~~&~~~&~~#  \9 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXX# 1|  #~&~~~&~~~&~~~&~#  \0 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXX# 031 #~~&~~~&~~~&~~~&~# 2\1 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXX# 9|  ###################  \2 ########################################XXXX
+XXX# 8 \     1         1    1   3                                        #XXXX
+XXXX# 7 - - -2- - - - -1- - 0    4 - - - - 9 - - - - 8 - - - - 7 - - -    #XXXX
+ XXXX# 6543210987654321098765432  5  654321098765432109876543210987654 \  #XXXX
+  XXXX##########################  \6 ###############################  3|  #XXXX
+   XXXXXXXXXXXXXXXXXXXXXXXXXXXXX#  \7 #~~~&~~~&~~~&~~~&~~~&~~~&~~~&~# 2|  #XXXX
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXX#  \8 #############################  1|  #XXXX
+     XXXXXXXXXXXXXXXXXXXXXXXXXXXXX#  \90123456789012345678901234567890/   #XXXX
+                               XXXX#  -3- - - - -4- - - - -5- - - - -6   #XXXX
+                                XXXX#                                   #XXXX
+                                 XXXX###################################XXXX
+                                    ----------------------------------->
+                                        Direccion de circulación
+Funcionamiento Cambio de carril:
+
+    Cambio de carril(carril, desplazamiento);
+                                L--> Tablas de desplazamientos:
+                                               Der -> Izq                    	   Izq -> Der
+                                             0..13	 0..13		                 0..15	  0..15                     0       0
+                                            14..28	15..29		                16..28	 15..27                     +1      -1
+                                            29..60	29..60	                	29..58	 29..58                     0       0
+                                            61..62	60..61	                	59..60	 60..61                     -1      +1
+                                            63..65	61..63	                 	61..62	 63..64                     -2      +2
+                                            66..67	63..64		                63..64   67..68                     -3      +4
+                                              68	  64		                65..125  70..130                    -4      +5
+                                            69..129 64..124		                  126      130                      -5      +4
+                                              130	  127		               127..128 130..131                    -3      +3
+                                           131..134 129..132	               129..133 131..135                    -2      +2
+                                           135  136 134  135		           134..136    136                      -1      *
+
+                                    ¿Cómo funcionan? cambio(cd,80)--->ci,75
+
+                                                    Cambio del carril derecho posición 80; Nos vamos a la tabla, 80 entra en 69..129
+                                                      CD:  80-69=11; (11 es desplazamiento relativo)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Biblioteca <libfalonso.h>(Manual):
+
+>int FALONSO2_estado_semAforo(int direcciOn)
+     Esta función devuelve el estado del semáforo que se le especifica como argumento (HORIZONTAL o VERTICAL). El estado devuelto será ROJO, AMARILLO, VERDE o NEGRO.
+
+
+>int FALONSO2_posiciOn_ocupada(int carril, int desp)
+     Verdadera, si la posición correspondiente al carril y desplazamiento está ocupada por un coche. Falsa, en caso contrario.
+
+>int inicio_falonso(int ret, int semAforos, char *z)
+    El primer proceso, después de haber creado los mecanismos IPC que se necesiten y antes de haber tenido ningún hijo, debe llamar a esta función, indicando en 
+    ret si desea velocidad normal (1) o no (0) y pasando 
+    el identificador del conjunto de semáforos y el puntero a la zona de memoria compartida recién creados.
+
+
+>int FALONSO2_inicio_coche(int *carril, int *desp, int color)
+    Esta función se debe invocar cuando se cree un nuevo coche. Se pasarán por referencia las variables para indicar 
+    el carril y desplazamiento del coche y por valor, su color. La variable carril podrá tener los valores CARRIL_DERECHO o CARRIL_IZQUIERDO, 
+    macros definidas en falonso.h. Los colores disponibles se encuentran definidos en el fichero de cabeceras falonso.h. No está permitido un coche azul porque 
+    no se ve. Podéis añadir 8 al código de color, si deseáis un tono más tenue o 16, si lo queréis más vivo. 
+    Si la posición donde queremos colocar el coche ya está ocupada, también se producirá un error.
+
+
+>int FALONSO2_avance_coche(int *carril, int *desp, int color)
+    Dado un coche situado en la posición del circuito indicada por las variables enteras carril y desp, esta función 
+    le hará avanzar una posición en el circuito, modificando dichas variables de un modo acorde.
+
+
+>int FALONSO2_cambio_carril(int *carril, int *desp, int color)
+    Igual que la función anterior, pero el coche se mantiene en la misma posición y sólo cambia de carril.
+
+
+>int FALONSO2_luz_semAforo(int direcciOn, int color)
+    Pone el indicado en dirección al color señalado en color (ROJO, AMARILLO, VERDE o NEGRO).
+
+
+>int FALONSO2_pausa(void)
+    Hace una pausa de aproximadamente una décima de segundo, sin consumir CPU.
+
+
+>int FALONSO2_velocidad(int v, int carril, int desp)
+    Dado un coche situado en (carril, desp), y que marcha a una velocidad v, 
+    esta función ejecuta una pausa, sin consumo de CPU, del tamaño justo que hay entre dos avances del coche. 
+    La velocidad v estará comprendida entre 1 y 99, reservándose al valor 100 para la máxima velocidad que permite el ordenador (pausa efectiva nula).
+
+
+>int FALONSO2_fin_falonso(int *cuenta)
+    Se llama a esta función después de muertos los hijos y haber esperado por ellos y antes de destruir los recursos IPC. 
+    El parámetro es la dirección de memoria compartida donde se ha llevado la cuenta de las vueltas de los coches (pasos por línea de meta).
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
