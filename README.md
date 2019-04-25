@@ -1,22 +1,4 @@
 # [CorreAlonso](http://avellano.usal.es/~ssooii/FALONSO/falonsow.htm)
-El programa propuesto constará de un único fichero fuente, falonso2.cpp, cuya adecuada compilación producirá el ejecutable falonso2.exe. 
-
-Las principales diferencias respecto a la práctica primera son:
-Se proporcionará una Biblioteca de Enlazado Dinámico (DLL) en lugar de la biblioteca estática libfalonso.a. La biblioteca se llamará falonso2.dll.
-
-Se realizará la práctica mediante hilos, uno para cada coche, además del hilo principal.
-
-En lugar del array de semáforos o buzones de mensajes se usarán los semáforos independientes u otros mecanismos de sincronización de WIN32 que se estimen convenientes.
-
-*Aparece dos nuevas funciones de la biblioteca de prototipo:
-
-  int FALONSO2_estado_semAforo(int direcciOn): Esta función devuelve el estado del semáforo que se le especifica como argumento (HORIZONTAL     o VERTICAL). El estado devuelto será ROJO, AMARILLO, VERDE o NEGRO.
-
-  int FALONSO2_posiciOn_ocupada(int carril, int desp): Verdadera, si la posición correspondiente al carril y desplazamiento está ocupada       por un coche. Falsa, en caso contrario.
-  
-  
-La práctica no funcionará indefinidamente hasta que se pulse CTRL+C, sino que durará 30 segundos, transcurridos los cuales, acabará, no sin antes comprobar que la cuenta de vueltas de la biblioteca coincide con la realizada por vuestro programa.
-No estará permitida la semiespera ocupada. Se deben bloquear completamente a los hilos que no puedan avanzar.
 
 ## LPEs
 - [ ] No debéis usar la función TerminateThread para acabar con los hilos o TerminateProcess para acabar con los procesos. El problema de estas funciones es que están diseñadas para ser usadas solo en condiciones excepcionales y los hilos mueren abruptamente. Pueden dejar estructuras colgando, ir llenando la memoria virtual del proceso con basura o no invocar adecuadamente las funciones de descarga de la DLL. 
