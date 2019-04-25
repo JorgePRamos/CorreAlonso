@@ -32,7 +32,7 @@
 #define HORIZONTAL   0
 #define VERTICAL     1
 
-#ifdef DLL_EXPORTS
+#ifndef DLL_EXPORTS
 extern "C" DLL_API int FALONSO2_inicio(int ret);
 extern "C" DLL_API int FALONSO2_fin(int *cuenta);
 extern "C" DLL_API int FALONSO2_luz_semAforo(int direcciOn, int color);
