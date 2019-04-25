@@ -20,14 +20,14 @@ extern "C"{
 typedef int (__cdecl *MYPROC)(LPWSTR); 
 int main( void ) 
 { 
-    HINSTANCE hinstLib; 
-    MYPROC ProcAdd; 
+    HINSTANCE hinstLib=NULL; 
+    MYPROC ProcAdd = NULL; 
     //FARPROC ProcAdd;
     BOOL fFreeResult, fRunTimeLinkSuccess = FALSE; 
  
     // Get a handle to the DLL module.
  
-    hinstLib = LoadLibrary(TEXT(".\falonso2.dll")); //cargas la libreria en memoria del proceso
+    hinstLib = LoadLibrary(TEXT("falonso2.dll")); //cargas la libreria en memoria del proceso
     //HINSTANCE__ *hModule= LoadLibrary(L"C:\\Windows\\System32\\user32.dll");
  
     // If the handle is valid, try to get the function address.
@@ -39,7 +39,8 @@ int main( void )
         // If the function address is valid, call the function.
  
         if (NULL != ProcAdd) 
-        {
+        {          printf("entro\n");
+
             fRunTimeLinkSuccess = TRUE;
             (ProcAdd) (L"2"); 
             printf("entro");
