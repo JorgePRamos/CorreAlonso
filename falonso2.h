@@ -17,14 +17,14 @@
         LocalFree( lpMsgBuf );                                   \
     }
 
-#define NEGRO    0
-#define ROJO     1
-#define VERDE    2
-#define AMARILLO 3
-#define AZUL     4
-#define MAGENTA  5
-#define CYAN     6
-#define BLANCO   7
+#define NEGRO    0 // gris
+#define ROJO     1 // azul
+#define VERDE    2 // verde
+#define AMARILLO 3 // azul
+#define AZUL     4 // rojo
+#define MAGENTA  5 // rojo
+#define CYAN     6 // blanco
+#define BLANCO   7 // blanco
 
 #define CARRIL_DERECHO       0
 #define CARRIL_IZQUIERDO     1
@@ -34,14 +34,14 @@
 
 #ifndef DLL_EXPORTS
 extern "C" DLL_API int FALONSO2_inicio(int ret);
+extern "C" DLL_API int FALONSO2_estado_semAforo(int direcciOn);
 extern "C" DLL_API int FALONSO2_fin(int *cuenta);
 extern "C" DLL_API int FALONSO2_luz_semAforo(int direcciOn, int color);
-extern "C" DLL_API int FALONSO2_estado_semAforo(int direcciOn);
+extern "C" DLL_API int FALONSO2_posiciOn_ocupada(int carril, int desp);
+extern "C" DLL_API int FALONSO2_velocidad(int v, int carril, int desp);
 extern "C" DLL_API int FALONSO2_inicio_coche(int *carril, int *desp, int color);
 extern "C" DLL_API int FALONSO2_avance_coche(int *carril, int *desp, int color);
-extern "C" DLL_API int FALONSO2_velocidad(int v, int carril, int desp);
 extern "C" DLL_API int FALONSO2_cambio_carril(int *carril, int *desp, int color);
-extern "C" DLL_API int FALONSO2_posiciOn_ocupada(int carril, int desp);
 extern "C" DLL_API int FALONSO2_pausa(void);
 extern "C" DLL_API void pon_error(const char *mensaje);
 #endif

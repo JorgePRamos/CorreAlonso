@@ -10,12 +10,15 @@ gcc object1.o object2.o -lMyLib2 -Wl,-Bstatic -lMyLib1 -Wl,-Bdynamic -o output
 
 #include <windows.h> 
 #include <stdio.h> 
+/*
 int FALONSO2_inicio(int ret);
 
 extern "C"{
-#define DLL_EXPORTS 1
-#include "falonso2.h"
+    #define DLL_EXPORTS 1
+    #include "falonso2.h"
 }
+*/
+  #include "falonso2.h"
 typedef int (*DLL1Arg)(int);
 typedef int (*DLL0Arg)(void);
 typedef int (__cdecl *MYPROC)(LPWSTR); 
