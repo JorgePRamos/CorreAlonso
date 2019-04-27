@@ -37,7 +37,7 @@ extern "C" DLL_API int FALONSO2_inicio(int ret);
 extern "C" DLL_API int FALONSO2_estado_semAforo(int direcciOn);
 extern "C" DLL_API int FALONSO2_fin(int *cuenta);
 extern "C" DLL_API int FALONSO2_luz_semAforo(int direcciOn, int color);
-extern "C" DLL_API int FALONSO2_posiciOn_ocupada(int carril, int desp);
+extern "C" DLL_API int FALONSO2_posiciOn_ocupada(int carril, int desp);//1 ocup 0 libre
 extern "C" DLL_API int FALONSO2_velocidad(int v, int carril, int desp);
 extern "C" DLL_API int FALONSO2_inicio_coche(int *carril, int *desp, int color);
 extern "C" DLL_API int FALONSO2_avance_coche(int *carril, int *desp, int color);
