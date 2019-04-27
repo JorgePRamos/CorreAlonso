@@ -16,12 +16,15 @@ extern "C"{
 #define DLL_EXPORTS 1
 #include "falonso2.h"
 }
-
+typedef int (*DLL1Arg)(int);
+typedef int (*DLL0Arg)(void);
 typedef int (__cdecl *MYPROC)(LPWSTR); 
+
 int main( void ) 
 { 
     HINSTANCE hinstLib=NULL; 
-    MYPROC ProcAdd = NULL; 
+    DLL1Arg f_ini = NULL; 
+    DLL0Arg f_pausa = NULL; 
     //FARPROC ProcAdd;
     BOOL fFreeResult, fRunTimeLinkSuccess = FALSE; 
  
@@ -34,17 +37,17 @@ int main( void )
  
     if (hinstLib != NULL) 
     { 
-       ProcAdd = (MYPROC) GetProcAddress(hinstLib, "FALONSO2_inicio"); //obtienes y añades la direccion de la funcion
- 
+       f_ini = (DLL1Arg) GetProcAddress(hinstLib, "FALONSO2_inicio"); //obtienes y añades la direccion de la funcion
+        f_pausa = (DLL0Arg) GetProcAddress(hinstLib, "FALONSO2_pausa");
         // If the function address is valid, call the function.
  
-        if (NULL != ProcAdd) 
+        if (NULL != f_ini) 
         {          printf("entro\n");
 
             fRunTimeLinkSuccess = TRUE;
-            (ProcAdd) (L"2"); 
+            //(ProcAdd) (L"2"); 
             printf("entro");
-           ProcAdd;
+            f_ini(1);
         }
         // Free the DLL module.
  
@@ -54,7 +57,11 @@ int main( void )
     // If unable to call the DLL function, use an alternative.
     if (! fRunTimeLinkSuccess) 
         printf("Message printed from executable\n"); 
-
+    while (1)
+    {
+        f_pausa;
+    }
+    
     return 0;
 
 }
