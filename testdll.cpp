@@ -67,11 +67,12 @@ int main( void )
 
     //ENVIO
         //Postea un mensage en la cola asociada con el hilo que creo la ventana especificada
-        if(PostMessageA(HWND_BROADCAST, 0x0402, 0, 0)==FALSE)
-            exit(1);
+        //if(PostMessageA(HWND_BROADCAST, 0x0402, 0, 0)==FALSE)
+          //  exit(1);
 
         //Postea un mensage en la cola de un hilo especifico.
-          if(PostThreadMessageA(DWORD  idThread,0x0402, 0, 0) == False)
+          //if(PostThreadMessageA(DWORD  idThread,0x0402, 0, 0) == FALSE)
+          if(PostThreadMessageA( GetCurrentThreadId(),0x0402, 0, 0) == FALSE)
             exit(1);
 
 
@@ -79,17 +80,21 @@ int main( void )
     //RECEPCION
         MSG test_msg, uMsg;
 
-        //if(PeekMessageA(&test_msg, NULL,0x0401, 0x0403, PM_REMOVE )!=0)
         //if(PeekMessageA(&test_msg, NULL, WM_INPUT, 0x0402, PM_REMOVE) !=0)
         if(PeekMessageA(&test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE) !=0)//Creamos cola de mensage en el hilo ya que no es una aplicion de ventana sino de consola; Esto NO debe de borrar los mensajes PM_NOREMOVE
-          
+          {}
+        if(PeekMessageA(&test_msg, NULL,0x0402, 0x0402, PM_NOREMOVE )!=0)//Esto recive el msg
+            printf("test\n");
+        /*
         while (GetMessage (&uMsg, NULL, 0, 0) > 0)//He visto que todo el mundo lo hace asi con el bucle while; Pero no seria espera ocupada¿?¿?
         {
+
             TranslateMessage (&uMsg);
             DispatchMessage (&uMsg);//esto solo funciona con procesos de ventanas Creo
         }
-        
-
+        */
+        if(GetMessage(&uMsg, NULL, 0x0402,0x0402 )==-1)//0x00FF = WM_INPUT
+            printf("error getmsg");
 
 
 
