@@ -61,14 +61,12 @@ int main( void )
             exit(1);
         MSG test_msg, uMsg;
         //if(PeekMessageA(&test_msg, NULL,0x0401, 0x0403, PM_REMOVE )!=0)
-        if(PeekMessageA(&test_msg, NULL, WM_INPUT, 0x0402, PM_REMOVE) !=0)
-            printf("msg recivido\n");
+        //if(PeekMessageA(&test_msg, NULL, 0, 0, PM_REMOVE) !=0)
+          //  printf("msg recivido\n");
         // Free the DLL module.
-while (GetMessage (&uMsg, NULL, 0, 0) > 0)
-{
-     TranslateMessage (&uMsg);
-     DispatchMessage (&uMsg);
-}
+if (GetMessage (&uMsg, NULL, 0x00FF, 0x0402) == -1)
+        printf("getmsg error\n");
+        printf("getmsg recivido\n");
 
         //fFreeResult = FreeLibrary(hinstLib); 
     
