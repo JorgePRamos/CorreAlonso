@@ -400,7 +400,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 //CREA_N_HIJOS
 int creaNhijos(int n, int v) {
 
-    //int colores[] = {0,0,1,2,3,5,6,7};
+    int colores[] = {0,0,1,2,3,5,6,7};
     static int i = 0;
     int miIndice, miIndiceCarril;
     pid_t pid_child, pidPoceso;
@@ -457,58 +457,56 @@ int creaNhijos(int n, int v) {
                     if (PostThreadMessageA(GetCurrentThreadId(), miIndice + 1, 0, 0) == FALSE)
                         perror("Error PostMsg");
                     raise(SIGINT);
-                }
-                if (GetMessage( & uMsg, NULL, 500 + miIndice, 500 + miIndice) == -1) {
-                    perror("[GetMessage] pausa Sem");
-                    raise(SIGINT);
-                }
 
-                if (miIndice != 1) {
-                    // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
-                    // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                    if (PostThreadMessageA(GetCurrentThreadId(), 500 + miIndice - 1, 0, 0) == FALSE)
+                    if (GetMessage( & uMsg, NULL, 500 + miIndice, 500 + miIndice) == -1) {
+                        perror("[GetMessage] pausa Sem");
+                        raise(SIGINT);
+                    }
+
+                    if (miIndice != 1) {
+                        // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
+                        // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
+                        if (PostThreadMessageA(GetCurrentThreadId(), 500 + miIndice - 1, 0, 0) == FALSE)
+                            perror("Error PostMsg");
+                        raise(SIGINT);
+
+                    }
+                    if (miIndice == n) {
+                        if (GetMessage( & uMsg, NULL, 600, 600) == -1) {
+                            perror("[GetMessage] pausa Sem");
+                            raise(SIGINT);
+                        }
+                    }
+                    // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[miIndice], i , m1.tipo);
+                } else { //i==n
+                    if (GetMessage( & uMsg, NULL, miIndice, miIndice) == -1) {
+                        perror("[GetMessage] pausa Sem");
+                        raise(SIGINT);
+                    }
+                    if (PostThreadMessageA(GetCurrentThreadId(), miIndice - 1 + 500, 0, 0) == FALSE)
                         perror("Error PostMsg");
                     raise(SIGINT);
+
+                    // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i , m1.tipo);
+                    // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
                 }
             }
-            if (miIndice == n) {
-                if (GetMessage( & uMsg, NULL, 600, 600) == -1) {
-                    perror("[GetMessage] pausa Sem");
-                    raise(SIGINT);
-                }
+            // fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[miIndice],i);
+            while (1) {
+                //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
+                avance_controlado( & miIndiceCarril, & b, colores[miIndice], v);
             }
-            // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[miIndice], i , m1.tipo);
-        } else { //i==n
-            if (GetMessage( & uMsg, NULL, miIndice, miIndice) == -1) {
-                perror("[GetMessage] pausa Sem");
-                raise(SIGINT);
-            }
-            if (PostThreadMessageA(GetCurrentThreadId(), miIndice - 1 + 500, 0, 0) == FALSE)
-                perror("Error PostMsg");
+
+            exit(0);
+        } else if (pidPoceso == -1) {
+            perror("ERROR FORK");
             raise(SIGINT);
         }
-        // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i , m1.tipo);
-        // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
     }
-}
-// fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[miIndice],i);
-while (1) {
-    //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
-    avance_controlado( & miIndiceCarril, & b, colores[miIndice], v);
-}
 
-exit(0);
-}
-else if (pidPoceso == -1) {
-    perror("ERROR FORK");
-    raise(SIGINT);
-}
-}
+    return 0;
 
-return 0;
-
-} //Fin Nhijos
-
+    } //Fin Nhijos
 
 //---------------------------------------------------------------------------
 void testhand(int param) {
@@ -597,7 +595,7 @@ int main(void) { //Punteros funciones
     int d = 1, p = 30;
     iniCoche( & d, & p, 1);
     luzSem(1, 3);*/
-    while (1) {
+    for(;;){
         avanceCoche( & d, & p, 6);
         printf("%d", posOcup(1, 20));
         velocidad(10, d, p);
