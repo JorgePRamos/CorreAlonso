@@ -52,36 +52,69 @@ int main( void )
             //f_ini(1);
 
         }*/
-
+        /*
+        cola de mensajes en el hilo del padre
+        todos postean en la cola del hilo padre postthread(idthreadPdre)
+        usando getmesage escuchando a la cola de mensajes del hilo padre
         
+        */
+
+
         //if(PostThreadMessageA(GetCurrentThreadId, msg, 0, 0)==FALSE)
 
 
+
+
+    //ENVIO
+        //Postea un mensage en la cola asociada con el hilo que creo la ventana especificada
         if(PostMessageA(HWND_BROADCAST, 0x0402, 0, 0)==FALSE)
             exit(1);
-        MSG test_msg, uMsg;
-        //if(PeekMessageA(&test_msg, NULL,0x0401, 0x0403, PM_REMOVE )!=0)
-        if(PeekMessageA(&test_msg, NULL, WM_INPUT, 0x0402, PM_REMOVE) !=0)
-            printf("msg recivido\n");
-        // Free the DLL module.
-while (GetMessage (&uMsg, NULL, 0, 0) > 0)
-{
-     TranslateMessage (&uMsg);
-     DispatchMessage (&uMsg);
-}
 
-        //fFreeResult = FreeLibrary(hinstLib); 
-    
-/*
-    // If unable to call the DLL function, use an alternative.
-    if (! fRunTimeLinkSuccess) 
-        printf("Message printed from executable\n"); 
-    while (1)
-    {
-        f_pausa;
-    }*/
-    
-    return 0;
+        //Postea un mensage en la cola de un hilo especifico.
+          if(PostThreadMessageA(DWORD  idThread,0x0402, 0, 0) == False)
+            exit(1);
+
+
+
+    //RECEPCION
+        MSG test_msg, uMsg;
+
+        //if(PeekMessageA(&test_msg, NULL,0x0401, 0x0403, PM_REMOVE )!=0)
+        //if(PeekMessageA(&test_msg, NULL, WM_INPUT, 0x0402, PM_REMOVE) !=0)
+        if(PeekMessageA(&test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE) !=0)//Creamos cola de mensage en el hilo ya que no es una aplicion de ventana sino de consola; Esto NO debe de borrar los mensajes PM_NOREMOVE
+          
+        while (GetMessage (&uMsg, NULL, 0, 0) > 0)//He visto que todo el mundo lo hace asi con el bucle while; Pero no seria espera ocupada¿?¿?
+        {
+            TranslateMessage (&uMsg);
+            DispatchMessage (&uMsg);//esto solo funciona con procesos de ventanas Creo
+        }
+        
+
+
+
+
+
+                //fFreeResult = FreeLibrary(hinstLib); 
+            
+        /*
+            // If unable to call the DLL function, use an alternative.
+            if (! fRunTimeLinkSuccess) 
+                printf("Message printed from executable\n"); 
+            while (1)
+            {
+                f_pausa;
+            }*/
+            
+            return 0;
+
+
+
+
+
+
+
+
+
 
 }
 /*
