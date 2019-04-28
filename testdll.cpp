@@ -83,7 +83,7 @@ int main( void )
         //if(PeekMessageA(&test_msg, NULL, WM_INPUT, 0x0402, PM_REMOVE) !=0)
         if(PeekMessageA(&test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE) !=0)//Creamos cola de mensage en el hilo ya que no es una aplicion de ventana sino de consola; Esto NO debe de borrar los mensajes PM_NOREMOVE
           {}
-        if(PeekMessageA(&test_msg, NULL,0x0402, 0x0402, PM_NOREMOVE )!=0)//Esto recive el msg
+        if(PeekMessageA(&test_msg, NULL,0x0402, 0x0402, PM_NOREMOVE )!=0)
             printf("test\n");
         /*
         while (GetMessage (&uMsg, NULL, 0, 0) > 0)//He visto que todo el mundo lo hace asi con el bucle while; Pero no seria espera ocupada¿?¿?
