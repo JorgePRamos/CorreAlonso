@@ -65,7 +65,7 @@ std::unique_lock<std::mutex> sem_dad (m_sem_dad,std::defer_lock);
 
 //---------------------------------------------------------------------------
 //DEFINICIONES
-unsigned long * contador = NULL;
+unsigned int  contador = 0;
 typedef struct Coche {
     int posicion;
     int carril;
@@ -337,11 +337,11 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             //fprintf(stderr, "Color (%d) [%d] Suelto la pagita en el cruze %d\n", color, getpid(), *desp);
         }
         if (( * desp == 131 && * carril) || ( * desp == 133 && ! * carril)) {
-            ( * contador) ++;
+            (contador) ++;
         }
         //fprintf(stderr, "Color (%d) [%d] check Carril-pos: %d\n", color, getpid(), pos_2);
         //pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1
-        if (posOcup( * carril, ((( * desp) + 135) % 137) + 1)) {
+        if (posOcup( * carril, ((( * desp) + 135) % 137))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_2);
             if (PostThreadMessageA(GetCurrentThreadId(), pos_2 + 1, 0, 0) == FALSE) {
                 perror("ERROR AL MSGSND");
@@ -352,7 +352,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 
         //fprintf(stderr, "Color (%d) [%d] check Carril-pos: %d\n", color, getpid(), pos_cambio);
         //pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1
-        if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril) + 1)) {
+        if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_cambio);
             if (PostThreadMessageA(GetCurrentThreadId(), pos_cambio + 1, 0, 0) == FALSE) {
                 perror("ERROR AL MSGSND");
@@ -591,7 +591,7 @@ int main(void) { //Punteros funciones
 
 
     inicio_falonso(1);
-    
+
     int d = 1, p = 30;
     iniCoche( & d, & p, 1);
     luzSem(1, 2);
