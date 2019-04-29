@@ -116,7 +116,7 @@ int cambio_carril_cal(int desp, int carril) {
 
 //---------------------------------------------------------------------------
 //ENTER_CRITIC
-void enterCritic(char semId[], int op) {
+void enterCritic(const char semId[], int op) {
     int f = 0;
 
 
@@ -147,7 +147,7 @@ void enterCritic(char semId[], int op) {
 }
 //---------------------------------------------------------------------------
 //LEAVE_CRITIC
-void leaveCritic(char semId[], int op) {
+void leaveCritic(const char semId[], int op) {
     if (strcmp(semId, "critica")) {
         ReleaseSemaphore(critica, op, NULL);
     } else if (strcmp(semId, "critica_salida")) {
@@ -591,28 +591,14 @@ int main(void) { //Punteros funciones
 
 
     inicio_falonso(1);
-    /*
+    
     int d = 1, p = 30;
     iniCoche( & d, & p, 1);
-    luzSem(1, 3);*/
+    luzSem(1, 2);
+    luzSem(0, 2);
     for(;;){
-        avanceCoche( & d, & p, 6);
-        printf("%d", posOcup(1, 20));
-        velocidad(10, d, p);
-        avanceCoche( & d, & p, 4);
-        printf("%d", posOcup(1, 20));
-        velocidad(10, d, p);
-        avanceCoche( & d, & p, 2);
-        printf("%d", posOcup(1, 20));
-        velocidad(10, d, p);
-        avanceCoche( & d, & p, 4);
-        printf("%d", posOcup(1, 20));
-        velocidad(10, d, p);
-        avanceCoche( & d, & p, 7);
-        printf("%d", posOcup(1, 20));
+        avance_controlado(&d, &p, 4, 1);
         pausa;
-        velocidad(20, d, p);
-        //cambioCarril(&d, &p, 4);
 
     }
 
