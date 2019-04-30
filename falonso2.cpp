@@ -7,8 +7,6 @@
 #include <thread>         // std::thread
 #include <mutex>   
 #include <iostream>        // std::mutex, std::unique_lock, std::defer_lock
-#include <mpi.h>
-
 
 
 
@@ -22,11 +20,6 @@ typedef int (*DLL3Arg)(int,int,int);
 typedef int (*DLL3ArgP)(int*,int*,int);
 typedef void (*DLL1Argvoid)(const char *);
 
-int rank , size, *mt;
-MPI_Request req;
-MPI_Status sta;
-
-mt = new int [10];
 
 HANDLE critica = CreateSemaphore(
     NULL, // default security attributes
@@ -173,17 +166,11 @@ void leaveCritic(const char semId[], int op) {
 void semtoRed(int sem) {
 
     //fprintf(stderr, " [%d] Revico mensajes residuales to Red\n", getpid());
-    PeekMessageA( & test_msg, NULL, 303 - 2 * sem, 303 - 2 * sem, PM_REMOVE);//ipc_Nowait
-    PeekMessageA( & test_msg, NULL, 303 - 2 * sem - 1, 303 - 2 * sem - 1, PM_REMOVE);//ipc_Nowait
+    PeekMessageA( & test_msg, NULL,401+ 303 - 2 * sem, 303 - 2 * sem, PM_REMOVE);
+    PeekMessageA( & test_msg, NULL,401+ 303 - 2 * sem - 1, 303 - 2 * sem - 1, PM_REMOVE);
     luzSem(sem, AMARILLO);
     //fprintf(stderr, " PADRE Sem_cruze pre rojo: %d\n", semctl(sem_cruze, 0, GETVAL));
     enterCritic("sem_cruze", 6);
-
-    leaveCritic("critica_salida", 1);
-    //fprintf(stderr, " PADRE Sem_cruze pre rojo: %d\n", semctl(sem_cruze, 0, GETVAL));
-    enterCritic("sem_cruze", 6);
-    enterCritic("critica_salida", 1);
-
     luzSem(sem, ROJO);
     //fprintf(stderr, " PADRE Sem_cruze post rojo: %d\n", semctl(sem_cruze, 0, GETVAL));
 }
@@ -198,8 +185,8 @@ void semtoGreen(int sem) {
 
 
     //fprintf(stderr, " [%d] Recivo mensajes residuales to Green \n", getpid());
-    PeekMessageA( & test_msg, NULL, 303 - 2 * sem, 303 - 2 * sem, PM_REMOVE);
-    PeekMessageA( & test_msg, NULL, 303 - 2 * sem - 1, 303 - 2 * sem - 1, PM_REMOVE);
+    PeekMessageA( & test_msg, NULL,401+ 303 - 2 * sem, 303 - 2 * sem, PM_REMOVE);
+    PeekMessageA( & test_msg, NULL,401+ 303 - 2 * sem - 1, 303 - 2 * sem - 1, PM_REMOVE);
     luzSem(sem, VERDE);
     //fprintf(stderr, "               >>>SEM==%d\n",sem);
 
@@ -208,12 +195,12 @@ void semtoGreen(int sem) {
     //fprintf(stderr, "[%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem);
 
 
-    if (MPI_Isend(mt,10, MPI_INT, 1, 303 - 2 * sem, MPI_COMM_WORLD, &req) == FALSE) {
+    if (PostThreadMessageA(GetCurrentThreadId(),401 +303 - 2 * sem, 0, 0) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
     //fprintf(stderr, " [%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem-1);
-    if (MPI_Isend(mt,10, MPI_INT, 1, 303 - 2 * sem - 1, MPI_COMM_WORLD, &req) == FALSE) {
+    if (PostThreadMessageA(GetCurrentThreadId(),401 +303 - 2 * sem - 1, 0, 0) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
@@ -236,10 +223,10 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
     int dep_temp = * desp, pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1, pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1;
     //  fprintf(stderr, "Color (%d) [%d] Entro Funcion avance controlado\n",color, getpid());
 
-    PeekMessageA( & test_msg, NULL, pos_cambio + 1, pos_cambio + 1, PM_REMOVE);//IPC_NOWAIT
+    PeekMessageA( & test_msg, NULL,401+ pos_cambio + 1, pos_cambio + 1, PM_REMOVE);
     //fprintf(stderr, "Color (%d) [%d]  MENSAJE RECOGIDO CON EXITO ------> [%d]\n", color, getpid(), pos_cambio);
 
-   // PeekMessageA( & test_msg, NULL, pos_2 + 1, pos_2 + 1, PM_REMOVE);
+    PeekMessageA( & test_msg, NULL,401+ pos_2 + 1, pos_2 + 1, PM_REMOVE);
     //fprintf(stderr, "Color (%d) [%d]  MENSAJE RECOGIDO CON EXITO ------> [%d]\n", color, getpid(), pos_2);
     //fprintf(stderr, "Color (%d) [%d] Limpio mensajes (rcv)\n",color, getpid());
     //fprintf(stderr, "Color (%d) [%d]  COMPRUEBO POSICION SIGUIENTE %d (%d+1%%137+%d*137)\n", color, getpid(), *desp + 1 % 137 + *carril *137, *desp, *carril);
@@ -255,27 +242,20 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
-
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
                 enterCritic("critica", 1);
+                //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
                 enterCritic("sem_cruze", 1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else if (estadoSem(VERTICAL) == VERDE) {
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
-                leaveCritic("critica_salida", 1);
-                leaveCritic("critica", 1);
-                enterCritic("sem_cruze",1);
-                enterCritic("critica",1);
-
+                enterCritic("sem_cruze", 1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else
                 raise(SIGINT);
 
         } else if ( * desp == 20 && !( * carril)) {
-            enterCritic("critica_salida",1);
-
             if ((estadoSem(VERTICAL) == ROJO || estadoSem(VERTICAL) == AMARILLO)) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (301)\n", color, getpid());
 
@@ -284,8 +264,6 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
-                
-                leaveCritic("critica_salida",1);
                 enterCritic("critica", 1);
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
                 enterCritic("sem_cruze", 1);
@@ -311,46 +289,35 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
-              
+                enterCritic("critica", 1);
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
                 enterCritic("sem_cruze", 1);
-                enterCritic("critica", 1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else if (estadoSem(HORIZONTAL) == VERDE) {
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
-                leaveCritic("critica_salida", 1);
-                leaveCritic("critica", 1);
                 enterCritic("sem_cruze", 1);
-                enterCritic("critica", 1);
-
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else
                 raise(SIGINT);
 
-        } else if ( * desp == 97 && ! * carril) {
-            enterCritic("critica_salida", 1);
+        } else if ( * desp == 102 && ! * carril) {
             if (estadoSem(HORIZONTAL) == ROJO || estadoSem(HORIZONTAL) == AMARILLO) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (303)\n", color, getpid());
                 leaveCritic("critica", 1);
-                leaveCritic("critica_salida", 1);
-                if (GetMessage( & uMsg, NULL, 303, 303) == -1) {//302¿?
+                if (GetMessage( & uMsg, NULL, 303, 303) == -1) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
-                enterCritic("sem_cruze", 1);
                 enterCritic("critica", 1);
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
-                
+                enterCritic("sem_cruze", 1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else if (estadoSem(HORIZONTAL) == VERDE) {
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
-                leaveCritic("critica_salida", 1);
-                leaveCritic("critica", 1);
                 enterCritic("sem_cruze", 1);
-                enterCritic("critica", 1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else
@@ -362,7 +329,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             raise(SIGINT);
         }
         //fprintf(stderr, "Color (%d) [%d] Modificada la pos: (nueva) %d\n", color, getpid(), *desp);
-        if (( * desp == 111 && ! * carril) || ( * desp == 24 && ! * carril) || ( * desp == 106 && * carril) || ( * desp == 25 && * carril)) {
+        if (( * desp == 111 && ! * carril) || ( * desp == 24 && ! * carril) || ( * desp == 102 && * carril) || ( * desp == 27 && * carril)) {
             //fprintf(stderr, "Color (%d) [%d] Sem_cruze salida pre leave: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
 
             leaveCritic("sem_cruze", 1);
@@ -376,8 +343,8 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         //pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1
         if (posOcup( * carril, ((( * desp) + 135) % 137))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_2);
-            if (MPI_Isend(mt,10, MPI_INT, 1, pos_2 + 1, MPI_COMM_WORLD, &req) == FALSE) {
-                PERROR("ERROR AL MSGSND (pos -2 ocupada post avance)");
+            if (PostThreadMessageA(GetCurrentThreadId(),401 +pos_2 + 1, 0, 0) == FALSE) {
+                PERROR("ERROR AL MSGSND");
                 raise(SIGINT);
             }
             ////fprintf(stderr, "Color (%d) [%d] ENVIADO MENSAJE --> %ld \n", color, getpid(), mt1.tipo);
@@ -387,15 +354,15 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         //pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1
         if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_cambio);
-            if (MPI_Isend(mt,10, MPI_INT, 1, pos_cambio + 1, MPI_COMM_WORLD, &req) == FALSE) {
-                ("ERROR AL MSGSND (pos carril opuesto ocupada)");
+            if (PostThreadMessageA(GetCurrentThreadId(),401 +pos_cambio + 1, 0, 0) == FALSE) {
+                PERROR("ERROR AL MSGSND");
                 raise(SIGINT);
             }
             ////fprintf(stderr, "Color (%d) [%d] ENVIADO MENSAJE --> %ld \n", color, getpid(), mt1.tipo);
         }
         // fprintf(stderr, "Color (%d) [%d] Voy a soltar la seccion critica \n",color, getpid());
         leaveCritic("critica", 1);
-        velocidad(50, * carril, * desp);
+        velocidad(70, * carril, * desp);
 
         // fprintf(stderr, "Color (%d) [%d] Suelto la seccion critica \n",color, getpid());
     } else {
@@ -456,11 +423,11 @@ int creaNhijos(int n, int v) {
             //fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[miIndice], i);
             for (b = 136; b >= 0;) {
                 //fprintf(stderr, "Color (%d) [%d] Iteracion b = %d\n", colores[miIndice], i, b);
-                b -= 2;
+                b -= 4;
                 //if (memoria[b + miIndiceCarril * 137] == ' ') {
                 if (!(posOcup(miIndiceCarril, b))) {
                     //  fprintf(stderr, "Color (%d) [%d] Carril libre encontrado\n",colores[miIndice],i);
-                    if (iniCoche( & miIndiceCarril, & b,  colores[1+(miIndice-1)%6]]) == -1) {
+                    if (iniCoche( & miIndiceCarril, & b, colores[miIndice]) == -1) {
                         PERROR("ERROR INCIO COCHE");
                         raise(SIGINT);
                     } //miendice alterna Izquierdo y derecho
@@ -481,13 +448,13 @@ int creaNhijos(int n, int v) {
                     if (miIndice != 1) {
                         //fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
                         //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                        if (GetMessage( & uMsg, NULL, miIndice, 100+miIndice) == -1) {
+                        if (GetMessage( & uMsg, NULL, miIndice, miIndice) == -1) {
                             PERROR("[GetMessage] pausa Sem");
                             raise(SIGINT);
                         }
 
                     }
-                    if (MPI_Isend(mt,10, MPI_INT, 1, 100+miIndice + 1, MPI_COMM_WORLD, &req) == FALSE)
+                    if (PostThreadMessageA(GetCurrentThreadId(),401 +miIndice + 1, 0, 0) == FALSE)
                         PERROR("Error PostMsg");
                     raise(SIGINT);
 
@@ -499,7 +466,7 @@ int creaNhijos(int n, int v) {
                     if (miIndice != 1) {
                         // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
                         // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                        if (MPI_Isend(mt,10, MPI_INT, 1, 500 + miIndice - 1, MPI_COMM_WORLD, &req) == FALSE)
+                        if (PostThreadMessageA(GetCurrentThreadId(),401 +500 + miIndice - 1, 0, 0) == FALSE)
                             PERROR("Error PostMsg");
                         raise(SIGINT);
 
@@ -512,11 +479,11 @@ int creaNhijos(int n, int v) {
                     }
                     // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[miIndice], i , m1.tipo);
                 } else { //i==n
-                    if (GetMessage( & uMsg, NULL, miIndice,100+miIndice) == -1) {
+                    if (GetMessage( & uMsg, NULL, miIndice, miIndice) == -1) {
                         PERROR("[GetMessage] pausa Sem");
                         raise(SIGINT);
                     }
-                    if (MPI_Isend(mt,10, MPI_INT, 1, miIndice - 1 + 500, MPI_COMM_WORLD, &req) == FALSE)
+                    if (PostThreadMessageA(GetCurrentThreadId(),401 +miIndice - 1 + 500, 0, 0) == FALSE)
                         PERROR("Error PostMsg");
                     raise(SIGINT);
 
@@ -527,7 +494,7 @@ int creaNhijos(int n, int v) {
             // fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[miIndice],i);
             while (1) {
                 //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
-                avance_controlado( & miIndiceCarril, & b, colores[1+(miIndice-1)%6], v);
+                avance_controlado( & miIndiceCarril, & b, colores[miIndice], v);
             }
 
             exit(0);
@@ -547,14 +514,14 @@ void testhand(int param) {
     FreeLibrary(hinstLib);
     exit(1);
 }
-int main(int argc, char *argv[]) { //Punteros funciones
+int main(void) { //Punteros funciones
 
     signal(SIGINT, testhand);
 
     //---------------------------------------------------------------------------
     //Var's
-
-
+    
+    PeekMessage(&test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
         //CreateThread(NULL,0,avance_controlado,NULL,0);
 
     if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //cargas la libreria en memoria del proceso
