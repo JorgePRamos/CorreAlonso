@@ -555,7 +555,6 @@ int main(int argc, char *argv[]) { //Punteros funciones
     //Var's
 
 
-    MPI_Init(&argc, &argv);
         //CreateThread(NULL,0,avance_controlado,NULL,0);
 
     if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //cargas la libreria en memoria del proceso
@@ -636,35 +635,3 @@ int main(int argc, char *argv[]) { //Punteros funciones
     for(;;){
         avance_controlado(&d, &p, 4, 1);
         avance_controlado(&e,&f, 4, 1 );
-        pausa();
-
-    }
-
-    FreeLibrary(hinstLib); //esto va a la manejadora (BOOL)
-
-    return 0;
-
-}
-/*
-  for( i=0; i < THREADCOUNT; i++ )
-    {
-        aThread[i] = CreateThread( 
-                     NULL,       // default security attributes
-                     0,          // default stack size
-                     (LPTHREAD_START_ROUTINE) ThreadProc, 
-                     NULL,       // no thread function arguments
-                     0,          // default creation flags
-                     &ThreadID); // receive thread identifier
-
-        if( aThread[i] == NULL )
-        {
-            printf("CreateThread error: %d\n", GetLastError());
-            return 1;
-        }
-    }
-
-    // Wait for all threads to terminate
-
-    WaitForMultipleObjects(THREADCOUNT, aThread, TRUE, INFINITE);
-    
-*/
