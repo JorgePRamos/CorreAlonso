@@ -511,6 +511,7 @@ int creaNhijos(int n, int v) {
 //---------------------------------------------------------------------------
 void testhand(int param) {
     printf("ersd");
+    FreeLibrary(hinstLib);
     exit(1);
 }
 int main(void) { //Punteros funciones
@@ -521,6 +522,7 @@ int main(void) { //Punteros funciones
     //Var's
 
 
+        //CreateThread(NULL,0,avance_controlado,NULL,0);
 
     if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //cargas la libreria en memoria del proceso
         perror("Error cargar DLL");
@@ -592,12 +594,14 @@ int main(void) { //Punteros funciones
 
     inicio_falonso(1);
 
-    int d = 1, p = 30;
+    int d = 1, p = 30, e=1, f=29;
     iniCoche( & d, & p, 1);
+    iniCoche(&e,&f, 4 );
     luzSem(1, 2);
     luzSem(0, 2);
     for(;;){
         avance_controlado(&d, &p, 4, 1);
+        avance_controlado(&e,&f, 4, 1 );
         pausa;
 
     }
