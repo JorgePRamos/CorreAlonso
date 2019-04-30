@@ -196,12 +196,12 @@ void semtoGreen(int sem) {
 
 
     if (PostThreadMessageA(GetCurrentThreadId(), 303 - 2 * sem, 0, 0) == FALSE) {
-        perror("ERROR AL MSGSND");
+        PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
     //fprintf(stderr, " [%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem-1);
     if (PostThreadMessageA(GetCurrentThreadId(), 303 - 2 * sem - 1, 0, 0) == FALSE) {
-        perror("ERROR AL MSGSND");
+        PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
 
@@ -239,7 +239,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (%d)\n", color, getpid(), 300);
                 leaveCritic("critica", 1);
                 if (GetMessage( & uMsg, NULL, 300, 300) == -1) {
-                    perror("[GetMessage] pausa Sem");
+                    PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
                 enterCritic("critica", 1);
@@ -261,7 +261,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 
                 leaveCritic("critica", 1);
                 if (GetMessage( & uMsg, NULL, 301, 301) == -1) {
-                    perror("[GetMessage] pausa Sem");
+                    PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
                 enterCritic("critica", 1);
@@ -286,7 +286,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (302)\n", color, getpid());
                 leaveCritic("critica", 1);
                 if (GetMessage( & uMsg, NULL, 302, 302) == -1) {
-                    perror("[GetMessage] pausa Sem");
+                    PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
                 enterCritic("critica", 1);
@@ -307,7 +307,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (303)\n", color, getpid());
                 leaveCritic("critica", 1);
                 if (GetMessage( & uMsg, NULL, 303, 303) == -1) {
-                    perror("[GetMessage] pausa Sem");
+                    PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
                 enterCritic("critica", 1);
@@ -325,7 +325,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         }
         // fprintf(stderr, "Color (%d) [%d] Avanzo a la siguente posicion (%d)\n",color, getpid(), *desp + 1 % 137 + *carril *137);
         if (avanceCoche(carril, desp, color) == -1) {
-            perror("ERROR AL AVANZAR COCHE");
+            PERROR("ERROR AL AVANZAR COCHE");
             raise(SIGINT);
         }
         //fprintf(stderr, "Color (%d) [%d] Modificada la pos: (nueva) %d\n", color, getpid(), *desp);
@@ -344,7 +344,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         if (posOcup( * carril, ((( * desp) + 135) % 137))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_2);
             if (PostThreadMessageA(GetCurrentThreadId(), pos_2 + 1, 0, 0) == FALSE) {
-                perror("ERROR AL MSGSND");
+                PERROR("ERROR AL MSGSND (pos -2 ocupada post avance)");
                 raise(SIGINT);
             }
             ////fprintf(stderr, "Color (%d) [%d] ENVIADO MENSAJE --> %ld \n", color, getpid(), mt1.tipo);
@@ -355,7 +355,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_cambio);
             if (PostThreadMessageA(GetCurrentThreadId(), pos_cambio + 1, 0, 0) == FALSE) {
-                perror("ERROR AL MSGSND");
+                PERROR("ERROR AL MSGSND (pos carril opuesto ocupada)");
                 raise(SIGINT);
             }
             ////fprintf(stderr, "Color (%d) [%d] ENVIADO MENSAJE --> %ld \n", color, getpid(), mt1.tipo);
@@ -371,7 +371,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         if (!posOcup(! * carril, cambio_carril_cal( * desp, * carril))) {
             //  fprintf(stderr, "Color (%d) [%d] Efectivo cambio de carril pos(nueva): %d\n",color, getpid(), dep_temp);
             if (cambioCarril(carril, desp, color) == -1) {
-                perror("ERROR AL CAMBIAR CARRIL");
+                PERROR("ERROR AL CAMBIAR CARRIL");
                 raise(SIGINT);
             }
             //fprintf(stderr, "Color (%d) [%d] Cambio de carril efectuado pos: %d\n", color, getpid(), * desp);
@@ -385,7 +385,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             leaveCritic("critica", 1);
             //fprintf(stderr, "Color (%d) [%d] Suelto la seccion critica \n",color, getpid());
             if (GetMessage( & uMsg, NULL, ( * desp + * carril * 137) + 1, ( * desp + * carril * 137) + 1) == -1) {
-                perror("[GetMessage] pausa Sem");
+                PERROR("[GetMessage] pausa Sem");
                 raise(SIGINT);
             }
             //fprintf(stderr, "               ***MENSAJE RECIVIDO ---> %d\n", ( *desp + *carril *137) + 1);
@@ -412,7 +412,7 @@ int creaNhijos(int n, int v) {
         miIndiceCarril = miIndice % 2;
 
         /*if ((pid_child = fork()) == -1) {
-            perror("ERROR CREACION HIJOS");
+            PERROR("ERROR CREACION HIJOS");
             raise(SIGINT);
             
         }
@@ -428,7 +428,7 @@ int creaNhijos(int n, int v) {
                 if (!(posOcup(miIndiceCarril, b))) {
                     //  fprintf(stderr, "Color (%d) [%d] Carril libre encontrado\n",colores[miIndice],i);
                     if (iniCoche( & miIndiceCarril, & b, colores[miIndice]) == -1) {
-                        perror("ERROR INCIO COCHE");
+                        PERROR("ERROR INCIO COCHE");
                         raise(SIGINT);
                     } //miendice alterna Izquierdo y derecho
                     // fprintf(stderr, "Color (%d) [%d] Inicio coche con Carril %d **Posicion %d **Color %d \n", colores[miIndice], i, miIndiceCarril, b, colores[miIndice]);
@@ -449,17 +449,17 @@ int creaNhijos(int n, int v) {
                         //fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
                         //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
                         if (GetMessage( & uMsg, NULL, miIndice, miIndice) == -1) {
-                            perror("[GetMessage] pausa Sem");
+                            PERROR("[GetMessage] pausa Sem");
                             raise(SIGINT);
                         }
 
                     }
                     if (PostThreadMessageA(GetCurrentThreadId(), miIndice + 1, 0, 0) == FALSE)
-                        perror("Error PostMsg");
+                        PERROR("Error PostMsg");
                     raise(SIGINT);
 
                     if (GetMessage( & uMsg, NULL, 500 + miIndice, 500 + miIndice) == -1) {
-                        perror("[GetMessage] pausa Sem");
+                        PERROR("[GetMessage] pausa Sem");
                         raise(SIGINT);
                     }
 
@@ -467,24 +467,24 @@ int creaNhijos(int n, int v) {
                         // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
                         // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
                         if (PostThreadMessageA(GetCurrentThreadId(), 500 + miIndice - 1, 0, 0) == FALSE)
-                            perror("Error PostMsg");
+                            PERROR("Error PostMsg");
                         raise(SIGINT);
 
                     }
                     if (miIndice == n) {
                         if (GetMessage( & uMsg, NULL, 600, 600) == -1) {
-                            perror("[GetMessage] pausa Sem");
+                            PERROR("[GetMessage] pausa Sem");
                             raise(SIGINT);
                         }
                     }
                     // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[miIndice], i , m1.tipo);
                 } else { //i==n
                     if (GetMessage( & uMsg, NULL, miIndice, miIndice) == -1) {
-                        perror("[GetMessage] pausa Sem");
+                        PERROR("[GetMessage] pausa Sem");
                         raise(SIGINT);
                     }
                     if (PostThreadMessageA(GetCurrentThreadId(), miIndice - 1 + 500, 0, 0) == FALSE)
-                        perror("Error PostMsg");
+                        PERROR("Error PostMsg");
                     raise(SIGINT);
 
                     // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i , m1.tipo);
@@ -499,7 +499,7 @@ int creaNhijos(int n, int v) {
 
             exit(0);
         } else if (pidPoceso == -1) {
-            perror("ERROR FORK");
+            PERROR("ERROR FORK");
             raise(SIGINT);
         }
     }
@@ -525,65 +525,65 @@ int main(void) { //Punteros funciones
         //CreateThread(NULL,0,avance_controlado,NULL,0);
 
     if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //cargas la libreria en memoria del proceso
-        perror("Error cargar DLL");
+        PERROR("Error cargar DLL");
         return (1);
     }
 
 
     if (!(inicio_falonso = (DLL1Arg) GetProcAddress(hinstLib, "FALONSO2_inicio"))) {
-        perror("Error getProc FALONSO2_inicio");
+        PERROR("Error getProc FALONSO2_inicio");
         FreeLibrary(hinstLib);
         return (2);
     }
     if (!(estadoSem = (DLL1Arg) GetProcAddress(hinstLib, "FALONSO2_estado_semAforo"))) {
-        perror("Error getProc FALONSO2_estado_semAforo");
+        PERROR("Error getProc FALONSO2_estado_semAforo");
         FreeLibrary(hinstLib);
         return (2);
     }
     if (!(f_fin = (DLL1Argp) GetProcAddress(hinstLib, "FALONSO2_fin"))) {
-        perror("Error getProc FALONSO2_fin");
+        PERROR("Error getProc FALONSO2_fin");
         FreeLibrary(hinstLib);
         return (2);
     }
     if (!(luzSem = (DLL2Arg) GetProcAddress(hinstLib, "FALONSO2_luz_semAforo"))) {
-        perror("Error getProc FALONSO2_luz_semAforo");
+        PERROR("Error getProc FALONSO2_luz_semAforo");
         FreeLibrary(hinstLib);
         return (2);
     }
     if (!(posOcup = (DLL2Arg) GetProcAddress(hinstLib, "FALONSO2_posiciOn_ocupada"))) {
-        perror("Error getProc FALONSO2_posiciOn_ocupada");
+        PERROR("Error getProc FALONSO2_posiciOn_ocupada");
         FreeLibrary(hinstLib);
         return (2);
     }
 
     if (!(velocidad = (DLL3Arg) GetProcAddress(hinstLib, "FALONSO2_velocidad"))) {
-        perror("Error getProc FALONSO2_velocidad");
+        PERROR("Error getProc FALONSO2_velocidad");
         FreeLibrary(hinstLib);
         return (2);
     }
     if (!(iniCoche = (DLL3ArgP) GetProcAddress(hinstLib, "FALONSO2_inicio_coche"))) {
-        perror("Error getProc FALONSO2_inicio_coche");
+        PERROR("Error getProc FALONSO2_inicio_coche");
         FreeLibrary(hinstLib);
         return (2);
     }
     if (!(avanceCoche = (DLL3ArgP) GetProcAddress(hinstLib, "FALONSO2_avance_coche"))) {
-        perror("Error getProc FALONSO2_avance_coche");
+        PERROR("Error getProc FALONSO2_avance_coche");
         FreeLibrary(hinstLib);
         return (2);
     }
     if (!(cambioCarril = (DLL3ArgP) GetProcAddress(hinstLib, "FALONSO2_cambio_carril"))) {
-        perror("Error getProc FALONSO2_cambio_carril");
+        PERROR("Error getProc FALONSO2_cambio_carril");
         FreeLibrary(hinstLib);
         return (2);
     }
     if (!(p_error = (DLL1Argvoid) GetProcAddress(hinstLib, "pon_error"))) {
-        perror("Error getProc  pon_error");
+        PERROR("Error getProc  pon_error");
         FreeLibrary(hinstLib);
         return (2);
     }
 
     if (!(pausa = (DLL0Arg) GetProcAddress(hinstLib, "FALONSO2_pausa"))) {
-        perror("Error getProc FALONSO2_pausa");
+        PERROR("Error getProc FALONSO2_pausa");
         FreeLibrary(hinstLib);
         return (2);
     }
