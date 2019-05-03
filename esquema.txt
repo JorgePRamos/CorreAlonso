@@ -1,3 +1,4 @@
+g++ -o falonso .\falonso2.cpp -L./ -lfalonso2 ; if($?){.\falonso.exe}
 
 #Características adicionales que programar#
 
@@ -6,7 +7,6 @@
          puede que esta opción esté deshabilitada.
 
     >IMPORTANTE: Aunque no se indique explícitamente en el enunciado, parece obvio que se necesitarán objetos de sincronización en diferentes partes del programa.
-
 
 
 Circuito:

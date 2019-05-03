@@ -1,3 +1,5 @@
+//Version correctamente sincronizada.
+
 #include <assert.h>
 #include <unistd.h>
 #include <sys/ipc.h>
@@ -157,8 +159,10 @@ void semtoRed(int sem) {
     msgrcv(buzon, & mg, sizeof(mensaje) - sizeof(long), 303 - 2 * sem, IPC_NOWAIT);
     msgrcv(buzon, & mg, sizeof(mensaje) - sizeof(long), 303 - 2 * sem - 1, IPC_NOWAIT);
     luz_semAforo(sem, AMARILLO);
+    leaveCritic(critica_salida, 0, 1);
     //fprintf(stderr, " PADRE Sem_cruze pre rojo: %d\n", semctl(sem_cruze, 0, GETVAL));
     enterCritic(sem_cruze, 0, -6);
+    enterCritic(critica_salida, 0, -1);
     luz_semAforo(sem, ROJO);
     //fprintf(stderr, " PADRE Sem_cruze post rojo: %d\n", semctl(sem_cruze, 0, GETVAL));
 }
@@ -211,9 +215,9 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 
     int dep_temp = * desp, pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1, pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1;
     ////  fprintf(stderr, "Color (%d) [%d] Entro Funcion avance controlado\n",color, getpid());
-    msgrcv(buzon, & mt2, sizeof(mensaje) - sizeof(long), pos_cambio + 1, IPC_NOWAIT);
+    msgrcv(buzon, & mt2, sizeof(mensaje) - sizeof(long),  * desp + (( * carril) * 137) + 1, IPC_NOWAIT);
     //fprintf(stderr, "Color (%d) [%d]  MENSAJE RECOGIDO CON EXITO ------> [%d]\n", color, getpid(), pos_cambio);
-    msgrcv(buzon, & mt2, sizeof(mensaje) - sizeof(long), pos_2 + 1, IPC_NOWAIT);
+    //msgrcv(buzon, & mt2, sizeof(mensaje) - sizeof(long), pos_2 + 1, IPC_NOWAIT);
     //fprintf(stderr, "Color (%d) [%d]  MENSAJE RECOGIDO CON EXITO ------> [%d]\n", color, getpid(), pos_2);
     // fprintf(stderr, "Color (%d) [%d] Limpio mensajes (rcv)\n",color, getpid());
     //fprintf(stderr, "Color (%d) [%d]  COMPRUEBO POSICION SIGUIENTE %d (%d+1%%137+%d*137)\n", color, getpid(), *desp + 1 % 137 + *carril *137, *desp, *carril);
@@ -221,43 +225,55 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         // fprintf(stderr, "Estado semaforo V: %d H: %d\n", memoria[275], memoria[274]);
         //fprintf(stderr, "Color (%d) [%d] Vacia posicion sig: %d\n", color, getpid(), * desp + 1 % 137 + * carril * 137);
         if ( * desp == 21 && * carril) {
+            enterCritic(critica_salida, 0, -1);
             if ((memoria[275] == ROJO || memoria[275] == AMARILLO)) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (%d)\n", color, getpid(), 300);
                 leaveCritic(critica, 0, 1);
+                leaveCritic(critica_salida, 0, 1);
                 if (-1 == msgrcv(buzon, & mt2, sizeof(mensaje) - sizeof(long), 300, 0)) {
                     perror("ERROR AL MSGRCV");
                     raise(SIGINT);
                 }
-                enterCritic(critica, 0, -1);
+
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
                 enterCritic(sem_cruze, 0, -1);
+                enterCritic(critica, 0, -1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else if (memoria[275] == VERDE) {
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                leaveCritic(critica_salida, 0, 1);
+                leaveCritic(critica, 0, 1);
                 enterCritic(sem_cruze, 0, -1);
+                enterCritic(critica, 0, -1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             }else
                 raise(SIGINT);
 
         } else if ( * desp == 20 && !( * carril)) {
+            enterCritic(critica_salida, 0, -1);
             if ((memoria[275] == ROJO || memoria[275] == AMARILLO)) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (301)\n", color, getpid());
 
                 leaveCritic(critica, 0, 1);
+                leaveCritic(critica_salida, 0, 1);
                 if (-1 == msgrcv(buzon, & mt2, sizeof(mensaje) - sizeof(long), 301, 0)) {
                     perror("ERROR AL MSGRCV");
                     raise(SIGINT);
                 }
-                enterCritic(critica, 0, -1);
+
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
                 enterCritic(sem_cruze, 0, -1);
+                enterCritic(critica, 0, -1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else if (memoria[275] == VERDE) {
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                leaveCritic(critica_salida, 0, 1);
+                leaveCritic(critica, 0, 1);
                 enterCritic(sem_cruze, 0, -1);
+                enterCritic(critica, 0, -1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             }else
@@ -267,43 +283,55 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 
         } else if ( * desp == 97 && * carril) { //233
             ////  fprintf(stderr, "                                           >>>>>>>POST-ELSE-IF---> %d\n", *desp);
-            //          
+            //   
+            enterCritic(critica_salida, 0, -1);
             if (memoria[274] == ROJO || memoria[274] == AMARILLO) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (302)\n", color, getpid());
                 leaveCritic(critica, 0, 1);
+                leaveCritic(critica_salida, 0, 1);
                 if (-1 == msgrcv(buzon, & mt2, sizeof(mensaje) - sizeof(long), 302, 0)) {
                     perror("ERROR AL MSGRCV");
                     raise(SIGINT);
                 }
-                enterCritic(critica, 0, -1);
+
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+
                 enterCritic(sem_cruze, 0, -1);
+                enterCritic(critica, 0, -1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else if (memoria[274] == VERDE) {
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                leaveCritic(critica_salida, 0, 1);
+                leaveCritic(critica, 0, 1);
                 enterCritic(sem_cruze, 0, -1);
+                enterCritic(critica, 0, -1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             }else
                 raise(SIGINT);
 
         } else if ( * desp == 102 && ! * carril) {
+            enterCritic(critica_salida, 0, -1);
             if (memoria[274] == ROJO || memoria[274] == AMARILLO) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (303)\n", color, getpid());
                 leaveCritic(critica, 0, 1);
+                leaveCritic(critica_salida, 0, 1);
                 if (-1 == msgrcv(buzon, & mt2, sizeof(mensaje) - sizeof(long), 303, 0)) {
                     perror("ERROR AL MSGRCV");
                     raise(SIGINT);
                 }
-                enterCritic(critica, 0, -1);
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
                 enterCritic(sem_cruze, 0, -1);
+                enterCritic(critica, 0, -1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else if (memoria[274] == VERDE) {
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                leaveCritic(critica_salida, 0, 1);
+                leaveCritic(critica, 0, 1);
                 enterCritic(sem_cruze, 0, -1);
+                enterCritic(critica, 0, -1);
 
                 //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             }else
@@ -315,7 +343,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             raise(SIGINT);
         }
         //fprintf(stderr, "Color (%d) [%d] Modificada la pos: (nueva) %d\n", color, getpid(), *desp);
-        if ((( * desp == 111 && ! * carril) || ( * desp == 24 && ! * carril) || ( * desp == 102 && * carril) || ( * desp == 27 && * carril)) && (memoria[274] == ROJO || memoria[274] == AMARILLO || memoria[274] == VERDE)) {
+        if ((( * desp == 111 && ! * carril) || ( * desp == 24 && ! * carril) || ( * desp == 106 && * carril) || ( * desp == 25 && * carril)) && (memoria[274] == ROJO || memoria[274] == AMARILLO || memoria[274] == VERDE)) {
             //fprintf(stderr, "Color (%d) [%d] Sem_cruze salida pre leave: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
 
             leaveCritic(sem_cruze, 0, 1);
@@ -349,7 +377,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         }
         // fprintf(stderr, "Color (%d) [%d] Voy a soltar la seccion critica \n",color, getpid());
         leaveCritic(critica, 0, 1);
-        velocidad(70, * carril, * desp);
+        velocidad(10, * carril, * desp);
 
         // fprintf(stderr, "Color (%d) [%d] Suelto la seccion critica \n",color, getpid());
     } else {
@@ -409,10 +437,11 @@ int creaNhijos(int n, int v) {
 
             for (b = 136; b >= 0;) {
                 //fprintf(stderr, "Color (%d) [%d] Iteracion b = %d\n", colores[miIndice], i, b);
-                b -= 4;
+                b -= 2;
                 if (memoria[b + miIndiceCarril * 137] == ' ') {
                     ////  fprintf(stderr, "Color (%d) [%d] Carril libre encontrado\n",colores[miIndice],i);
-                    if (inicio_coche( & miIndiceCarril, & b, colores[miIndice]) == -1) {
+                    if (inicio_coche( & miIndiceCarril, & b,
+                                      colores[1+(miIndice-1)%6]) == -1) {
                         perror("ERROR INCIO COCHE");
                         raise(SIGINT);
                     } //miendice alterna Izquierdo y derecho
@@ -436,13 +465,13 @@ int creaNhijos(int n, int v) {
 
                         // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
                         //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                        if (-1 == msgrcv(buzon, & m2, sizeof(mensaje) - sizeof(long), miIndice, 0)) {
+                        if (-1 == msgrcv(buzon, & m2, sizeof(mensaje) - sizeof(long), 100+miIndice, 0)) {
                             perror("ERROR AL MSGRCV");
                             raise(SIGINT);
                         }
 
                     }
-                     m1.tipo = miIndice+1;
+                     m1.tipo =100+ miIndice+1;
                         if (-1 == msgsnd(buzon, & m1, sizeof(mensaje) - sizeof(long), 0)) {
                             perror("ERROR AL MSGSND");
                             raise(SIGINT);
@@ -474,7 +503,7 @@ int creaNhijos(int n, int v) {
                     // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[miIndice], i , m1.tipo);
 
                 } else { //i==n
-                    if (-1 == msgrcv(buzon, & m2, sizeof(mensaje) - sizeof(long), miIndice, 0)) {
+                    if (-1 == msgrcv(buzon, & m2, sizeof(mensaje) - sizeof(long),100+ miIndice, 0)) {
                         perror("ERROR AL MSGRCV");
                         raise(SIGINT);
                     }
@@ -495,7 +524,7 @@ int creaNhijos(int n, int v) {
 
             while (1) {
                 //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
-                avance_controlado( & miIndiceCarril, & b, colores[miIndice], v);
+                avance_controlado( & miIndiceCarril, & b, colores[1+(miIndice-1)%6], v);
             }
 
             exit(0);
@@ -516,7 +545,7 @@ int main(int argc, char const * argv[]) {
         perror("arg:");
         exit(4);
         //fprintf(stderr, "Error numero de argumentos:%d\n", argc);
-    } else if (atoi(argv[1]) < 1 && atoi(argv[1]) > 8) {
+    } else if (atoi(argv[1]) < 1 && atoi(argv[1]) > 20) {
         perror("arg:");
         exit(4);
         //fprintf(stderr, "Error numero de coches invalido\n");
@@ -622,7 +651,7 @@ int main(int argc, char const * argv[]) {
         }
         contador = (unsigned long * ) memoria + 324;
         * contador = 0;
-        PenterCritic(critica_salida, 0, -1);
+        enterCritic(critica_salida, 0, -1);
             semtoRed(VERTICAL);
             semtoGreen(HORIZONTAL);
             leaveCritic(critica_salida, 0, 1);

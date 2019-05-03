@@ -1,0 +1,3 @@
+
+falonso2.exe: libalonso.h falonso2.dll
+	g++ -o falonso falonso2.cpp -L./ -lfalonso2 ; if($?){falonso.exe}
