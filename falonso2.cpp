@@ -20,6 +20,7 @@ typedef int (*DLL3Arg)(int,int,int);
 typedef int (*DLL3ArgP)(int*,int*,int);
 typedef void (*DLL1Argvoid)(const char *);
 
+HWND nHwnd= FindWindow ("Windows PowerShell", "");
 
 HANDLE critica = CreateSemaphore(
     NULL, // default security attributes
@@ -195,12 +196,12 @@ void semtoGreen(int sem) {
     //fprintf(stderr, "[%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem);
 
 
-    if (PostThreadMessageA(GetCurrentThreadId(), 303 - 2 * sem, 0, 0) == FALSE) {
+    if (SendMessage(nHwnd, 303 - 2 * sem, 0, 0) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
     //fprintf(stderr, " [%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem-1);
-    if (PostThreadMessageA(GetCurrentThreadId(), 303 - 2 * sem - 1, 0, 0) == FALSE) {
+    if (SendMessage(nHwnd, 303 - 2 * sem - 1, 0, 0) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
@@ -343,7 +344,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         //pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1
         if (posOcup( * carril, ((( * desp) + 135) % 137))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_2);
-            if (PostThreadMessageA(GetCurrentThreadId(), pos_2 + 1, 0, 0) == FALSE) {
+            if (SendMessage(nHwnd, pos_2 + 1, 0, 0) == FALSE) {
                 PERROR("ERROR AL MSGSND (pos -2 ocupada post avance)");
                 raise(SIGINT);
             }
@@ -354,8 +355,8 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         //pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1
         if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_cambio);
-            if (PostThreadMessageA(GetCurrentThreadId(), pos_cambio + 1, 0, 0) == FALSE) {
-                PERROR("ERROR AL MSGSND (pos carril opuesto ocupada)");
+            if (SendMessage(nHwnd, pos_cambio + 1, 0, 0) == FALSE) {
+                ("ERROR AL MSGSND (pos carril opuesto ocupada)");
                 raise(SIGINT);
             }
             ////fprintf(stderr, "Color (%d) [%d] ENVIADO MENSAJE --> %ld \n", color, getpid(), mt1.tipo);
@@ -454,7 +455,7 @@ int creaNhijos(int n, int v) {
                         }
 
                     }
-                    if (PostThreadMessageA(GetCurrentThreadId(), miIndice + 1, 0, 0) == FALSE)
+                    if (SendMessage(nHwnd, miIndice + 1, 0, 0) == FALSE)
                         PERROR("Error PostMsg");
                     raise(SIGINT);
 
@@ -466,7 +467,7 @@ int creaNhijos(int n, int v) {
                     if (miIndice != 1) {
                         // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
                         // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                        if (PostThreadMessageA(GetCurrentThreadId(), 500 + miIndice - 1, 0, 0) == FALSE)
+                        if (SendMessage(nHwnd, 500 + miIndice - 1, 0, 0) == FALSE)
                             PERROR("Error PostMsg");
                         raise(SIGINT);
 
@@ -483,7 +484,7 @@ int creaNhijos(int n, int v) {
                         PERROR("[GetMessage] pausa Sem");
                         raise(SIGINT);
                     }
-                    if (PostThreadMessageA(GetCurrentThreadId(), miIndice - 1 + 500, 0, 0) == FALSE)
+                    if (SendMessage(nHwnd, miIndice - 1 + 500, 0, 0) == FALSE)
                         PERROR("Error PostMsg");
                     raise(SIGINT);
 
