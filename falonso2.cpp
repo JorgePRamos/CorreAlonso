@@ -537,15 +537,15 @@ int creaNhijos(int n, int v) {
     } //Fin Nhijos
 
 //---------------------------------------------------------------------------
-void testhand(int param) {
-    printf("ersd");
+void manejadora(int param) {
+    printf("Salto a Manejadora\n");
     FreeLibrary(hinstLib);
     exit(1);
 }
 int main(void) { //Punteros funciones
 
     PeekMessage(&test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
-    signal(SIGINT, testhand);
+    signal(SIGINT, manejadora);
 
     //---------------------------------------------------------------------------
     //Var's
