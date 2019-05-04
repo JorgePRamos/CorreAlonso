@@ -7,6 +7,7 @@
 #include <thread>         // std::thread
 #include <mutex>   
 #include <iostream>        // std::mutex, std::unique_lock, std::defer_lock
+#include <mpi.h>
 
 
 
@@ -21,7 +22,11 @@ typedef int (*DLL3Arg)(int,int,int);
 typedef int (*DLL3ArgP)(int*,int*,int);
 typedef void (*DLL1Argvoid)(const char *);
 
+int rank , size, *mt;
+MPI_Request req;
+MPI_Status sta;
 
+mt = new int [10];
 
 HANDLE critica = CreateSemaphore(
     NULL, // default security attributes
@@ -203,12 +208,12 @@ void semtoGreen(int sem) {
     //fprintf(stderr, "[%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem);
 
 
-    if (SendMessageCallbackA(HWND_BROADCAST, 303 - 2 * sem, 0, 0) == FALSE) {
+    if (MPI_Isend(mt,10, MPI_INT, 1, 303 - 2 * sem, MPI_COMM_WORLD, &req) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
     //fprintf(stderr, " [%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem-1);
-    if (SendMessageCallbackA(HWND_BROADCAST, 303 - 2 * sem - 1, 0, 0) == FALSE) {
+    if (MPI_Isend(mt,10, MPI_INT, 1, 303 - 2 * sem - 1, MPI_COMM_WORLD, &req) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
@@ -371,7 +376,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         //pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1
         if (posOcup( * carril, ((( * desp) + 135) % 137))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_2);
-            if (SendMessageCallbackA(HWND_BROADCAST, pos_2 + 1, 0, 0) == FALSE) {
+            if (MPI_Isend(mt,10, MPI_INT, 1, pos_2 + 1, MPI_COMM_WORLD, &req) == FALSE) {
                 PERROR("ERROR AL MSGSND (pos -2 ocupada post avance)");
                 raise(SIGINT);
             }
@@ -382,7 +387,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         //pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1
         if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_cambio);
-            if (SendMessageCallbackA(HWND_BROADCAST, pos_cambio + 1, 0, 0) == FALSE) {
+            if (MPI_Isend(mt,10, MPI_INT, 1, pos_cambio + 1, MPI_COMM_WORLD, &req) == FALSE) {
                 ("ERROR AL MSGSND (pos carril opuesto ocupada)");
                 raise(SIGINT);
             }
@@ -482,7 +487,7 @@ int creaNhijos(int n, int v) {
                         }
 
                     }
-                    if (SendMessageCallbackA(HWND_BROADCAST, 100+miIndice + 1, 0, 0) == FALSE)
+                    if (MPI_Isend(mt,10, MPI_INT, 1, 100+miIndice + 1, MPI_COMM_WORLD, &req) == FALSE)
                         PERROR("Error PostMsg");
                     raise(SIGINT);
 
@@ -494,7 +499,7 @@ int creaNhijos(int n, int v) {
                     if (miIndice != 1) {
                         // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
                         // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                        if (SendMessageCallbackA(HWND_BROADCAST, 500 + miIndice - 1, 0, 0) == FALSE)
+                        if (MPI_Isend(mt,10, MPI_INT, 1, 500 + miIndice - 1, MPI_COMM_WORLD, &req) == FALSE)
                             PERROR("Error PostMsg");
                         raise(SIGINT);
 
@@ -511,7 +516,7 @@ int creaNhijos(int n, int v) {
                         PERROR("[GetMessage] pausa Sem");
                         raise(SIGINT);
                     }
-                    if (SendMessageCallbackA(HWND_BROADCAST, miIndice - 1 + 500, 0, 0) == FALSE)
+                    if (MPI_Isend(mt,10, MPI_INT, 1, miIndice - 1 + 500, MPI_COMM_WORLD, &req) == FALSE)
                         PERROR("Error PostMsg");
                     raise(SIGINT);
 
@@ -542,7 +547,7 @@ void testhand(int param) {
     FreeLibrary(hinstLib);
     exit(1);
 }
-int main(void) { //Punteros funciones
+int main(int argc, char *argv[]) { //Punteros funciones
 
     signal(SIGINT, testhand);
 
@@ -550,6 +555,7 @@ int main(void) { //Punteros funciones
     //Var's
 
 
+    MPI_Init(&argc, &argv);
         //CreateThread(NULL,0,avance_controlado,NULL,0);
 
     if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //cargas la libreria en memoria del proceso
