@@ -13,7 +13,7 @@
                    GetLastError(),                               \
                    MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),    \
                    (LPTSTR) &lpMsgBuf,0,NULL );                  \
-        fprintf(stderr,"%s:(%d)%s\n",a,GetLastError(),lpMsgBuf); \
+        fprintf(stderr,"%s: (%d) %s\n",a,GetLastError(),lpMsgBuf); \
         LocalFree( lpMsgBuf );                                   \
     }
 
