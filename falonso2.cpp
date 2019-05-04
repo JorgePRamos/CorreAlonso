@@ -168,8 +168,8 @@ void leaveCritic(const char semId[], int op) {
 void semtoRed(int sem) {
 
     //fprintf(stderr, " [%d] Revico mensajes residuales to Red\n", getpid());
-    PeekMessageA( & test_msg, NULL,1024+ 303 - 2 * sem, 303 - 2 * sem, PM_REMOVE);//ipc_Nowait
-    PeekMessageA( & test_msg, NULL,1024+ 303 - 2 * sem - 1, 303 - 2 * sem - 1, PM_REMOVE);//ipc_Nowait
+    PeekMessageA( & test_msg, NULL,WM_USER+ 303 - 2 * sem, 303 - 2 * sem, PM_REMOVE);//ipc_Nowait
+    PeekMessageA( & test_msg, NULL,WM_USER+ 303 - 2 * sem - 1, 303 - 2 * sem - 1, PM_REMOVE);//ipc_Nowait
     luzSem(sem, AMARILLO);
     //fprintf(stderr, " PADRE Sem_cruze pre rojo: %d\n", semctl(sem_cruze, 0, GETVAL));
     enterCritic("sem_cruze", 6);
@@ -193,8 +193,8 @@ void semtoGreen(int sem) {
 
 
     //fprintf(stderr, " [%d] Recivo mensajes residuales to Green \n", getpid());
-    PeekMessageA( & test_msg, NULL,1024+ 303 - 2 * sem, 303 - 2 * sem, PM_REMOVE);
-    PeekMessageA( & test_msg, NULL,1024+ 303 - 2 * sem - 1, 303 - 2 * sem - 1, PM_REMOVE);
+    PeekMessageA( & test_msg, NULL,WM_USER+ 303 - 2 * sem, 303 - 2 * sem, PM_REMOVE);
+    PeekMessageA( & test_msg, NULL,WM_USER+ 303 - 2 * sem - 1, 303 - 2 * sem - 1, PM_REMOVE);
     luzSem(sem, VERDE);
     //fprintf(stderr, "               >>>SEM==%d\n",sem);
 
@@ -203,12 +203,12 @@ void semtoGreen(int sem) {
     //fprintf(stderr, "[%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem);
 
 
-    if (PostThreadMessageA(GetCurrentThreadId(),1024 + 303 - 2 * sem, 0, 0) == FALSE) {
+    if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + 303 - 2 * sem, 0, 0) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
     //fprintf(stderr, " [%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem-1);
-    if (PostThreadMessageA(GetCurrentThreadId(),1024 + 303 - 2 * sem - 1, 0, 0) == FALSE) {
+    if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + 303 - 2 * sem - 1, 0, 0) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
@@ -231,10 +231,10 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
     int dep_temp = * desp, pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1, pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1;
     //  fprintf(stderr, "Color (%d) [%d] Entro Funcion avance controlado\n",color, getpid());
 
-    PeekMessageA( & test_msg, NULL,1024+ pos_cambio + 1, pos_cambio + 1, PM_REMOVE);//IPC_NOWAIT
+    PeekMessageA( & test_msg, NULL,WM_USER+ pos_cambio + 1, pos_cambio + 1, PM_REMOVE);//IPC_NOWAIT
     //fprintf(stderr, "Color (%d) [%d]  MENSAJE RECOGIDO CON EXITO ------> [%d]\n", color, getpid(), pos_cambio);
 
-   // PeekMessageA( & test_msg, NULL,1024+ pos_2 + 1, pos_2 + 1, PM_REMOVE);
+   // PeekMessageA( & test_msg, NULL,WM_USER+ pos_2 + 1, pos_2 + 1, PM_REMOVE);
     //fprintf(stderr, "Color (%d) [%d]  MENSAJE RECOGIDO CON EXITO ------> [%d]\n", color, getpid(), pos_2);
     //fprintf(stderr, "Color (%d) [%d] Limpio mensajes (rcv)\n",color, getpid());
     //fprintf(stderr, "Color (%d) [%d]  COMPRUEBO POSICION SIGUIENTE %d (%d+1%%137+%d*137)\n", color, getpid(), *desp + 1 % 137 + *carril *137, *desp, *carril);
@@ -246,7 +246,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             if ((estadoSem(VERTICAL) == ROJO || estadoSem(VERTICAL) == AMARILLO)) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (%d)\n", color, getpid(), 300);
                 leaveCritic("critica", 1);
-                if (GetMessage( & uMsg, NULL,1024+ 300, 300) == -1) {
+                if (GetMessage( & uMsg, NULL,WM_USER+ 300, 300) == -1) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
@@ -275,7 +275,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (301)\n", color, getpid());
 
                 leaveCritic("critica", 1);
-                if (GetMessage( & uMsg, NULL,1024+ 301, 301) == -1) {
+                if (GetMessage( & uMsg, NULL,WM_USER+ 301, 301) == -1) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
@@ -302,7 +302,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             if (estadoSem(HORIZONTAL) == ROJO || estadoSem(HORIZONTAL) == AMARILLO) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (302)\n", color, getpid());
                 leaveCritic("critica", 1);
-                if (GetMessage( & uMsg, NULL,1024+ 302, 302) == -1) {
+                if (GetMessage( & uMsg, NULL,WM_USER+ 302, 302) == -1) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
@@ -330,7 +330,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (303)\n", color, getpid());
                 leaveCritic("critica", 1);
                 leaveCritic("critica_salida", 1);
-                if (GetMessage( & uMsg, NULL,1024+ 303, 303) == -1) {//302¿?
+                if (GetMessage( & uMsg, NULL,WM_USER+ 303, 303) == -1) {//302¿?
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
@@ -371,7 +371,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         //pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1
         if (posOcup( * carril, ((( * desp) + 135) % 137))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_2);
-            if (PostThreadMessageA(GetCurrentThreadId(),1024 + pos_2 + 1, 0, 0) == 0) {
+            if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + pos_2 + 1, 0, 0) == 0) {
                 PERROR("ERROR AL MSGSND (pos -2 ocupada post avance)");
                 raise(SIGINT);
             }
@@ -382,7 +382,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         //pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1
         if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_cambio);
-            if (PostThreadMessageA(GetCurrentThreadId(),1024 + pos_cambio + 1, 0, 0) == 0) {
+            if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + pos_cambio + 1, 0, 0) == 0) {
                 ("ERROR AL MSGSND (pos carril opuesto ocupada)");
                 raise(SIGINT);
             }
@@ -412,7 +412,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             //  fprintf(stderr, "Color (%d) [%d] Voy a soltar la seccion critica \n",color, getpid());
             leaveCritic("critica", 1);
             //fprintf(stderr, "Color (%d) [%d] Suelto la seccion critica \n",color, getpid());
-            if (GetMessage( & uMsg, NULL,1024+ ( * desp + * carril * 137) + 1, ( * desp + * carril * 137) + 1) == -1) {
+            if (GetMessage( & uMsg, NULL,WM_USER+ ( * desp + * carril * 137) + 1, ( * desp + * carril * 137) + 1) == -1) {
                 PERROR("[GetMessage] pausa Sem");
                 raise(SIGINT);
             }
@@ -476,17 +476,17 @@ int creaNhijos(int n, int v) {
                     if (miIndice != 1) {
                         //fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
                         //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                        if (GetMessage( & uMsg, NULL,1024+ miIndice, 100+miIndice) == -1) {
+                        if (GetMessage( & uMsg, NULL,WM_USER+ miIndice, 100+miIndice) == -1) {
                             PERROR("[GetMessage] pausa Sem");
                             raise(SIGINT);
                         }
 
                     }
-                    if (PostThreadMessageA(GetCurrentThreadId(),1024 + 100+miIndice + 1, 0, 0) == FALSE)
+                    if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + 100+miIndice + 1, 0, 0) == FALSE)
                         PERROR("Error PostMsg");
                     raise(SIGINT);
 
-                    if (GetMessage( & uMsg, NULL,1024+ 500 + miIndice, 500 + miIndice) == -1) {
+                    if (GetMessage( & uMsg, NULL,WM_USER+ 500 + miIndice, 500 + miIndice) == -1) {
                         PERROR("[GetMessage] pausa Sem");
                         raise(SIGINT);
                     }
@@ -494,24 +494,24 @@ int creaNhijos(int n, int v) {
                     if (miIndice != 1) {
                         // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
                         // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                        if (PostThreadMessageA(GetCurrentThreadId(),1024 + 500 + miIndice - 1, 0, 0) == FALSE)
+                        if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + 500 + miIndice - 1, 0, 0) == FALSE)
                             PERROR("Error PostMsg");
                         raise(SIGINT);
 
                     }
                     if (miIndice == n) {
-                        if (GetMessage( & uMsg, NULL,1024+ 600, 600) == -1) {
+                        if (GetMessage( & uMsg, NULL,WM_USER+ 600, 600) == -1) {
                             PERROR("[GetMessage] pausa Sem");
                             raise(SIGINT);
                         }
                     }
                     // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[miIndice], i , m1.tipo);
                 } else { //i==n
-                    if (GetMessage( & uMsg, NULL,1024+ miIndice,100+miIndice) == -1) {
+                    if (GetMessage( & uMsg, NULL,WM_USER+ miIndice,100+miIndice) == -1) {
                         PERROR("[GetMessage] pausa Sem");
                         raise(SIGINT);
                     }
-                    if (PostThreadMessageA(GetCurrentThreadId(),1024 + miIndice - 1 + 500, 0, 0) == FALSE)
+                    if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + miIndice - 1 + 500, 0, 0) == FALSE)
                         PERROR("Error PostMsg");
                     raise(SIGINT);
 
