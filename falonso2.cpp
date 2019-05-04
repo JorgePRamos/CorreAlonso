@@ -544,6 +544,8 @@ void testhand(int param) {
 }
 int main(void) { //Punteros funciones
 
+    PeekMessage(&test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
+
     signal(SIGINT, testhand);
 
     //---------------------------------------------------------------------------
