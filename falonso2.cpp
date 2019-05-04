@@ -624,12 +624,12 @@ int main(void) { //Punteros funciones
     inicio_falonso(1);
   
     int d = 1, p = 30, e=1, f=29;
-    iniCoche( & d, & p, 1);
+    iniCoche( & d, & p, 7);
     iniCoche(&e,&f, 4 );
     luzSem(1, 2);
     luzSem(0, 2);
     for(;;){
-        avance_controlado(&d, &p, 4, 1);
+        avance_controlado(&d, &p, 7, 1);
         avance_controlado(&e,&f, 4, 1 );
         pausa;
 
