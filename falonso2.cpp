@@ -167,263 +167,307 @@ void leaveCritic(const char semId[], int op) {
 //SEMtoRed
 void semtoRed(int sem) {
 
-    //fprintf(stderr, " [%d] Revico mensajes residuales to Red\n", getpid());
+    fprintf(stderr, " [%d] Quito mensajes residuales de SemRed [%d]\n", getpid(), sem);
     PeekMessageA( & test_msg, NULL,WM_USER+ 303 - 2 * sem, 303 - 2 * sem, PM_REMOVE);//ipc_Nowait
     PeekMessageA( & test_msg, NULL,WM_USER+ 303 - 2 * sem - 1, 303 - 2 * sem - 1, PM_REMOVE);//ipc_Nowait
     luzSem(sem, AMARILLO);
-    //fprintf(stderr, " PADRE Sem_cruze pre rojo: %d\n", semctl(sem_cruze, 0, GETVAL));
-    enterCritic("sem_cruze", 6);
 
     leaveCritic("critica_salida", 1);
-    //fprintf(stderr, " PADRE Sem_cruze pre rojo: %d\n", semctl(sem_cruze, 0, GETVAL));
+    fprintf(stderr, "[%d]-Padre Salida Sem_Salida critica +1 pajitas: %d\n", getpid(),semctl(critica_salida, 0, GETVAL));
+
     enterCritic("sem_cruze", 6);
+    fprintf(stderr, "[%d]-Padre Enter Sem_Cruze critica -6 pajitas: %d\n", getpid(),semctl(sem_cruze, 0, GETVAL));
+
     enterCritic("critica_salida", 1);
+    fprintf(stderr, "[%d]-Padre Enter critica_salida critica -1 pajitas: %d\n", getpid(),semctl(critica_salida, 0, GETVAL));
 
     luzSem(sem, ROJO);
-    //fprintf(stderr, " PADRE Sem_cruze post rojo: %d\n", semctl(sem_cruze, 0, GETVAL));
 }
+
 //---------------------------------------------------------------------------
 //SEMtoGreen
 void semtoGreen(int sem) {
-    //fprintf(stderr, " PADRE Sem_cruze pre verde: %d\n", semctl(sem_cruze, 0, GETVAL));
 
     leaveCritic("sem_cruze", 6);
-    //fprintf(stderr, " PADRE Sem_cruze post verde: %d\n", semctl(sem_cruze, 0, GETVAL));
+    fprintf(stderr, "[%d]-Padre Salida Sem_Cruze critica +6 pajitas: %d\n", getpid(),semctl(sem_cruze, 0, GETVAL));
 
-
-
-    //fprintf(stderr, " [%d] Recivo mensajes residuales to Green \n", getpid());
+    fprintf(stderr, " [%d] Quito mensajes residuales de SemRed [%d]\n", getpid(), sem);
     PeekMessageA( & test_msg, NULL,WM_USER+ 303 - 2 * sem, 303 - 2 * sem, PM_REMOVE);
     PeekMessageA( & test_msg, NULL,WM_USER+ 303 - 2 * sem - 1, 303 - 2 * sem - 1, PM_REMOVE);
     luzSem(sem, VERDE);
-    //fprintf(stderr, "               >>>SEM==%d\n",sem);
 
-
-
-    //fprintf(stderr, "[%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem);
-
-
-    if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + 303 - 2 * sem, 0, 0) == FALSE) {
+    fprintf(stderr, "[%d] Envio mensaje [ %d ]\n", getpid(),303 -2*sem);
+    readMessageA(GetCurrentThreadId(),WM_USER + 303 - 2 * sem, 0, 0) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
-    //fprintf(stderr, " [%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem-1);
+
+    fprintf(stderr, "[%d] Envio mensaje [ %d ]\n", getpid(),303 -2*sem-1);
     if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + 303 - 2 * sem - 1, 0, 0) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
 
 }
+
 //---------------------------------------------------------------------------
 //AVANCE CONTROLADO
 void avance_controlado(int * carril, int * desp, int color, int v) {
     enterCritic("critica", 1);
-    //fprintf(stderr, "Color (%d) [%d] Entro seccion critica avance\n", color, getpid());
+    fprintf(stderr, "[%d] Color (%d)Entrada Critica critica -1 pajitas: %d\n", getpid(),color, semctl(critica, 0, GETVAL));
 
 
-    ////fprintf(stderr, "Color (%d) [%d] ENVIADO MENSAJE --> %ld \n", color, getpid(), mt1.tipo);
     if ( * desp > 137 || * desp < 0 || * carril < 0 || * carril > 1 || color < 0 || color > 7) {
-        ////  fprintf(stderr, "Color (%d) [%d]ERROR ARGUMENTOS F-AVANCE_CONTROLADO d: %d c:%d co:%d b:%d\n",color, getpid(), *desp, *carril, color, buzon);
         leaveCritic("critica", 1);
         raise(SIGINT);
     } //Error en el paso de argumentos
 
     int dep_temp = * desp, pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1, pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1;
-    //  fprintf(stderr, "Color (%d) [%d] Entro Funcion avance controlado\n",color, getpid());
+
 
     PeekMessageA( & test_msg, NULL,WM_USER+ pos_cambio + 1, pos_cambio + 1, PM_REMOVE);//IPC_NOWAIT
-    //fprintf(stderr, "Color (%d) [%d]  MENSAJE RECOGIDO CON EXITO ------> [%d]\n", color, getpid(), pos_cambio);
+    fprintf(stderr, " [%d] Color (%d) Quito mensajes residuales de [%d]\n", getpid(), color, pos_cambio + 1);//#mensaje
 
-   // PeekMessageA( & test_msg, NULL,WM_USER+ pos_2 + 1, pos_2 + 1, PM_REMOVE);
-    //fprintf(stderr, "Color (%d) [%d]  MENSAJE RECOGIDO CON EXITO ------> [%d]\n", color, getpid(), pos_2);
-    //fprintf(stderr, "Color (%d) [%d] Limpio mensajes (rcv)\n",color, getpid());
-    //fprintf(stderr, "Color (%d) [%d]  COMPRUEBO POSICION SIGUIENTE %d (%d+1%%137+%d*137)\n", color, getpid(), *desp + 1 % 137 + *carril *137, *desp, *carril);
 
     if (!(posOcup( * carril, ( * desp + 1) % 137))) {
-        // fprintf(stderr, "Estado semaforo V: %d H: %d\n", memoria[275], memoria[274]);
-        //fprintf(stderr, "Color (%d) [%d] Vacia posicion sig: %d\n", color, getpid(), * desp + 1 % 137 + * carril * 137);
+
         if ( * desp == 21 && * carril) {
+            enterCritic("critica_salida", 1);
+            fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
+
             if ((estadoSem(VERTICAL) == ROJO || estadoSem(VERTICAL) == AMARILLO)) {
-                //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (%d)\n", color, getpid(), 300);
+                fprintf(stderr, "[%d] Color (%d) Espero semaforo VERTICAL (%d)\n", getpid(), color, 300);//#semaforo
+                
                 leaveCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+                
+                leaveCritic("critica_salida", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
+
                 if (GetMessage( & uMsg, NULL,WM_USER+ 300, 300) == -1) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
-
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
-                enterCritic("critica", 1);
+                fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", getpid(), color, 300);//#mensaje
+                
                 enterCritic("sem_cruze", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
 
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                enterCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
+                
             } else if (estadoSem(VERTICAL) == VERDE) {
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", getpid(), color);//#semaforo
+
                 leaveCritic("critica_salida", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
                 leaveCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
                 enterCritic("sem_cruze",1);
+                fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
                 enterCritic("critica",1);
+                fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
 
 
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else
                 raise(SIGINT);
 
-        } else if ( * desp == 20 && !( * carril)) {
-            enterCritic("critica_salida",1);
+        } else if ( * desp == 20 && !( * carril)) { 
+            enterCritic("critica_salida", 1);
+            fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
 
             if ((estadoSem(VERTICAL) == ROJO || estadoSem(VERTICAL) == AMARILLO)) {
-                //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (301)\n", color, getpid());
+                fprintf(stderr, "[%d] Color (%d) Espero semaforo VERTICAL (%d)\n", getpid(), color, 301);//#semaforo
 
                 leaveCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+                
+                leaveCritic("critica_salida", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
+
                 if (GetMessage( & uMsg, NULL,WM_USER+ 301, 301) == -1) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
+                fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", getpid(), color, 300);//#mensaje
+            
+                enterCritic("sem_cruze", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
                 
-                leaveCritic("critica_salida",1);
                 enterCritic("critica", 1);
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
-                enterCritic("sem_cruze", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
 
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
             } else if (estadoSem(VERTICAL) == VERDE) {
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
-                enterCritic("sem_cruze", 1);
+                fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", getpid(), color);//#semaforo
 
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                leaveCritic("critica_salida", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
+                leaveCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
+                enterCritic("sem_cruze",1);
+                fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
+                enterCritic("critica",1);
+                fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
             } else
                 raise(SIGINT);
 
-            //fprintf(stderr, "Color (%d) [%d] Semáforo apagado\n", color, getpid());
-
-        } else if ( * desp == 97 && * carril) { //233
-            //  fprintf(stderr, "                                           >>>>>>>POST-ELSE-IF---> %d\n", *desp);
+        } else if ( * desp == 97 && * carril) {
+            enterCritic("critica_salida", 1);
+            fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
 
             if (estadoSem(HORIZONTAL) == ROJO || estadoSem(HORIZONTAL) == AMARILLO) {
-                //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (302)\n", color, getpid());
+                fprintf(stderr, "[%d] Color (%d) Espero semaforo HORIZONTAL (%d)\n", getpid(), color, 302);//#semaforo
+                
                 leaveCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+                
+                leaveCritic("critica_salida", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
+
                 if (GetMessage( & uMsg, NULL,WM_USER+ 302, 302) == -1) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
-              
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", getpid(), color, 302);//#mensaje
+                
                 enterCritic("sem_cruze", 1);
-                enterCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
 
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                enterCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
             } else if (estadoSem(HORIZONTAL) == VERDE) {
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", getpid(), color);//#semaforo
+
                 leaveCritic("critica_salida", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
                 leaveCritic("critica", 1);
-                enterCritic("sem_cruze", 1);
-                enterCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
 
+                enterCritic("sem_cruze",1);
+                fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
 
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                enterCritic("critica",1);
+                fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
             } else
                 raise(SIGINT);
 
         } else if ( * desp == 97 && ! * carril) {
             enterCritic("critica_salida", 1);
+            fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
+
             if (estadoSem(HORIZONTAL) == ROJO || estadoSem(HORIZONTAL) == AMARILLO) {
-                //fprintf(stderr, "Color (%d) [%d] Espero al semaforo (303)\n", color, getpid());
+                fprintf(stderr, "[%d] Color (%d) Espero semaforo HORIZONTAL (%d)\n", getpid(), color, 303);//#semaforo
+                
+                fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
                 leaveCritic("critica", 1);
+
                 leaveCritic("critica_salida", 1);
-                if (GetMessage( & uMsg, NULL,WM_USER+ 303, 303) == -1) {//302¿?
+                fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
+
+                if (GetMessage( & uMsg, NULL,WM_USER+ 303, 303) == -1) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
-                enterCritic("sem_cruze", 1);
-                enterCritic("critica", 1);
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
-                
+                fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", getpid(), color, 303);//#mensaje
 
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
-            } else if (estadoSem(HORIZONTAL) == VERDE) {
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze pre enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                enterCritic("sem_cruze", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", getpid(), color, semctl(sem_cruze, 0, GETVAL));//#critica
+
+                enterCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
+                } else if (estadoSem(HORIZONTAL) == VERDE) {
+                fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", getpid(), color);//#semaforo
+
                 leaveCritic("critica_salida", 1);
-                leaveCritic("critica", 1);
-                enterCritic("sem_cruze", 1);
-                enterCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
 
-                //fprintf(stderr, "Color (%d) [%d] Sem_cruze post enter: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
+                leaveCritic("critica", 1);
+                fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
+                enterCritic("sem_cruze",1);
+                fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
+                enterCritic("critica",1);
+                fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
             } else
                 raise(SIGINT);
         }
-        // fprintf(stderr, "Color (%d) [%d] Avanzo a la siguente posicion (%d)\n",color, getpid(), *desp + 1 % 137 + *carril *137);
+        fprintf(stderr, "[%d] Color (%d) Avanzo a posicion (%d)\n", getpid(), color, *desp + 1 % 137 + *carril *137);//#posicion
         if (avanceCoche(carril, desp, color) == -1) {
             PERROR("ERROR AL AVANZAR COCHE");
             raise(SIGINT);
         }
-        //fprintf(stderr, "Color (%d) [%d] Modificada la pos: (nueva) %d\n", color, getpid(), *desp);
         if (( * desp == 111 && ! * carril) || ( * desp == 24 && ! * carril) || ( * desp == 106 && * carril) || ( * desp == 25 && * carril)) {
-            //fprintf(stderr, "Color (%d) [%d] Sem_cruze salida pre leave: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
 
             leaveCritic("sem_cruze", 1);
-            //fprintf(stderr, "Color (%d) [%d] Sem_cruze salida post leave: %d\n", color, getpid(), semctl(sem_cruze, 0, GETVAL));
-            //fprintf(stderr, "Color (%d) [%d] Suelto la pagita en el cruze %d\n", color, getpid(), *desp);
+            fprintf(stderr, "[%d] Color (%d) Salida sem_cruze critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
         }
         if (( * desp == 131 && * carril) || ( * desp == 133 && ! * carril)) {
             (contador) ++;
         }
-        //fprintf(stderr, "Color (%d) [%d] check Carril-pos: %d\n", color, getpid(), pos_2);
+
         //pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1
         if (posOcup( * carril, ((( * desp) + 135) % 137))) {
-            //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_2);
             if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + pos_2 + 1, 0, 0) == 0) {
                 PERROR("ERROR AL MSGSND (pos -2 ocupada post avance)");
                 raise(SIGINT);
             }
-            ////fprintf(stderr, "Color (%d) [%d] ENVIADO MENSAJE --> %ld \n", color, getpid(), mt1.tipo);
+            fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", getpid(), color, mt1.tipo);//#mensaje
         }
 
-        //fprintf(stderr, "Color (%d) [%d] check Carril-pos: %d\n", color, getpid(), pos_cambio);
         //pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1
         if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril))) {
-            //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_cambio);
             if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + pos_cambio + 1, 0, 0) == 0) {
                 ("ERROR AL MSGSND (pos carril opuesto ocupada)");
                 raise(SIGINT);
             }
-            ////fprintf(stderr, "Color (%d) [%d] ENVIADO MENSAJE --> %ld \n", color, getpid(), mt1.tipo);
+            fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", getpid(), color, mt1.tipo);//#mensaje
+
         }
-        // fprintf(stderr, "Color (%d) [%d] Voy a soltar la seccion critica \n",color, getpid());
         leaveCritic("critica", 1);
+        fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
+
         velocidad(50, * carril, * desp);
 
-        // fprintf(stderr, "Color (%d) [%d] Suelto la seccion critica \n",color, getpid());
     } else {
-        //fprintf(stderr, "Color (%d) [%d] Posicion siguiente ocupada, compruebo posible cambio de carril pos: %d\n", color, getpid(), * desp);
+        fprintf(stderr, "[%d] Color (%d) Posicion ocupada, compruebo cambio de carril: %d\n", getpid(), color,m * desp);//#posicion
 
         if (!posOcup(! * carril, cambio_carril_cal( * desp, * carril))) {
-            //  fprintf(stderr, "Color (%d) [%d] Efectivo cambio de carril pos(nueva): %d\n",color, getpid(), dep_temp);
             if (cambioCarril(carril, desp, color) == -1) {
                 PERROR("ERROR AL CAMBIAR CARRIL");
                 raise(SIGINT);
             }
-            //fprintf(stderr, "Color (%d) [%d] Cambio de carril efectuado pos: %d\n", color, getpid(), * desp);
-            // fprintf(stderr, "Color (%d) [%d] Voy a soltar la seccion critica \n",color, getpid());
+            fprintf(stderr, "[%d] Color (%d) Cambio Carril: %d\n", getpid(), color, dep_temp);//#posicion
+
             leaveCritic("critica", 1);
-            // fprintf(stderr, "Color (%d) [%d] Suelto la seccion critica \n",color, getpid());
+            fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
         } else {
-            //  fprintf(stderr, "Color (%d) [%d] Imposible cambio de carril pos: %d\n",color, getpid(), *desp);
-            //fprintf(stderr, "Color (%d) [%d] RECIBIR MENSAJE DE %d \n", color, getpid(), ( *desp + *carril *137) + 1);
-            //  fprintf(stderr, "Color (%d) [%d] Voy a soltar la seccion critica \n",color, getpid());
+            
             leaveCritic("critica", 1);
-            //fprintf(stderr, "Color (%d) [%d] Suelto la seccion critica \n",color, getpid());
+            fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", getpid(), color, semctl(critica, 0, GETVAL));//#critica
             if (GetMessage( & uMsg, NULL,WM_USER+ ( * desp + * carril * 137) + 1, ( * desp + * carril * 137) + 1) == -1) {
                 PERROR("[GetMessage] pausa Sem");
                 raise(SIGINT);
             }
-            //fprintf(stderr, "               ***MENSAJE RECIVIDO ---> %d\n", ( *desp + *carril *137) + 1);
+            fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", getpid(), color, ( * desp + * carril * 137) + 1);//#mensaje
         }
     }
-
-
-
-
 } //fin avance_controlado
+
+
 //---------------------------------------------------------------------------
 //CREA_N_HIJOS
 int creaNhijos(int n, int v) {
