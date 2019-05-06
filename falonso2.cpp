@@ -22,6 +22,7 @@ typedef int (*DLL3ArgP)(int*,int*,int);
 typedef void (*DLL1Argvoid)(const char *);
 
 
+DWORD WINAPI funcionHilos (LPVOID pEstruct);
 
 HANDLE critica = CreateSemaphore(
     NULL, // default security attributes
@@ -71,8 +72,12 @@ unsigned int  contador = 0;
 typedef struct Coche {
     int posicion;
     int carril;
-}
-coche;
+} coche;
+typedef struct parametros {
+    int nCoches;
+    int velocidad;
+    int indice;
+} * pParam;
 HINSTANCE hinstLib = NULL;
 DLL1Arg inicio_falonso = NULL, estadoSem = NULL;
 DLL1Argp f_fin = NULL;
@@ -82,6 +87,7 @@ DLL3ArgP iniCoche = NULL, avanceCoche = NULL, cambioCarril = NULL;
 DLL0Arg pausa = NULL;
 DLL1Argvoid p_error = NULL;
 MSG test_msg, uMsg;
+
 
 
 
@@ -428,25 +434,38 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 //CREA_N_HIJOS
 int creaNhijos(int n, int v) {
 
-    int colores[] = {0,0,1,2,3,5,6,7};
-    static int i = 0;
-    int miIndice, miIndiceCarril;
-    pid_t pid_child, pidPoceso;
-    int b;
+    DWORD idHilo [n];
+    static int i;
+
+
+
 
     for (i = 1; i <= n; i++) {
         ////  fprintf(stderr, "**Soy el padre creando al hijo--> %d\n", i);
-        miIndice = i;
-        miIndiceCarril = miIndice % 2;
 
-        /*if ((pid_child = fork()) == -1) {
-            PERROR("ERROR CREACION HIJOS");
+        pParam nParam;
+        nParam->indice=i;
+        nParam->velocidad=v;
+        nParam->nCoches=n
+
+        if((CreateThread(NULL,0, funcionHilos,nParam, 0 , &idHilo[i]))==NULL){
+            PERROR("Create Hilo");
             raise(SIGINT);
-            
         }
-    */
-        if (pid_child == 0) {
-            //fprintf(stderr, "Hola soy el hijo %d PID: %d\n", i, getpid());
+        
+
+    }
+
+    return 0;
+
+    } //Fin Nhijos
+
+DWORD WINAPI funcionHilos (LPVOID pEstruct){
+    int colores[] = {0,0,1,2,3,5,6,7};
+    int n = pEstruct->nCoches;
+    int  miIndice=pEstruct->indice;
+    int v = pEstruct->velocidad;
+       //fprintf(stderr, "Hola soy el hijo %d PID: %d\n", i, getpid());
             enterCritic("critica_salida", 1);
             //fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[miIndice], i);
             for (b = 136; b >= 0;) {
@@ -468,74 +487,63 @@ int creaNhijos(int n, int v) {
 
             //fprintf(stderr, "Color (%d) [%d] Salgo de la seccion critica\n", colores[miIndice], i);
             leaveCritic("critica_salida", 1);
-
-            //SINCRONIZACION SALIDA
-            if (n != 1) {
-                if (miIndice != n) {
-                    //  fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, i + 1);
-                    if (miIndice != 1) {
-                        //fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
-                        //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                        if (GetMessage( & uMsg, NULL,WM_USER+ miIndice, 100+miIndice) == -1) {
-                            PERROR("[GetMessage] pausa Sem");
-                            raise(SIGINT);
-                        }
-
-                    }
-                    if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + 100+miIndice + 1, 0, 0) == FALSE)
-                        PERROR("Error PostMsg");
-                    raise(SIGINT);
-
-                    if (GetMessage( & uMsg, NULL,WM_USER+ 500 + miIndice, 500 + miIndice) == -1) {
+        if (n != 1) {
+            if (miIndice != n) {
+                //  fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, i + 1);
+                if (miIndice != 1) {
+                    //fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
+                    //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
+                    if (GetMessage( & uMsg, NULL, WM_USER + miIndice, 100 + miIndice) == -1) {
                         PERROR("[GetMessage] pausa Sem");
                         raise(SIGINT);
                     }
 
-                    if (miIndice != 1) {
-                        // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
-                        // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                        if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + 500 + miIndice - 1, 0, 0) == FALSE)
-                            PERROR("Error PostMsg");
-                        raise(SIGINT);
-
-                    }
-                    if (miIndice == n) {
-                        if (GetMessage( & uMsg, NULL,WM_USER+ 600, 600) == -1) {
-                            PERROR("[GetMessage] pausa Sem");
-                            raise(SIGINT);
-                        }
-                    }
-                    // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[miIndice], i , m1.tipo);
-                } else { //i==n
-                    if (GetMessage( & uMsg, NULL,WM_USER+ miIndice,100+miIndice) == -1) {
-                        PERROR("[GetMessage] pausa Sem");
-                        raise(SIGINT);
-                    }
-                    if (PostThreadMessageA(GetCurrentThreadId(),WM_USER + miIndice - 1 + 500, 0, 0) == FALSE)
-                        PERROR("Error PostMsg");
-                    raise(SIGINT);
-
-                    // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i , m1.tipo);
-                    // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
                 }
-            }
-            // fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[miIndice],i);
-            while (1) {
-                //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
-                avance_controlado( & miIndiceCarril, & b, colores[1+(miIndice-1)%6], v);
-            }
+                if (PostThreadMessageA(GetCurrentThreadId(), WM_USER + 100 + miIndice + 1, 0, 0) == FALSE)
+                    PERROR("Error PostMsg");
+                raise(SIGINT);
 
-            exit(0);
-        } else if (pidPoceso == -1) {
-            PERROR("ERROR FORK");
-            raise(SIGINT);
+                if (GetMessage( & uMsg, NULL, WM_USER + 500 + miIndice, 500 + miIndice) == -1) {
+                    PERROR("[GetMessage] pausa Sem");
+                    raise(SIGINT);
+                }
+
+                if (miIndice != 1) {
+                    // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i,  m1.tipo);
+                    // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
+                    if (PostThreadMessageA(GetCurrentThreadId(), WM_USER + 500 + miIndice - 1, 0, 0) == FALSE)
+                        PERROR("Error PostMsg");
+                    raise(SIGINT);
+
+                }
+                if (miIndice == n) {
+                    if (GetMessage( & uMsg, NULL, WM_USER + 600, 600) == -1) {
+                        PERROR("[GetMessage] pausa Sem");
+                        raise(SIGINT);
+                    }
+                }
+                // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[miIndice], i , m1.tipo);
+            } else { //i==n
+                if (GetMessage( & uMsg, NULL, WM_USER + miIndice, 100 + miIndice) == -1) {
+                    PERROR("[GetMessage] pausa Sem");
+                    raise(SIGINT);
+                }
+                if (PostThreadMessageA(GetCurrentThreadId(), WM_USER + miIndice - 1 + 500, 0, 0) == FALSE)
+                    PERROR("Error PostMsg");
+                raise(SIGINT);
+
+                // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], i , m1.tipo);
+                // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
+            }
         }
+    // fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[miIndice],i);
+    while (1) {
+        //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
+        avance_controlado( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6], v);
     }
 
-    return 0;
-
-    } //Fin Nhijos
-
+    exit(0);
+}
 //---------------------------------------------------------------------------
 void manejadora(int param) {
     printf("Salto a Manejadora\n");
