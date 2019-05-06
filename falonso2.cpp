@@ -460,11 +460,13 @@ int creaNhijos(int n, int v) {
 
     } //Fin Nhijos
 
-DWORD WINAPI funcionHilos (LPVOID pEstruct){
+DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
+    pParam pEstruct = (pParam) pEstruct_2;
     int colores[] = {0,0,1,2,3,5,6,7};
     int n = pEstruct->nCoches;
-    int  miIndice=pEstruct->indice;
+    int  miIndice=  pEstruct->indice;
     int v = pEstruct->velocidad;
+    int miIndiceCarril = miIndice%2;
     int b;
        //fprintf(stderr, "Hola soy el hijo %d PID: %d\n", i, getpid());
             enterCritic("critica_salida", 1);
@@ -632,17 +634,11 @@ int main(void) { //Punteros funciones
 
     inicio_falonso(1);
   
-    int d = 1, p = 30, e=1, f=29;
-    iniCoche( & d, & p, 7);
-    iniCoche(&e,&f, 4 );
     luzSem(1, 2);
     luzSem(0, 2);
-    for(;;){
-        avance_controlado(&d, &p, 7, 1);
-        avance_controlado(&e,&f, 4, 1 );
-        pausa;
 
-    }
+
+    creaNhijos(2, 1);
 
     FreeLibrary(hinstLib); //esto va a la manejadora (BOOL)
 
