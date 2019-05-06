@@ -446,7 +446,7 @@ int creaNhijos(int n, int v) {
         pParam nParam;
         nParam->indice=i;
         nParam->velocidad=v;
-        nParam->nCoches=n
+        nParam->nCoches=n;
 
         if((CreateThread(NULL,0, funcionHilos,nParam, 0 , &idHilo[i]))==NULL){
             PERROR("Create Hilo");
@@ -465,6 +465,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct){
     int n = pEstruct->nCoches;
     int  miIndice=pEstruct->indice;
     int v = pEstruct->velocidad;
+    int b;
        //fprintf(stderr, "Hola soy el hijo %d PID: %d\n", i, getpid());
             enterCritic("critica_salida", 1);
             //fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[miIndice], i);
