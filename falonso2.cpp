@@ -654,104 +654,121 @@ void manejadora(int param) {
     FreeLibrary(hinstLib);
     exit(1);
 }
-int main(void) { //Punteros funciones
+int main(int argc, char const * argv[]) {
+    if (argc != 3) {
+        perror("arg:");
+        exit(4);
+        //fprintf(stderr, "Error numero de argumentos:%d\n", argc);
+    } else if (atoi(argv[1]) < 1 && atoi(argv[1]) > 20) {
+        perror("arg:");
+        exit(4);
+        //fprintf(stderr, "Error numero de coches invalido\n");
+    } else if (!(!atoi(argv[2]) || atoi(argv[2]) == 1)) {
+        perror("Velocidad");
+        exit(4);
+    } else {
+            int u = 0; //variable para bucles For
+            int numCoches = atoi(argv[1]);
+            int vel = atoi(argv[2]); //Punteros funciones
 
-    PeekMessage(&test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
-    signal(SIGINT, manejadora);
+        PeekMessage(&test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
+        signal(SIGINT, manejadora);
 
-    //---------------------------------------------------------------------------
-    //Var's
+        //---------------------------------------------------------------------------
+        //Var's
 
 
-        //CreateThread(NULL,0,avance_controlado,NULL,0);
+            //CreateThread(NULL,0,avance_controlado,NULL,0);
 
-    if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //cargas la libreria en memoria del proceso
-        PERROR("Error cargar DLL");
-        return (1);
+        if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //cargas la libreria en memoria del proceso
+            PERROR("Error cargar DLL");
+            return (1);
+        }
+
+
+        if (!(inicio_falonso = (DLL1Arg) GetProcAddress(hinstLib, "FALONSO2_inicio"))) {
+            PERROR("Error getProc FALONSO2_inicio");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+        if (!(estadoSem = (DLL1Arg) GetProcAddress(hinstLib, "FALONSO2_estado_semAforo"))) {
+            PERROR("Error getProc FALONSO2_estado_semAforo");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+        if (!(f_fin = (DLL1Argp) GetProcAddress(hinstLib, "FALONSO2_fin"))) {
+            PERROR("Error getProc FALONSO2_fin");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+        if (!(luzSem = (DLL2Arg) GetProcAddress(hinstLib, "FALONSO2_luz_semAforo"))) {
+            PERROR("Error getProc FALONSO2_luz_semAforo");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+        if (!(posOcup = (DLL2Arg) GetProcAddress(hinstLib, "FALONSO2_posiciOn_ocupada"))) {
+            PERROR("Error getProc FALONSO2_posiciOn_ocupada");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+
+        if (!(velocidad = (DLL3Arg) GetProcAddress(hinstLib, "FALONSO2_velocidad"))) {
+            PERROR("Error getProc FALONSO2_velocidad");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+        if (!(iniCoche = (DLL3ArgP) GetProcAddress(hinstLib, "FALONSO2_inicio_coche"))) {
+            PERROR("Error getProc FALONSO2_inicio_coche");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+        if (!(avanceCoche = (DLL3ArgP) GetProcAddress(hinstLib, "FALONSO2_avance_coche"))) {
+            PERROR("Error getProc FALONSO2_avance_coche");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+        if (!(cambioCarril = (DLL3ArgP) GetProcAddress(hinstLib, "FALONSO2_cambio_carril"))) {
+            PERROR("Error getProc FALONSO2_cambio_carril");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+        if (!(p_error = (DLL1Argvoid) GetProcAddress(hinstLib, "pon_error"))) {
+            PERROR("Error getProc  pon_error");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+
+        if (!(pausa = (DLL0Arg) GetProcAddress(hinstLib, "FALONSO2_pausa"))) {
+            PERROR("Error getProc FALONSO2_pausa");
+            FreeLibrary(hinstLib);
+            return (2);
+        }
+
+
+
+
+
+        inicio_falonso(1);
+    
+        int d = 1, p = 30, e=1, f=29;
+        iniCoche( & d, & p, 7);
+        iniCoche(&e,&f, 4 );
+        luzSem(1, 2);
+        luzSem(0, 2);
+        for(;;){
+            avance_controlado(&d, &p, 7, 1);
+            avance_controlado(&e,&f, 4, 1 );
+            pausa;
+
+        }
+
+        FreeLibrary(hinstLib); //esto va a la manejadora (BOOL)
+
+        return 0;
+
     }
-
-
-    if (!(inicio_falonso = (DLL1Arg) GetProcAddress(hinstLib, "FALONSO2_inicio"))) {
-        PERROR("Error getProc FALONSO2_inicio");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-    if (!(estadoSem = (DLL1Arg) GetProcAddress(hinstLib, "FALONSO2_estado_semAforo"))) {
-        PERROR("Error getProc FALONSO2_estado_semAforo");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-    if (!(f_fin = (DLL1Argp) GetProcAddress(hinstLib, "FALONSO2_fin"))) {
-        PERROR("Error getProc FALONSO2_fin");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-    if (!(luzSem = (DLL2Arg) GetProcAddress(hinstLib, "FALONSO2_luz_semAforo"))) {
-        PERROR("Error getProc FALONSO2_luz_semAforo");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-    if (!(posOcup = (DLL2Arg) GetProcAddress(hinstLib, "FALONSO2_posiciOn_ocupada"))) {
-        PERROR("Error getProc FALONSO2_posiciOn_ocupada");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-
-    if (!(velocidad = (DLL3Arg) GetProcAddress(hinstLib, "FALONSO2_velocidad"))) {
-        PERROR("Error getProc FALONSO2_velocidad");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-    if (!(iniCoche = (DLL3ArgP) GetProcAddress(hinstLib, "FALONSO2_inicio_coche"))) {
-        PERROR("Error getProc FALONSO2_inicio_coche");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-    if (!(avanceCoche = (DLL3ArgP) GetProcAddress(hinstLib, "FALONSO2_avance_coche"))) {
-        PERROR("Error getProc FALONSO2_avance_coche");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-    if (!(cambioCarril = (DLL3ArgP) GetProcAddress(hinstLib, "FALONSO2_cambio_carril"))) {
-        PERROR("Error getProc FALONSO2_cambio_carril");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-    if (!(p_error = (DLL1Argvoid) GetProcAddress(hinstLib, "pon_error"))) {
-        PERROR("Error getProc  pon_error");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-
-    if (!(pausa = (DLL0Arg) GetProcAddress(hinstLib, "FALONSO2_pausa"))) {
-        PERROR("Error getProc FALONSO2_pausa");
-        FreeLibrary(hinstLib);
-        return (2);
-    }
-
-
-
-
-
-    inicio_falonso(1);
-  
-    int d = 1, p = 30, e=1, f=29;
-    iniCoche( & d, & p, 7);
-    iniCoche(&e,&f, 4 );
-    luzSem(1, 2);
-    luzSem(0, 2);
-    for(;;){
-        avance_controlado(&d, &p, 7, 1);
-        avance_controlado(&e,&f, 4, 1 );
-        pausa;
-
-    }
-
-    FreeLibrary(hinstLib); //esto va a la manejadora (BOOL)
-
-    return 0;
-
 }
+
 /*
   for( i=0; i < THREADCOUNT; i++ )
     {
