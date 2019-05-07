@@ -471,7 +471,7 @@ int creaNhijos(int n, int v) {
         arrayParam[i]->velocidad=v;
         arrayParam[i]->nCoches=n;
 
-        if((hThreadArray[i]=CreateThread(NULL,0, funcionHilos,hThreadArray[i], 0 , &idHilo[i]))==NULL){
+        if((hThreadArray[i]=CreateThread(NULL,0, funcionHilos,arrayParam[i], 0 , &idHilo[i]))==NULL){
             PERROR("Create Hilo");
             raise(SIGINT);
         }
@@ -571,6 +571,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     while (1) {
         //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
         avance_controlado( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6], v);
+        
     }
 
     exit(0);
