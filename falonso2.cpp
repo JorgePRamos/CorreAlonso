@@ -122,6 +122,24 @@ int cambio_carril_cal(int desp, int carril) {
     return dep_temp;
 
 }
+void manejadora(int param) {
+    printf("Salto a Manejadora\n");
+    FreeLibrary(hinstLib);
+    for(int i=0; i<num_coche; i++)
+    {
+        CloseHandle(hThreadArray[i]);
+
+        if(arrayParam[i] != NULL)
+        {
+            HeapFree(GetProcessHeap(), 0, arrayParam[i]);
+            arrayParam[i] = NULL;    // Ensure address is not reused.
+        }
+
+    }
+    delete [] hThreadArray;
+    delete [] arrayParam;
+    exit(1);
+}
 
 //---------------------------------------------------------------------------
 //ENTER_CRITIC
@@ -420,6 +438,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             leaveCritic("critica", 1);
             //fprintf(stderr, "Color (%d) [%d] Suelto la seccion critica \n",color, getpid());
             if (GetMessage( & uMsg, NULL,WM_APP+ ( * desp + * carril * 137) + 1, ( * desp + * carril * 137) + 1) == -1) {
+
                 PERROR("[GetMessage] pausa Sem");
                 raise(SIGINT);
             }
@@ -466,6 +485,7 @@ int creaNhijos(int n, int v) {
     } //Fin Nhijos
 
 DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
+    signal(SIGINT, manejadora);
     pParam pEstruct = (pParam) pEstruct_2;
     int colores[] = {0,0,1,2,3,5,6,7};
     int n = pEstruct->nCoches;
@@ -473,7 +493,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     int v = pEstruct->velocidad;
     int miIndiceCarril = miIndice%2;
     int b;
-       //fprintf(stderr, "Hola soy el hijo %d PID: %d\n", miIndice, GetCurrentThreadId());
+       fprintf(stderr, "Hola soy el hijo %d PID: %d\n", miIndice, GetCurrentThreadId());
             enterCritic("critica_salida", 1);
             //fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[1+(miIndice-1)%6], miIndice);
             for (b = 136; b >= 0;) {
@@ -556,24 +576,6 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     exit(0);
 }
 //---------------------------------------------------------------------------
-void manejadora(int param) {
-    printf("Salto a Manejadora\n");
-    FreeLibrary(hinstLib);
-    for(int i=0; i<num_coche; i++)
-    {
-        CloseHandle(hThreadArray[i]);
-
-        if(arrayParam[i] != NULL)
-        {
-            HeapFree(GetProcessHeap(), 0, arrayParam[i]);
-            arrayParam[i] = NULL;    // Ensure address is not reused.
-        }
-
-    }
-    delete [] hThreadArray;
-    delete [] arrayParam;
-    exit(1);
-}
 int main(void) { //Punteros funciones
 
     PeekMessage(&test_msg, NULL, WM_APP, WM_APP, PM_NOREMOVE);
