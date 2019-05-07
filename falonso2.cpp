@@ -21,6 +21,7 @@ typedef int (*DLL3Arg)(int,int,int);
 typedef int (*DLL3ArgP)(int*,int*,int);
 typedef void (*DLL1Argvoid)(const char *);
 
+HANDLE * hThreadArray= NULL;
 
 DWORD WINAPI funcionHilos (LPVOID pEstruct);
 
@@ -77,7 +78,7 @@ typedef struct parametros {
     int nCoches;
     int velocidad;
     int indice;
-} * pParam;
+} * pParam, Param;
 HINSTANCE hinstLib = NULL;
 DLL1Arg inicio_falonso = NULL, estadoSem = NULL;
 DLL1Argp f_fin = NULL;
@@ -87,8 +88,8 @@ DLL3ArgP iniCoche = NULL, avanceCoche = NULL, cambioCarril = NULL;
 DLL0Arg pausa = NULL;
 DLL1Argvoid p_error = NULL;
 MSG test_msg, uMsg;
-
-
+int num_coche=0;
+pParam * arrayParam = NULL;
 
 
 //---------------------------------------------------------------------------
@@ -433,27 +434,31 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 //---------------------------------------------------------------------------
 //CREA_N_HIJOS
 int creaNhijos(int n, int v) {
+    hThreadArray = new HANDLE [n];
 
     DWORD idHilo [n];
     static int i;
+    num_coche=n;
+    arrayParam = new pParam [n];
 
 
 
 
     for (i = 1; i <= n; i++) {
-        ////  fprintf(stderr, "**Soy el padre creando al hijo--> %d\n", i);
+        fprintf(stderr, "%d %d**Soy el padre creando al hijo--> %d\n", (sizeof(hThreadArray)/sizeof(* hThreadArray )) ,n, i);
 
-        pParam nParam;
-        nParam->indice=i;
-        nParam->velocidad=v;
-        nParam->nCoches=n;
+        arrayParam[i]= (pParam)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sizeof(Param));
+        arrayParam[i]->indice=i;
+        arrayParam[i]->velocidad=v;
+        arrayParam[i]->nCoches=n;
 
-        if((CreateThread(NULL,0, funcionHilos,nParam, 0 , &idHilo[i]))==NULL){
+        if((hThreadArray[i]=CreateThread(NULL,0, funcionHilos,hThreadArray[i], 0 , &idHilo[i]))==NULL){
             PERROR("Create Hilo");
             raise(SIGINT);
         }
-        
+        fprintf(stderr, "Post creacion Hijo\n");
 
+        WaitForMultipleObjects(n,hThreadArray, TRUE, INFINITE);
     }
 
     return 0;
@@ -468,7 +473,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     int v = pEstruct->velocidad;
     int miIndiceCarril = miIndice%2;
     int b;
-       //fprintf(stderr, "Hola soy el hijo %d PID: %d\n", i, getpid());
+       fprintf(stderr, "Hola soy el hijo %d PID: %d\n", miIndice, GetCurrentThreadId());
             enterCritic("critica_salida", 1);
             //fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[miIndice], i);
             for (b = 136; b >= 0;) {
@@ -551,6 +556,19 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
 void manejadora(int param) {
     printf("Salto a Manejadora\n");
     FreeLibrary(hinstLib);
+    for(int i=0; i<num_coche; i++)
+    {
+        CloseHandle(hThreadArray[i]);
+
+        if(arrayParam[i] != NULL)
+        {
+            HeapFree(GetProcessHeap(), 0, arrayParam[i]);
+            arrayParam[i] = NULL;    // Ensure address is not reused.
+        }
+
+    }
+    delete [] hThreadArray;
+    delete [] arrayParam;
     exit(1);
 }
 int main(void) { //Punteros funciones
@@ -638,7 +656,7 @@ int main(void) { //Punteros funciones
     luzSem(0, 2);
 
 
-    creaNhijos(2, 1);
+    creaNhijos(3, 1);
 
     FreeLibrary(hinstLib); //esto va a la manejadora (BOOL)
 
