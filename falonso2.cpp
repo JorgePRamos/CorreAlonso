@@ -486,7 +486,7 @@ int creaNhijos(int n, int v) {
         }
         //fprintf(stderr, "Post creacion Hijo\n");
 
-        //WaitForMultipleObjects(n,hThreadArray, TRUE, INFINITE);
+        WaitForMultipleObjects(n,hThreadArray, TRUE, INFINITE);
     }
 
     return 0;
@@ -525,7 +525,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
 
     leaveCritic("critica_salida", 1);
     fprintf(stderr, "Color (%d) [%d] Salgo de la seccion critica\n", colores[miIndice], miIndice);
-    /*
+    
     if (n != 1) {
         if (miIndice != n) {
             //  fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, i + 1);
@@ -579,7 +579,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
         avance_controlado( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6], v);
 
     }
-    */
+    
 
 
 }
@@ -668,12 +668,17 @@ int main(void) { //Punteros funciones
     luzSem(1, 2);
     luzSem(0, 2);
 
-
+    fprintf(stderr, "PRE-CreaHijos\n");
     creaNhijos(3, 1);
+    fprintf(stderr, "POST-CreaHijos\n");
 
+    while(1){
+        pausa();
+    }
+    
     FreeLibrary(hinstLib); //esto va a la manejadora (BOOL)
-
     return 0;
+
 
 }
 /*
