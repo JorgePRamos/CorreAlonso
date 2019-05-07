@@ -121,10 +121,11 @@ int cambio_carril_cal(int desp, int carril) {
     return dep_temp;
 
 }
-/*
+
 void manejadora(int param) {
     printf("Salto a Manejadora\n");
     FreeLibrary(hinstLib);
+    /*
     for(int i=0; i<num_coche; i++)
     {
         CloseHandle(hThreadArray[i]);
@@ -138,16 +139,18 @@ void manejadora(int param) {
     }
     delete [] hThreadArray;
     delete [] arrayParam;
+    */
+
     exit(1);
 }
-*/
+
 
 //---------------------------------------------------------------------------
 //ENTER_CRITIC
 void enterCritic(const char semId[], int op) {
     int f = 0;
 
-        fprintf(stderr, "Pre-IF enterCritc()\n");
+        //fprintf(stderr, "Pre-IF enterCritc()\n");
 
     if (!strcmp(semId, "critica")) {
         for (; f < op; f++) {
@@ -155,9 +158,9 @@ void enterCritic(const char semId[], int op) {
             PERROR("WaitForSingleObject");
         }
     } else if (!strcmp(semId, "critica_salida")) {//WAIT_FAILED
-            fprintf(stderr, "Post strcmp\n");
+            //fprintf(stderr, "Post strcmp\n");
         for (; f < op; f++) {
-            fprintf(stderr, "Entro en critica salida\n");
+            //fprintf(stderr, "Entro en critica salida\n");
             if((WaitForSingleObject(critica_salida, INFINITE))==WAIT_FAILED)
             PERROR("WaitForSingleObject");
         }
@@ -501,56 +504,57 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     int v = pEstruct -> velocidad;
     int miIndiceCarril = miIndice % 2;
     int b;
-    fprintf(stderr, "Hola soy el hijo %d PID: %d\n", miIndice, GetCurrentThreadId());
+    //fprintf(stderr, "\t\tHola soy el hijo %d PID: %d\n", miIndice, GetCurrentThreadId());
     enterCritic("critica_salida", 1);
-    fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
+    //fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
 
     for (b = 136; b >= 0;) {
-        fprintf(stderr, "Color (%d) [%d] Iteracion b = %d\n", colores[1 + (miIndice - 1) % 6], miIndice, b);
+        //fprintf(stderr, "Color (%d) [%d] Iteracion b = %d\n", colores[1 + (miIndice - 1) % 6], miIndice, b);
         b -= 2;
         //if (memoria[b + miIndiceCarril * 137] == ' ') {
         if (!(posOcup(miIndiceCarril, b))) {
-            fprintf(stderr, "Color (%d) [%d] Carril libre encontrado\n", colores[1 + (miIndice - 1) % 6], miIndice);
+            //fprintf(stderr, "Color (%d) [%d] Carril libre encontrado\n", colores[1 + (miIndice - 1) % 6], miIndice);
             if (iniCoche( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6]) != 0) {
-                fprintf(stderr, "Color (%d) [%d] ERROR INICIO COCHE +++++++++++++++++++++++++++++++++\n", colores[1 + (miIndice - 1) % 6], miIndice);
+                //fprintf(stderr, "Color (%d) [%d] ERROR INICIO COCHE +++++++++++++++++++++++++++++++++\n", colores[1 + (miIndice - 1) % 6], miIndice);
                 PERROR("ERROR INCIO COCHE");
                 raise(SIGINT);
             } //miendice alterna Izquierdo y derecho
-            fprintf(stderr, "Color (%d) [%d] Inicio coche con Carril %d **Posicion %d **Color %d \n", colores[1 + (miIndice - 1) % 6], miIndice, miIndiceCarril, b, colores[1 + (miIndice - 1) % 6]);
-            // fprintf(stderr, "Color (%d) [%d] Salgo del bucle...\n",colores[miIndice],i);
+            //fprintf(stderr, "Color (%d) [%d] Inicio coche con Carril %d **Posicion %d **Color %d \n", colores[1 + (miIndice - 1) % 6], miIndice, miIndiceCarril, b, colores[1 + (miIndice - 1) % 6]);
+            // fprintf(stderr, "Color (%d) [%d] Salgo del bucle...\n",colores[1 + (miIndice - 1) % 6],i);
 
             break;
         }
     }
+    fflush(stderr);
 
     leaveCritic("critica_salida", 1);
-    fprintf(stderr, "Color (%d) [%d] Salgo de la seccion critica\n", colores[miIndice], miIndice);
+    //fprintf(stderr, "Color (%d) [%d] Salgo de la seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
     
     if (n != 1) {
         if (miIndice != n) {
-            //  fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, i + 1);
+            //  fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, i + 1);
             if (miIndice != 1) {
-                //fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], miIndice,  m1.tipo);
-                //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
-                if (GetMessage( & uMsg, NULL, WM_APP + miIndice, 100 + miIndice) == -1) {
+                fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, WM_APP + miIndice);
+                if (GetMessage( & uMsg, NULL, WM_APP + miIndice, WM_APP + miIndice) == -1) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
 
             }
-            if (PostThreadMessageA(GetCurrentThreadId(), WM_APP + 100 + miIndice + 1, 0, 0) == FALSE) {
+            fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[1 + (miIndice - 1) % 6], miIndice,  WM_APP + miIndice + 1);
+            if (PostThreadMessageA(GetCurrentThreadId(), WM_APP + miIndice + 1, 0, 0) == FALSE) {
                 PERROR("Error PostMsg");
                 raise(SIGINT);
             }
 
-            if (GetMessage( & uMsg, NULL, WM_APP + 500 + miIndice, 500 + miIndice) == -1) {
+            if (GetMessage( & uMsg, NULL, WM_APP + 500 + miIndice,WM_APP + 500 + miIndice) == -1) {
                 PERROR("[GetMessage] pausa Sem");
                 raise(SIGINT);
             }
 
             if (miIndice != 1) {
-                // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], miIndice,  m1.tipo);
-                // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
+               fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[1 + (miIndice - 1) % 6], miIndice,  WM_APP + 500 + miIndice - 1);
+                // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, 2*n+i);
                 if (PostThreadMessageA(GetCurrentThreadId(), WM_APP + 500 + miIndice - 1, 0, 0) == FALSE) {
                     PERROR("Error PostMsg");
                     raise(SIGINT);
@@ -558,22 +562,22 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
 
             }
 
-            // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[miIndice], miIndice , m1.tipo);
+            // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[1 + (miIndice - 1) % 6], miIndice , m1.tipo);
         } else { //i==n
-            if (GetMessage( & uMsg, NULL, WM_APP + miIndice, 100 + miIndice) == -1) {
+            fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, WM_APP + miIndice);
+            if (GetMessage( & uMsg, NULL, WM_APP + miIndice, WM_APP + miIndice) == -1) {
                 PERROR("[GetMessage] pausa Sem");
                 raise(SIGINT);
             }
+            fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[1 + (miIndice - 1) % 6], miIndice , WM_APP + miIndice - 1 + 500);
             if (PostThreadMessageA(GetCurrentThreadId(), WM_APP + miIndice - 1 + 500, 0, 0) == FALSE) {
                 PERROR("Error PostMsg");
                 raise(SIGINT);
             }
 
-            // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[miIndice], miIndice , m1.tipo);
-            // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[miIndice],i, 2*n+i);
         }
     }
-    // fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[miIndice],i);
+    // fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[1 + (miIndice - 1) % 6],i);
     while (1) {
         //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
         avance_controlado( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6], v);
@@ -587,7 +591,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
 int main(void) { //Punteros funciones
 
     PeekMessage(&test_msg, NULL, WM_APP, WM_APP, PM_NOREMOVE);
-
+    signal(SIGINT, manejadora);
 
     //---------------------------------------------------------------------------
     //Var's
@@ -662,15 +666,15 @@ int main(void) { //Punteros funciones
 
 
 
-
+    fflush(stderr);
     inicio_falonso(1);
   
     luzSem(1, 2);
     luzSem(0, 2);
 
-    fprintf(stderr, "PRE-CreaHijos\n");
+    //fprintf(stderr, "PRE-CreaHijos\n");
     creaNhijos(3, 1);
-    fprintf(stderr, "POST-CreaHijos\n");
+    //fprintf(stderr, "POST-CreaHijos\n");
 
     while(1){
         pausa();
