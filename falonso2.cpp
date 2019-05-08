@@ -529,7 +529,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
 
     leaveCritic("critica_salida", 1);
     //fprintf(stderr, "Color (%d) [%d] Salgo de la seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
-    
+    /*
     if (n != 1) {
         if (miIndice != n) {
             //  fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, i + 1);
@@ -576,7 +576,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
             }
 
         }
-    }
+    }*/
     // fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[1 + (miIndice - 1) % 6],i);
     while (1) {
         //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
@@ -590,7 +590,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
 //---------------------------------------------------------------------------
 int main(void) { //Punteros funciones
 
-    PeekMessage(&test_msg, NULL, WM_APP, WM_APP, PM_NOREMOVE);
+    PeekMessage(&test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
     idPadre = GetCurrentThreadId();
 
     //---------------------------------------------------------------------------
