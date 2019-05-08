@@ -88,7 +88,7 @@ DLL0Arg pausa = NULL;
 DLL1Argvoid p_error = NULL;
 MSG test_msg, uMsg;
 int num_coche=0;
-
+DWORD idPadre;
 
 
 //---------------------------------------------------------------------------
@@ -239,12 +239,12 @@ void semtoGreen(int sem) {
     //fprintf(stderr, "[%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem);
 
 
-    if (PostThreadMessageA(GetCurrentThreadId(),WM_APP + 303 - 2 * sem, 0, 0) == FALSE) {
+    if (PostThreadMessageA(idPadre,WM_APP + 303 - 2 * sem, 0, 0) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
     //fprintf(stderr, " [%d] Envio mensaje tipo %d \n", getpid(),303 -2*sem-1);
-    if (PostThreadMessageA(GetCurrentThreadId(),WM_APP + 303 - 2 * sem - 1, 0, 0) == FALSE) {
+    if (PostThreadMessageA(idPadre,WM_APP + 303 - 2 * sem - 1, 0, 0) == FALSE) {
         PERROR("ERROR AL MSGSND");
         raise(SIGINT);
     }
@@ -407,7 +407,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         //pos_2 = (((( * desp) + 135) % 137) + (( * carril) * 137)) + 1
         if (posOcup( * carril, ((( * desp) + 135) % 137))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_2);
-            if (PostThreadMessageA(GetCurrentThreadId(),WM_APP + pos_2 + 1, 0, 0) == 0) {
+            if (PostThreadMessageA(idPadre,WM_APP + pos_2 + 1, 0, 0) == 0) {
                 PERROR("ERROR AL MSGSND (pos -2 ocupada post avance)");
                 raise(SIGINT);
             }
@@ -418,7 +418,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         //pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1
         if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril))) {
             //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, getpid(), pos_cambio);
-            if (PostThreadMessageA(GetCurrentThreadId(),WM_APP + pos_cambio + 1, 0, 0) == 0) {
+            if (PostThreadMessageA(idPadre,WM_APP + pos_cambio + 1, 0, 0) == 0) {
                 ("ERROR AL MSGSND (pos carril opuesto ocupada)");
                 raise(SIGINT);
             }
@@ -542,7 +542,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
 
             }
             fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[1 + (miIndice - 1) % 6], miIndice,  WM_APP + miIndice + 1);
-            if (PostThreadMessageA(GetCurrentThreadId(), WM_APP + miIndice + 1, 0, 0) == FALSE) {
+            if (PostThreadMessageA(idPadre, WM_APP + miIndice + 1, 0, 0) == FALSE) {
                 PERROR("Error PostMsg");
                 raise(SIGINT);
             }
@@ -555,7 +555,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
             if (miIndice != 1) {
                fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[1 + (miIndice - 1) % 6], miIndice,  WM_APP + 500 + miIndice - 1);
                 // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, 2*n+i);
-                if (PostThreadMessageA(GetCurrentThreadId(), WM_APP + 500 + miIndice - 1, 0, 0) == FALSE) {
+                if (PostThreadMessageA(idPadre, WM_APP + 500 + miIndice - 1, 0, 0) == FALSE) {
                     PERROR("Error PostMsg");
                     raise(SIGINT);
                 }
@@ -570,7 +570,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
                 raise(SIGINT);
             }
             fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[1 + (miIndice - 1) % 6], miIndice , WM_APP + miIndice - 1 + 500);
-            if (PostThreadMessageA(GetCurrentThreadId(), WM_APP + miIndice - 1 + 500, 0, 0) == FALSE) {
+            if (PostThreadMessageA(idPadre, WM_APP + miIndice - 1 + 500, 0, 0) == FALSE) {
                 PERROR("Error PostMsg");
                 raise(SIGINT);
             }
@@ -591,7 +591,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
 int main(void) { //Punteros funciones
 
     PeekMessage(&test_msg, NULL, WM_APP, WM_APP, PM_NOREMOVE);
-    signal(SIGINT, manejadora);
+    idPadre = GetCurrentThreadId();
 
     //---------------------------------------------------------------------------
     //Var's
