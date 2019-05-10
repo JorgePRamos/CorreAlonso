@@ -22,21 +22,8 @@ typedef void (*DLL1Argvoid)(const char *);
 CRITICAL_SECTION sc1, critica_salida ,critica;
 DWORD WINAPI funcionHilos (LPVOID pEstruct);
 DWORD arrayPosiciones [272];
-HANDLE evento, pistola;
-/*
-HANDLE critica = CreateSemaphore(
-    NULL, // default security attributes
-    1, // initial count
-    1, // maximum count
-    NULL);
+HANDLE evento, semH, semV;
 
-HANDLE critica_salida = CreateSemaphore(
-    NULL, // default security attributes
-    1, // initial count
-    1, // maximum count
-    NULL);
-
-*/
 HANDLE sem_cruze = CreateSemaphore(
     NULL, // default security attributes
     6, // initial count
@@ -44,12 +31,6 @@ HANDLE sem_cruze = CreateSemaphore(
     NULL);
 
 
-
-
-
-
-//---------------------------------------------------------------------------
-//DEFINICIONES
 unsigned int  contador = 0;
 typedef struct Coche {
     int posicion;
@@ -73,9 +54,10 @@ int num_coche=0;
 DWORD idPadre;
 
 
-//---------------------------------------------------------------------------
-//CAMBIO DE CARRIL
+//----------------------------------------------------------------------------------------------------------------------
+//---------- Cambio_carril_cal
 int cambio_carril_cal(int desp, int carril) {
+
     int dep_temp = desp;
     if ((!(carril) && desp <= 28 && desp >= 14) || (carril && desp >= 59 && desp <= 60))
         dep_temp++;
@@ -101,171 +83,64 @@ int cambio_carril_cal(int desp, int carril) {
         dep_temp = 136;
 
     return dep_temp;
+}//Fin Cambio_carril_cal
 
-}
-/*
-void manejadora(int param) {
-    printf("Salto a Manejadora\n");
-    FreeLibrary(hinstLib);
-    /*
-    for(int i=0; i<num_coche; i++)
-    {
-        CloseHandle(hThreadArray[i]);
-
-        if(arrayParam[i] != NULL)
-        {
-            HeapFree(GetProcessHeap(), 0, arrayParam[i]);
-            arrayParam[i] = NULL;    // Ensure address is not reused.
-        }
-
-    }
-    delete [] hThreadArray;
-    delete [] arrayParam;
-    
-
-    exit(1);
-}*/
-
-/*
-//---------------------------------------------------------------------------
-//ENTER_CRITIC
-void enterCritic(const char semId[], int op) {
-    int f = 0;
-
-        //fprintf(stderr, "Pre-IF enterCritc()\n");
-
-    if (!strcmp(semId, "critica")) {
-        for (; f < op; f++) {
-            if((WaitForSingleObject(critica, INFINITE))==WAIT_FAILED)
-            PERROR("WaitForSingleObject");
-        }
-    } else if (!strcmp(semId, "critica_salida")) {//WAIT_FAILED
-            //fprintf(stderr, "Post strcmp\n");
-        for (; f < op; f++) {
-            //fprintf(stderr, "Entro en critica salida\n");
-            if((WaitForSingleObject(critica_salida, INFINITE))==WAIT_FAILED)
-            PERROR("WaitForSingleObject");
-        }
-    } else if (!strcmp(semId, "sem_cruze")) {
-        for (; f < op; f++) {
-            if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
-            PERROR("WaitForSingleObject");
-        }
-    
-    } else {
-        raise(SIGINT);
-    }
-
-}
-//--------------------------------------------------------------------------
-//LEAVE_CRITIC
-void leaveCritic(const char semId[], int op) {
-
-    if (!strcmp(semId, "critica")) {
-        if(!(ReleaseSemaphore(critica, op, NULL)))
-            PERROR("ReleaseSemaphore");
-    } else if (!strcmp(semId, "critica_salida")) {
-        if(!(ReleaseSemaphore(critica_salida, op, NULL)))
-            PERROR("ReleaseSemaphore");
-    } else if (!strcmp(semId, "sem_cruze")) {
-        if(!(ReleaseSemaphore(sem_cruze, op, NULL)))
-            PERROR("ReleaseSemaphore");
-    
-
-    } else {
-        raise(SIGINT);
-    }
-
-}
-*/
-//---------------------------------------------------------------------------
-//SEMtoRed
+//----------------------------------------------------------------------------------------------------------------------
+//---------- SemtoRed
 void semtoRed(int sem) {
 
-
     luzSem(sem, AMARILLO);
-
     LeaveCriticalSection(&critica_salida);
-    //fprintf(stderr, "[%d]-Padre Salida Sem_Salida critica +1 pajitas: %d\n", GetCurrentThreadId(),semctl(critica_salida, 0, GETVAL));//#getval
     //fprintf(stderr, "[%d]-Padre Salida Sem_Salida critica +1 pajitas\n", GetCurrentThreadId());
-
-
-    //enterCritic("sem_cruze", 6);
-    for(int a= 0; a<6;a++)
-            //EnterCriticalSection(&sem_cruze);
-
+    for(int a= 0; a<6;a++){
             if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
             PERROR("WaitForSingleObject");
-
-
-    //fprintf(stderr, "[%d]-Padre Enter Sem_Cruze critica -6 pajitas: %d\n", GetCurrentThreadId(),semctl(sem_cruze, 0, GETVAL));//#getval
+    }
     //fprintf(stderr, "[%d]-Padre Enter Sem_Cruze critica -6 pajitas\n", GetCurrentThreadId());
-
-
+    
+      if(sem){   //vertical
+        ResetEvent(semV);
+    }else
+    {//horizontal
+    ResetEvent(semH);
+    }
     EnterCriticalSection(&critica_salida);
-    //fprintf(stderr, "[%d]-Padre Enter critica_salida critica -1 pajitas: %d\n", GetCurrentThreadId(),semctl(critica_salida, 0, GETVAL));//#getval
     //fprintf(stderr, "[%d]-Padre Enter critica_salida critica -1 pajitas\n", GetCurrentThreadId());
-
-
     luzSem(sem, ROJO);
-}
+}//Fin SemtoRed
 
-//---------------------------------------------------------------------------
-//SEMtoGreen
+//----------------------------------------------------------------------------------------------------------------------
+//---------- semtoGreen
 void semtoGreen(int sem) {
-    //for(int a= 0; a<6;a++)
-        //LeaveCriticalSection(&sem_cruze);
- if(!(ReleaseSemaphore(sem_cruze, 6, NULL)))
+    if(!(ReleaseSemaphore(sem_cruze, 6, NULL))){
             PERROR("ReleaseSemaphore");
-        
-        
-
-    //leaveCritic("sem_cruze", 6);
-    //fprintf(stderr, "[%d]-Padre Salida Sem_Cruze critica +6 pajitas: %d\n", GetCurrentThreadId(),semctl(sem_cruze, 0, GETVAL));//getval
+    } 
     //fprintf(stderr, "[%d]-Padre Salida Sem_Cruze critica +6 pajitas\n", GetCurrentThreadId());
 
-
-
     luzSem(sem, VERDE);
-
-
-    if (PostThreadMessageA(idPadre,WM_APP + 303 - 2 * sem, 0, 0) == FALSE) {
-        PERROR("ERROR AL MSGSND");
-        raise(SIGINT);
+    if(sem){   //vertical
+        SetEvent(semV);
+    }else
+    {//Horizontal
+    SetEvent(semH);
     }
-    //fprintf(stderr, " [%d] Envio mensaje tipo %d \n", GetCurrentThreadId(),303 -2*sem-1);
-    if (PostThreadMessageA(idPadre,WM_APP + 303 - 2 * sem - 1, 0, 0) == FALSE) {
+}//Fin semtoGreen
 
-        PERROR("ERROR AL MSGSND");
-        raise(SIGINT);
-    }
-
-}
-
-//---------------------------------------------------------------------------
-//AVANCE CONTROLADO
+//----------------------------------------------------------------------------------------------------------------------
+//---------- Avance_controlado
 void avance_controlado(int * carril, int * desp, int color, int v) {
         EnterCriticalSection( & critica);
         arrayPosiciones[ * desp + ( * carril) * 137] = GetCurrentThreadId();
-
-        //fprintf(stderr, "[%d] Color (%d)Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(),color, semctl(critica, 0, GETVAL));//#getval
-        //fprintf(stderr, "[%d] Color (%d) *%d+(*%d)*137 = %d \n", GetCurrentThreadId(), color, * desp, * carril, * desp + ( * carril) * 137);
-        //fprintf(stderr, "[%d] Color (%d)Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);
-
-
         if ( * desp > 137 || * desp < 0 || * carril < 0 || * carril > 1 || color < 0 || color > 7) {
             LeaveCriticalSection( & critica);
             raise(SIGINT);
         } //Error en el paso de argumentos
 
+        //fprintf(stderr, "[%d] Color (%d) *%d+(*%d)*137 = %d \n", GetCurrentThreadId(), color, * desp, * carril, * desp + ( * carril) * 137);
+        //fprintf(stderr, "[%d] Color (%d)Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);
+
         int dep_temp = * desp, pos_2 = (((( * desp) + 136) % 137) + (( * carril) * 137));
 
-        //PeekMessageA( & test_msg, NULL,WM_APP+ pos_cambio + 1, pos_cambio + 1, PM_REMOVE);//IPC_NOWAIT
-        //fprintf(stderr, "Color (%d) [%d]  MENSAJE RECOGIDO CON EXITO ------> [%d]\n", color, GetCurrentThreadId(), pos_cambio);
-
-        // PeekMessageA( & test_msg, NULL,WM_APP+ pos_2 + 1, pos_2 + 1, PM_REMOVE);
-        //fprintf(stderr, "Color (%d) [%d]  MENSAJE RECOGIDO CON EXITO ------> [%d]\n", color, GetCurrentThreadId(), pos_2);
-        //fprintf(stderr, "Color (%d) [%d] Limpio mensajes (rcv)\n",color, GetCurrentThreadId());
         //fprintf(stderr, "Color (%d) [%d]  COMPRUEBO POSICION SIGUIENTE %d (%d+1%%137+%d*137)\n", color, GetCurrentThreadId(), *desp + 1 % 137 + *carril *137, *desp, *carril);
 
 
@@ -291,11 +166,8 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
 
 
-                    if (GetMessage( & uMsg, NULL, WM_USER + 300, 300) == -1) {
-
-                        PERROR("[GetMessage] pausa Sem");
-                        raise(SIGINT);
-                    }
+                    if((WaitForSingleObject(semV, INFINITE))==WAIT_FAILED)
+                        PERROR("WaitForSingleObject");
                     //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
 
                     //EnterCriticalSection( & sem_cruze);
@@ -357,11 +229,8 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
 
 
-                    if (GetMessage( & uMsg, NULL, WM_USER + 300, 300) == -1) {
-
-                        PERROR("[GetMessage] pausa Sem");
-                        raise(SIGINT);
-                    }
+                if((WaitForSingleObject(semV, INFINITE))==WAIT_FAILED)
+            PERROR("WaitForSingleObject");
                     //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
 
                     //EnterCriticalSection( & sem_cruze);
@@ -419,10 +288,8 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
 
 
-                    if (GetMessage( & uMsg, NULL, WM_USER + 300, 300) == -1) {
-                        PERROR("[GetMessage] pausa Sem");
-                        raise(SIGINT);
-                    }
+                    if((WaitForSingleObject(semH, INFINITE))==WAIT_FAILED)
+            PERROR("WaitForSingleObject");
                     //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
 
 
@@ -484,11 +351,8 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
 
 
-                    if (GetMessage( & uMsg, NULL, WM_USER + 300, 300) == -1) {
-
-                        PERROR("[GetMessage] pausa Sem");
-                        raise(SIGINT);
-                    }
+                    if((WaitForSingleObject(semH, INFINITE))==WAIT_FAILED)
+            PERROR("WaitForSingleObject");
                     //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
 
                     //EnterCriticalSection( & sem_cruze);
@@ -616,45 +480,33 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
             }
         }
-} //fin avance_controlado
+} //Fin Avance_controlado
 
-
-//---------------------------------------------------------------------------
-//CREA_N_HIJOS
+//----------------------------------------------------------------------------------------------------------------------
+//---------- CreaNhijos
 int creaNhijos(int n, int v) {
     HANDLE hThreadArray [n];
-
     DWORD idHilo [n];
     static int i;
     num_coche=n;
     pParam arrayParam [n];
-
-
-
-
-    for (i = 1; i <= n; i++) {
+    
+    for (i = 1; i <= n; i++) {//CreaciOn N Hilos
         //fprintf(stderr, "%d %d**Soy el padre creando al hijo--> %d\n", (sizeof(hThreadArray)/sizeof(* hThreadArray )) ,n, i);
-
         arrayParam[i]= (pParam)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sizeof(Param));
-
         arrayParam[i]->indice=i;
         arrayParam[i]->velocidad=v;
         arrayParam[i]->nCoches=n;
-
         if((hThreadArray[i]=CreateThread(NULL,0, funcionHilos,arrayParam[i], 0 , &idHilo[i]))==NULL){
             PERROR("Create Hilo");
-            //raise(SIGINT);
         }
-        //fprintf(stderr, "Post creacion Hijo\n");
-
     }
     SetEvent(evento);
-    //WaitForMultipleObjects(n,hThreadArray, TRUE, INFINITE);
-
     return 0;
-
     } //Fin Nhijos
 
+//----------------------------------------------------------------------------------------------------------------------
+//---------- FuncionHilos
 DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     pParam pEstruct = (pParam) pEstruct_2;
     int colores[] = {0,0,1,2,3,5,6,7};
@@ -663,6 +515,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     int v = pEstruct -> velocidad;
     int miIndiceCarril = miIndice % 2;
     int b;
+
     EnterCriticalSection( & critica_salida);
     PeekMessage( & test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
     arrayPosiciones[miIndice] = GetCurrentThreadId();
@@ -672,140 +525,64 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     //fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
     EnterCriticalSection( & critica_salida);
 
-    for (b = 136; b >= 0;) {
+    for (b = 136; b >= 0;) {//Busqueda de Sitio
         //fprintf(stderr, "Color (%d) [%d] Iteracion b = %d\n", colores[1 + (miIndice - 1) % 6], miIndice, b);
         b -= 2;
-        //if (memoria[b + miIndiceCarril * 137] == ' ') {
-             EnterCriticalSection( & critica);
+        EnterCriticalSection( & critica);
         if (!(posOcup(miIndiceCarril, b))) {
             //fprintf(stderr, "Color (%d) [%d] Carril libre encontrado\n", colores[1 + (miIndice - 1) % 6], miIndice);
             if (iniCoche( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6]) != 0) {
                 //fprintf(stderr, "Color (%d) [%d] ERROR INICIO COCHE +++++++++++++++++++++++++++++++++\n", colores[1 + (miIndice - 1) % 6], miIndice);
                 PERROR("ERROR INCIO COCHE");
                 raise(SIGINT);
-            } //miendice alterna Izquierdo y derecho
+            } //Alterna Carril
             //fprintf(stderr, "Color (%d) [%d] Inicio coche con Carril %d **Posicion %d **Color %d \n", colores[1 + (miIndice - 1) % 6], miIndice, miIndiceCarril, b, colores[1 + (miIndice - 1) % 6]);
             // //fprintf(stderr, "Color (%d) [%d] Salgo del bucle...\n",colores[1 + (miIndice - 1) % 6],i);
-            LeaveCriticalSection( & critica);
-            break;
+            break;//Encontrado Sitio
         }
-        LeaveCriticalSection( & critica);
     }
-
+    LeaveCriticalSection( & critica);
     LeaveCriticalSection( & critica_salida);
     //fprintf(stderr, "Color (%d) [%d] Salgo de la seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
-/*
-    if (n != 1) {
-        if(miIndice==n)
-            SetEvent(pistola);
-        else
-            WaitForSingleObject(pistola, INFINITE);
-
-        /*
-        if (miIndice != n) {
-            //  //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, i + 1);
-            if (miIndice != 1) {
-                //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n", colores[1 + (miIndice - 1) % 6], miIndice, WM_APP + miIndice);
-                if (GetMessage( & uMsg, NULL, WM_APP + 1, WM_APP + 1) == -1) {
-                    PERROR("[GetMessage] pausa Sem");
-                    raise(SIGINT);
-                }
-
-            }
-            //fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n", colores[1 + (miIndice - 1) % 6], miIndice, WM_APP + miIndice + 1);
-            EnterCriticalSection( & sc1);
-            if (PostThreadMessageA(arrayPosiciones[miIndice + 1], WM_APP + 1, 0, 0) == FALSE) {
-                PERROR("Error PostMsg");
-                raise(SIGINT);
-            }
-            LeaveCriticalSection( & sc1);
-
-
-            if (GetMessage( & uMsg, NULL, WM_APP + 2, WM_APP + 2) == -1) {
-                PERROR("[GetMessage] pausa Sem");
-                raise(SIGINT);
-            }
-
-            if (miIndice != 1) {
-                //fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n", colores[1 + (miIndice - 1) % 6], miIndice, WM_APP + 500 + miIndice - 1);
-                // //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, 2*n+i);
-                EnterCriticalSection( & sc1);
-                if (PostThreadMessageA(arrayPosiciones[miIndice - 1], WM_APP + 2, 0, 0) == FALSE) {
-                    PERROR("Error PostMsg");
-                    raise(SIGINT);
-                }
-                LeaveCriticalSection( & sc1);
-
-
-            }
-
-            // //fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[1 + (miIndice - 1) % 6], miIndice , m1.tipo);
-        } else { //i==n
-            //fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n", colores[1 + (miIndice - 1) % 6], miIndice, WM_APP + miIndice);
-            if (GetMessage( & uMsg, NULL, WM_APP + 1, WM_APP + 1) == -1) {
-                PERROR("[GetMessage] pausa Sem");
-                raise(SIGINT);
-            }
-            //fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n", colores[1 + (miIndice - 1) % 6], miIndice, WM_APP + miIndice - 1 + 500);
-            EnterCriticalSection( & sc1);
-            if (PostThreadMessageA(arrayPosiciones[miIndice - 1], WM_APP + 2, 0, 0) == FALSE) {
-                PERROR("Error PostMsg");
-                raise(SIGINT);
-            }
-            LeaveCriticalSection( & sc1);
-        }
-        
-    }
-    */
     // //fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[1 + (miIndice - 1) % 6],i);
     arrayPosiciones[b + (miIndiceCarril) * 137] = GetCurrentThreadId();
+        
     while (1) {
-        //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
         avance_controlado( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6], v);
-
     }
+}//Fin funcionHilos
 
+//----------------------------------------------------------------------------------------------------------------------
+//---------- Main
+int main(int argc, char const * argv[]) {
 
-
-    }
-int main(int argc, char
-        const * argv[]) {
         if (argc != 3) {
             perror("arg:");
             exit(4);
-            //fprintf(stderr, "Error numero de argumentos:%d\n", argc);
         } else if (atoi(argv[1]) < 1 && atoi(argv[1]) > 20) {
             perror("arg:");
             exit(4);
-            //fprintf(stderr, "Error numero de coches invalido\n");
         } else if (!(!atoi(argv[2]) || atoi(argv[2]) == 1)) {
             perror("Velocidad");
             exit(4);
         } else {
             int u = 0; //variable para bucles For
-            int numCoches = atoi(argv[1]);
+            int numCoches = atoi(argv[1]);//Ncoches
             int vel = atoi(argv[2]); //Punteros funciones
         }
-        PeekMessage( & test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
+        PeekMessage( & test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE); //Creacion cola  mensaje
 
 
-
-        //---------------------------------------------------------------------------
-        //Var's
-
-
-        //CreateThread(NULL,0,avance_controlado,NULL,0);
-
-        if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //cargas la libreria en memoria del proceso
+        if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //Carga libreria en memoria del proceso
             PERROR("Error cargar DLL");
             return (1);
         }
+    //Secciones Criticas
+        InitializeCriticalSection( & sc1); //LanzarA STATUS_NO_MEMORY si no hay memoria
+        InitializeCriticalSection( & critica_salida); 
+        InitializeCriticalSection( & critica); 
 
-        InitializeCriticalSection( & sc1); //Control de errores?
-        InitializeCriticalSection( & critica_salida); //Control de errores?
-        InitializeCriticalSection( & critica); //Control de errores?
-
-
+    //Prototipos Funciones
         if (!(inicio_falonso = (DLL1Arg) GetProcAddress(hinstLib, "FALONSO2_inicio"))) {
             PERROR("Error getProc FALONSO2_inicio");
             FreeLibrary(hinstLib);
@@ -831,7 +608,6 @@ int main(int argc, char
             FreeLibrary(hinstLib);
             return (2);
         }
-
         if (!(velocidad = (DLL3Arg) GetProcAddress(hinstLib, "FALONSO2_velocidad"))) {
             PERROR("Error getProc FALONSO2_velocidad");
             FreeLibrary(hinstLib);
@@ -857,53 +633,43 @@ int main(int argc, char
             FreeLibrary(hinstLib);
             return (2);
         }
-
         if (!(pausa = (DLL0Arg) GetProcAddress(hinstLib, "FALONSO2_pausa"))) {
             PERROR("Error getProc FALONSO2_pausa");
             FreeLibrary(hinstLib);
             return (2);
         }
 
-
-
+    //Eventos
         if ((evento = CreateEvent(NULL, TRUE, FALSE, TEXT("Evento"))) == NULL) {
             PERROR("Creacion evento");
             exit(1);
         }
-        if ((pistola = CreateEvent(NULL, TRUE, FALSE, TEXT("Evento"))) == NULL) {
-            PERROR("Creacion evento");
+                if ((semH = CreateEvent(NULL, TRUE, FALSE, TEXT("Evento"))) == NULL) {
+            PERROR("Creacion semH");
+            exit(1);
+        }
+                if ((semV = CreateEvent(NULL, TRUE, FALSE, TEXT("Evento"))) == NULL) {
+            PERROR("Creacion semV");
             exit(1);
         }
 
+    //Inicio comportamiento
+        inicio_falonso(1);//Inicio Circuito
 
-        inicio_falonso(1);
-
-
-            luzSem(1, 2);
-            luzSem(0, 2);
-            /*
         EnterCriticalSection( & critica_salida);
-        semtoRed(HORIZONTAL);
+        semtoRed(HORIZONTAL);//Configuracion Incial Semaforos
         semtoGreen(VERTICAL);
         LeaveCriticalSection( & critica_salida);
-    */
+
         //fprintf(stderr, "PRE-CreaHijos\n");
         creaNhijos(3, 1);
         //fprintf(stderr, "POST-CreaHijos\n");
 
-        while (1) {
-    pausa();
-}
-/*
-        while (!0) {
-
+        while (1) {//Alterdor Semaforos
             EnterCriticalSection( & critica_salida);
             semtoRed(HORIZONTAL);
             semtoGreen(VERTICAL);
             LeaveCriticalSection( & critica_salida);
-
-
-
             int b = 0;
             for (; b < 7; b++) {
                 pausa();
@@ -915,32 +681,8 @@ int main(int argc, char
             for (b = 0; b < 7; b++) {
                 pausa();
             }
-        }*/
-
-        FreeLibrary(hinstLib); //esto va a la manejadora (BOOL)
-        return 0;
-}
-
-/*
-  for( i=0; i < THREADCOUNT; i++ )
-    {
-        aThread[i] = CreateThread( 
-                     NULL,       // default security attributes
-                     0,          // default stack size
-                     (LPTHREAD_START_ROUTINE) ThreadProc, 
-                     NULL,       // no thread function arguments
-                     0,          // default creation flags
-                     &ThreadID); // receive thread identifier
-
-        if( aThread[i] == NULL )
-        {
-            printf("CreateThread error: %d\n", GetLastError());
-            return 1;
         }
-    }
 
-    // Wait for all threads to terminate
-
-    WaitForMultipleObjects(THREADCOUNT, aThread, TRUE, INFINITE);
-    
-*/      
+        FreeLibrary(hinstLib);//LiberaciOn de DLl
+        return 0;
+}//Fin Main
