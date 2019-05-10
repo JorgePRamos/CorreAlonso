@@ -668,13 +668,15 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     arrayPosiciones[miIndice] = GetCurrentThreadId();
     LeaveCriticalSection( & critica_salida);
     //fprintf(stderr, "\t\tHola soy el hijo %d PID: %d\n", miIndice, GetCurrentThreadId());
+    WaitForSingleObject(evento, INFINITE);
     //fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
     EnterCriticalSection( & critica_salida);
 
     for (b = 136; b >= 0;) {
         //fprintf(stderr, "Color (%d) [%d] Iteracion b = %d\n", colores[1 + (miIndice - 1) % 6], miIndice, b);
-        b -= 3;
+        b -= 2;
         //if (memoria[b + miIndiceCarril * 137] == ' ') {
+             EnterCriticalSection( & critica);
         if (!(posOcup(miIndiceCarril, b))) {
             //fprintf(stderr, "Color (%d) [%d] Carril libre encontrado\n", colores[1 + (miIndice - 1) % 6], miIndice);
             if (iniCoche( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6]) != 0) {
@@ -684,17 +686,18 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
             } //miendice alterna Izquierdo y derecho
             //fprintf(stderr, "Color (%d) [%d] Inicio coche con Carril %d **Posicion %d **Color %d \n", colores[1 + (miIndice - 1) % 6], miIndice, miIndiceCarril, b, colores[1 + (miIndice - 1) % 6]);
             // //fprintf(stderr, "Color (%d) [%d] Salgo del bucle...\n",colores[1 + (miIndice - 1) % 6],i);
-
+            LeaveCriticalSection( & critica);
             break;
         }
+        LeaveCriticalSection( & critica);
     }
 
     LeaveCriticalSection( & critica_salida);
     //fprintf(stderr, "Color (%d) [%d] Salgo de la seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
-
+/*
     if (n != 1) {
         if(miIndice==n)
-            SetEvent(evento);
+            SetEvent(pistola);
         else
             WaitForSingleObject(pistola, INFINITE);
 
@@ -751,8 +754,9 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
             }
             LeaveCriticalSection( & sc1);
         }
-        */
+        
     }
+    */
     // //fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[1 + (miIndice - 1) % 6],i);
     arrayPosiciones[b + (miIndiceCarril) * 137] = GetCurrentThreadId();
     while (1) {
