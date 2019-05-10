@@ -22,7 +22,7 @@ typedef void (*DLL1Argvoid)(const char *);
 CRITICAL_SECTION sc1, critica_salida ,critica,sem_cruze;
 DWORD WINAPI funcionHilos (LPVOID pEstruct);
 DWORD arrayPosiciones [272];
-HANDLE evento;
+HANDLE evento, pistola;
 /*
 HANDLE critica = CreateSemaphore(
     NULL, // default security attributes
@@ -629,18 +629,17 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     int v = pEstruct -> velocidad;
     int miIndiceCarril = miIndice % 2;
     int b;
-EnterCriticalSection(&critica_salida);
+    EnterCriticalSection( & critica_salida);
     PeekMessage( & test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
-    arrayPosiciones[miIndice]=GetCurrentThreadId();
-                LeaveCriticalSection(&critica_salida);
+    arrayPosiciones[miIndice] = GetCurrentThreadId();
+    LeaveCriticalSection( & critica_salida);
     fprintf(stderr, "\t\tHola soy el hijo %d PID: %d\n", miIndice, GetCurrentThreadId());
-    WaitForSingleObject(evento, INFINITE);
     fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
-EnterCriticalSection(&critica_salida);
+    EnterCriticalSection( & critica_salida);
 
     for (b = 136; b >= 0;) {
         //fprintf(stderr, "Color (%d) [%d] Iteracion b = %d\n", colores[1 + (miIndice - 1) % 6], miIndice, b);
-        b -= 2;
+        b -= 3;
         //if (memoria[b + miIndiceCarril * 137] == ' ') {
         if (!(posOcup(miIndiceCarril, b))) {
             //fprintf(stderr, "Color (%d) [%d] Carril libre encontrado\n", colores[1 + (miIndice - 1) % 6], miIndice);
@@ -656,96 +655,101 @@ EnterCriticalSection(&critica_salida);
         }
     }
 
-                LeaveCriticalSection(&critica_salida);
+    LeaveCriticalSection( & critica_salida);
     //fprintf(stderr, "Color (%d) [%d] Salgo de la seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
-    
+
     if (n != 1) {
+        if(miIndice==n)
+            SetEvent(evento);
+        else
+            WaitForSingleObject(pistola, INFINITE);
+
+        /*
         if (miIndice != n) {
             //  fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, i + 1);
             if (miIndice != 1) {
-                fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, WM_APP + miIndice);
+                fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n", colores[1 + (miIndice - 1) % 6], miIndice, WM_APP + miIndice);
                 if (GetMessage( & uMsg, NULL, WM_APP + 1, WM_APP + 1) == -1) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
 
             }
-            fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[1 + (miIndice - 1) % 6], miIndice,  WM_APP + miIndice + 1);
-            EnterCriticalSection(&sc1);
-            if (PostThreadMessageA(arrayPosiciones[miIndice+1], WM_APP + 1, 0, 0) == FALSE) {
+            fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n", colores[1 + (miIndice - 1) % 6], miIndice, WM_APP + miIndice + 1);
+            EnterCriticalSection( & sc1);
+            if (PostThreadMessageA(arrayPosiciones[miIndice + 1], WM_APP + 1, 0, 0) == FALSE) {
                 PERROR("Error PostMsg");
                 raise(SIGINT);
             }
-            LeaveCriticalSection(&sc1);
+            LeaveCriticalSection( & sc1);
 
 
-            if (GetMessage( & uMsg, NULL, WM_APP + 2,WM_APP + 2) == -1) {
+            if (GetMessage( & uMsg, NULL, WM_APP + 2, WM_APP + 2) == -1) {
                 PERROR("[GetMessage] pausa Sem");
                 raise(SIGINT);
             }
 
             if (miIndice != 1) {
-               fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[1 + (miIndice - 1) % 6], miIndice,  WM_APP + 500 + miIndice - 1);
+                fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n", colores[1 + (miIndice - 1) % 6], miIndice, WM_APP + 500 + miIndice - 1);
                 // fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, 2*n+i);
-                EnterCriticalSection(&sc1);
-                if (PostThreadMessageA(arrayPosiciones[miIndice-1], WM_APP + 2, 0, 0) == FALSE) {
+                EnterCriticalSection( & sc1);
+                if (PostThreadMessageA(arrayPosiciones[miIndice - 1], WM_APP + 2, 0, 0) == FALSE) {
                     PERROR("Error PostMsg");
                     raise(SIGINT);
                 }
-                LeaveCriticalSection(&sc1);
+                LeaveCriticalSection( & sc1);
 
 
             }
 
             // fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld y Arranco \n",colores[1 + (miIndice - 1) % 6], miIndice , m1.tipo);
         } else { //i==n
-            fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n",colores[1 + (miIndice - 1) % 6],miIndice, WM_APP + miIndice);
-           if (GetMessage( & uMsg, NULL, WM_APP + 1, WM_APP + 1) == -1) {
-                    PERROR("[GetMessage] pausa Sem");
-                    raise(SIGINT);
-                }
-            fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n",colores[1 + (miIndice - 1) % 6], miIndice , WM_APP + miIndice - 1 + 500);
-            EnterCriticalSection(&sc1);
-            if (PostThreadMessageA(arrayPosiciones[miIndice-1], WM_APP + 2, 0, 0) == FALSE) {
-                    PERROR("Error PostMsg");
-                    raise(SIGINT);
-                }
-                LeaveCriticalSection(&sc1);
-
-
+            fprintf(stderr, "Color (%d) [%d] Espero al mensaje %d\n", colores[1 + (miIndice - 1) % 6], miIndice, WM_APP + miIndice);
+            if (GetMessage( & uMsg, NULL, WM_APP + 1, WM_APP + 1) == -1) {
+                PERROR("[GetMessage] pausa Sem");
+                raise(SIGINT);
+            }
+            fprintf(stderr, "Color (%d) [%d] Envio mensaje %ld \n", colores[1 + (miIndice - 1) % 6], miIndice, WM_APP + miIndice - 1 + 500);
+            EnterCriticalSection( & sc1);
+            if (PostThreadMessageA(arrayPosiciones[miIndice - 1], WM_APP + 2, 0, 0) == FALSE) {
+                PERROR("Error PostMsg");
+                raise(SIGINT);
+            }
+            LeaveCriticalSection( & sc1);
         }
+        */
     }
     // fprintf(stderr, "Color (%d) [%d] Arranco\n",colores[1 + (miIndice - 1) % 6],i);
-    arrayPosiciones[b+(miIndiceCarril)*137]=GetCurrentThreadId();
+    arrayPosiciones[b + (miIndiceCarril) * 137] = GetCurrentThreadId();
     while (1) {
         //printf("%d",semctl(sem_cruze, 0 ,GETVAL ));
         avance_controlado( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6], v);
 
     }
-    
 
 
-}
 
-int main(int argc, char
-        const * argv[]) {
-        if (argc != 3) {
-            perror("arg:");
-            exit(4);
-            //fprintf(stderr, "Error numero de argumentos:%d\n", argc);
-        } else if (atoi(argv[1]) < 1 && atoi(argv[1]) > 20) {
-            perror("arg:");
-            exit(4);
-            //fprintf(stderr, "Error numero de coches invalido\n");
-        } else if (!(!atoi(argv[2]) || atoi(argv[2]) == 1)) {
-            perror("Velocidad");
-            exit(4);
-        } else {
-            int u = 0; //variable para bucles For
-            int numCoches = atoi(argv[1]);
-            int vel = atoi(argv[2]); //Punteros funciones
-        }
-        PeekMessage( & test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
+    }
+
+    int main(int argc, char
+            const * argv[]) {
+            if (argc != 3) {
+                perror("arg:");
+                exit(4);
+                //fprintf(stderr, "Error numero de argumentos:%d\n", argc);
+            } else if (atoi(argv[1]) < 1 && atoi(argv[1]) > 20) {
+                perror("arg:");
+                exit(4);
+                //fprintf(stderr, "Error numero de coches invalido\n");
+            } else if (!(!atoi(argv[2]) || atoi(argv[2]) == 1)) {
+                perror("Velocidad");
+                exit(4);
+            } else {
+                int u = 0; //variable para bucles For
+                int numCoches = atoi(argv[1]);
+                int vel = atoi(argv[2]); //Punteros funciones
+            }
+            PeekMessage( & test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
 
 
 
@@ -760,10 +764,10 @@ int main(int argc, char
                 return (1);
             }
 
-            InitializeCriticalSection(&sc1); //Control de errores?
-            InitializeCriticalSection(&critica_salida); //Control de errores?
-            InitializeCriticalSection(&critica); //Control de errores?
-            InitializeCriticalSection(&sem_cruze); //Control de errores?
+            InitializeCriticalSection( & sc1); //Control de errores?
+            InitializeCriticalSection( & critica_salida); //Control de errores?
+            InitializeCriticalSection( & critica); //Control de errores?
+            InitializeCriticalSection( & sem_cruze); //Control de errores?
 
             if (!(inicio_falonso = (DLL1Arg) GetProcAddress(hinstLib, "FALONSO2_inicio"))) {
                 PERROR("Error getProc FALONSO2_inicio");
@@ -825,7 +829,11 @@ int main(int argc, char
 
 
 
-            if((evento=CreateEvent(NULL, TRUE, FALSE,TEXT("Evento")))==NULL){
+            if ((evento = CreateEvent(NULL, TRUE, FALSE, TEXT("Evento"))) == NULL) {
+                PERROR("Creacion evento");
+                exit(1);
+            }
+            if ((pistola = CreateEvent(NULL, TRUE, FALSE, TEXT("Evento"))) == NULL) {
                 PERROR("Creacion evento");
                 exit(1);
             }
