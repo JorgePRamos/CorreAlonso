@@ -49,7 +49,7 @@ DLL3Arg velocidad = NULL;
 DLL3ArgP iniCoche = NULL, avanceCoche = NULL, cambioCarril = NULL;
 DLL0Arg pausa = NULL;
 DLL1Argvoid p_error = NULL;
-MSG test_msg, uMsg;
+MSG creaCola, uMsg, clMsg;
 int num_coche=0;
 DWORD idPadre;
 
@@ -529,11 +529,12 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
     int b;
 
     EnterCriticalSection( & critica_salida);
-    PeekMessage( & test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE);
+    PeekMessage( & creaCola, NULL, WM_USER, WM_USER, PM_NOREMOVE);
     arrayPosiciones[miIndice] = GetCurrentThreadId();
     LeaveCriticalSection( & critica_salida);
     //fprintf(stderr, "\t\tHola soy el hijo %d PID: %d\n", miIndice, GetCurrentThreadId());
-    WaitForSingleObject(evento, INFINITE);
+    if(WaitForSingleObject(evento, INFINITE)==WAIT_FAILED)
+                        PERROR("WaitForSingleObject vertical INI");
     //fprintf(stderr, "Color (%d) [%d] Entro seccion critica\n", colores[1 + (miIndice - 1) % 6], miIndice);
     EnterCriticalSection( & critica_salida);
 
@@ -567,7 +568,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
 //----------------------------------------------------------------------------------------------------------------------
 //---------- Main
 int main(int argc, char const * argv[]) {
-
+        //Check atributos
         if (argc != 3) {
             perror("arg:");
             exit(4);
@@ -582,7 +583,7 @@ int main(int argc, char const * argv[]) {
             int numCoches = atoi(argv[1]);//Ncoches
             int vel = atoi(argv[2]); //Punteros funciones
         }
-        PeekMessage( & test_msg, NULL, WM_USER, WM_USER, PM_NOREMOVE); //Creacion cola  mensaje
+        PeekMessage( & creaCola, NULL, WM_USER, WM_USER, PM_NOREMOVE); //Creacion cola  mensaje
 
 
         if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //Carga libreria en memoria del proceso
@@ -656,11 +657,11 @@ int main(int argc, char const * argv[]) {
             PERROR("Creacion evento");
             exit(1);
         }
-                if ((semH = CreateEvent(NULL, TRUE, FALSE,  NULL)) == NULL) {
+        if ((semH = CreateEvent(NULL, TRUE, FALSE,  NULL)) == NULL) {
             PERROR("Creacion semH");
             exit(1);
         }
-                if ((semV = CreateEvent(NULL, TRUE, FALSE,  NULL)) == NULL) {
+        if ((semV = CreateEvent(NULL, TRUE, FALSE,  NULL)) == NULL) {
             PERROR("Creacion semV");
             exit(1);
         }
@@ -675,6 +676,7 @@ int main(int argc, char const * argv[]) {
 
         //fprintf(stderr, "PRE-CreaHijos\n");
         creaNhijos(3, 1);
+        //creaNhijos(numCoches,vel);//descomentar cuando depurado
         //fprintf(stderr, "POST-CreaHijos\n");
 
         while (1) {//Alterdor Semaforos
@@ -698,3 +700,11 @@ int main(int argc, char const * argv[]) {
         FreeLibrary(hinstLib);//LiberaciOn de DLl
         return 0;
 }//Fin Main
+
+
+/*//eliminar mensage cola
+while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER, PM_NOREMOVE)){
+    printf(stderr,"Limpiando Cola...\n")
+}
+
+*/
