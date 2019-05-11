@@ -137,268 +137,273 @@ void semtoGreen(int sem) {
 //----------------------------------------------------------------------------------------------------------------------
 //---------- Avance_controlado
 void avance_controlado(int * carril, int * desp, int color, int v) {
-        
-    EnterCriticalSection( & critica);
-    arrayPosiciones[ * desp + ( * carril) * 137] = GetCurrentThreadId();//Guarda ThreadID a Array
+        EnterCriticalSection( & critica);
+        arrayPosiciones[ * desp + ( * carril) * 137] = GetCurrentThreadId();
+        if ( * desp > 137 || * desp < 0 || * carril < 0 || * carril > 1 || color < 0 || color > 7) {
+            LeaveCriticalSection( & critica);
+            raise(SIGINT);
+        } //Error en el paso de argumentos
 
-    if ( * desp > 137 || * desp < 0 || * carril < 0 || * carril > 1 || color < 0 || color > 7) {
-        LeaveCriticalSection( & critica);
-        raise(SIGINT);
-    } //Error en el paso de argumentos
+        //fprintf(stderr, "[%d] Color (%d) *%d+(*%d)*137 = %d \n", GetCurrentThreadId(), color, * desp, * carril, * desp + ( * carril) * 137);
+        //fprintf(stderr, "[%d] Color (%d)Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);
 
-    //fprintf(stderr, "[%d] Color (%d) *%d+(*%d)*137 = %d \n", GetCurrentThreadId(), color, * desp, * carril, * desp + ( * carril) * 137);
-    //fprintf(stderr, "[%d] Color (%d)Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);
-
-    int dep_temp = * desp, pos_2 = (((( * desp) + 136) % 137) + (( * carril) * 137));
+        int dep_temp = * desp, pos_2 = (((( * desp) + 136) % 137) + (( * carril) * 137));
 
         //fprintf(stderr, "Color (%d) [%d]  COMPRUEBO POSICION SIGUIENTE %d (%d+1%%137+%d*137)\n", color, GetCurrentThreadId(), *desp + 1 % 137 + *carril *137, *desp, *carril);
 
 
-    if (!(posOcup( * carril, ( * desp + 1) % 137))) {
+        if (!(posOcup( * carril, ( * desp + 1) % 137))) {
 
-        if ( * desp == 21 && * carril) {
+            if ( * desp == 21 && * carril) {
 
-            EnterCriticalSection( & critica_salida);
-            //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-            //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+                EnterCriticalSection( & critica_salida);
+                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
 
-            if ((estadoSem(VERTICAL) == ROJO || estadoSem(VERTICAL) == AMARILLO)) {
-                //fprintf(stderr, "[%d] Color (%d) Espero semaforo VERTICAL (%d)\n", GetCurrentThreadId(), color, 300); //#semaforo
+                if ((estadoSem(VERTICAL) == ROJO || estadoSem(VERTICAL) == AMARILLO)) {
+                    //fprintf(stderr, "[%d] Color (%d) Espero semaforo VERTICAL (%d)\n", GetCurrentThreadId(), color, 300); //#semaforo
 
-                LeaveCriticalSection( & critica);
+                    LeaveCriticalSection( & critica);
 
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
-                LeaveCriticalSection( & critica_salida);
-                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
+                    LeaveCriticalSection( & critica_salida);
+                    //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
 
-                if((WaitForSingleObject(semV, INFINITE))==WAIT_FAILED)
-                    PERROR("WaitForSingleObjectA");
-                //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
+                    if((WaitForSingleObject(semV, INFINITE))==WAIT_FAILED)
+                        PERROR("WaitForSingleObjectA");
+                    //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
 
                     //EnterCriticalSection( & sem_cruze);
 
-                if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
-                PERROR("WaitForSingleObject Vertical 1");
+                    if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
+                    PERROR("WaitForSingleObject Vertical 1");
 
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-                EnterCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-
-            }else if (estadoSem(VERTICAL) == VERDE) {
-                //fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", GetCurrentThreadId(), color); //#semaforo
-
-                LeaveCriticalSection( & critica_salida);
-                //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas\n", GetCurrentThreadId()); //#critica
-
-                LeaveCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId()); //#critica
-
-                //EnterCriticalSection( & sem_cruze);
-
-                if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
-                    PERROR("WaitForSingleObject vertical 2");
-                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
                     //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
-                EnterCriticalSection( & critica);
-
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-            } else
-                raise(SIGINT);
-
-        } else if ( * desp == 20 && !( * carril)) {
-
-            EnterCriticalSection( & critica_salida);
-            //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-            //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-            if ((estadoSem(VERTICAL) == ROJO || estadoSem(VERTICAL) == AMARILLO)) { 
-                //fprintf(stderr, "[%d] Color (%d) Espero semaforo VERTICAL (%d)\n", GetCurrentThreadId(), color, 301); //#semaforo
-
-                LeaveCriticalSection( & critica);
-
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-                LeaveCriticalSection( & critica_salida);
-                 //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
-
-
-                if((WaitForSingleObject(semV, INFINITE))==WAIT_FAILED)
-                    PERROR("WaitForSingleObjectB");
-                //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
-
-                //EnterCriticalSection( & sem_cruze);
-
-                if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
-                    PERROR("WaitForSingleObject vertical 3");
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-                EnterCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-            } else if (estadoSem(VERTICAL) == VERDE) {
-                //fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", GetCurrentThreadId(), color); //#semaforo
-
-                LeaveCriticalSection( & critica_salida);
-                //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas\n", GetCurrentThreadId()); //#critica
-
-                LeaveCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId()); //#critica
-
-                //EnterCriticalSection( & sem_cruze);
-
-                if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
-                    PERROR("WaitForSingleObject vertical 4");
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-                EnterCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-            } else
-                raise(SIGINT);
-
-        } else if ( * desp == 97 && * carril) {
-            EnterCriticalSection( & critica_salida);
-            //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-            //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-
-            if (estadoSem(HORIZONTAL) == ROJO || estadoSem(HORIZONTAL) == AMARILLO) {
-                LeaveCriticalSection( & critica);
-
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-                LeaveCriticalSection( & critica_salida);
-                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
-
-
-                if((WaitForSingleObject(semH, INFINITE))==WAIT_FAILED)//Espera Evento VErdeH
-                    PERROR("WaitForSingleObject C");
-                //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
-                //EnterCriticalSection( & sem_cruze);
-
-                if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
-                    PERROR("WaitForSingleObject HORIZONTAL 1");
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-
-                EnterCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-
-            } else if (estadoSem(HORIZONTAL) == VERDE) {
-                fprintf(stderr,"******************************\n");
-                fprintf(stderr,"\n");
-                //fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", GetCurrentThreadId(), color); //#semaforo
-
-                LeaveCriticalSection( & critica_salida);
-                //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas\n", GetCurrentThreadId()); //#critica
-
-                LeaveCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId()); //#critica
-
-                //EnterCriticalSection( & sem_cruze);
-
-                if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
-                    PERROR("WaitForSingleObject HORIZONTAL 2");
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-                EnterCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-
-            } else
-                raise(SIGINT);
-
-        } else if ( * desp == 102 && ! * carril) {
-            EnterCriticalSection( & critica_salida);
-            //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-            //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-                        
-
-            if (estadoSem(HORIZONTAL) == ROJO || estadoSem(HORIZONTAL) == AMARILLO) {
-                //fprintf(stderr, "[%d] Color (%d) Espero semaforo HORIZONTAL (%d)\n", GetCurrentThreadId(), color, 303); //#semaforo
-
-                LeaveCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-
-                LeaveCriticalSection( & critica_salida);
-
-                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
-
-
-                if((WaitForSingleObject(semH, INFINITE))==WAIT_FAILED)
-                    PERROR("WaitForSingleObjectD");
-                //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
-
-                if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
-                    PERROR("WaitForSingleObject HORIZONTAL 3");
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-
-
-                EnterCriticalSection( & critica);
+                    EnterCriticalSection( & critica);
                     //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
                     //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
-            } else if (estadoSem(HORIZONTAL) == VERDE) {
-                fprintf(stderr,"******************************\n");
-                fprintf(stderr,"\n");
-                //fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", GetCurrentThreadId(), color); //#semaforo
 
-                LeaveCriticalSection( & critica_salida);
-                //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas\n", GetCurrentThreadId()); //#critica
+                } else if (estadoSem(VERTICAL) == VERDE) {
+                    //fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", GetCurrentThreadId(), color); //#semaforo
 
-                LeaveCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId()); //#critica
+                    LeaveCriticalSection( & critica_salida);
+                    //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas\n", GetCurrentThreadId()); //#critica
 
-                //EnterCriticalSection( & sem_cruze);
+                    LeaveCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId()); //#critica
 
-                if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
-                    PERROR("WaitForSingleObject HORIZONTAL 4");
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+                    //EnterCriticalSection( & sem_cruze);
 
-                EnterCriticalSection( & critica);
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
-                //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+                    if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
+                        PERROR("WaitForSingleObject vertical 2");
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
-            } else{
-                raise(SIGINT);
+                    EnterCriticalSection( & critica);
+
+
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+
+                } else
+                    raise(SIGINT);
+
+            } else if ( * desp == 20 && !( * carril)) {
+
+
+                EnterCriticalSection( & critica_salida);
+                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+                if ((estadoSem(VERTICAL) == ROJO || estadoSem(VERTICAL) == AMARILLO)) { 
+                    //fprintf(stderr, "[%d] Color (%d) Espero semaforo VERTICAL (%d)\n", GetCurrentThreadId(), color, 301); //#semaforo
+
+                    LeaveCriticalSection( & critica);
+
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+
+                    LeaveCriticalSection( & critica_salida);
+                    //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
+
+
+                    if((WaitForSingleObject(semV, INFINITE))==WAIT_FAILED)
+                        PERROR("WaitForSingleObjectB");
+                    //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
+
+                    //EnterCriticalSection( & sem_cruze);
+
+                    if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
+                        PERROR("WaitForSingleObject vertical 3");
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+
+                    EnterCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+                } else if (estadoSem(VERTICAL) == VERDE) {
+                    //fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", GetCurrentThreadId(), color); //#semaforo
+
+                    LeaveCriticalSection( & critica_salida);
+                    //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas\n", GetCurrentThreadId()); //#critica
+
+                    LeaveCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId()); //#critica
+
+                    //EnterCriticalSection( & sem_cruze);
+
+                    if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
+                        PERROR("WaitForSingleObject vertical 4");
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+                    EnterCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+                } else
+                    raise(SIGINT);
+
+            } else if ( * desp == 97 && * carril) {
+                EnterCriticalSection( & critica_salida);
+                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+
+                if (estadoSem(HORIZONTAL) == ROJO || estadoSem(HORIZONTAL) == AMARILLO) {
+                    LeaveCriticalSection( & critica);
+
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+                    LeaveCriticalSection( & critica_salida);
+                    //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
+
+
+                    if((WaitForSingleObject(semH, INFINITE))==WAIT_FAILED)//Espera Evento VErdeH
+                        PERROR("WaitForSingleObject C");
+                    //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
+
+
+                    //EnterCriticalSection( & sem_cruze);
+
+                    if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
+                        PERROR("WaitForSingleObject HORIZONTAL 1");
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+
+                    EnterCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+
+                } else if (estadoSem(HORIZONTAL) == VERDE) {
+                      fprintf(stderr,"******************************\n");
+                                fprintf(stderr,"\n");
+                    //fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", GetCurrentThreadId(), color); //#semaforo
+
+                    LeaveCriticalSection( & critica_salida);
+                    //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas\n", GetCurrentThreadId()); //#critica
+
+                    LeaveCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId()); //#critica
+
+                    //EnterCriticalSection( & sem_cruze);
+
+                    if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
+                        PERROR("WaitForSingleObject HORIZONTAL 2");
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+                    EnterCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+
+                } else
+                    raise(SIGINT);
+
+            } else if ( * desp == 102 && ! * carril) {
+                EnterCriticalSection( & critica_salida);
+                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+                              
+
+                if (estadoSem(HORIZONTAL) == ROJO || estadoSem(HORIZONTAL) == AMARILLO) {
+                    //fprintf(stderr, "[%d] Color (%d) Espero semaforo HORIZONTAL (%d)\n", GetCurrentThreadId(), color, 303); //#semaforo
+
+                    LeaveCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+
+                    LeaveCriticalSection( & critica_salida);
+
+                    //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica 
+
+
+                    if((WaitForSingleObject(semH, INFINITE))==WAIT_FAILED)
+                    PERROR("WaitForSingleObjectD");
+                    //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, 300); //#mensaje
+
+                    if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
+                        PERROR("WaitForSingleObject HORIZONTAL 3");
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+
+                    EnterCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+                } else if (estadoSem(HORIZONTAL) == VERDE) {
+                      fprintf(stderr,"******************************\n");
+                                fprintf(stderr,"\n");
+                    //fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", GetCurrentThreadId(), color); //#semaforo
+
+                    LeaveCriticalSection( & critica_salida);
+                    //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida critica_salida critica +1 pajitas\n", GetCurrentThreadId()); //#critica
+
+                    LeaveCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId()); //#critica
+
+                    //EnterCriticalSection( & sem_cruze);
+
+                    if((WaitForSingleObject(sem_cruze, INFINITE))==WAIT_FAILED)
+                        PERROR("WaitForSingleObject HORIZONTAL 4");
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+                    EnterCriticalSection( & critica);
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
+                    //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+
+                } else
+                    raise(SIGINT);
             }
-
             //fprintf(stderr, "[%d] Color (%d) Avanzo a posicion (%d)\n", GetCurrentThreadId(), color, * desp + 1 % 137 + * carril * 137); //#posicion
             arrayPosiciones[ * desp + ( * carril) * 137] = 0;
             if (avanceCoche(carril, desp, color) == -1) {
@@ -410,9 +415,9 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             if (( * desp == 111 && ! * carril) || ( * desp == 24 && ! * carril) || ( * desp == 106 && * carril) || ( * desp == 25 && * carril)) {
 
                 //LeaveCriticalSection( & sem_cruze);
-                if(!(ReleaseSemaphore(sem_cruze, 1, NULL)))
-                            PERROR("ReleaseSemaphore");
-                                
+ if(!(ReleaseSemaphore(sem_cruze, 1, NULL)))
+            PERROR("ReleaseSemaphore");
+                
                 //fprintf(stderr, "[%d] Color (%d) Salida sem_cruze critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
                 //fprintf(stderr, "[%d] Color (%d) Salida sem_cruze critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
@@ -425,12 +430,12 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             if (posOcup( * carril, ((( * desp) + 135) % 137))) {
 
                 //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, GetCurrentThreadId(), pos_2);
-               // EnterCriticalSection( & sc1);
+                EnterCriticalSection( & sc1);
                 if (PostThreadMessageA(arrayPosiciones[pos_2], WM_APP + 3, 0, 0) == 0) {
                     PERROR("ERROR AL MSGSND (pos -2 ocupada post avance)");
                     raise(SIGINT);
                 }
-                //LeaveCriticalSection( & sc1);
+                LeaveCriticalSection( & sc1);
 
                 //fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", GetCurrentThreadId(), color, pos_2); //#mensaje
             }
@@ -439,22 +444,25 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril))) {
 
                 //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, GetCurrentThreadId(), pos_cambio);
-                 // EnterCriticalSection( & sc1);
+                EnterCriticalSection( & sc1);
                 if (PostThreadMessageA(arrayPosiciones[pos_cambio], WM_APP + 3, 0, 0) == 0) {
                     //fprintf(stderr, " [%d] Pos actual: %d carril %d pos cambio %d [%d]=%d\n", GetCurrentThreadId(), * desp, * carril, pos_cambio, cambio_carril_cal((( * desp) + 136) % 137, * carril), arrayPosiciones[cambio_carril_cal((( * desp) + 136) % 137, * carril)]); //#mensaje
                     PERROR("ERROR AL MSGSND (pos carril opuesto ocupada)");
                     raise(SIGINT);
                 }
-               // LeaveCriticalSection( & sc1);
+                LeaveCriticalSection( & sc1);
+
                 //fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", GetCurrentThreadId(), color, pos_cambio); //#mensaje
+
             }
             LeaveCriticalSection( & critica);
             //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
             //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica
 
+
             velocidad(50, * carril, * desp);
 
-    } else {//Ocupada Intento cambio carril
+        } else {
             //fprintf(stderr, "[%d] Color (%d) Posicion ocupada, compruebo cambio de carril: %d\n", GetCurrentThreadId(), color, * desp); //#posicion
 
             if (!posOcup(! * carril, cambio_carril_cal( * desp, * carril))) {
@@ -467,24 +475,25 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 LeaveCriticalSection( & critica);
                 //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
                 //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
-                } else {
-                /*//eliminar mensage cola
-                while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER, PM_NOREMOVE)){
-                    printf(stderr,"Limpiando Cola...\n")
-                }
-                */
+
+            } else {
+
+
                 LeaveCriticalSection( & critica);
+
                 //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
                 //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica 
+
                 if (GetMessage( & uMsg, NULL, WM_APP + ( * desp + * carril * 137) + 1, ( * desp + * carril * 137) + 1) == -1) {
+
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
                 //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
             }
-    }
+        }
 } //Fin Avance_controlado
-}
+
 //----------------------------------------------------------------------------------------------------------------------
 //---------- CreaNhijos
 int creaNhijos(int n, int v) {
@@ -691,3 +700,11 @@ int main(int argc, char const * argv[]) {
         FreeLibrary(hinstLib);//LiberaciOn de DLl
         return 0;
 }//Fin Main
+
+
+/*//eliminar mensage cola
+while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER, PM_NOREMOVE)){
+    printf(stderr,"Limpiando Cola...\n")
+}
+
+*/
