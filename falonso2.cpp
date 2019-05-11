@@ -22,14 +22,20 @@ typedef void (*DLL1Argvoid)(const char *);
 CRITICAL_SECTION sc1, critica_salida ,critica;
 DWORD WINAPI funcionHilos (LPVOID pEstruct);
 DWORD arrayPosiciones [272];
-HANDLE evento, semH, semV;
-
+//HANDLE evento, semH, semV;
+SECURITY_ATTRIBUTES test;
 HANDLE sem_cruze = CreateSemaphore(
     NULL, // default security attributes
     6, // initial count
     6, // maximum count
     NULL);
 
+    HANDLE evento = CreateEvent(NULL, TRUE, FALSE, NULL);//Crear para solo para este hilo NO es heredable
+      
+    HANDLE semH = CreateEvent(NULL, TRUE, FALSE,  NULL);
+        
+   HANDLE semV = CreateEvent(NULL, TRUE, FALSE,  NULL);
+      
 
 unsigned int  contador = 0;
 typedef struct Coche {
@@ -653,18 +659,7 @@ int main(int argc, char const * argv[]) {
         }
 
     //Eventos
-        if ((evento = CreateEvent(NULL, TRUE, FALSE, NULL)) == NULL) {
-            PERROR("Creacion evento");
-            exit(1);
-        }
-        if ((semH = CreateEvent(NULL, TRUE, FALSE,  NULL)) == NULL) {
-            PERROR("Creacion semH");
-            exit(1);
-        }
-        if ((semV = CreateEvent(NULL, TRUE, FALSE,  NULL)) == NULL) {
-            PERROR("Creacion semV");
-            exit(1);
-        }
+       
 
     //Inicio comportamiento
         inicio_falonso(1);//Inicio Circuito
