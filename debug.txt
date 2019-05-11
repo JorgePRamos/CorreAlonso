@@ -1,4 +1,2 @@
 En DllMain
-WaitForSingleObject C: (6) Controlador no válido.
-
 ^C
