@@ -1,0 +1,6 @@
+En DllMain
+WaitForSingleObject C: (6) Controlador no válido.
+
+ERROR AL AVANZAR COCHE: (6) Controlador no válido.
+
+^C
