@@ -1,4 +1,4 @@
 En DllMain
-******************************
 
-^C
+ERROR AL MSGSND (pos -2 ocupada post avance): (1444) El identificador del subproceso no es válido.
+

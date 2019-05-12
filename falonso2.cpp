@@ -159,7 +159,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 
 
         if (!(posOcup( * carril, ( * desp + 1) % 137))) {
-
+        
             if ( * desp == 21 && * carril) {
 
                 EnterCriticalSection( & critica_salida);
@@ -322,7 +322,6 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 
 
                 } else if (estadoSem(HORIZONTAL) == VERDE) {
-                      fprintf(stderr,"******************************\n");
                                 fprintf(stderr,"\n");
                     //fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", GetCurrentThreadId(), color); //#semaforo
 
@@ -353,7 +352,6 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 EnterCriticalSection( & critica_salida);
                 //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(sem_cruze, 0, GETVAL));//#critica getval
                 //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
-                              
 
                 if (estadoSem(HORIZONTAL) == ROJO || estadoSem(HORIZONTAL) == AMARILLO) {
                     //fprintf(stderr, "[%d] Color (%d) Espero semaforo HORIZONTAL (%d)\n", GetCurrentThreadId(), color, 303); //#semaforo
@@ -384,7 +382,6 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     //fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
                 } else if (estadoSem(HORIZONTAL) == VERDE) {
-                      fprintf(stderr,"******************************\n");
                                 fprintf(stderr,"\n");
                     //fprintf(stderr, "[%d] Color (%d) Semaforo VERTICAL (VERDE)\n", GetCurrentThreadId(), color); //#semaforo
 
@@ -442,6 +439,8 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     raise(SIGINT);
                 }
                 LeaveCriticalSection( & sc1);
+//os_2 = (((( * desp) + 136) % 137) + (( * carril) * 137));// lo que esta ahora
+//os_2 = ((((( * desp) + 136) % 137)+1 % 136) + (( * carril) * 136));// lo que edeberia ser de 0 - 136 & 137 - 272
 
                 //fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", GetCurrentThreadId(), color, pos_2); //#mensaje
             }
@@ -495,7 +494,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     PERROR("[GetMessage] pausa Sem");
                     raise(SIGINT);
                 }
-                //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
+                fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
             }
         }
 } //Fin Avance_controlado
@@ -658,8 +657,7 @@ int main(int argc, char const * argv[]) {
             return (2);
         }
 
-    //Eventos
-       
+
 
     //Inicio comportamiento
         inicio_falonso(1);//Inicio Circuito
