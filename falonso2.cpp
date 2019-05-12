@@ -376,7 +376,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     PERROR("ERROR AL MSGSND (pos -2 )");
                     raise(SIGINT);
                 }
-                //fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", GetCurrentThreadId(), color, pos_2); //#mensaje
+                fprintf(stderr, " [%d] Color (%d) Envio mensaje POS_2: [%d]\n", GetCurrentThreadId(), color, pos_2); //#mensaje
             }
 
             //pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137)) + 1
@@ -384,12 +384,13 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 
                 //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, GetCurrentThreadId(), pos_cambio);
                 if (PostThreadMessageA(arrayPosiciones[pos_cambio], WM_USER, 3, 3) == 0) {
-                    //fprintf(stderr, " [%d] Pos actual: %d carril %d pos cambio %d [%d]=%d\n", GetCurrentThreadId(), * desp, * carril, pos_cambio, cambio_carril_cal((( * desp) + 136) % 137, * carril), arrayPosiciones[cambio_carril_cal((( * desp) + 136) % 137, * carril)]); //#mensaje
                     PERROR("ERROR AL MSGSND (pos carril opuesto ocupada)");
                 }
+                fprintf(stderr, "Color (%d) [%d] Envio Mesaje pos_cambio: %d\n", color, GetCurrentThreadId(), pos_cambio);
+
 
                 //Limpieza Cola
-                while(PeekMessage( & clMsg, NULL, 3, 3, PM_NOREMOVE)){
+                while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER, PM_REMOVE)){
                     fprintf(stderr,"Limpiando Cola...\n");
                 }
                 LeaveCriticalSection( & sc1);
@@ -398,7 +399,6 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
 
             }
             LeaveCriticalSection( & critica);
-            //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color, semctl(critica, 0, GETVAL));//#critica getval
             //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica
 
             velocidad(50, * carril, * desp);
@@ -421,10 +421,9 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 LeaveCriticalSection( & critica);
                 //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica 
 
+                fprintf(stderr, " [%d] Color (%d) ESPERANDO Mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
                 if (GetMessage( & uMsg, NULL,3, 3) == -1) {
-
                     PERROR("[GetMessage] pausa Sem");
-                    raise(SIGINT);
                 }
                 fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
             }
