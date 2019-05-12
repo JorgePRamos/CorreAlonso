@@ -1,5 +1,2 @@
 En DllMain
-
-
-
 ^C

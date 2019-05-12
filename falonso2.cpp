@@ -20,8 +20,7 @@ typedef void (*DLL1Argvoid)(const char *);
 
 CRITICAL_SECTION sc1, critica_salida ,critica;
 DWORD WINAPI funcionHilos (LPVOID pEstruct);
-DWORD arrayPosiciones [274];//272
-//HANDLE evento, semH, semV;
+DWORD arrayPosiciones [274];
 SECURITY_ATTRIBUTES test;
 HANDLE sem_cruze = CreateSemaphore(
     NULL, // default security attributes
@@ -29,12 +28,12 @@ HANDLE sem_cruze = CreateSemaphore(
     6, // maximum count
     NULL);
 
-    HANDLE evento = CreateEvent(NULL, TRUE, FALSE, NULL);//Crear para solo para este hilo NO es heredable
-      
-    HANDLE semH = CreateEvent(NULL, TRUE, FALSE,  NULL);
+HANDLE evento = CreateEvent(NULL, TRUE, FALSE, NULL);//Inicio Evento
+
+HANDLE semH = CreateEvent(NULL, TRUE, FALSE,  NULL);
         
-   HANDLE semV = CreateEvent(NULL, TRUE, FALSE,  NULL);
-      
+HANDLE semV = CreateEvent(NULL, TRUE, FALSE,  NULL);
+
 
 unsigned int  contador = 0;
 typedef struct Coche {
@@ -259,7 +258,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 } else
                     raise(SIGINT);
 
-            } else if ( * desp == 97 && * carril) {//dep =97 y CArril = Izquierdo
+            } else if ( * desp == 96 && * carril) {//dep =96 y CArril = Izquierdo
                 EnterCriticalSection( & critica_salida);
                 //fprintf(stderr, "[%d] Color (%d) Entrada critica_salida critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
 
@@ -377,7 +376,6 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     PERROR("ERROR AL MSGSND (pos -2 )");
                     raise(SIGINT);
                 }
-                LeaveCriticalSection( & sc1);
                 //fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", GetCurrentThreadId(), color, pos_2); //#mensaje
             }
 
@@ -385,11 +383,15 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             if (posOcup(! * carril, cambio_carril_cal((( * desp) + 136) % 137, * carril))) {
 
                 //fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, GetCurrentThreadId(), pos_cambio);
-                EnterCriticalSection( & sc1);
                 if (PostThreadMessageA(arrayPosiciones[pos_cambio], WM_USER, 3, 3) == 0) {
                     //fprintf(stderr, " [%d] Pos actual: %d carril %d pos cambio %d [%d]=%d\n", GetCurrentThreadId(), * desp, * carril, pos_cambio, cambio_carril_cal((( * desp) + 136) % 137, * carril), arrayPosiciones[cambio_carril_cal((( * desp) + 136) % 137, * carril)]); //#mensaje
                     PERROR("ERROR AL MSGSND (pos carril opuesto ocupada)");
                 }
+                /*NO VA AQUIIII
+                //eliminar mensage cola
+                while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER, PM_NOREMOVE)){
+                    fprintf(stderr,"Limpiando Cola...\n");
+                }*/
                 LeaveCriticalSection( & sc1);
 
                 //fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", GetCurrentThreadId(), color, pos_cambio); //#mensaje
@@ -621,11 +623,3 @@ int main(int argc, char const * argv[]) {
         FreeLibrary(hinstLib);//LiberaciOn de DLl
         return 0;
 }//Fin Main
-
-
-/*//eliminar mensage cola
-while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER, PM_NOREMOVE)){
-    printf(stderr,"Limpiando Cola...\n")
-}
-
-*/
