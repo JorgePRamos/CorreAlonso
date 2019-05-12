@@ -402,7 +402,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             LeaveCriticalSection( & critica);
             //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica
 
-            velocidad(50, * carril, * desp);
+            velocidad(10, * carril, * desp);
 
         } else {
             //fprintf(stderr, "[%d] Color (%d) Posicion ocupada, compruebo cambio de carril: %d\n", GetCurrentThreadId(), color, * desp); //#posicion
