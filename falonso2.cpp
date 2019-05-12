@@ -97,18 +97,12 @@ void semtoRed(int sem) {
     
     //fprintf(stderr, "Reset Vertical\n");
 
-    if(ResetEvent(semV)==0)
-        {PERROR("Reset event");
-        raise(SIGINT);
-        }
+    ResetEvent(semV);
     }else if(sem==HORIZONTAL)
     {//horizontal
     //fprintf(stderr, "Reset Horizontal\n");
 
-    if(ResetEvent(semH)==0)
-        {PERROR("Reset event");
-        raise(SIGINT);
-        }
+    ResetEvent(semH);
     }
 
     //fprintf(stderr, "[%d]-Padre Enter critica_salida critica -1 pajitas\n", GetCurrentThreadId());

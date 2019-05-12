@@ -1,673 +1,1453 @@
 En DllMain
- [27116] Color (0)  #### Posicion LIBRE: [272] ####
- [22932] Color (1)  #### Posicion LIBRE: [135] ####
- [26656] Color (2)  #### Posicion LIBRE: [137] ####
- [26656] Color (2) Envio mensaje POS_2-----> [135]: [22932]
-Color (2) [26656] Envio Mesaje pos_cambio: 272
- [26656] Color (2)  #### Posicion LIBRE: [1] ####
- [26656] Color (2)  #### Posicion LIBRE: [2] ####
- [27116] Color (0)  #### Posicion LIBRE: [273] ####
- [22932] Color (1)  #### Posicion LIBRE: [136] ####
- [26656] Color (2)  #### Posicion LIBRE: [3] ####
- [27116] Color (0)  #### Posicion LIBRE: [274] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 136
-Limpiando Cola...
- [22932] Color (1)  #### Posicion LIBRE: [137] ####
- [26656] Color (2)  #### Posicion LIBRE: [4] ####
- [27116] Color (0)  #### Posicion LIBRE: [138] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 0
- [22932] Color (1)  #### Posicion LIBRE: [1] ####
- [26656] Color (2)  #### Posicion LIBRE: [5] ####
- [27116] Color (0)  #### Posicion LIBRE: [139] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 1
- [22932] Color (1)  #### Posicion LIBRE: [2] ####
- [26656] Color (2)  #### Posicion LIBRE: [6] ####
- [27116] Color (0)  #### Posicion LIBRE: [140] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 2
- [22932] Color (1)  #### Posicion LIBRE: [3] ####
- [26656] Color (2)  #### Posicion LIBRE: [7] ####
- [27116] Color (0)  #### Posicion LIBRE: [141] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 3
- [22932] Color (1)  #### Posicion LIBRE: [4] ####
- [26656] Color (2)  #### Posicion LIBRE: [8] ####
- [27116] Color (0)  #### Posicion LIBRE: [142] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 4
- [22932] Color (1)  #### Posicion LIBRE: [5] ####
- [26656] Color (2)  #### Posicion LIBRE: [9] ####
- [27116] Color (0)  #### Posicion LIBRE: [143] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 5
- [22932] Color (1)  #### Posicion LIBRE: [6] ####
- [26656] Color (2)  #### Posicion LIBRE: [10] ####
- [27116] Color (0)  #### Posicion LIBRE: [144] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 6
- [22932] Color (1)  #### Posicion LIBRE: [7] ####
- [26656] Color (2)  #### Posicion LIBRE: [11] ####
- [27116] Color (0)  #### Posicion LIBRE: [145] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 7
- [22932] Color (1)  #### Posicion LIBRE: [8] ####
- [26656] Color (2)  #### Posicion LIBRE: [12] ####
- [27116] Color (0)  #### Posicion LIBRE: [146] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 8
- [22932] Color (1)  #### Posicion LIBRE: [9] ####
- [26656] Color (2)  #### Posicion LIBRE: [13] ####
- [27116] Color (0)  #### Posicion LIBRE: [147] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 9
- [22932] Color (1)  #### Posicion LIBRE: [10] ####
- [26656] Color (2)  #### Posicion LIBRE: [14] ####
- [27116] Color (0)  #### Posicion LIBRE: [148] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 10
- [22932] Color (1)  #### Posicion LIBRE: [11] ####
- [26656] Color (2)  #### Posicion LIBRE: [15] ####
- [27116] Color (0)  #### Posicion LIBRE: [149] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 11
- [22932] Color (1)  #### Posicion LIBRE: [12] ####
- [27116] Color (0)  #### Posicion LIBRE: [150] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 12
- [22932] Color (1)  #### Posicion LIBRE: [13] ####
- [27116] Color (0)  #### Posicion LIBRE: [151] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 13
- [22932] Color (1)  #### Posicion LIBRE: [14] ####
- [26656] Color (2)  #### Posicion LIBRE: [16] ####
- [26656] Color (2) Envio mensaje POS_2-----> [14]: [22932]
- [27116] Color (0)  #### Posicion LIBRE: [152] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 14
- [22932] Color (1)  #### Posicion LIBRE: [15] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 152
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
- [26656] Color (2)  #### Posicion LIBRE: [17] ####
- [26656] Color (2) Envio mensaje POS_2-----> [15]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [16] ####
- [27116] Color (0)  #### Posicion LIBRE: [153] ####
- [26656] Color (2)  #### Posicion LIBRE: [18] ####
- [26656] Color (2) Envio mensaje POS_2-----> [16]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [17] ####
- [27116] Color (0)  #### Posicion LIBRE: [154] ####
- [26656] Color (2)  #### Posicion LIBRE: [19] ####
- [26656] Color (2) Envio mensaje POS_2-----> [17]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [18] ####
- [27116] Color (0)  #### Posicion LIBRE: [155] ####
- [26656] Color (2)  #### Posicion LIBRE: [20] ####
- [26656] Color (2) Envio mensaje POS_2-----> [18]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [19] ####
- [27116] Color (0)  #### Posicion LIBRE: [156] ####
- [26656] Color (2)  #### Posicion LIBRE: [21] ####
- [26656] Color (2) Envio mensaje POS_2-----> [19]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [20] ####
- [27116] Color (0)  #### Posicion LIBRE: [157] ####
- [26656] Color (2)  #### Posicion LIBRE: [22] ####
- [26656] Color (2) Envio mensaje POS_2-----> [20]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [21] ####
- [27116] Color (0)  #### Posicion LIBRE: [158] ####
- [26656] Color (2)  #### Posicion LIBRE: [23] ####
- [26656] Color (2) Envio mensaje POS_2-----> [21]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [22] ####
- [27116] Color (0)  #### Posicion LIBRE: [159] ####
- [26656] Color (2)  #### Posicion LIBRE: [24] ####
- [26656] Color (2) Envio mensaje POS_2-----> [22]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [23] ####
- [27116] Color (0)  #### Posicion LIBRE: [160] ####
- [26656] Color (2)  #### Posicion LIBRE: [25] ####
- [26656] Color (2) Envio mensaje POS_2-----> [23]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [24] ####
- [27116] Color (0)  #### Posicion LIBRE: [161] ####
- [26656] Color (2)  #### Posicion LIBRE: [26] ####
- [26656] Color (2) Envio mensaje POS_2-----> [24]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [25] ####
- [27116] Color (0)  #### Posicion LIBRE: [162] ####
- [26656] Color (2)  #### Posicion LIBRE: [27] ####
- [26656] Color (2) Envio mensaje POS_2-----> [25]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [26] ####
- [27116] Color (0)  #### Posicion LIBRE: [163] ####
- [26656] Color (2)  #### Posicion LIBRE: [28] ####
- [26656] Color (2) Envio mensaje POS_2-----> [26]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [27] ####
- [27116] Color (0)  #### Posicion LIBRE: [164] ####
- [26656] Color (2)  #### Posicion LIBRE: [29] ####
- [26656] Color (2) Envio mensaje POS_2-----> [27]: [22932]
- [27116] Color (0)  #### Posicion LIBRE: [165] ####
- [22932] Color (1)  #### Posicion LIBRE: [28] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 165
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
- [26656] Color (2)  #### Posicion LIBRE: [30] ####
- [26656] Color (2) Envio mensaje POS_2-----> [28]: [22932]
- [26656] Color (2)  #### Posicion LIBRE: [31] ####
- [26656] Color (2)  #### Posicion LIBRE: [32] ####
- [22932] Color (1)  #### Posicion LIBRE: [29] ####
- [27116] Color (0)  #### Posicion LIBRE: [166] ####
- [26656] Color (2)  #### Posicion LIBRE: [33] ####
- [22932] Color (1)  #### Posicion LIBRE: [30] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 166
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [167] ####
- [26656] Color (2)  #### Posicion LIBRE: [34] ####
- [22932] Color (1)  #### Posicion LIBRE: [31] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 167
- [27116] Color (0)  #### Posicion LIBRE: [168] ####
- [26656] Color (2)  #### Posicion LIBRE: [35] ####
- [22932] Color (1)  #### Posicion LIBRE: [32] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 168
- [27116] Color (0)  #### Posicion LIBRE: [169] ####
- [26656] Color (2)  #### Posicion LIBRE: [36] ####
- [22932] Color (1)  #### Posicion LIBRE: [33] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 169
- [27116] Color (0)  #### Posicion LIBRE: [170] ####
- [26656] Color (2)  #### Posicion LIBRE: [37] ####
- [22932] Color (1)  #### Posicion LIBRE: [34] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 170
- [27116] Color (0)  #### Posicion LIBRE: [171] ####
- [26656] Color (2)  #### Posicion LIBRE: [38] ####
- [22932] Color (1)  #### Posicion LIBRE: [35] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 171
- [27116] Color (0)  #### Posicion LIBRE: [172] ####
- [26656] Color (2)  #### Posicion LIBRE: [39] ####
- [22932] Color (1)  #### Posicion LIBRE: [36] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 172
- [27116] Color (0)  #### Posicion LIBRE: [173] ####
- [26656] Color (2)  #### Posicion LIBRE: [40] ####
- [22932] Color (1)  #### Posicion LIBRE: [37] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 173
- [27116] Color (0)  #### Posicion LIBRE: [174] ####
- [26656] Color (2)  #### Posicion LIBRE: [41] ####
- [22932] Color (1)  #### Posicion LIBRE: [38] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 174
- [27116] Color (0)  #### Posicion LIBRE: [175] ####
- [26656] Color (2)  #### Posicion LIBRE: [42] ####
- [22932] Color (1)  #### Posicion LIBRE: [39] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 175
- [27116] Color (0)  #### Posicion LIBRE: [176] ####
- [26656] Color (2)  #### Posicion LIBRE: [43] ####
- [22932] Color (1)  #### Posicion LIBRE: [40] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 176
- [27116] Color (0)  #### Posicion LIBRE: [177] ####
- [26656] Color (2)  #### Posicion LIBRE: [44] ####
- [22932] Color (1)  #### Posicion LIBRE: [41] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 177
- [27116] Color (0)  #### Posicion LIBRE: [178] ####
- [26656] Color (2)  #### Posicion LIBRE: [45] ####
- [22932] Color (1)  #### Posicion LIBRE: [42] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 178
- [27116] Color (0)  #### Posicion LIBRE: [179] ####
- [26656] Color (2)  #### Posicion LIBRE: [46] ####
- [22932] Color (1)  #### Posicion LIBRE: [43] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 179
- [27116] Color (0)  #### Posicion LIBRE: [180] ####
- [26656] Color (2)  #### Posicion LIBRE: [47] ####
- [22932] Color (1)  #### Posicion LIBRE: [44] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 180
- [27116] Color (0)  #### Posicion LIBRE: [181] ####
- [26656] Color (2)  #### Posicion LIBRE: [48] ####
- [22932] Color (1)  #### Posicion LIBRE: [45] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 181
- [27116] Color (0)  #### Posicion LIBRE: [182] ####
- [22932] Color (1)  #### Posicion LIBRE: [46] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 182
- [26656] Color (2)  #### Posicion LIBRE: [49] ####
- [27116] Color (0)  #### Posicion LIBRE: [183] ####
- [26656] Color (2)  #### Posicion LIBRE: [50] ####
- [22932] Color (1)  #### Posicion LIBRE: [47] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 183
- [27116] Color (0)  #### Posicion LIBRE: [184] ####
- [22932] Color (1)  #### Posicion LIBRE: [48] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 184
- [26656] Color (2)  #### Posicion LIBRE: [51] ####
- [27116] Color (0)  #### Posicion LIBRE: [185] ####
- [26656] Color (2)  #### Posicion LIBRE: [52] ####
- [22932] Color (1)  #### Posicion LIBRE: [49] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 185
- [27116] Color (0)  #### Posicion LIBRE: [186] ####
- [26656] Color (2)  #### Posicion LIBRE: [53] ####
- [22932] Color (1)  #### Posicion LIBRE: [50] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 186
- [27116] Color (0)  #### Posicion LIBRE: [187] ####
- [26656] Color (2)  #### Posicion LIBRE: [54] ####
- [22932] Color (1)  #### Posicion LIBRE: [51] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 187
- [27116] Color (0)  #### Posicion LIBRE: [188] ####
- [26656] Color (2)  #### Posicion LIBRE: [55] ####
- [22932] Color (1)  #### Posicion LIBRE: [52] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 188
- [27116] Color (0)  #### Posicion LIBRE: [189] ####
- [26656] Color (2)  #### Posicion LIBRE: [56] ####
- [22932] Color (1)  #### Posicion LIBRE: [53] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 189
- [27116] Color (0)  #### Posicion LIBRE: [190] ####
- [22932] Color (1)  #### Posicion LIBRE: [54] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 190
- [27116] Color (0)  #### Posicion LIBRE: [191] ####
- [26656] Color (2)  #### Posicion LIBRE: [57] ####
- [27116] Color (0)  #### Posicion LIBRE: [192] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 54
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
- [22932] Color (1)  #### Posicion LIBRE: [55] ####
- [26656] Color (2)  #### Posicion LIBRE: [58] ####
- [27116] Color (0)  #### Posicion LIBRE: [193] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 55
- [22932] Color (1)  #### Posicion LIBRE: [56] ####
- [26656] Color (2)  #### Posicion LIBRE: [59] ####
- [27116] Color (0)  #### Posicion LIBRE: [194] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 56
- [22932] Color (1)  #### Posicion LIBRE: [57] ####
- [26656] Color (2)  #### Posicion LIBRE: [60] ####
- [27116] Color (0)  #### Posicion LIBRE: [195] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 57
- [22932] Color (1)  #### Posicion LIBRE: [58] ####
- [27116] Color (0)  #### Posicion LIBRE: [196] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 58
- [22932] Color (1)  #### Posicion LIBRE: [59] ####
- [26656] Color (2)  #### Posicion LIBRE: [61] ####
- [26656] Color (2) Envio mensaje POS_2-----> [59]: [22932]
- [27116] Color (0)  #### Posicion LIBRE: [197] ####
- [22932] Color (1)  #### Posicion LIBRE: [60] ####
- [26656] Color (2)  #### Posicion LIBRE: [62] ####
- [26656] Color (2) Envio mensaje POS_2-----> [60]: [22932]
-Color (2) [26656] Envio Mesaje pos_cambio: 197
- [27116] Color (0)  #### Posicion LIBRE: [198] ####
- [22932] Color (1)  #### Posicion LIBRE: [61] ####
- [26656] Color (2)  #### Posicion LIBRE: [63] ####
- [26656] Color (2) Envio mensaje POS_2-----> [61]: [22932]
-Color (2) [26656] Envio Mesaje pos_cambio: 198
- [27116] Color (0)  #### Posicion LIBRE: [199] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 63
-Limpiando Cola...
-Limpiando Cola...
- [22932] Color (1)  #### Posicion LIBRE: [62] ####
- [26656] Color (2)  #### Posicion LIBRE: [64] ####
- [26656] Color (2) Envio mensaje POS_2-----> [62]: [22932]
- [27116] Color (0)  #### Posicion LIBRE: [200] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 64
- [22932] Color (1)  #### Posicion LIBRE: [63] ####
- [26656] Color (2)  #### Posicion LIBRE: [65] ####
- [26656] Color (2) Envio mensaje POS_2-----> [63]: [22932]
- [27116] Color (0)  #### Posicion LIBRE: [201] ####
- [22932] Color (1)  #### Posicion LIBRE: [64] ####
- [27116] Color (0)  #### Posicion LIBRE: [202] ####
- [26656] Color (2)  #### Posicion LIBRE: [66] ####
- [26656] Color (2) Envio mensaje POS_2-----> [64]: [22932]
- [27116] Color (0)  #### Posicion LIBRE: [203] ####
- [22932] Color (1)  #### Posicion LIBRE: [65] ####
- [27116] Color (0)  #### Posicion LIBRE: [204] ####
- [26656] Color (2)  #### Posicion LIBRE: [67] ####
- [26656] Color (2) Envio mensaje POS_2-----> [65]: [22932]
- [27116] Color (0)  #### Posicion LIBRE: [205] ####
- [22932] Color (1)  #### Posicion LIBRE: [66] ####
- [27116] Color (0)  #### Posicion LIBRE: [206] ####
- [26656] Color (2)  #### Posicion LIBRE: [68] ####
- [26656] Color (2) Envio mensaje POS_2-----> [66]: [22932]
- [27116] Color (0)  #### Posicion LIBRE: [207] ####
- [22932] Color (1)  #### Posicion LIBRE: [67] ####
- [26656] Color (2)  #### Posicion LIBRE: [69] ####
- [26656] Color (2) Envio mensaje POS_2-----> [67]: [22932]
- [27116] Color (0)  #### Posicion LIBRE: [208] ####
- [26656] Color (2)  #### Posicion LIBRE: [70] ####
- [27116] Color (0)  #### Posicion LIBRE: [209] ####
- [22932] Color (1)  #### Posicion LIBRE: [68] ####
- [26656] Color (2)  #### Posicion LIBRE: [71] ####
- [27116] Color (0)  #### Posicion LIBRE: [210] ####
- [22932] Color (1)  #### Posicion LIBRE: [69] ####
- [26656] Color (2)  #### Posicion LIBRE: [72] ####
- [27116] Color (0)  #### Posicion LIBRE: [211] ####
- [22932] Color (1)  #### Posicion LIBRE: [70] ####
- [26656] Color (2)  #### Posicion LIBRE: [73] ####
- [27116] Color (0)  #### Posicion LIBRE: [212] ####
- [22932] Color (1)  #### Posicion LIBRE: [71] ####
- [26656] Color (2)  #### Posicion LIBRE: [74] ####
- [27116] Color (0)  #### Posicion LIBRE: [213] ####
- [22932] Color (1)  #### Posicion LIBRE: [72] ####
- [26656] Color (2)  #### Posicion LIBRE: [75] ####
- [27116] Color (0)  #### Posicion LIBRE: [214] ####
- [22932] Color (1)  #### Posicion LIBRE: [73] ####
- [26656] Color (2)  #### Posicion LIBRE: [76] ####
- [27116] Color (0)  #### Posicion LIBRE: [215] ####
- [22932] Color (1)  #### Posicion LIBRE: [74] ####
- [26656] Color (2)  #### Posicion LIBRE: [77] ####
- [27116] Color (0)  #### Posicion LIBRE: [216] ####
- [22932] Color (1)  #### Posicion LIBRE: [75] ####
- [26656] Color (2)  #### Posicion LIBRE: [78] ####
- [27116] Color (0)  #### Posicion LIBRE: [217] ####
- [22932] Color (1)  #### Posicion LIBRE: [76] ####
- [26656] Color (2)  #### Posicion LIBRE: [79] ####
- [27116] Color (0)  #### Posicion LIBRE: [218] ####
- [22932] Color (1)  #### Posicion LIBRE: [77] ####
- [26656] Color (2)  #### Posicion LIBRE: [80] ####
- [27116] Color (0)  #### Posicion LIBRE: [219] ####
- [22932] Color (1)  #### Posicion LIBRE: [78] ####
- [26656] Color (2)  #### Posicion LIBRE: [81] ####
- [27116] Color (0)  #### Posicion LIBRE: [220] ####
- [22932] Color (1)  #### Posicion LIBRE: [79] ####
- [26656] Color (2)  #### Posicion LIBRE: [82] ####
- [27116] Color (0)  #### Posicion LIBRE: [221] ####
- [22932] Color (1)  #### Posicion LIBRE: [80] ####
- [26656] Color (2)  #### Posicion LIBRE: [83] ####
- [27116] Color (0)  #### Posicion LIBRE: [222] ####
- [22932] Color (1)  #### Posicion LIBRE: [81] ####
- [26656] Color (2)  #### Posicion LIBRE: [84] ####
- [27116] Color (0)  #### Posicion LIBRE: [223] ####
- [22932] Color (1)  #### Posicion LIBRE: [82] ####
- [26656] Color (2)  #### Posicion LIBRE: [85] ####
- [27116] Color (0)  #### Posicion LIBRE: [224] ####
- [22932] Color (1)  #### Posicion LIBRE: [83] ####
- [26656] Color (2)  #### Posicion LIBRE: [86] ####
- [27116] Color (0)  #### Posicion LIBRE: [225] ####
- [22932] Color (1)  #### Posicion LIBRE: [84] ####
- [26656] Color (2)  #### Posicion LIBRE: [87] ####
- [27116] Color (0)  #### Posicion LIBRE: [226] ####
- [22932] Color (1)  #### Posicion LIBRE: [85] ####
- [26656] Color (2)  #### Posicion LIBRE: [88] ####
- [27116] Color (0)  #### Posicion LIBRE: [227] ####
- [22932] Color (1)  #### Posicion LIBRE: [86] ####
- [26656] Color (2)  #### Posicion LIBRE: [89] ####
- [27116] Color (0)  #### Posicion LIBRE: [228] ####
- [22932] Color (1)  #### Posicion LIBRE: [87] ####
- [26656] Color (2)  #### Posicion LIBRE: [90] ####
- [27116] Color (0)  #### Posicion LIBRE: [229] ####
- [22932] Color (1)  #### Posicion LIBRE: [88] ####
- [26656] Color (2)  #### Posicion LIBRE: [91] ####
- [27116] Color (0)  #### Posicion LIBRE: [230] ####
- [22932] Color (1)  #### Posicion LIBRE: [89] ####
- [26656] Color (2)  #### Posicion LIBRE: [92] ####
- [27116] Color (0)  #### Posicion LIBRE: [231] ####
- [22932] Color (1)  #### Posicion LIBRE: [90] ####
- [26656] Color (2)  #### Posicion LIBRE: [93] ####
- [27116] Color (0)  #### Posicion LIBRE: [232] ####
- [22932] Color (1)  #### Posicion LIBRE: [91] ####
- [26656] Color (2)  #### Posicion LIBRE: [94] ####
- [27116] Color (0)  #### Posicion LIBRE: [233] ####
- [22932] Color (1)  #### Posicion LIBRE: [92] ####
- [26656] Color (2)  #### Posicion LIBRE: [95] ####
- [27116] Color (0)  #### Posicion LIBRE: [234] ####
- [22932] Color (1)  #### Posicion LIBRE: [93] ####
- [26656] Color (2)  #### Posicion LIBRE: [96] ####
- [22932] Color (1)  #### Posicion LIBRE: [94] ####
- [26656] Color (2)  #### Posicion LIBRE: [97] ####
- [22932] Color (1)  #### Posicion LIBRE: [95] ####
- [26656] Color (2)  #### Posicion LIBRE: [98] ####
- [22932] Color (1)  #### Posicion LIBRE: [96] ####
- [26656] Color (2)  #### Posicion LIBRE: [99] ####
- [22932] Color (1)  #### Posicion LIBRE: [97] ####
- [26656] Color (2)  #### Posicion LIBRE: [100] ####
- [22932] Color (1)  #### Posicion LIBRE: [98] ####
- [26656] Color (2)  #### Posicion LIBRE: [101] ####
- [22932] Color (1)  #### Posicion LIBRE: [99] ####
- [26656] Color (2)  #### Posicion LIBRE: [102] ####
-Color (2) [26656] Envio Mesaje pos_cambio: 233
-Limpiando Cola...
-Limpiando Cola...
- [22932] Color (1)  #### Posicion LIBRE: [100] ####
- [26656] Color (2)  #### Posicion LIBRE: [103] ####
- [22932] Color (1)  #### Posicion LIBRE: [101] ####
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
- [22932] Color (1) ESPERANDO Mensaje [102]
-Color (0) [27116] Envio Mesaje pos_cambio: 101
-Limpiando Cola...
- [22932] Color (1) Recojo mensaje [102]
- [26656] Color (2) Envio mensaje POS_2-----> [101]: [22932]
-Color (2) [26656] Envio Mesaje pos_cambio: 234
- [22932] Color (1)  #### Posicion LIBRE: [102] ####
-Limpiando Cola...
- [22932] Color (1) ESPERANDO Mensaje [103]
- [26656] Color (2)  #### Posicion LIBRE: [104] ####
- [26656] Color (2) Envio mensaje POS_2-----> [102]: [22932]
- [27116] Color (0)  #### Posicion LIBRE: [235] ####
- [22932] Color (1) Recojo mensaje [103]
-Color (0) [27116] Envio Mesaje pos_cambio: 102
-Limpiando Cola...
- [22932] Color (1)  #### Posicion LIBRE: [103] ####
- [26656] Color (2)  #### Posicion LIBRE: [105] ####
- [26656] Color (2) Envio mensaje POS_2-----> [103]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [104] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 235
-Limpiando Cola...
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [236] ####
- [22932] Color (1) ESPERANDO Mensaje [105]
- [26656] Color (2)  #### Posicion LIBRE: [106] ####
- [26656] Color (2) Envio mensaje POS_2-----> [104]: [22932]
- [22932] Color (1) Recojo mensaje [105]
- [22932] Color (1)  #### Posicion LIBRE: [105] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 236
- [27116] Color (0)  #### Posicion LIBRE: [237] ####
- [26656] Color (2)  #### Posicion LIBRE: [107] ####
- [26656] Color (2) Envio mensaje POS_2-----> [105]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [106] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 237
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [238] ####
- [26656] Color (2)  #### Posicion LIBRE: [108] ####
- [26656] Color (2) Envio mensaje POS_2-----> [106]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [107] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 238
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [239] ####
- [26656] Color (2)  #### Posicion LIBRE: [109] ####
- [26656] Color (2) Envio mensaje POS_2-----> [107]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [108] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 239
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [240] ####
- [26656] Color (2)  #### Posicion LIBRE: [110] ####
- [26656] Color (2) Envio mensaje POS_2-----> [108]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [109] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 240
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [241] ####
- [26656] Color (2)  #### Posicion LIBRE: [111] ####
- [26656] Color (2) Envio mensaje POS_2-----> [109]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [110] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 241
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [242] ####
- [26656] Color (2)  #### Posicion LIBRE: [112] ####
- [26656] Color (2) Envio mensaje POS_2-----> [110]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [111] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 242
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [243] ####
- [26656] Color (2)  #### Posicion LIBRE: [113] ####
- [26656] Color (2) Envio mensaje POS_2-----> [111]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [112] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 243
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [244] ####
- [26656] Color (2)  #### Posicion LIBRE: [114] ####
- [26656] Color (2) Envio mensaje POS_2-----> [112]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [113] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 244
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [245] ####
- [26656] Color (2)  #### Posicion LIBRE: [115] ####
- [26656] Color (2) Envio mensaje POS_2-----> [113]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [114] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 245
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [246] ####
- [26656] Color (2)  #### Posicion LIBRE: [116] ####
- [26656] Color (2) Envio mensaje POS_2-----> [114]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [115] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 246
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [247] ####
- [26656] Color (2)  #### Posicion LIBRE: [117] ####
- [26656] Color (2) Envio mensaje POS_2-----> [115]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [116] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 247
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [248] ####
- [26656] Color (2)  #### Posicion LIBRE: [118] ####
- [26656] Color (2) Envio mensaje POS_2-----> [116]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [117] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 248
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [249] ####
- [26656] Color (2)  #### Posicion LIBRE: [119] ####
- [26656] Color (2) Envio mensaje POS_2-----> [117]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [118] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 249
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [250] ####
- [26656] Color (2)  #### Posicion LIBRE: [120] ####
- [26656] Color (2) Envio mensaje POS_2-----> [118]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [119] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 250
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [251] ####
- [26656] Color (2)  #### Posicion LIBRE: [121] ####
- [26656] Color (2) Envio mensaje POS_2-----> [119]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [120] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 251
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [252] ####
- [22932] Color (1) ESPERANDO Mensaje [121]
- [26656] Color (2)  #### Posicion LIBRE: [122] ####
- [26656] Color (2) Envio mensaje POS_2-----> [120]: [22932]
- [22932] Color (1) Recojo mensaje [121]
- [22932] Color (1)  #### Posicion LIBRE: [121] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 252
- [27116] Color (0)  #### Posicion LIBRE: [253] ####
- [26656] Color (2)  #### Posicion LIBRE: [123] ####
- [26656] Color (2) Envio mensaje POS_2-----> [121]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [122] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 253
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [254] ####
- [26656] Color (2)  #### Posicion LIBRE: [124] ####
- [26656] Color (2) Envio mensaje POS_2-----> [122]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [123] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 254
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [255] ####
- [26656] Color (2)  #### Posicion LIBRE: [125] ####
- [26656] Color (2) Envio mensaje POS_2-----> [123]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [124] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 255
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [256] ####
- [26656] Color (2)  #### Posicion LIBRE: [126] ####
- [26656] Color (2) Envio mensaje POS_2-----> [124]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [125] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 256
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [257] ####
- [26656] Color (2)  #### Posicion LIBRE: [127] ####
- [26656] Color (2) Envio mensaje POS_2-----> [125]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [126] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 257
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [258] ####
- [26656] Color (2)  #### Posicion LIBRE: [128] ####
- [26656] Color (2) Envio mensaje POS_2-----> [126]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [127] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 258
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [259] ####
- [26656] Color (2)  #### Posicion LIBRE: [129] ####
- [26656] Color (2) Envio mensaje POS_2-----> [127]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [128] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 259
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [260] ####
- [26656] Color (2)  #### Posicion LIBRE: [130] ####
- [26656] Color (2) Envio mensaje POS_2-----> [128]: [22932]
- [22932] Color (1)  #### Posicion LIBRE: [129] ####
-Color (1) [22932] Envio Mesaje pos_cambio: 260
-Limpiando Cola...
- [27116] Color (0)  #### Posicion LIBRE: [261] ####
- [22932] Color (1) ESPERANDO Mensaje [130]
- [27116] Color (0)  #### Posicion LIBRE: [262] ####
-Color (0) [27116] Envio Mesaje pos_cambio: 129
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
-Limpiando Cola...
- [22932] Color (1) Recojo mensaje [130]
- [27116] Color (0)  #### Posicion LIBRE: [263] ####
+ [25908] Color (1)  #### Posicion LIBRE: [135] ####
+ [20560] Color (0)  #### Posicion LIBRE: [272] ####
+ [23228] Color (2)  #### Posicion LIBRE: [137] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [135]: [25908]
+Color (2) [23228] Envio Mesaje pos_cambio: 272
+ [23228] Color (2)  #### Posicion LIBRE: [1] ####
+ [23228] Color (2)  #### Posicion LIBRE: [2] ####
+ [20560] Color (0)  #### Posicion LIBRE: [273] ####
+ [25908] Color (1)  #### Posicion LIBRE: [136] ####
+ [23228] Color (2)  #### Posicion LIBRE: [3] ####
+ [25908] Color (1)  #### Posicion LIBRE: [137] ####
+ [20560] Color (0)  #### Posicion LIBRE: [274] ####
+ [23228] Color (2)  #### Posicion LIBRE: [4] ####
+ [25908] Color (1)  #### Posicion LIBRE: [1] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 137
+Limpiando Cola...
+ [20560] Color (0)  #### Posicion LIBRE: [138] ####
+ [23228] Color (2)  #### Posicion LIBRE: [5] ####
+ [25908] Color (1)  #### Posicion LIBRE: [2] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 138
+ [20560] Color (0)  #### Posicion LIBRE: [139] ####
+ [23228] Color (2)  #### Posicion LIBRE: [6] ####
+ [25908] Color (1)  #### Posicion LIBRE: [3] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 139
+ [20560] Color (0)  #### Posicion LIBRE: [140] ####
+ [23228] Color (2)  #### Posicion LIBRE: [7] ####
+ [25908] Color (1)  #### Posicion LIBRE: [4] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 140
+ [20560] Color (0)  #### Posicion LIBRE: [141] ####
+ [23228] Color (2)  #### Posicion LIBRE: [8] ####
+ [25908] Color (1)  #### Posicion LIBRE: [5] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 141
+ [20560] Color (0)  #### Posicion LIBRE: [142] ####
+ [23228] Color (2)  #### Posicion LIBRE: [9] ####
+ [25908] Color (1)  #### Posicion LIBRE: [6] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 142
+ [20560] Color (0)  #### Posicion LIBRE: [143] ####
+ [23228] Color (2)  #### Posicion LIBRE: [10] ####
+ [25908] Color (1)  #### Posicion LIBRE: [7] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 143
+ [20560] Color (0)  #### Posicion LIBRE: [144] ####
+ [23228] Color (2)  #### Posicion LIBRE: [11] ####
+ [25908] Color (1)  #### Posicion LIBRE: [8] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 144
+ [20560] Color (0)  #### Posicion LIBRE: [145] ####
+ [23228] Color (2)  #### Posicion LIBRE: [12] ####
+ [25908] Color (1)  #### Posicion LIBRE: [9] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 145
+ [20560] Color (0)  #### Posicion LIBRE: [146] ####
+ [23228] Color (2)  #### Posicion LIBRE: [13] ####
+ [25908] Color (1)  #### Posicion LIBRE: [10] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 146
+ [20560] Color (0)  #### Posicion LIBRE: [147] ####
+ [23228] Color (2)  #### Posicion LIBRE: [14] ####
+ [20560] Color (0)  #### Posicion LIBRE: [148] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 10
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [25908] Color (1)  #### Posicion LIBRE: [11] ####
+ [23228] Color (2)  #### Posicion LIBRE: [15] ####
+ [20560] Color (0)  #### Posicion LIBRE: [149] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 11
+ [25908] Color (1)  #### Posicion LIBRE: [12] ####
+ [20560] Color (0)  #### Posicion LIBRE: [150] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 12
+ [25908] Color (1)  #### Posicion LIBRE: [13] ####
+ [23228] Color (2)  #### Posicion LIBRE: [16] ####
+ [20560] Color (0)  #### Posicion LIBRE: [151] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 13
+ [25908] Color (1)  #### Posicion LIBRE: [14] ####
+ [20560] Color (0)  #### Posicion LIBRE: [152] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 14
+ [25908] Color (1)  #### Posicion LIBRE: [15] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 152
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [17] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [15]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [153] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 15
+Limpiando Cola...
+ [25908] Color (1)  #### Posicion LIBRE: [16] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 153
+Limpiando Cola...
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [18] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [16]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [154] ####
+ [25908] Color (1)  #### Posicion LIBRE: [17] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 154
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [19] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [17]: [25908]
+ [25908] Color (1)  #### Posicion LIBRE: [18] ####
+ [20560] Color (0)  #### Posicion LIBRE: [155] ####
+ [23228] Color (2)  #### Posicion LIBRE: [20] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [18]: [25908]
+ [25908] Color (1)  #### Posicion LIBRE: [19] ####
+ [20560] Color (0)  #### Posicion LIBRE: [156] ####
+ [23228] Color (2)  #### Posicion LIBRE: [21] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [19]: [25908]
+ [25908] Color (1)  #### Posicion LIBRE: [20] ####
+ [20560] Color (0)  #### Posicion LIBRE: [157] ####
+ [23228] Color (2)  #### Posicion LIBRE: [22] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [20]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [158] ####
+ [25908] Color (1)  #### Posicion LIBRE: [21] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 158
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [23] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [21]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [159] ####
+ [25908] Color (1)  #### Posicion LIBRE: [22] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 159
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [24] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [22]: [25908]
+ [25908] Color (1)  #### Posicion LIBRE: [23] ####
+ [20560] Color (0)  #### Posicion LIBRE: [160] ####
+ [23228] Color (2)  #### Posicion LIBRE: [25] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [23]: [25908]
+ [25908] Color (1)  #### Posicion LIBRE: [24] ####
+ [20560] Color (0)  #### Posicion LIBRE: [161] ####
+ [23228] Color (2)  #### Posicion LIBRE: [26] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [24]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [162] ####
+ [25908] Color (1)  #### Posicion LIBRE: [25] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 162
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [27] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [25]: [25908]
+ [25908] Color (1)  #### Posicion LIBRE: [26] ####
+ [20560] Color (0)  #### Posicion LIBRE: [163] ####
+ [23228] Color (2)  #### Posicion LIBRE: [28] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [26]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [164] ####
+ [25908] Color (1)  #### Posicion LIBRE: [27] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 164
+Limpiando Cola...
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [29] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [27]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [30] ####
+ [20560] Color (0)  #### Posicion LIBRE: [165] ####
+ [25908] Color (1)  #### Posicion LIBRE: [28] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 165
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [31] ####
+ [23228] Color (2)  #### Posicion LIBRE: [32] ####
+ [20560] Color (0)  #### Posicion LIBRE: [166] ####
+ [25908] Color (1)  #### Posicion LIBRE: [29] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 166
+ [23228] Color (2)  #### Posicion LIBRE: [33] ####
+ [25908] Color (1)  #### Posicion LIBRE: [30] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 166
+ [20560] Color (0)  #### Posicion LIBRE: [167] ####
+ [23228] Color (2)  #### Posicion LIBRE: [34] ####
+ [20560] Color (0)  #### Posicion LIBRE: [168] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 30
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [25908] Color (1)  #### Posicion LIBRE: [31] ####
+ [23228] Color (2)  #### Posicion LIBRE: [35] ####
+ [20560] Color (0)  #### Posicion LIBRE: [169] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 31
+ [25908] Color (1)  #### Posicion LIBRE: [32] ####
+ [23228] Color (2)  #### Posicion LIBRE: [36] ####
+ [20560] Color (0)  #### Posicion LIBRE: [170] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 32
+ [25908] Color (1)  #### Posicion LIBRE: [33] ####
+ [23228] Color (2)  #### Posicion LIBRE: [37] ####
+ [25908] Color (1)  #### Posicion LIBRE: [34] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 170
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [20560] Color (0)  #### Posicion LIBRE: [171] ####
+ [23228] Color (2)  #### Posicion LIBRE: [38] ####
+ [20560] Color (0)  #### Posicion LIBRE: [172] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 34
+Limpiando Cola...
+ [25908] Color (1)  #### Posicion LIBRE: [35] ####
+ [23228] Color (2)  #### Posicion LIBRE: [39] ####
+ [20560] Color (0)  #### Posicion LIBRE: [173] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 35
+ [25908] Color (1)  #### Posicion LIBRE: [36] ####
+ [23228] Color (2)  #### Posicion LIBRE: [40] ####
+ [20560] Color (0)  #### Posicion LIBRE: [174] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 36
+ [25908] Color (1)  #### Posicion LIBRE: [37] ####
+ [23228] Color (2)  #### Posicion LIBRE: [41] ####
+ [20560] Color (0)  #### Posicion LIBRE: [175] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 37
+ [25908] Color (1)  #### Posicion LIBRE: [38] ####
+ [23228] Color (2)  #### Posicion LIBRE: [42] ####
+ [20560] Color (0)  #### Posicion LIBRE: [176] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 38
+ [25908] Color (1)  #### Posicion LIBRE: [39] ####
+ [23228] Color (2)  #### Posicion LIBRE: [43] ####
+ [20560] Color (0)  #### Posicion LIBRE: [177] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 39
+ [25908] Color (1)  #### Posicion LIBRE: [40] ####
+ [23228] Color (2)  #### Posicion LIBRE: [44] ####
+ [20560] Color (0)  #### Posicion LIBRE: [178] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 40
+ [25908] Color (1)  #### Posicion LIBRE: [41] ####
+ [23228] Color (2)  #### Posicion LIBRE: [45] ####
+ [20560] Color (0)  #### Posicion LIBRE: [179] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 41
+ [25908] Color (1)  #### Posicion LIBRE: [42] ####
+ [23228] Color (2)  #### Posicion LIBRE: [46] ####
+ [20560] Color (0)  #### Posicion LIBRE: [180] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 42
+ [25908] Color (1)  #### Posicion LIBRE: [43] ####
+ [23228] Color (2)  #### Posicion LIBRE: [47] ####
+ [20560] Color (0)  #### Posicion LIBRE: [181] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 43
+ [25908] Color (1)  #### Posicion LIBRE: [44] ####
+ [23228] Color (2)  #### Posicion LIBRE: [48] ####
+ [20560] Color (0)  #### Posicion LIBRE: [182] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 44
+ [25908] Color (1)  #### Posicion LIBRE: [45] ####
+ [23228] Color (2)  #### Posicion LIBRE: [49] ####
+ [20560] Color (0)  #### Posicion LIBRE: [183] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 45
+ [25908] Color (1)  #### Posicion LIBRE: [46] ####
+ [23228] Color (2)  #### Posicion LIBRE: [50] ####
+ [20560] Color (0)  #### Posicion LIBRE: [184] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 46
+ [25908] Color (1)  #### Posicion LIBRE: [47] ####
+ [23228] Color (2)  #### Posicion LIBRE: [51] ####
+ [20560] Color (0)  #### Posicion LIBRE: [185] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 47
+ [25908] Color (1)  #### Posicion LIBRE: [48] ####
+ [23228] Color (2)  #### Posicion LIBRE: [52] ####
+ [20560] Color (0)  #### Posicion LIBRE: [186] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 48
+ [25908] Color (1)  #### Posicion LIBRE: [49] ####
+ [23228] Color (2)  #### Posicion LIBRE: [53] ####
+ [20560] Color (0)  #### Posicion LIBRE: [187] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 49
+ [25908] Color (1)  #### Posicion LIBRE: [50] ####
+ [23228] Color (2)  #### Posicion LIBRE: [54] ####
+ [20560] Color (0)  #### Posicion LIBRE: [188] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 50
+ [25908] Color (1)  #### Posicion LIBRE: [51] ####
+ [23228] Color (2)  #### Posicion LIBRE: [55] ####
+ [20560] Color (0)  #### Posicion LIBRE: [189] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 51
+ [25908] Color (1)  #### Posicion LIBRE: [52] ####
+ [23228] Color (2)  #### Posicion LIBRE: [56] ####
+ [20560] Color (0)  #### Posicion LIBRE: [190] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 52
+ [25908] Color (1)  #### Posicion LIBRE: [53] ####
+ [23228] Color (2)  #### Posicion LIBRE: [57] ####
+ [20560] Color (0)  #### Posicion LIBRE: [191] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 53
+ [25908] Color (1)  #### Posicion LIBRE: [54] ####
+ [23228] Color (2)  #### Posicion LIBRE: [58] ####
+ [20560] Color (0)  #### Posicion LIBRE: [192] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 54
+ [25908] Color (1)  #### Posicion LIBRE: [55] ####
+ [23228] Color (2)  #### Posicion LIBRE: [59] ####
+ [20560] Color (0)  #### Posicion LIBRE: [193] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 55
+ [25908] Color (1)  #### Posicion LIBRE: [56] ####
+ [23228] Color (2)  #### Posicion LIBRE: [60] ####
+ [20560] Color (0)  #### Posicion LIBRE: [194] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 56
+ [25908] Color (1)  #### Posicion LIBRE: [57] ####
+ [20560] Color (0)  #### Posicion LIBRE: [195] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 57
+ [25908] Color (1)  #### Posicion LIBRE: [58] ####
+ [23228] Color (2)  #### Posicion LIBRE: [61] ####
+ [20560] Color (0)  #### Posicion LIBRE: [196] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 58
+ [25908] Color (1)  #### Posicion LIBRE: [59] ####
+ [20560] Color (0)  #### Posicion LIBRE: [197] ####
+ [25908] Color (1)  #### Posicion LIBRE: [60] ####
+ [23228] Color (2)  #### Posicion LIBRE: [62] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [60]: [25908]
+Color (2) [23228] Envio Mesaje pos_cambio: 197
+ [20560] Color (0)  #### Posicion LIBRE: [198] ####
+ [25908] Color (1)  #### Posicion LIBRE: [61] ####
+ [23228] Color (2)  #### Posicion LIBRE: [63] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [61]: [25908]
+Color (2) [23228] Envio Mesaje pos_cambio: 198
+ [20560] Color (0)  #### Posicion LIBRE: [199] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 63
+Limpiando Cola...
+Limpiando Cola...
+ [25908] Color (1)  #### Posicion LIBRE: [62] ####
+ [23228] Color (2)  #### Posicion LIBRE: [64] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [62]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [200] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 64
+ [25908] Color (1)  #### Posicion LIBRE: [63] ####
+ [23228] Color (2)  #### Posicion LIBRE: [65] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [63]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [201] ####
+ [25908] Color (1)  #### Posicion LIBRE: [64] ####
+ [23228] Color (2)  #### Posicion LIBRE: [66] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [64]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [202] ####
+ [20560] Color (0)  #### Posicion LIBRE: [203] ####
+ [25908] Color (1)  #### Posicion LIBRE: [65] ####
+ [23228] Color (2)  #### Posicion LIBRE: [67] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [65]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [204] ####
+ [20560] Color (0)  #### Posicion LIBRE: [205] ####
+ [25908] Color (1)  #### Posicion LIBRE: [66] ####
+ [20560] Color (0)  #### Posicion LIBRE: [206] ####
+ [23228] Color (2)  #### Posicion LIBRE: [68] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [66]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [207] ####
+ [23228] Color (2)  #### Posicion LIBRE: [69] ####
+ [25908] Color (1)  #### Posicion LIBRE: [67] ####
+ [20560] Color (0)  #### Posicion LIBRE: [208] ####
+ [23228] Color (2)  #### Posicion LIBRE: [70] ####
+ [20560] Color (0)  #### Posicion LIBRE: [209] ####
+ [23228] Color (2)  #### Posicion LIBRE: [71] ####
+ [25908] Color (1)  #### Posicion LIBRE: [68] ####
+ [20560] Color (0)  #### Posicion LIBRE: [210] ####
+ [23228] Color (2)  #### Posicion LIBRE: [72] ####
+ [25908] Color (1)  #### Posicion LIBRE: [69] ####
+ [20560] Color (0)  #### Posicion LIBRE: [211] ####
+ [23228] Color (2)  #### Posicion LIBRE: [73] ####
+ [25908] Color (1)  #### Posicion LIBRE: [70] ####
+ [20560] Color (0)  #### Posicion LIBRE: [212] ####
+ [23228] Color (2)  #### Posicion LIBRE: [74] ####
+ [25908] Color (1)  #### Posicion LIBRE: [71] ####
+ [20560] Color (0)  #### Posicion LIBRE: [213] ####
+ [23228] Color (2)  #### Posicion LIBRE: [75] ####
+ [25908] Color (1)  #### Posicion LIBRE: [72] ####
+ [20560] Color (0)  #### Posicion LIBRE: [214] ####
+ [23228] Color (2)  #### Posicion LIBRE: [76] ####
+ [25908] Color (1)  #### Posicion LIBRE: [73] ####
+ [20560] Color (0)  #### Posicion LIBRE: [215] ####
+ [23228] Color (2)  #### Posicion LIBRE: [77] ####
+ [25908] Color (1)  #### Posicion LIBRE: [74] ####
+ [20560] Color (0)  #### Posicion LIBRE: [216] ####
+ [23228] Color (2)  #### Posicion LIBRE: [78] ####
+ [25908] Color (1)  #### Posicion LIBRE: [75] ####
+ [20560] Color (0)  #### Posicion LIBRE: [217] ####
+ [23228] Color (2)  #### Posicion LIBRE: [79] ####
+ [25908] Color (1)  #### Posicion LIBRE: [76] ####
+ [20560] Color (0)  #### Posicion LIBRE: [218] ####
+ [23228] Color (2)  #### Posicion LIBRE: [80] ####
+ [25908] Color (1)  #### Posicion LIBRE: [77] ####
+ [20560] Color (0)  #### Posicion LIBRE: [219] ####
+ [23228] Color (2)  #### Posicion LIBRE: [81] ####
+ [25908] Color (1)  #### Posicion LIBRE: [78] ####
+ [20560] Color (0)  #### Posicion LIBRE: [220] ####
+ [23228] Color (2)  #### Posicion LIBRE: [82] ####
+ [25908] Color (1)  #### Posicion LIBRE: [79] ####
+ [20560] Color (0)  #### Posicion LIBRE: [221] ####
+ [23228] Color (2)  #### Posicion LIBRE: [83] ####
+ [25908] Color (1)  #### Posicion LIBRE: [80] ####
+ [20560] Color (0)  #### Posicion LIBRE: [222] ####
+ [23228] Color (2)  #### Posicion LIBRE: [84] ####
+ [25908] Color (1)  #### Posicion LIBRE: [81] ####
+ [20560] Color (0)  #### Posicion LIBRE: [223] ####
+ [23228] Color (2)  #### Posicion LIBRE: [85] ####
+ [25908] Color (1)  #### Posicion LIBRE: [82] ####
+ [20560] Color (0)  #### Posicion LIBRE: [224] ####
+ [23228] Color (2)  #### Posicion LIBRE: [86] ####
+ [25908] Color (1)  #### Posicion LIBRE: [83] ####
+ [20560] Color (0)  #### Posicion LIBRE: [225] ####
+ [23228] Color (2)  #### Posicion LIBRE: [87] ####
+ [25908] Color (1)  #### Posicion LIBRE: [84] ####
+ [20560] Color (0)  #### Posicion LIBRE: [226] ####
+ [23228] Color (2)  #### Posicion LIBRE: [88] ####
+ [25908] Color (1)  #### Posicion LIBRE: [85] ####
+ [20560] Color (0)  #### Posicion LIBRE: [227] ####
+ [23228] Color (2)  #### Posicion LIBRE: [89] ####
+ [25908] Color (1)  #### Posicion LIBRE: [86] ####
+ [20560] Color (0)  #### Posicion LIBRE: [228] ####
+ [23228] Color (2)  #### Posicion LIBRE: [90] ####
+ [25908] Color (1)  #### Posicion LIBRE: [87] ####
+ [20560] Color (0)  #### Posicion LIBRE: [229] ####
+ [23228] Color (2)  #### Posicion LIBRE: [91] ####
+ [25908] Color (1)  #### Posicion LIBRE: [88] ####
+ [20560] Color (0)  #### Posicion LIBRE: [230] ####
+ [23228] Color (2)  #### Posicion LIBRE: [92] ####
+ [25908] Color (1)  #### Posicion LIBRE: [89] ####
+ [20560] Color (0)  #### Posicion LIBRE: [231] ####
+ [23228] Color (2)  #### Posicion LIBRE: [93] ####
+ [25908] Color (1)  #### Posicion LIBRE: [90] ####
+ [20560] Color (0)  #### Posicion LIBRE: [232] ####
+ [23228] Color (2)  #### Posicion LIBRE: [94] ####
+ [25908] Color (1)  #### Posicion LIBRE: [91] ####
+ [20560] Color (0)  #### Posicion LIBRE: [233] ####
+ [23228] Color (2)  #### Posicion LIBRE: [95] ####
+ [25908] Color (1)  #### Posicion LIBRE: [92] ####
+ [20560] Color (0)  #### Posicion LIBRE: [234] ####
+ [23228] Color (2)  #### Posicion LIBRE: [96] ####
+ [25908] Color (1)  #### Posicion LIBRE: [93] ####
+ [23228] Color (2)  #### Posicion LIBRE: [97] ####
+ [25908] Color (1)  #### Posicion LIBRE: [94] ####
+ [23228] Color (2)  #### Posicion LIBRE: [98] ####
+ [25908] Color (1)  #### Posicion LIBRE: [95] ####
+ [23228] Color (2)  #### Posicion LIBRE: [99] ####
+ [25908] Color (1)  #### Posicion LIBRE: [96] ####
+ [23228] Color (2)  #### Posicion LIBRE: [100] ####
+ [25908] Color (1)  #### Posicion LIBRE: [97] ####
+ [23228] Color (2)  #### Posicion LIBRE: [101] ####
+ [25908] Color (1)  #### Posicion LIBRE: [98] ####
+ [23228] Color (2)  #### Posicion LIBRE: [102] ####
+Color (2) [23228] Envio Mesaje pos_cambio: 233
+Limpiando Cola...
+Limpiando Cola...
+ [25908] Color (1)  #### Posicion LIBRE: [99] ####
+ [23228] Color (2)  #### Posicion LIBRE: [103] ####
+ [25908] Color (1)  #### Posicion LIBRE: [100] ####
+ [25908] Color (1)  #### Posicion LIBRE: [101] ####
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [25908] Color (1) ESPERANDO Mensaje [102]
+Color (0) [20560] Envio Mesaje pos_cambio: 101
+ [25908] Color (1) Recojo mensaje [102]
+Limpiando Cola...
+ [23228] Color (2) Envio mensaje POS_2-----> [101]: [25908]
+Color (2) [23228] Envio Mesaje pos_cambio: 234
+ [25908] Color (1)  #### Posicion LIBRE: [102] ####
+ [20560] Color (0)  #### Posicion LIBRE: [235] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 102
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [104] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [102]: [25908]
+Color (2) [23228] Envio Mesaje pos_cambio: 235
+ [25908] Color (1)  #### Posicion LIBRE: [103] ####
+ [20560] Color (0)  #### Posicion LIBRE: [236] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 103
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [105] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [103]: [25908]
+Color (2) [23228] Envio Mesaje pos_cambio: 236
+ [25908] Color (1)  #### Posicion LIBRE: [104] ####
+ [20560] Color (0)  #### Posicion LIBRE: [237] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 104
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [106] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [104]: [25908]
+Color (2) [23228] Envio Mesaje pos_cambio: 237
+ [25908] Color (1)  #### Posicion LIBRE: [105] ####
+ [23228] Color (2)  #### Posicion LIBRE: [107] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [105]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [238] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 105
+Limpiando Cola...
+ [25908] Color (1)  #### Posicion LIBRE: [106] ####
+ [23228] Color (2)  #### Posicion LIBRE: [108] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [106]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [239] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 106
+ [25908] Color (1)  #### Posicion LIBRE: [107] ####
+ [23228] Color (2)  #### Posicion LIBRE: [109] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [107]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [240] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 107
+ [25908] Color (1)  #### Posicion LIBRE: [108] ####
+ [23228] Color (2)  #### Posicion LIBRE: [110] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [108]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [241] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 108
+ [25908] Color (1)  #### Posicion LIBRE: [109] ####
+ [23228] Color (2)  #### Posicion LIBRE: [111] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [109]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [242] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 109
+ [25908] Color (1)  #### Posicion LIBRE: [110] ####
+ [23228] Color (2)  #### Posicion LIBRE: [112] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [110]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [243] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 110
+ [25908] Color (1)  #### Posicion LIBRE: [111] ####
+ [23228] Color (2)  #### Posicion LIBRE: [113] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [111]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [244] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 111
+ [25908] Color (1)  #### Posicion LIBRE: [112] ####
+ [23228] Color (2)  #### Posicion LIBRE: [114] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [112]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [245] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 112
+ [25908] Color (1)  #### Posicion LIBRE: [113] ####
+ [23228] Color (2)  #### Posicion LIBRE: [115] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [113]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [246] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 113
+ [25908] Color (1)  #### Posicion LIBRE: [114] ####
+ [23228] Color (2)  #### Posicion LIBRE: [116] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [114]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [247] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 114
+ [25908] Color (1)  #### Posicion LIBRE: [115] ####
+ [23228] Color (2)  #### Posicion LIBRE: [117] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [115]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [248] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 115
+ [25908] Color (1)  #### Posicion LIBRE: [116] ####
+ [23228] Color (2)  #### Posicion LIBRE: [118] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [116]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [249] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 116
+ [25908] Color (1)  #### Posicion LIBRE: [117] ####
+ [23228] Color (2)  #### Posicion LIBRE: [119] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [117]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [250] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 117
+ [25908] Color (1)  #### Posicion LIBRE: [118] ####
+ [23228] Color (2)  #### Posicion LIBRE: [120] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [118]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [251] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 118
+ [25908] Color (1)  #### Posicion LIBRE: [119] ####
+ [23228] Color (2)  #### Posicion LIBRE: [121] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [119]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [252] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 119
+ [25908] Color (1)  #### Posicion LIBRE: [120] ####
+ [23228] Color (2)  #### Posicion LIBRE: [122] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [120]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [253] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 120
+ [25908] Color (1)  #### Posicion LIBRE: [121] ####
+ [23228] Color (2)  #### Posicion LIBRE: [123] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [121]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [254] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 121
+ [25908] Color (1)  #### Posicion LIBRE: [122] ####
+ [23228] Color (2)  #### Posicion LIBRE: [124] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [122]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [255] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 122
+ [25908] Color (1)  #### Posicion LIBRE: [123] ####
+ [23228] Color (2)  #### Posicion LIBRE: [125] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [123]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [256] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 123
+ [25908] Color (1)  #### Posicion LIBRE: [124] ####
+ [23228] Color (2)  #### Posicion LIBRE: [126] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [124]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [257] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 124
+ [25908] Color (1)  #### Posicion LIBRE: [125] ####
+ [23228] Color (2)  #### Posicion LIBRE: [127] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [125]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [258] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 125
+ [25908] Color (1)  #### Posicion LIBRE: [126] ####
+ [23228] Color (2)  #### Posicion LIBRE: [128] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [126]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [259] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 126
+ [25908] Color (1)  #### Posicion LIBRE: [127] ####
+ [23228] Color (2)  #### Posicion LIBRE: [129] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [127]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [260] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 127
+ [25908] Color (1)  #### Posicion LIBRE: [128] ####
+ [23228] Color (2)  #### Posicion LIBRE: [130] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [128]: [25908]
+ [20560] Color (0)  #### Posicion LIBRE: [261] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 128
+ [25908] Color (1)  #### Posicion LIBRE: [129] ####
+ [20560] Color (0)  #### Posicion LIBRE: [262] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 129
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [20560] Color (0)  #### Posicion LIBRE: [263] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 130
+ [25908] Color (1)  #### Posicion LIBRE: [262] ####
+ [23228] Color (2)  #### Posicion LIBRE: [131] ####
+ [25908] Color (1)  #### Posicion LIBRE: [265] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [263]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [132] ####
+ [20560] Color (0)  #### Posicion LIBRE: [264] ####
+ [25908] Color (1)  #### Posicion LIBRE: [266] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [264]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [133] ####
+ [20560] Color (0)  #### Posicion LIBRE: [265] ####
+ [25908] Color (1)  #### Posicion LIBRE: [267] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [265]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [134] ####
+ [20560] Color (0)  #### Posicion LIBRE: [266] ####
+ [25908] Color (1)  #### Posicion LIBRE: [268] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [266]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [135] ####
+ [20560] Color (0)  #### Posicion LIBRE: [267] ####
+ [25908] Color (1)  #### Posicion LIBRE: [269] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [267]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [136] ####
+ [20560] Color (0)  #### Posicion LIBRE: [268] ####
+ [25908] Color (1)  #### Posicion LIBRE: [270] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [268]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [137] ####
+ [23228] Color (2)  #### Posicion LIBRE: [1] ####
+ [20560] Color (0)  #### Posicion LIBRE: [269] ####
+ [25908] Color (1)  #### Posicion LIBRE: [271] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [269]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [2] ####
+ [23228] Color (2)  #### Posicion LIBRE: [3] ####
+ [20560] Color (0)  #### Posicion LIBRE: [270] ####
+ [23228] Color (2)  #### Posicion LIBRE: [4] ####
+ [25908] Color (1)  #### Posicion LIBRE: [272] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [270]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [5] ####
+ [20560] Color (0)  #### Posicion LIBRE: [271] ####
+ [23228] Color (2)  #### Posicion LIBRE: [6] ####
+ [25908] Color (1)  #### Posicion LIBRE: [273] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [271]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [7] ####
+ [20560] Color (0)  #### Posicion LIBRE: [272] ####
+ [25908] Color (1)  #### Posicion LIBRE: [274] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [272]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [8] ####
+ [25908] Color (1)  #### Posicion LIBRE: [138] ####
+ [23228] Color (2)  #### Posicion LIBRE: [9] ####
+ [25908] Color (1)  #### Posicion LIBRE: [139] ####
+ [20560] Color (0)  #### Posicion LIBRE: [273] ####
+ [23228] Color (2)  #### Posicion LIBRE: [10] ####
+ [25908] Color (1)  #### Posicion LIBRE: [140] ####
+ [20560] Color (0)  #### Posicion LIBRE: [274] ####
+ [23228] Color (2)  #### Posicion LIBRE: [11] ####
+ [25908] Color (1)  #### Posicion LIBRE: [141] ####
+ [20560] Color (0)  #### Posicion LIBRE: [138] ####
+ [23228] Color (2)  #### Posicion LIBRE: [12] ####
+ [25908] Color (1)  #### Posicion LIBRE: [142] ####
+ [20560] Color (0)  #### Posicion LIBRE: [139] ####
+ [23228] Color (2)  #### Posicion LIBRE: [13] ####
+ [25908] Color (1)  #### Posicion LIBRE: [143] ####
+ [20560] Color (0)  #### Posicion LIBRE: [140] ####
+ [23228] Color (2)  #### Posicion LIBRE: [14] ####
+ [25908] Color (1)  #### Posicion LIBRE: [144] ####
+ [20560] Color (0)  #### Posicion LIBRE: [141] ####
+ [23228] Color (2)  #### Posicion LIBRE: [15] ####
+ [25908] Color (1)  #### Posicion LIBRE: [145] ####
+ [20560] Color (0)  #### Posicion LIBRE: [142] ####
+ [25908] Color (1)  #### Posicion LIBRE: [146] ####
+ [20560] Color (0)  #### Posicion LIBRE: [143] ####
+ [23228] Color (2)  #### Posicion LIBRE: [16] ####
+ [25908] Color (1)  #### Posicion LIBRE: [147] ####
+ [20560] Color (0)  #### Posicion LIBRE: [144] ####
+ [25908] Color (1)  #### Posicion LIBRE: [148] ####
+ [20560] Color (0)  #### Posicion LIBRE: [145] ####
+ [23228] Color (2)  #### Posicion LIBRE: [17] ####
+ [25908] Color (1)  #### Posicion LIBRE: [149] ####
+ [20560] Color (0)  #### Posicion LIBRE: [146] ####
+ [25908] Color (1)  #### Posicion LIBRE: [150] ####
+ [20560] Color (0)  #### Posicion LIBRE: [147] ####
+ [20560] Color (0)  #### Posicion LIBRE: [148] ####
+ [25908] Color (1)  #### Posicion LIBRE: [151] ####
+ [23228] Color (2)  #### Posicion LIBRE: [18] ####
+ [20560] Color (0)  #### Posicion LIBRE: [149] ####
+ [25908] Color (1)  #### Posicion LIBRE: [152] ####
+ [20560] Color (0)  #### Posicion LIBRE: [150] ####
+ [23228] Color (2)  #### Posicion LIBRE: [19] ####
+ [20560] Color (0)  #### Posicion LIBRE: [151] ####
+ [25908] Color (1)  #### Posicion LIBRE: [153] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [151]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [152] ####
+ [23228] Color (2)  #### Posicion LIBRE: [20] ####
+ [25908] Color (1)  #### Posicion LIBRE: [154] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [152]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [153] ####
+ [23228] Color (2)  #### Posicion LIBRE: [21] ####
+ [25908] Color (1)  #### Posicion LIBRE: [155] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [153]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [154] ####
+ [23228] Color (2)  #### Posicion LIBRE: [22] ####
+ [25908] Color (1)  #### Posicion LIBRE: [156] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [154]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [155] ####
+ [23228] Color (2)  #### Posicion LIBRE: [23] ####
+ [25908] Color (1)  #### Posicion LIBRE: [157] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [155]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [156] ####
+ [25908] Color (1)  #### Posicion LIBRE: [158] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [156]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [24] ####
+ [20560] Color (0)  #### Posicion LIBRE: [157] ####
+ [23228] Color (2)  #### Posicion LIBRE: [25] ####
+ [25908] Color (1)  #### Posicion LIBRE: [159] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [157]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [158] ####
+ [23228] Color (2)  #### Posicion LIBRE: [26] ####
+ [25908] Color (1)  #### Posicion LIBRE: [160] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [158]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [159] ####
+ [23228] Color (2)  #### Posicion LIBRE: [27] ####
+ [25908] Color (1)  #### Posicion LIBRE: [161] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [159]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [160] ####
+ [23228] Color (2)  #### Posicion LIBRE: [28] ####
+ [25908] Color (1)  #### Posicion LIBRE: [162] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [160]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [161] ####
+ [23228] Color (2)  #### Posicion LIBRE: [29] ####
+ [25908] Color (1)  #### Posicion LIBRE: [163] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [161]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [162] ####
+ [23228] Color (2)  #### Posicion LIBRE: [30] ####
+ [23228] Color (2)  #### Posicion LIBRE: [31] ####
+ [25908] Color (1)  #### Posicion LIBRE: [164] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [162]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [163] ####
+ [23228] Color (2)  #### Posicion LIBRE: [32] ####
+ [23228] Color (2)  #### Posicion LIBRE: [33] ####
+ [25908] Color (1)  #### Posicion LIBRE: [165] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [163]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [164] ####
+ [23228] Color (2)  #### Posicion LIBRE: [34] ####
+ [23228] Color (2)  #### Posicion LIBRE: [35] ####
+ [25908] Color (1)  #### Posicion LIBRE: [166] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [164]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [36] ####
+ [20560] Color (0)  #### Posicion LIBRE: [165] ####
+ [25908] Color (1)  #### Posicion LIBRE: [167] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [165]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [37] ####
+ [23228] Color (2)  #### Posicion LIBRE: [38] ####
+ [25908] Color (1)  #### Posicion LIBRE: [168] ####
+ [20560] Color (0)  #### Posicion LIBRE: [166] ####
+ [23228] Color (2)  #### Posicion LIBRE: [39] ####
+ [25908] Color (1)  #### Posicion LIBRE: [169] ####
+ [20560] Color (0)  #### Posicion LIBRE: [167] ####
+ [23228] Color (2)  #### Posicion LIBRE: [40] ####
+ [25908] Color (1)  #### Posicion LIBRE: [170] ####
+ [20560] Color (0)  #### Posicion LIBRE: [168] ####
+ [23228] Color (2)  #### Posicion LIBRE: [41] ####
+ [25908] Color (1)  #### Posicion LIBRE: [171] ####
+ [20560] Color (0)  #### Posicion LIBRE: [169] ####
+ [23228] Color (2)  #### Posicion LIBRE: [42] ####
+ [25908] Color (1)  #### Posicion LIBRE: [172] ####
+ [20560] Color (0)  #### Posicion LIBRE: [170] ####
+ [23228] Color (2)  #### Posicion LIBRE: [43] ####
+ [25908] Color (1)  #### Posicion LIBRE: [173] ####
+ [20560] Color (0)  #### Posicion LIBRE: [171] ####
+ [23228] Color (2)  #### Posicion LIBRE: [44] ####
+ [25908] Color (1)  #### Posicion LIBRE: [174] ####
+ [20560] Color (0)  #### Posicion LIBRE: [172] ####
+ [23228] Color (2)  #### Posicion LIBRE: [45] ####
+ [25908] Color (1)  #### Posicion LIBRE: [175] ####
+ [20560] Color (0)  #### Posicion LIBRE: [173] ####
+ [23228] Color (2)  #### Posicion LIBRE: [46] ####
+ [25908] Color (1)  #### Posicion LIBRE: [176] ####
+ [20560] Color (0)  #### Posicion LIBRE: [174] ####
+ [23228] Color (2)  #### Posicion LIBRE: [47] ####
+ [25908] Color (1)  #### Posicion LIBRE: [177] ####
+ [20560] Color (0)  #### Posicion LIBRE: [175] ####
+ [23228] Color (2)  #### Posicion LIBRE: [48] ####
+ [25908] Color (1)  #### Posicion LIBRE: [178] ####
+ [20560] Color (0)  #### Posicion LIBRE: [176] ####
+ [25908] Color (1)  #### Posicion LIBRE: [179] ####
+ [23228] Color (2)  #### Posicion LIBRE: [49] ####
+ [20560] Color (0)  #### Posicion LIBRE: [177] ####
+ [25908] Color (1)  #### Posicion LIBRE: [180] ####
+ [23228] Color (2)  #### Posicion LIBRE: [50] ####
+ [20560] Color (0)  #### Posicion LIBRE: [178] ####
+ [25908] Color (1)  #### Posicion LIBRE: [181] ####
+ [23228] Color (2)  #### Posicion LIBRE: [51] ####
+ [20560] Color (0)  #### Posicion LIBRE: [179] ####
+ [23228] Color (2)  #### Posicion LIBRE: [52] ####
+ [25908] Color (1)  #### Posicion LIBRE: [182] ####
+ [20560] Color (0)  #### Posicion LIBRE: [180] ####
+ [23228] Color (2)  #### Posicion LIBRE: [53] ####
+ [25908] Color (1)  #### Posicion LIBRE: [183] ####
+ [20560] Color (0)  #### Posicion LIBRE: [181] ####
+ [23228] Color (2)  #### Posicion LIBRE: [54] ####
+ [25908] Color (1)  #### Posicion LIBRE: [184] ####
+ [20560] Color (0)  #### Posicion LIBRE: [182] ####
+ [23228] Color (2)  #### Posicion LIBRE: [55] ####
+ [25908] Color (1)  #### Posicion LIBRE: [185] ####
+ [20560] Color (0)  #### Posicion LIBRE: [183] ####
+ [23228] Color (2)  #### Posicion LIBRE: [56] ####
+ [25908] Color (1)  #### Posicion LIBRE: [186] ####
+ [20560] Color (0)  #### Posicion LIBRE: [184] ####
+ [23228] Color (2)  #### Posicion LIBRE: [57] ####
+ [25908] Color (1)  #### Posicion LIBRE: [187] ####
+ [20560] Color (0)  #### Posicion LIBRE: [185] ####
+ [23228] Color (2)  #### Posicion LIBRE: [58] ####
+ [25908] Color (1)  #### Posicion LIBRE: [188] ####
+ [20560] Color (0)  #### Posicion LIBRE: [186] ####
+ [23228] Color (2)  #### Posicion LIBRE: [59] ####
+ [25908] Color (1)  #### Posicion LIBRE: [189] ####
+ [20560] Color (0)  #### Posicion LIBRE: [187] ####
+ [23228] Color (2)  #### Posicion LIBRE: [60] ####
+ [25908] Color (1)  #### Posicion LIBRE: [190] ####
+ [20560] Color (0)  #### Posicion LIBRE: [188] ####
+ [25908] Color (1)  #### Posicion LIBRE: [191] ####
+ [20560] Color (0)  #### Posicion LIBRE: [189] ####
+ [25908] Color (1)  #### Posicion LIBRE: [192] ####
+ [23228] Color (2)  #### Posicion LIBRE: [61] ####
+ [20560] Color (0)  #### Posicion LIBRE: [190] ####
+ [25908] Color (1)  #### Posicion LIBRE: [193] ####
+ [20560] Color (0)  #### Posicion LIBRE: [191] ####
+ [25908] Color (1)  #### Posicion LIBRE: [194] ####
+ [20560] Color (0)  #### Posicion LIBRE: [192] ####
+ [23228] Color (2)  #### Posicion LIBRE: [62] ####
+ [25908] Color (1)  #### Posicion LIBRE: [195] ####
+ [20560] Color (0)  #### Posicion LIBRE: [193] ####
+ [25908] Color (1)  #### Posicion LIBRE: [196] ####
+ [20560] Color (0)  #### Posicion LIBRE: [194] ####
+ [23228] Color (2)  #### Posicion LIBRE: [63] ####
+ [25908] Color (1)  #### Posicion LIBRE: [197] ####
+ [20560] Color (0)  #### Posicion LIBRE: [195] ####
+ [20560] Color (0)  #### Posicion LIBRE: [196] ####
+ [23228] Color (2)  #### Posicion LIBRE: [64] ####
+ [25908] Color (1)  #### Posicion LIBRE: [198] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [196]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [197] ####
+ [23228] Color (2)  #### Posicion LIBRE: [65] ####
+ [25908] Color (1)  #### Posicion LIBRE: [199] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [197]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [198] ####
+ [23228] Color (2)  #### Posicion LIBRE: [66] ####
+ [25908] Color (1)  #### Posicion LIBRE: [200] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [198]: [20560]
+ [20560] Color (0)  #### Posicion LIBRE: [199] ####
+ [23228] Color (2)  #### Posicion LIBRE: [67] ####
+Color (2) [23228] Envio Mesaje pos_cambio: 200
+Limpiando Cola...
+ [25908] Color (1)  #### Posicion LIBRE: [201] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [199]: [20560]
+Color (1) [25908] Envio Mesaje pos_cambio: 67
+Limpiando Cola...
+ [20560] Color (0)  #### Posicion LIBRE: [200] ####
+ [25908] Color (1)  #### Posicion LIBRE: [202] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [200]: [20560]
+ [23228] Color (2)  #### Posicion LIBRE: [68] ####
+ [25908] Color (1)  #### Posicion LIBRE: [203] ####
+ [20560] Color (0)  #### Posicion LIBRE: [201] ####
+ [23228] Color (2)  #### Posicion LIBRE: [69] ####
+Color (2) [23228] Envio Mesaje pos_cambio: 201
+Limpiando Cola...
+ [25908] Color (1)  #### Posicion LIBRE: [204] ####
+ [20560] Color (0)  #### Posicion LIBRE: [202] ####
+ [23228] Color (2)  #### Posicion LIBRE: [70] ####
+ [25908] Color (1)  #### Posicion LIBRE: [205] ####
+ [20560] Color (0)  #### Posicion LIBRE: [203] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 70
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [71] ####
+ [25908] Color (1)  #### Posicion LIBRE: [206] ####
+ [20560] Color (0)  #### Posicion LIBRE: [204] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 71
+ [23228] Color (2)  #### Posicion LIBRE: [72] ####
+ [25908] Color (1)  #### Posicion LIBRE: [207] ####
+ [20560] Color (0)  #### Posicion LIBRE: [205] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 72
+ [23228] Color (2)  #### Posicion LIBRE: [73] ####
+ [25908] Color (1)  #### Posicion LIBRE: [208] ####
+ [20560] Color (0)  #### Posicion LIBRE: [206] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 73
+ [23228] Color (2)  #### Posicion LIBRE: [74] ####
+ [25908] Color (1)  #### Posicion LIBRE: [209] ####
+ [20560] Color (0)  #### Posicion LIBRE: [207] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 74
+ [23228] Color (2)  #### Posicion LIBRE: [75] ####
+ [25908] Color (1)  #### Posicion LIBRE: [210] ####
+ [20560] Color (0)  #### Posicion LIBRE: [208] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 75
+ [23228] Color (2)  #### Posicion LIBRE: [76] ####
+ [25908] Color (1)  #### Posicion LIBRE: [211] ####
+ [20560] Color (0)  #### Posicion LIBRE: [209] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 76
+ [23228] Color (2)  #### Posicion LIBRE: [77] ####
+ [25908] Color (1)  #### Posicion LIBRE: [212] ####
+ [20560] Color (0)  #### Posicion LIBRE: [210] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 77
+ [23228] Color (2)  #### Posicion LIBRE: [78] ####
+ [25908] Color (1)  #### Posicion LIBRE: [213] ####
+ [20560] Color (0)  #### Posicion LIBRE: [211] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 78
+ [23228] Color (2)  #### Posicion LIBRE: [79] ####
+ [25908] Color (1)  #### Posicion LIBRE: [214] ####
+ [20560] Color (0)  #### Posicion LIBRE: [212] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 79
+ [23228] Color (2)  #### Posicion LIBRE: [80] ####
+ [25908] Color (1)  #### Posicion LIBRE: [215] ####
+ [20560] Color (0)  #### Posicion LIBRE: [213] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 80
+ [23228] Color (2)  #### Posicion LIBRE: [81] ####
+ [25908] Color (1)  #### Posicion LIBRE: [216] ####
+ [20560] Color (0)  #### Posicion LIBRE: [214] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 81
+ [23228] Color (2)  #### Posicion LIBRE: [82] ####
+ [25908] Color (1)  #### Posicion LIBRE: [217] ####
+ [20560] Color (0)  #### Posicion LIBRE: [215] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 82
+ [23228] Color (2)  #### Posicion LIBRE: [83] ####
+ [25908] Color (1)  #### Posicion LIBRE: [218] ####
+ [20560] Color (0)  #### Posicion LIBRE: [216] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 83
+ [23228] Color (2)  #### Posicion LIBRE: [84] ####
+ [25908] Color (1)  #### Posicion LIBRE: [219] ####
+ [20560] Color (0)  #### Posicion LIBRE: [217] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 84
+ [23228] Color (2)  #### Posicion LIBRE: [85] ####
+ [25908] Color (1)  #### Posicion LIBRE: [220] ####
+ [20560] Color (0)  #### Posicion LIBRE: [218] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 85
+ [23228] Color (2)  #### Posicion LIBRE: [86] ####
+ [25908] Color (1)  #### Posicion LIBRE: [221] ####
+ [20560] Color (0)  #### Posicion LIBRE: [219] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 86
+ [23228] Color (2)  #### Posicion LIBRE: [87] ####
+ [25908] Color (1)  #### Posicion LIBRE: [222] ####
+ [20560] Color (0)  #### Posicion LIBRE: [220] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 87
+ [23228] Color (2)  #### Posicion LIBRE: [88] ####
+ [25908] Color (1)  #### Posicion LIBRE: [223] ####
+ [20560] Color (0)  #### Posicion LIBRE: [221] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 88
+ [23228] Color (2)  #### Posicion LIBRE: [89] ####
+ [25908] Color (1)  #### Posicion LIBRE: [224] ####
+ [20560] Color (0)  #### Posicion LIBRE: [222] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 89
+ [23228] Color (2)  #### Posicion LIBRE: [90] ####
+ [25908] Color (1)  #### Posicion LIBRE: [225] ####
+ [20560] Color (0)  #### Posicion LIBRE: [223] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 90
+ [23228] Color (2)  #### Posicion LIBRE: [91] ####
+ [25908] Color (1)  #### Posicion LIBRE: [226] ####
+ [20560] Color (0)  #### Posicion LIBRE: [224] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 91
+ [23228] Color (2)  #### Posicion LIBRE: [92] ####
+ [25908] Color (1)  #### Posicion LIBRE: [227] ####
+ [20560] Color (0)  #### Posicion LIBRE: [225] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 92
+ [23228] Color (2)  #### Posicion LIBRE: [93] ####
+ [25908] Color (1)  #### Posicion LIBRE: [228] ####
+ [20560] Color (0)  #### Posicion LIBRE: [226] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 93
+ [23228] Color (2)  #### Posicion LIBRE: [94] ####
+ [25908] Color (1)  #### Posicion LIBRE: [229] ####
+ [20560] Color (0)  #### Posicion LIBRE: [227] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 94
+ [23228] Color (2)  #### Posicion LIBRE: [95] ####
+ [25908] Color (1)  #### Posicion LIBRE: [230] ####
+ [20560] Color (0)  #### Posicion LIBRE: [228] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 95
+ [23228] Color (2)  #### Posicion LIBRE: [96] ####
+ [25908] Color (1)  #### Posicion LIBRE: [231] ####
+ [20560] Color (0)  #### Posicion LIBRE: [229] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 96
+ [23228] Color (2)  #### Posicion LIBRE: [97] ####
+ [25908] Color (1)  #### Posicion LIBRE: [232] ####
+ [20560] Color (0)  #### Posicion LIBRE: [230] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 97
+ [23228] Color (2)  #### Posicion LIBRE: [98] ####
+ [25908] Color (1)  #### Posicion LIBRE: [233] ####
+ [20560] Color (0)  #### Posicion LIBRE: [231] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 98
+ [23228] Color (2)  #### Posicion LIBRE: [99] ####
+ [25908] Color (1)  #### Posicion LIBRE: [234] ####
+ [20560] Color (0)  #### Posicion LIBRE: [232] ####
+Color (0) [20560] Envio Mesaje pos_cambio: 99
+ [23228] Color (2)  #### Posicion LIBRE: [100] ####
+ [20560] Color (0) ESPERANDO Mensaje [233]
+ [23228] Color (2)  #### Posicion LIBRE: [101] ####
+Color (2) [23228] Envio Mesaje pos_cambio: 232
+Limpiando Cola...
+ [20560] Color (0) Recojo mensaje [233]
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [102] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [100]: [20560]
+Color (2) [23228] Envio Mesaje pos_cambio: 233
+ [20560] Color (0)  #### Posicion LIBRE: [101] ####
+ [23228] Color (2)  #### Posicion LIBRE: [103] ####
+Limpiando Cola...
+ [20560] Color (0) ESPERANDO Mensaje [102]
+Color (1) [25908] Envio Mesaje pos_cambio: 101
+ [20560] Color (0) Recojo mensaje [102]
+Limpiando Cola...
+Color (2) [23228] Envio Mesaje pos_cambio: 234
+ [20560] Color (0)  #### Posicion LIBRE: [102] ####
+ [25908] Color (1)  #### Posicion LIBRE: [235] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 102
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [104] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [102]: [20560]
+Color (2) [23228] Envio Mesaje pos_cambio: 235
+ [20560] Color (0)  #### Posicion LIBRE: [103] ####
+ [23228] Color (2)  #### Posicion LIBRE: [105] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [103]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [236] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 103
+Limpiando Cola...
+ [20560] Color (0)  #### Posicion LIBRE: [104] ####
+ [23228] Color (2)  #### Posicion LIBRE: [106] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [104]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [237] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 104
+ [20560] Color (0)  #### Posicion LIBRE: [105] ####
+ [23228] Color (2)  #### Posicion LIBRE: [107] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [105]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [238] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 105
+ [20560] Color (0)  #### Posicion LIBRE: [106] ####
+ [23228] Color (2)  #### Posicion LIBRE: [108] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [106]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [239] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 106
+ [20560] Color (0)  #### Posicion LIBRE: [107] ####
+ [23228] Color (2)  #### Posicion LIBRE: [109] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [107]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [240] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 107
+ [20560] Color (0)  #### Posicion LIBRE: [108] ####
+ [23228] Color (2)  #### Posicion LIBRE: [110] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [108]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [241] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 108
+ [20560] Color (0)  #### Posicion LIBRE: [109] ####
+ [23228] Color (2)  #### Posicion LIBRE: [111] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [109]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [242] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 109
+ [20560] Color (0)  #### Posicion LIBRE: [110] ####
+ [23228] Color (2)  #### Posicion LIBRE: [112] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [110]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [243] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 110
+ [20560] Color (0)  #### Posicion LIBRE: [111] ####
+ [23228] Color (2)  #### Posicion LIBRE: [113] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [111]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [244] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 111
+ [20560] Color (0)  #### Posicion LIBRE: [112] ####
+ [23228] Color (2)  #### Posicion LIBRE: [114] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [112]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [245] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 112
+ [20560] Color (0)  #### Posicion LIBRE: [113] ####
+ [23228] Color (2)  #### Posicion LIBRE: [115] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [113]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [246] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 113
+ [20560] Color (0)  #### Posicion LIBRE: [114] ####
+ [23228] Color (2)  #### Posicion LIBRE: [116] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [114]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [247] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 114
+ [20560] Color (0)  #### Posicion LIBRE: [115] ####
+ [23228] Color (2)  #### Posicion LIBRE: [117] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [115]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [248] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 115
+ [20560] Color (0)  #### Posicion LIBRE: [116] ####
+ [23228] Color (2)  #### Posicion LIBRE: [118] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [116]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [249] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 116
+ [20560] Color (0)  #### Posicion LIBRE: [117] ####
+ [23228] Color (2)  #### Posicion LIBRE: [119] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [117]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [250] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 117
+ [20560] Color (0)  #### Posicion LIBRE: [118] ####
+ [23228] Color (2)  #### Posicion LIBRE: [120] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [118]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [251] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 118
+ [20560] Color (0)  #### Posicion LIBRE: [119] ####
+ [25908] Color (1)  #### Posicion LIBRE: [252] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 119
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [121] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [119]: [20560]
+Color (2) [23228] Envio Mesaje pos_cambio: 252
+ [20560] Color (0)  #### Posicion LIBRE: [120] ####
+ [25908] Color (1)  #### Posicion LIBRE: [253] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 120
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [122] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [120]: [20560]
+Color (2) [23228] Envio Mesaje pos_cambio: 253
+ [20560] Color (0)  #### Posicion LIBRE: [121] ####
+ [25908] Color (1)  #### Posicion LIBRE: [254] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 121
+Limpiando Cola...
+ [23228] Color (2)  #### Posicion LIBRE: [123] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [121]: [20560]
+Color (2) [23228] Envio Mesaje pos_cambio: 254
+ [20560] Color (0)  #### Posicion LIBRE: [122] ####
+ [23228] Color (2)  #### Posicion LIBRE: [124] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [122]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [255] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 122
+Limpiando Cola...
+ [20560] Color (0)  #### Posicion LIBRE: [123] ####
+ [23228] Color (2)  #### Posicion LIBRE: [125] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [123]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [256] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 123
+ [20560] Color (0)  #### Posicion LIBRE: [124] ####
+ [23228] Color (2)  #### Posicion LIBRE: [126] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [124]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [257] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 124
+ [20560] Color (0)  #### Posicion LIBRE: [125] ####
+ [23228] Color (2)  #### Posicion LIBRE: [127] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [125]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [258] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 125
+ [20560] Color (0)  #### Posicion LIBRE: [126] ####
+ [25908] Color (1)  #### Posicion LIBRE: [259] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 126
+ [23228] Color (2)  #### Posicion LIBRE: [128] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [126]: [20560]
+Color (2) [23228] Envio Mesaje pos_cambio: 259
+ [20560] Color (0)  #### Posicion LIBRE: [127] ####
+ [23228] Color (2)  #### Posicion LIBRE: [129] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [127]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [260] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 127
+Limpiando Cola...
+ [20560] Color (0)  #### Posicion LIBRE: [128] ####
+ [23228] Color (2)  #### Posicion LIBRE: [130] ####
+ [23228] Color (2) Envio mensaje POS_2-----> [128]: [20560]
+ [25908] Color (1)  #### Posicion LIBRE: [261] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 128
+ [20560] Color (0)  #### Posicion LIBRE: [129] ####
+ [25908] Color (1)  #### Posicion LIBRE: [262] ####
+Color (1) [25908] Envio Mesaje pos_cambio: 129
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+ [25908] Color (1)  #### Posicion LIBRE: [263] ####
+ [25908] Color (1) Envio mensaje POS_2-----> [261]: [20560]
+Color (1) [25908] Envio Mesaje pos_cambio: 130
+ [20560] Color (0)  #### Posicion LIBRE: [262] ####
+ [23228] Color (2)  #### Posicion LIBRE: [131] ####
+Limpiando Cola...
+ [20560] Color (0)  #### Posicion LIBRE: [265] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [263]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [132] ####
+ [25908] Color (1)  #### Posicion LIBRE: [264] ####
+ [20560] Color (0)  #### Posicion LIBRE: [266] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [264]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [133] ####
+ [25908] Color (1)  #### Posicion LIBRE: [265] ####
+ [20560] Color (0)  #### Posicion LIBRE: [267] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [265]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [134] ####
+ [25908] Color (1)  #### Posicion LIBRE: [266] ####
+ [20560] Color (0)  #### Posicion LIBRE: [268] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [266]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [135] ####
+ [25908] Color (1)  #### Posicion LIBRE: [267] ####
+ [20560] Color (0)  #### Posicion LIBRE: [269] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [267]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [136] ####
+ [25908] Color (1)  #### Posicion LIBRE: [268] ####
+ [20560] Color (0)  #### Posicion LIBRE: [270] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [268]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [137] ####
+ [23228] Color (2)  #### Posicion LIBRE: [1] ####
+ [25908] Color (1)  #### Posicion LIBRE: [269] ####
+ [20560] Color (0)  #### Posicion LIBRE: [271] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [269]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [2] ####
+ [23228] Color (2)  #### Posicion LIBRE: [3] ####
+ [25908] Color (1)  #### Posicion LIBRE: [270] ####
+ [23228] Color (2)  #### Posicion LIBRE: [4] ####
+ [20560] Color (0)  #### Posicion LIBRE: [272] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [270]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [5] ####
+ [25908] Color (1)  #### Posicion LIBRE: [271] ####
+ [23228] Color (2)  #### Posicion LIBRE: [6] ####
+ [20560] Color (0)  #### Posicion LIBRE: [273] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [271]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [7] ####
+ [20560] Color (0)  #### Posicion LIBRE: [274] ####
+ [25908] Color (1)  #### Posicion LIBRE: [272] ####
+ [23228] Color (2)  #### Posicion LIBRE: [8] ####
+ [20560] Color (0)  #### Posicion LIBRE: [138] ####
+ [23228] Color (2)  #### Posicion LIBRE: [9] ####
+ [20560] Color (0)  #### Posicion LIBRE: [139] ####
+ [23228] Color (2)  #### Posicion LIBRE: [10] ####
+ [25908] Color (1)  #### Posicion LIBRE: [273] ####
+ [20560] Color (0)  #### Posicion LIBRE: [140] ####
+ [23228] Color (2)  #### Posicion LIBRE: [11] ####
+ [25908] Color (1)  #### Posicion LIBRE: [274] ####
+ [20560] Color (0)  #### Posicion LIBRE: [141] ####
+ [25908] Color (1)  #### Posicion LIBRE: [138] ####
+ [23228] Color (2)  #### Posicion LIBRE: [12] ####
+ [20560] Color (0)  #### Posicion LIBRE: [142] ####
+ [25908] Color (1)  #### Posicion LIBRE: [139] ####
+ [23228] Color (2)  #### Posicion LIBRE: [13] ####
+ [20560] Color (0)  #### Posicion LIBRE: [143] ####
+ [25908] Color (1)  #### Posicion LIBRE: [140] ####
+ [23228] Color (2)  #### Posicion LIBRE: [14] ####
+ [20560] Color (0)  #### Posicion LIBRE: [144] ####
+ [25908] Color (1)  #### Posicion LIBRE: [141] ####
+ [23228] Color (2)  #### Posicion LIBRE: [15] ####
+ [20560] Color (0)  #### Posicion LIBRE: [145] ####
+ [25908] Color (1)  #### Posicion LIBRE: [142] ####
+ [20560] Color (0)  #### Posicion LIBRE: [146] ####
+ [25908] Color (1)  #### Posicion LIBRE: [143] ####
+ [23228] Color (2)  #### Posicion LIBRE: [16] ####
+ [20560] Color (0)  #### Posicion LIBRE: [147] ####
+ [25908] Color (1)  #### Posicion LIBRE: [144] ####
+ [20560] Color (0)  #### Posicion LIBRE: [148] ####
+ [25908] Color (1)  #### Posicion LIBRE: [145] ####
+ [20560] Color (0)  #### Posicion LIBRE: [149] ####
+ [23228] Color (2)  #### Posicion LIBRE: [17] ####
+ [25908] Color (1)  #### Posicion LIBRE: [146] ####
+ [20560] Color (0)  #### Posicion LIBRE: [150] ####
+ [25908] Color (1)  #### Posicion LIBRE: [147] ####
+ [20560] Color (0)  #### Posicion LIBRE: [151] ####
+ [25908] Color (1)  #### Posicion LIBRE: [148] ####
+ [23228] Color (2)  #### Posicion LIBRE: [18] ####
+ [20560] Color (0)  #### Posicion LIBRE: [152] ####
+ [25908] Color (1)  #### Posicion LIBRE: [149] ####
+ [25908] Color (1)  #### Posicion LIBRE: [150] ####
+ [23228] Color (2)  #### Posicion LIBRE: [19] ####
+ [20560] Color (0)  #### Posicion LIBRE: [153] ####
+ [25908] Color (1)  #### Posicion LIBRE: [151] ####
+ [25908] Color (1)  #### Posicion LIBRE: [152] ####
+ [23228] Color (2)  #### Posicion LIBRE: [20] ####
+ [20560] Color (0)  #### Posicion LIBRE: [154] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [152]: [25908]
+ [25908] Color (1)  #### Posicion LIBRE: [153] ####
+ [23228] Color (2)  #### Posicion LIBRE: [21] ####
+ [20560] Color (0)  #### Posicion LIBRE: [155] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [153]: [25908]
+ [25908] Color (1)  #### Posicion LIBRE: [154] ####
+ [20560] Color (0)  #### Posicion LIBRE: [156] ####
+ [20560] Color (0) Envio mensaje POS_2-----> [154]: [25908]
+ [23228] Color (2)  #### Posicion LIBRE: [22] ####
+ [25908] Color (1)  #### Posicion LIBRE: [155] ####
 ^C
