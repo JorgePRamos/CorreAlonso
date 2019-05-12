@@ -522,7 +522,7 @@ int main(int argc, char const * argv[]) {
             int u = 0; //variable para bucles For
             int numCoches = atoi(argv[1]);//Ncoches
             int vel = atoi(argv[2]); //Punteros funciones
-        }
+        
         PeekMessage( & creaCola, NULL, WM_USER, WM_USER, PM_NOREMOVE); //Creacion cola  mensaje
 
         if ((hinstLib = LoadLibrary(TEXT("falonso2.dll"))) == NULL) { //Carga libreria en memoria del proceso
@@ -601,10 +601,9 @@ int main(int argc, char const * argv[]) {
         LeaveCriticalSection( & critica_salida);
 
         //fprintf(stderr, "PRE-CreaHijos\n");
-        creaNhijos(3, 1);
-        //creaNhijos(numCoches, vel);//DESCOMENTAR CUANDO ESTE DEPURADO
+        //creaNhijos(3, 1);
+        creaNhijos(numCoches, vel);//DESCOMENTAR CUANDO ESTE DEPURADO
 
-        //creaNhijos(numCoches,vel);//descomentar cuando depurado
         //fprintf(stderr, "POST-CreaHijos\n");
 
         while (1) {//Alterdor Semaforos
@@ -627,4 +626,5 @@ int main(int argc, char const * argv[]) {
 
         FreeLibrary(hinstLib);//LiberaciOn de DLl
         return 0;
+    }
 }//Fin Main
