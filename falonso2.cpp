@@ -387,11 +387,11 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     //fprintf(stderr, " [%d] Pos actual: %d carril %d pos cambio %d [%d]=%d\n", GetCurrentThreadId(), * desp, * carril, pos_cambio, cambio_carril_cal((( * desp) + 136) % 137, * carril), arrayPosiciones[cambio_carril_cal((( * desp) + 136) % 137, * carril)]); //#mensaje
                     PERROR("ERROR AL MSGSND (pos carril opuesto ocupada)");
                 }
-                /*NO VA AQUIIII
-                //eliminar mensage cola
-                while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER, PM_NOREMOVE)){
+
+                //Limpieza Cola
+                while(PeekMessage( & clMsg, NULL, 3, 3, PM_NOREMOVE)){
                     fprintf(stderr,"Limpiando Cola...\n");
-                }*/
+                }
                 LeaveCriticalSection( & sc1);
 
                 //fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", GetCurrentThreadId(), color, pos_cambio); //#mensaje
@@ -599,6 +599,8 @@ int main(int argc, char const * argv[]) {
 
         //fprintf(stderr, "PRE-CreaHijos\n");
         creaNhijos(3, 1);
+        //creaNhijos(numCoches, vel);//DESCOMENTAR CUANDO ESTE DEPURADO
+
         //creaNhijos(numCoches,vel);//descomentar cuando depurado
         //fprintf(stderr, "POST-CreaHijos\n");
 
