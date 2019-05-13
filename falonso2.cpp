@@ -407,7 +407,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
         } else {
             //fprintf(stderr, "[%d] Color (%d) Posicion ocupada, compruebo cambio de carril: %d\n", GetCurrentThreadId(), color, * desp); //#posicion
               //Limpieza Cola
-                while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER+4, PM_REMOVE)){
+                while(( & clMsg, NULL, WM_USER, WM_USER+4, PM_REMOVE)){
                     fprintf(stderr,"Limpiando Cola...\n");
                 }
 
