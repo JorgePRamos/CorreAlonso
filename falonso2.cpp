@@ -596,7 +596,7 @@ int main(int argc, char const * argv[]) {
 
 
         //Inicio comportamiento
-        inicio_falonso(1); //Inicio Circuito
+        inicio_falonso(vel); //Inicio Circuito
 
         EnterCriticalSection( & critica_sem);
         semtoRed(HORIZONTAL); //Configuracion Incial Semaforos
@@ -605,7 +605,7 @@ int main(int argc, char const * argv[]) {
 
         //fprintf(stderr, "PRE-CreaHijos\n");
         //creaNhijos(3, 1);
-        creaNhijos(numCoches, vel); //DESCOMENTAR CUANDO ESTE DEPURADO
+        creaNhijos(numCoches, rand()%100); //DESCOMENTAR CUANDO ESTE DEPURADO
 
         //fprintf(stderr, "POST-CreaHijos\n");
 
