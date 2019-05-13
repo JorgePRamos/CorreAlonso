@@ -408,8 +408,9 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             LeaveCriticalSection( & critica);
             //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica
 
-            velocidad(10, * carril, * desp);
-
+              if( (velocidad(10, * carril, * desp)) != -1) {
+                    fprintf(stderr,"+++++++++++++++++++++noERROR VELOCIAD");
+                }
         } else {//Entra la que SIG pos esta ocupada
             //fprintf(stderr, "[%d] Color (%d) Posicion ocupada, compruebo cambio de carril: %d\n", GetCurrentThreadId(), color, * desp); //#posicion
               //Limpieza Cola
@@ -424,7 +425,9 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 //fprintf(stderr, "[%d] Color (%d) Cambio Carril: %d\n", GetCurrentThreadId(), color, dep_temp); //#posicion
 
                 LeaveCriticalSection( & critica);
-                velocidad(10, * carril, * desp);
+                if( (velocidad(10, * carril, * desp)) != -1) {
+                    fprintf(stderr,"+++++++++++++++++++++noERROR VELOCIAD");
+                }
 
                 //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
@@ -516,6 +519,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
         
     while (1) {
         avance_controlado( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6], v);
+
     }
 }//Fin funcionHilos
 
