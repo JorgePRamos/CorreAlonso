@@ -359,6 +359,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                 raise(SIGINT);
             }
             arrayPosiciones[ * desp + ( * carril) * 137] = GetCurrentThreadId();//Guarda ID en Nueva Pos
+            
             int pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137));//Obtencion pos -1 cambio de carril bien
             if (( * desp == 111 && ! * carril) || ( * desp == 24 && ! * carril) || ( * desp == 106 && * carril) || ( * desp == 25 && * carril)) {//Salida del semaforo
 
@@ -408,7 +409,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             LeaveCriticalSection( & critica);
             //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica
 
-              if( (velocidad(10, * carril, * desp)) != -1) {
+              if( (velocidad(v, * carril, * desp)) != -1) {
                     fprintf(stderr,"+++++++++++++++++++++noERROR VELOCIAD");
                 }
         } else {//Entra la que SIG pos esta ocupada
@@ -423,9 +424,9 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
                     PERROR("ERROR AL CAMBIAR CARRIL");
                 }
                 //fprintf(stderr, "[%d] Color (%d) Cambio Carril: %d\n", GetCurrentThreadId(), color, dep_temp); //#posicion
-
+                arrayPosiciones[ * desp + ( * carril) * 137] = GetCurrentThreadId();//Guarda ID en Nueva Pos
                 LeaveCriticalSection( & critica);
-                if( (velocidad(10, * carril, * desp)) != -1) {
+                if( (velocidad(v, * carril, * desp)) != -1) {
                     fprintf(stderr,"+++++++++++++++++++++noERROR VELOCIAD");
                 }
 
