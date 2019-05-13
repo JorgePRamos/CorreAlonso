@@ -140,7 +140,7 @@ void semtoGreen(int sem) {
 
 //----------------------------------------------------------------------------------------------------------------------
 //---------- Avance_controlado
-void avance_controlado(int * carril, int * desp, int color, int v) {
+void avance_controlado(int * carril, int * desp, int color, int veloc) {
         EnterCriticalSection( & critica);
         //fprintf(stderr, "[%d] Color (%d)Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);
         arrayPosiciones[ * desp + ( * carril) * 137] = GetCurrentThreadId();
@@ -402,7 +402,7 @@ void avance_controlado(int * carril, int * desp, int color, int v) {
             LeaveCriticalSection( & critica);
             //fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica
 
-            velocidad(10, * carril, * desp);
+            velocidad(veloc, * carril, * desp);
 
         } else {
             //fprintf(stderr, "[%d] Color (%d) Posicion ocupada, compruebo cambio de carril: %d\n", GetCurrentThreadId(), color, * desp); //#posicion
@@ -447,7 +447,7 @@ int creaNhijos(int n, int v) {
         //fprintf(stderr, "%d %d**Soy el padre creando al hijo--> %d\n", (sizeof(hThreadArray)/sizeof(* hThreadArray )) ,n, i);
         arrayParam[i]= (pParam)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sizeof(Param));
         arrayParam[i]->indice=i;
-        arrayParam[i]->velocidad=v;
+        arrayParam[i]->velocidad=rand()%100+1;
         arrayParam[i]->nCoches=n;
         if((hThreadArray[i]=CreateThread(NULL,0, funcionHilos,arrayParam[i], 0 , &idHilo[i]))==NULL){
             PERROR("Create Hilo");
@@ -605,7 +605,7 @@ int main(int argc, char const * argv[]) {
 
         //fprintf(stderr, "PRE-CreaHijos\n");
         //creaNhijos(3, 1);
-        creaNhijos(numCoches, rand()%100); //DESCOMENTAR CUANDO ESTE DEPURADO
+        creaNhijos(numCoches, 1); //DESCOMENTAR CUANDO ESTE DEPURADO
 
         //fprintf(stderr, "POST-CreaHijos\n");
 
