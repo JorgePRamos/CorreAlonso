@@ -352,6 +352,9 @@ void avance_controlado(int * carril, int * desp, int color, int veloc) {
                 PERROR("ERROR AL AVANZAR COCHE");
                 raise(SIGINT);
             }
+                while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER+4, PM_REMOVE)){
+                    fprintf(stderr,"Limpiando Cola...\n");
+                }
             arrayPosiciones[ * desp + ( * carril) * 137] = GetCurrentThreadId();//Guarda ID en Nueva Pos
             int pos_cambio = (cambio_carril_cal((( * desp) + 136) % 137, * carril) + ((! * carril) * 137));//Obtencion pos -1 cambio de carril bien
             if (( * desp == 111 && ! * carril) || ( * desp == 24 && ! * carril) || ( * desp == 106 && * carril) || ( * desp == 25 && * carril)) {//Salida del semaforo
@@ -407,9 +410,6 @@ void avance_controlado(int * carril, int * desp, int color, int veloc) {
         } else {
             //fprintf(stderr, "[%d] Color (%d) Posicion ocupada, compruebo cambio de carril: %d\n", GetCurrentThreadId(), color, * desp); //#posicion
               //Limpieza Cola
-                while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER+4, PM_REMOVE)){
-                    fprintf(stderr,"Limpiando Cola...\n");
-                }
 
             if (!posOcup(! * carril, cambio_carril_cal( * desp, * carril))) {//Efectuo cambio carril Si es posible
                 if (cambioCarril(carril, desp, color) == -1) {
@@ -428,6 +428,9 @@ void avance_controlado(int * carril, int * desp, int color, int veloc) {
                 //fprintf(stderr, " [%d] Color (%d) ESPERANDO Mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
                 if (GetMessage( & uMsg, NULL,WM_USER+3, WM_USER+4) == -1) {
                     PERROR("GetMessage");
+                }
+                while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER+4, PM_REMOVE)){
+                    fprintf(stderr,"Limpiando Cola...\n");
                 }
                 //fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
             }
