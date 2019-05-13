@@ -481,7 +481,7 @@ DWORD WINAPI funcionHilos (LPVOID pEstruct_2){
         //fprintf(stderr, "Color (%d) [%d] Iteracion b = %d\n", colores[1 + (miIndice - 1) % 6], miIndice, b);
         b -= 2;
         //if (!(posOcup(miIndiceCarril, b))) {
-        if (!arrayPosiciones[b + (miIndiceCarril) * 137]) {
+        if (arrayPosiciones[b + (miIndiceCarril) * 137]==0) {
 
             //fprintf(stderr, "Color (%d) [%d] Carril libre encontrado\n", colores[1 + (miIndice - 1) % 6], miIndice);
             if (iniCoche( & miIndiceCarril, & b, colores[1 + (miIndice - 1) % 6]) != 0) {
