@@ -467,10 +467,10 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 //----------------------------------------------------------------------------------------------------------------------
 //---------- CreaNhijos
 int creaNhijos(int n, int v) {
-	HANDLE hThreadArray[20];
+	//HANDLE hThreadArray[20];
 	DWORD idHilo[20];
 	static int i;
-	num_coche = n;
+	//num_coche = n;
 	pParam arrayParam[20];
 	srand(time(NULL));
 
@@ -480,7 +480,8 @@ int creaNhijos(int n, int v) {
 		arrayParam[i]->indice = i;
 		arrayParam[i]->velocidad = rand() % 100 + 1;;
 		arrayParam[i]->nCoches = n;
-		if ((hThreadArray[i] = CreateThread(NULL, 0, funcionHilos, arrayParam[i], 0, &idHilo[i])) == NULL) {
+		//if ((hThreadArray[i] = CreateThread(NULL, 0, funcionHilos, arrayParam[i], 0, &idHilo[i])) == NULL) {
+		if ((CreateThread(NULL, 0, funcionHilos, arrayParam[i], 0, &idHilo[i])) == NULL) {
 			PERROR("Create Hilo");
 		}
 	}
