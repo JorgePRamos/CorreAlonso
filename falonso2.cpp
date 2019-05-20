@@ -387,7 +387,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 		}
 
 
-	  //if (posOcup( * carril, ((( * desp) + 135) % 137))) {//Comprobamos Pos -2 Para mensaje Bien
+		//if (posOcup( * carril, ((( * desp) + 135) % 137))) {//Comprobamos Pos -2 Para mensaje Bien
 		if (arrayPosiciones[pos_2]) {
 
 			fprintf(stderr, " [%d] Color (%d) Envio mensaje POS_2-----> %d | %d : [%d]\n", GetCurrentThreadId(), color, pos_2, (((*desp) + 135) % 137) + 137 * (*carril), arrayPosiciones[pos_2]); //#mensaje
@@ -468,10 +468,10 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 //---------- CreaNhijos
 int creaNhijos(int n, int v) {
 	//HANDLE hThreadArray[20];
-	DWORD idHilo[20];
+	DWORD idHilo[100];
 	static int i;
 	//num_coche = n;
-	pParam arrayParam[20];
+	pParam arrayParam[100];
 	srand(time(NULL));
 
 	for (i = 1; i <= n; i++) {//CreaciOn N Hilos
@@ -641,7 +641,7 @@ int main(int argc, char const* argv[]) {
 
 		//fprintf(stderr, "PRE-CreaHijos\n");
 		creaNhijos(numCoches, vel); //DESCOMENTAR CUANDO ESTE DEPURADO
-		if(CreateThread(NULL, 0, hiloContador, NULL, 0, NULL)==NULL)
+		if (CreateThread(NULL, 0, hiloContador, NULL, 0, NULL) == NULL)
 			PERROR("Create Hilo Contador");
 		//fprintf(stderr, "POST-CreaHijos\n");
 
@@ -667,7 +667,7 @@ int main(int argc, char const* argv[]) {
 		return 0;
 	}
 } //Fin Main
-DWORD WINAPI hiloContador(LPVOID pContador){
+DWORD WINAPI hiloContador(LPVOID pContador) {
 	Sleep(30000);
 	EnterCriticalSection(&critica);
 	f_fin(&contador);
