@@ -434,7 +434,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			 fprintf(stderr,"Limpiando Cola...\n");
 		 }*/
 
-		if (!posOcup(!*carril, cambio_carril_cal(*desp, *carril))) {//Efectuo cambio carril Si es posible
+		//if (!posOcup(!*carril, cambio_carril_cal(*desp, *carril))) {//Efectuo cambio carril Si es posible
+		if(!arrayPosiciones[cambio_carril_cal(*desp, *carril)+!*carril*137])
 			if (cambioCarril(carril, desp, color) == -1) {
 				PERROR("ERROR AL CAMBIAR CARRIL");
 			}
