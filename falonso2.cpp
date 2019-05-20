@@ -155,6 +155,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 	int pos_2 = ((((*desp) + 136) % 137) + ((*carril) * 137));//calculo posicion anterior preAvance
 
 	if (!(posOcup(*carril, (*desp + 1) % 137))) {
+       // if((arrayPosiciones[(*desp + 1) % 137+*carril*137])==0){
 		//fprintf(stderr, " [%d] Color (%d)  #### Posicion LIBRE: [%d] ####\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
 
 		if (*desp == 20 && *carril) {//dep =21 y CArril = Izquierdo
@@ -429,12 +430,13 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 	else {//Entra la que SIG pos esta ocupada
 	 //fprintf(stderr, "[%d] Color (%d) Posicion ocupada, compruebo cambio de carril: %d\n", GetCurrentThreadId(), color, * desp); //#posicion
 	   //Limpieza Cola
-		 /*while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER+4, PM_REMOVE)){
-			 fprintf(stderr,"Limpiando Cola...\n");
-		 }*/
+		/*while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER+4, PM_REMOVE)){
+			fprintf(stderr,"Limpiando Cola...\n");
+		}*/
 
-		if (!posOcup(!*carril, cambio_carril_cal(*desp, *carril))) {//Efectuo cambio carril Si es posible
-			if (cambioCarril(carril, desp, color) == -1) {
+		//if (!posOcup(!*carril, cambio_carril_cal(*desp, *carril))) {//Efectuo cambio carril Si es posible
+			if((arrayPosiciones[cambio_carril_cal(*desp, *carril)+(!*carril)*137])==0){
+            if (cambioCarril(carril, desp, color) == -1) {
 				PERROR("ERROR AL CAMBIAR CARRIL");
 			}
 			//fprintf(stderr, "[%d] Color (%d) Cambio Carril: %d\n", GetCurrentThreadId(), color, dep_temp); //#posicion
@@ -513,7 +515,7 @@ DWORD WINAPI funcionHilos(LPVOID pEstruct_2) {
 		//fprintf(stderr, "Color (%d) [%d] Iteracion b = %d\n", colores[1 + (miIndice - 1) % 6], miIndice, b);
 		b -= 2;
 		if (!(posOcup(miIndiceCarril, b))) {
-			//if (arrayPosiciones[b + (miIndiceCarril) * 137]==0) {
+			//if (arrayPosiciones[b + (miIndiceCarril * 137]==0) {
 
 				//fprintf(stderr, "Color (%d) [%d] Carril libre encontrado\n", colores[1 + (miIndice - 1) % 6], miIndice);
 			if (iniCoche(&miIndiceCarril, &b, colores[1 + (miIndice - 1) % 6]) != 0) {
