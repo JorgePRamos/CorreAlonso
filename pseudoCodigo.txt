@@ -1,0 +1,137 @@
+﻿PSUDOCODIGO UN DIA EN LAS CARRERAS DE COCHES.
+
+FUNCIONES DE SECCION CRITICA.
+	enterCritic()--> E()
+	leaveCritic()--> L()
+	
+--------------------------------------------------------------------------------------------------------------------
+
+<CONTROL SEMAFOROS>
+	Estado inicial  --> Critica semaforo central[CSC]=6;
+	E(CS);
+	SemToRed()		
+	|	if(eventoV){
+	|		Reset(eventoV);
+	|	}else if(eventoH){
+	|		Reset(eventoH);
+	|	}
+	|	L(CS);
+	|	semLuz(Amarillo);
+	|	E(CSC,-6);	
+	|	E(CS);
+	|	semLuz(Rojo);			
+------------------------------
+	
+	SemToGreen()
+	|	L(CSC,+6);
+	|	semLuz(Verde);
+	|	if(eventoV){
+	|		Set(eventoV);
+	|	}else if(eventoH){
+	|		Set(eventoH);
+	|	}
+	
+--------------------------------------------------------------------------------------------------------------------
+
+<CREACION + INICIO HIJOS>
+	Estado inicial sección critica --> Critica salida [CS]=1;
+
+	for(nHijos){
+	|	creahijos();
+	|
+	}
+	set(evento);
+	
+--------------------------------------------------------------------------------------------------------------------
+
+	creaNhijos()
+	|
+	|	creaCola();
+	|	E(C);
+	|	buscoSitio(*p);
+	|	inicioCoche(*p);
+	|	arrayPos[miPos]=miThreadId;
+	|	L(C);
+	|	WaitSingleObject(evento);
+	|	while(1){
+	|	|	avanceControlado();
+	|	}
+	|
+		
+--------------------------------------------------------------------------------------------------------------------
+
+<AVANCE CONTROLADO>
+	Estado inicial sección critica --> Critica [C]=1;
+	
+	avanceControlado()
+	|	E(C);
+	|	if(sigPosicion==libre){
+	|	|	
+	|	|	if(sigPosicion == entradaCruze){
+	|	|	|	E(CS);
+	|	|	|	comprobamosSemaforo(){
+	|	|	|	|	Rojo || Amarillo{
+	|	|	|	|	|	L(C);
+	|	|	|	|	|	L(CS);
+	|	|	|	|	|	WaitSingleObject(eventoV);||WaitSingleObject(eventoH);//Dependiendo de la entrada al cruze.
+	|	|	|	|	|	E(CSC,-1);
+	|	|	|	|	|	E(C);
+	|	|	|	|	|		
+	|	|	|	|	}
+	|	|	|	|	Verde{
+	|	|	|	|	|	L(CS);
+	|	|	|	|	|	L(C);
+	|	|	|	|	|	E(CSC,-1);
+	|	|	|	|	|	E(C);	
+	|	|	|	|	}
+	|	|	|	|
+	|	|	|	}
+	|	|	}
+	|	|	arrayPos{[miPos]=0;
+	|	|	|	avanzaCoche();
+	|	|	}
+	|	|	arrayPos[miPos]=miThreadId;
+	|	|	if(sigPosicion == salidaCruze){
+	|	|	|	L(CSC,+1);
+	|	|	}
+	|	|	if(ocupada(pos-2)){
+	|	|	|	postMessage(pos-2);	
+	|	|	}
+	|	|	if(ocupada(cambioCarril(pos-1))){
+	|	|	|	postMessage(cambioCarril(pos-1));
+	|	|	}			
+	|	|	L(C);
+	|	|	velocidad();
+	|	}else{
+	|	|	if(cambio){
+	|	|	|	cambio();
+	|	|	|	arrayPos[miPos]=miThreadId;
+	|	|	|	L(C);
+	|	|	|	velocidad();
+	|	|	}else{
+	|	|	|	arrayPos[miPos]=miThreadId;
+	|	|	|	L(C);
+	|	|	|	getMessage(tipo 3);
+	|	|	|	limpiaMiCola();
+	|	|	}
+	|	}
+
+	
+--------------------------------------------------------------------------------------------------------------------
+
+<MAIN>
+	creaCola();
+	while(ejecucion){
+	|	E(CS);
+	|	SemToRed(horizontal);
+	|	SemToGreen(vertical);
+	|	L(CS);
+	|	pausa();
+	|	E(CS);
+	|	SemToRed(vertical);
+	|	SemToGreen(horizontal);
+	|	L(CS);
+	|	pausa();
+	|	}
+	
+--------------------------------------------------------------------------------------------------------------------
