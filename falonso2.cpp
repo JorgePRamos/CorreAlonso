@@ -672,4 +672,5 @@ DWORD WINAPI hiloContador(LPVOID pContador){
 	EnterCriticalSection(&critica);
 	f_fin(&contador);
 	raise(SIGINT);
+	return 0;
 }
