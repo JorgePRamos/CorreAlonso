@@ -363,7 +363,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 				fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
 			}
-			else {}
+			else 
+				raise(SIGINT);
 		}
 		//fprintf(stderr, "[%d] Color (%d) Avanzo a posicion (%d)\n", GetCurrentThreadId(), color, * desp + 1 % 137 + * carril * 137); //#posicion
 		arrayPosiciones[*desp + (*carril) * 137] = 0;//Limpia pos Array
