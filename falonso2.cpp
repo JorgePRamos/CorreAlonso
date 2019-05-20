@@ -18,7 +18,7 @@ typedef int (*DLL3Arg)(int, int, int);
 typedef int (*DLL3ArgP)(int*, int*, int);
 typedef void (*DLL1Argvoid)(const char*);
 
-CRITICAL_SECTION sc1, critica_salida, critica, critica_sem;
+CRITICAL_SECTION  critica_salida, critica, critica_sem;
 DWORD WINAPI funcionHilos(LPVOID pEstruct);
 DWORD WINAPI hiloContador(LPVOID pContador);
 DWORD arrayPosiciones[274];
@@ -386,7 +386,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			(contador)++;
 		}
 
-		//  EnterCriticalSection( & sc1);
+
 	  //if (posOcup( * carril, ((( * desp) + 135) % 137))) {//Comprobamos Pos -2 Para mensaje Bien
 		if (arrayPosiciones[pos_2]) {
 
@@ -418,7 +418,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			//fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", GetCurrentThreadId(), color, pos_cambio); //#mensaje
 
 		}
-		//  LeaveCriticalSection( & sc1);
+
 		LeaveCriticalSection(&critica);
 		//fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica
 
@@ -567,7 +567,7 @@ int main(int argc, char const* argv[]) {
 			return (1);
 		}
 		//Secciones Criticas
-		InitializeCriticalSection(&sc1); //LanzarA STATUS_NO_MEMORY si no hay memoria
+		//LanzarA STATUS_NO_MEMORY si no hay memoria
 		InitializeCriticalSection(&critica_sem);
 		InitializeCriticalSection(&critica_salida);
 		InitializeCriticalSection(&critica);
