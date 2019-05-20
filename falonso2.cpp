@@ -480,7 +480,7 @@ int creaNhijos(int n, int v) {
 		//fprintf(stderr, "%d %d**Soy el padre creando al hijo--> %d\n", (sizeof(hThreadArray)/sizeof(* hThreadArray )) ,n, i);
 		arrayParam[i] = (pParam)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sizeof(Param));
 		arrayParam[i]->indice = i;
-		arrayParam[i]->velocidad = (rand() +10)% 100 ;;
+		arrayParam[i]->velocidad = (rand() +10)% 100 ;
 		arrayParam[i]->nCoches = n;
 		//if ((hThreadArray[i] = CreateThread(NULL, 0, funcionHilos, arrayParam[i], 0, &idHilo[i])) == NULL) {
 		if ((CreateThread(NULL, 0, funcionHilos, arrayParam[i], 0, &idHilo[i])) == NULL) {
