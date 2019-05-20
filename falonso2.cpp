@@ -154,13 +154,13 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 	int pos_2 = ((((*desp) + 136) % 137) + ((*carril) * 137));//calculo posicion anterior preAvance
 
-	//if (!(posOcup(*carril, (*desp + 1) % 137))) {
-	if (!(arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)])) {
+	if (!(posOcup(*carril, (*desp + 1) % 137))) {
+	//if (!(arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)])) {
 		/*for(int a=0;a<=274;a++){
 			fprintf(stderr, "%d: %6d |", a, arrayPosiciones[a]);
 		}
 		*/
-		fprintf(stderr, "%d:%d: %6d |\n", (((*desp) + 1) % 137) + ((*carril) * 137), ((*desp + 1) % 137) + ((*carril) * 137), arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)]);
+		//fprintf(stderr, "%d:%d: %6d |\n", (((*desp) + 1) % 137) + ((*carril) * 137), ((*desp + 1) % 137) + ((*carril) * 137), arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)]);
 		//fprintf(stderr, " [%d] Color (%d)  #### Posicion LIBRE: [%d] ####\n", GetCurrentThreadId(), color, (((*desp)+1)%137)+((*carril)*137)); //#mensaje
 
 		if (*desp == 20 && *carril) {//dep =21 y CArril = Izquierdo
@@ -373,8 +373,9 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 		}
 		//fprintf(stderr, "[%d] Color (%d) Avanzo a posicion (%d)\n", GetCurrentThreadId(), color, * desp + 1 % 137 + * carril * 137); //#posicion
 		arrayPosiciones[*desp + (*carril) * 137] = 0;//Limpia pos Array
-		fprintf(stderr, "%d:%d: %6d |\n", (((*desp) + 1) % 137) + ((*carril) * 137), ((*desp + 1) % 137) + ((*carril) * 137), arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)]);
-		if (!(arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)])) {
+		//fprintf(stderr, "%d:%d: %6d |\n", (((*desp) + 1) % 137) + ((*carril) * 137), ((*desp + 1) % 137) + ((*carril) * 137), arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)]);
+		//if (!(arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)])) {
+		if (!(posOcup(*carril, (*desp + 1) % 137))) {
 			if (avanceCoche(carril, desp, color) == -1) {
 				PERROR("ERROR AL AVANZAR COCHE");
 				raise(SIGINT);
@@ -398,7 +399,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			//if (posOcup( * carril, ((( * desp) + 135) % 137))) {//Comprobamos Pos -2 Para mensaje Bien
 			if (arrayPosiciones[pos_2]) {
 
-				fprintf(stderr, " [%d] Color (%d) Envio mensaje POS_2-----> %d | %d : [%d]\n", GetCurrentThreadId(), color, pos_2, (((*desp) + 135) % 137) + 137 * (*carril), arrayPosiciones[pos_2]); //#mensaje
+				//fprintf(stderr, " [%d] Color (%d) Envio mensaje POS_2-----> %d | %d : [%d]\n", GetCurrentThreadId(), color, pos_2, (((*desp) + 135) % 137) + 137 * (*carril), arrayPosiciones[pos_2]); //#mensaje
 					//fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, GetCurrentThreadId(), pos_2);
 				if (PostThreadMessageA(arrayPosiciones[pos_2], WM_USER + 3, 3, 3) == 0) {
 					PERROR("ERROR AL MSGSND (pos -2 )");
@@ -426,14 +427,20 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 				//fprintf(stderr, " [%d] Color (%d) Envio mensaje [%d]\n", GetCurrentThreadId(), color, pos_cambio); //#mensaje
 
 			}
-
 			LeaveCriticalSection(&critica);
-			//fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica
-
 			if ((velocidad(v, *carril, *desp)) != -1) {
-				fprintf(stderr, "+++++++++++++++++++++noERROR VELOCIAD");
+				fprintf(stderr, "##");
 			}
 		}
+		else{
+
+			LeaveCriticalSection(&critica);
+			
+		}
+
+			//fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica
+
+		
 	}
 	else {//Entra la que SIG pos esta ocupada
 	 //fprintf(stderr, "[%d] Color (%d) Posicion ocupada, compruebo cambio de carril: %d\n", GetCurrentThreadId(), color, * desp); //#posicion
@@ -444,7 +451,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 		if (!posOcup(!*carril, cambio_carril_cal(*desp, *carril))) {//Efectuo cambio carril Si es posible
 			arrayPosiciones[*desp + (*carril) * 137] = 0;//Guarda ID en Nueva Pos
-			fprintf(stderr, "\nCAMBIO%d:%d: %6d |\n", cambio_carril_cal(*desp, *carril) + !*carril * 137, ((*desp + 1) % 137) + ((*carril) * 137), arrayPosiciones[cambio_carril_cal(*desp, *carril) + !*carril * 137]);
+			//fprintf(stderr, "\nCAMBIO%d:%d: %6d |\n", cambio_carril_cal(*desp, *carril) + !*carril * 137, ((*desp + 1) % 137) + ((*carril) * 137), arrayPosiciones[cambio_carril_cal(*desp, *carril) + !*carril * 137]);
 
 			if (cambioCarril(carril, desp, color) == -1) {
 				PERROR("ERROR AL CAMBIAR CARRIL");
@@ -453,7 +460,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			arrayPosiciones[*desp + (*carril) * 137] = GetCurrentThreadId();//Guarda ID en Nueva Pos
 			LeaveCriticalSection(&critica);
 			if ((velocidad(v, *carril, *desp)) != -1) {
-				fprintf(stderr, "+++++++++++++++++++++noERROR VELOCIAD");
+				fprintf(stderr, "##");
 			}
 
 			//fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica

@@ -1,0 +1,3526 @@
+		Hola soy el hijo 1 PID: 17088
+		Hola soy el hijo 2 PID: 10012
+		Hola soy el hijo 7 PID: 13040
+		Hola soy el hijo 8 PID: 19496
+		Hola soy el hijo 12 PID: 13252
+		Hola soy el hijo 5 PID: 13832
+Color (0) [1]        Inicio coche con Carril 1 **Posicion 134 **Color 0 
+		Hola soy el hijo 16 PID: 20152
+		Hola soy el hijo 4 PID: 19644
+		Hola soy el hijo 17 PID: 20044
+		Hola soy el hijo 9 PID: 20328
+		Hola soy el hijo 18 PID: 19088
+		Hola soy el hijo 10 PID: 15036
+		Hola soy el hijo 14 PID: 20144
+		Hola soy el hijo 6 PID: 17792
+		Hola soy el hijo 11 PID: 15336
+		Hola soy el hijo 13 PID: 6688
+		Hola soy el hijo 15 PID: 19004
+		Hola soy el hijo 3 PID: 20212
+		Hola soy el hijo 20 PID: 10632
+Color (1) [2]        Inicio coche con Carril 0 **Posicion 134 **Color 1 
+135:135:      0 |
+		Hola soy el hijo 19 PID: 19824
+135:135:      0 |
+Color (1) [8]        Inicio coche con Carril 0 **Posicion 134 **Color 1 
+
+CAMBIO269:135:      0 |
+Color (5) [5]        Inicio coche con Carril 1 **Posicion 130 **Color 5 
+268:268:      0 |
+268:268:      0 |
+Color (3) [16]        Inicio coche con Carril 0 **Posicion 134 **Color 3 
+Color (3) [4]        Inicio coche con Carril 0 **Posicion 132 **Color 3 
+133:133:      0 |
+133:133:      0 |
+Color (2) [9]        Inicio coche con Carril 1 **Posicion 130 **Color 2 
+
+CAMBIO132:268:      0 |
+Color (3) [10]        Inicio coche con Carril 0 **Posicion 130 **Color 3 
+131:131:      0 |
+131:131:      0 |
+Color (6) [6]        Inicio coche con Carril 0 **Posicion 130 **Color 6 
+
+CAMBIO264:131:      0 |
+Color (0) [13]        Inicio coche con Carril 1 **Posicion 130 **Color 0 
+Color (2) [15]        Inicio coche con Carril 1 **Posicion 128 **Color 2 
+266:266:      0 |
+266:266:      0 |
+ [19004] Color (2) Envio mensaje POS_2-----> 264 | 264 : [17792]
+Color (1) [20]        Inicio coche con Carril 0 **Posicion 130 **Color 1 
+Color (0) [7]        Inicio coche con Carril 1 **Posicion 128 **Color 0 
+Color (0) [19]        Inicio coche con Carril 1 **Posicion 126 **Color 0 
+Color (6) [12]        Inicio coche con Carril 0 **Posicion 128 **Color 6 
+129:129:      0 |
+129:129:      0 |
+Color (5) [17]        Inicio coche con Carril 1 **Posicion 124 **Color 5 
+262:262:      0 |
+262:262:      0 |
+Color (1) [14]        Inicio coche con Carril 0 **Posicion 128 **Color 1 
+
+CAMBIO260:129:      0 |
+Color (2) [3]        Inicio coche con Carril 1 **Posicion 124 **Color 2 
+272:272:      0 |
+272:272:      0 |
+Color (6) [18]        Inicio coche con Carril 0 **Posicion 128 **Color 6 
+Color (5) [11]        Inicio coche con Carril 1 **Posicion 134 **Color 5 
+
+CAMBIO136:272:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO271:136:      0 |
++++++++++++++++++++++noERROR VELOCIAD0:0:      0 |
+0:0:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD270:270:      0 |
+270:270:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 268 | 268 : [13832]
+135:135:      0 |
+135:135:      0 |
+ [20152] Color (3) Envio mensaje POS_2-----> 133 | 133 : [19644]
++++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 271 | 271 : [10012]
++++++++++++++++++++++noERROR VELOCIAD269:269:      0 |
+269:269:      0 |
+ [13832] Color (5) Envio mensaje POS_2-----> 267 | 267 : [6688]
+268:268:      0 |
+268:268:      0 |
+ [6688] Color (0) Envio mensaje POS_2-----> 266 | 266 : [19004]
+267:267:      0 |
+267:267:      0 |
+ [19004] Color (2) Envio mensaje POS_2-----> 265 | 265 : [13040]
+266:266:      0 |
+266:266:      0 |
+ [13040] Color (0) Envio mensaje POS_2-----> 264 | 264 : [17792]
++++++++++++++++++++++noERROR VELOCIAD134:134:      0 |
+134:134:      0 |
++++++++++++++++++++++noERROR VELOCIAD [19644] Color (3) Envio mensaje POS_2-----> 132 | 132 : [20328]
+137:137:      0 |
+137:137:      0 |
++++++++++++++++++++++noERROR VELOCIAD1:1:      0 |
+1:1:      0 |
++++++++++++++++++++++noERROR VELOCIAD272:272:      0 |
+272:272:      0 |
+ [10012] Color (1) Envio mensaje POS_2-----> 270 | 270 : [19496]
++++++++++++++++++++++noERROR VELOCIAD138:138:      0 |
+138:138:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO133:269:      0 |
++++++++++++++++++++++noERROR VELOCIAD268:268:      0 |
+268:268:      0 |
+ [19004] Color (2) Envio mensaje POS_2-----> 266 | 266 : [13040]
++++++++++++++++++++++noERROR VELOCIAD136:136:      0 |
+136:136:      0 |
+ [20152] Color (3) Envio mensaje POS_2-----> 134 | 134 : [19644]
++++++++++++++++++++++noERROR VELOCIAD271:271:      0 |
+271:271:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 269 | 269 : [13832]
++++++++++++++++++++++noERROR VELOCIAD270:270:      0 |
+270:270:      0 |
+ [13832] Color (5) Envio mensaje POS_2-----> 268 | 268 : [19004]
++++++++++++++++++++++noERROR VELOCIAD139:139:      0 |
+139:139:      0 |
++++++++++++++++++++++noERROR VELOCIAD2:2:      0 |
+2:2:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO267:133:      0 |
+0:0:      0 |
+0:0:      0 |
++++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
++++++++++++++++++++++noERROR VELOCIAD [10012] Color (1) Envio mensaje POS_2-----> 271 | 271 : [19496]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD269:269:      0 |
+269:269:      0 |
+ [19004] Color (2) Envio mensaje POS_2-----> 267 | 267 : [20328]
+
+CAMBIO268:134:      0 |
+140:140:      0 |
+140:140:      0 |
++++++++++++++++++++++noERROR VELOCIAD135:135:      0 |
+135:135:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD1:1:      0 |
+1:1:      0 |
+3:3:      0 |
+3:3:      0 |
++++++++++++++++++++++noERROR VELOCIAD [15336] Color (5) Envio mensaje POS_2-----> 1 | 1 : [20152]
+137:137:      0 |
+137:137:      0 |
++++++++++++++++++++++noERROR VELOCIAD141:141:      0 |
+141:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD132:132:      0 |
+132:132:      0 |
++++++++++++++++++++++noERROR VELOCIAD [15036] Color (3) Envio mensaje POS_2-----> 130 | 130 : [10632]
+131:131:      0 |
+131:131:      0 |
+ [10632] Color (1) Envio mensaje POS_2-----> 129 | 129 : [13252]
+130:130:      0 |
+130:130:      0 |
+ [13252] Color (6) Envio mensaje POS_2-----> 128 | 128 : [19088]
+129:129:      0 |
+129:129:      0 |
+
+CAMBIO128:261:      0 |
+272:272:      0 |
+272:272:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 270 | 270 : [13832]
++++++++++++++++++++++noERROR VELOCIAD271:271:      0 |
+271:271:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD [13832] Color (5) Envio mensaje POS_2-----> 269 | 269 : [19004]
+138:138:      0 |
+138:138:      0 |
+2:2:      0 |
+2:2:      0 |
+
+CAMBIO133:269:      0 |
+270:270:      0 |
+270:270:      0 |
+142:142:      0 |
+142:142:      0 |
++++++++++++++++++++++noERROR VELOCIAD4:4:      0 |
+4:4:      0 |
+ [15336] Color (5) Envio mensaje POS_2-----> 2 | 2 : [20152]
++++++++++++++++++++++noERROR VELOCIAD139:139:      0 |
+139:139:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO260:129:      0 |
++++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD3:3:      0 |
+3:3:      0 |
++++++++++++++++++++++noERROR VELOCIAD140:140:      0 |
+140:140:      0 |
++++++++++++++++++++++noERROR VELOCIAD134:134:      0 |
+134:134:      0 |
+ [6688] Color (0) Envio mensaje POS_2-----> 132 | 132 : [15036]
++++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 271 | 271 : [13832]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD136:136:      0 |
+136:136:      0 |
++++++++++++++++++++++noERROR VELOCIAD [19644] Color (3) Envio mensaje POS_2-----> 134 | 134 : [6688]
+Limpiando Cola...
+
+CAMBIO135:271:      0 |
++++++++++++++++++++++noERROR VELOCIAD5:5:      0 |
+5:5:      0 |
+ [15336] Color (5) Envio mensaje POS_2-----> 3 | 3 : [20152]
+4:4:      0 |
+4:4:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO128:261:      0 |
++++++++++++++++++++++noERROR VELOCIAD141:141:      0 |
+141:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD272:272:      0 |
+272:272:      0 |
++++++++++++++++++++++noERROR VELOCIAD145:145:      0 |
+145:145:      0 |
++++++++++++++++++++++noERROR VELOCIAD137:137:      0 |
+137:137:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 272 | 272 : [13832]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD268:268:      0 |
+268:268:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 266 | 266 : [13040]
++++++++++++++++++++++noERROR VELOCIAD142:142:      0 |
+142:142:      0 |
+
+CAMBIO141:5:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO269:135:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO260:129:      0 |
+0:0:      0 |
+0:0:      0 |
+ [19644] Color (3) Envio mensaje POS_2-----> 135 | 135 : [19004]
++++++++++++++++++++++noERROR VELOCIAD146:146:      0 |
+146:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD6:6:      0 |
+6:6:      0 |
++++++++++++++++++++++noERROR VELOCIAD136:136:      0 |
+136:136:      0 |
++++++++++++++++++++++noERROR VELOCIAD138:138:      0 |
+138:138:      0 |
++++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+143:143:      0 |
+ [10012] Color (1) Envio mensaje POS_2-----> 141 | 141 : [20152]
++++++++++++++++++++++noERROR VELOCIAD142:142:      0 |
+142:142:      0 |
++++++++++++++++++++++noERROR VELOCIAD147:147:      0 |
+147:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO128:261:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
+ [10012] Color (1) Envio mensaje POS_2-----> 142 | 142 : [20152]
++++++++++++++++++++++noERROR VELOCIAD1:1:      0 |
+1:1:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD [19644] Color (3) Envio mensaje POS_2-----> 136 | 136 : [19004]
+0:0:      0 |
+0:0:      0 |
+270:270:      0 |
+270:270:      0 |
+ [6688] Color (0) Envio mensaje POS_2-----> 268 | 268 : [20328]
+7:7:      0 |
+7:7:      0 |
+139:139:      0 |
+139:139:      0 |
++++++++++++++++++++++noERROR VELOCIAD148:148:      0 |
+148:148:      0 |
++++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
++++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD145:145:      0 |
+145:145:      0 |
+ [10012] Color (1) Envio mensaje POS_2-----> 143 | 143 : [20152]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO137:1:      0 |
++++++++++++++++++++++noERROR VELOCIAD133:133:      0 |
+133:133:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD [15036] Color (3) Envio mensaje POS_2-----> 131 | 131 : [10632]
+
+CAMBIO260:129:      0 |
+149:149:      0 |
+149:149:      0 |
+132:132:      0 |
+132:132:      0 |
+ [10632] Color (1) Envio mensaje POS_2-----> 130 | 130 : [13252]
+131:131:      0 |
+131:131:      0 |
+ [13252] Color (6) Envio mensaje POS_2-----> 129 | 129 : [19088]
+130:130:      0 |
+130:130:      0 |
+
+CAMBIO129:262:      0 |
++++++++++++++++++++++noERROR VELOCIAD140:140:      0 |
+140:140:      0 |
++++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO136:137:      0 |
++++++++++++++++++++++noERROR VELOCIAD2:2:      0 |
+2:2:      0 |
++++++++++++++++++++++noERROR VELOCIAD146:146:      0 |
+146:146:      0 |
+ [10012] Color (1) Envio mensaje POS_2-----> 144 | 144 : [20152]
++++++++++++++++++++++noERROR VELOCIAD8:8:      0 |
+8:8:      0 |
++++++++++++++++++++++noERROR VELOCIAD138:138:      0 |
+138:138:      0 |
++++++++++++++++++++++noERROR VELOCIAD150:150:      0 |
+150:150:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD271:271:      0 |
+271:271:      0 |
+
+CAMBIO261:130:      0 |
++++++++++++++++++++++noERROR VELOCIAD141:141:      0 |
+141:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD145:145:      0 |
+145:145:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD147:147:      0 |
+147:147:      0 |
+ [10012] Color (1) Envio mensaje POS_2-----> 145 | 145 : [20152]
+
+CAMBIO128:261:      0 |
++++++++++++++++++++++noERROR VELOCIAD0:0:      0 |
+0:0:      0 |
++++++++++++++++++++++noERROR VELOCIAD139:139:      0 |
+139:139:      0 |
++++++++++++++++++++++noERROR VELOCIAD151:151:      0 |
+151:151:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO129:262:      0 |
++++++++++++++++++++++noERROR VELOCIAD3:3:      0 |
+3:3:      0 |
++++++++++++++++++++++noERROR VELOCIAD9:9:      0 |
+9:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD148:148:      0 |
+148:148:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD142:142:      0 |
+142:142:      0 |
+146:146:      0 |
+146:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD267:267:      0 |
+267:267:      0 |
+
+CAMBIO266:132:      0 |
++++++++++++++++++++++noERROR VELOCIAD269:269:      0 |
+269:269:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 267 | 267 : [13040]
++++++++++++++++++++++noERROR VELOCIAD140:140:      0 |
+140:140:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO261:130:      0 |
+152:152:      0 |
+152:152:      0 |
++++++++++++++++++++++noERROR VELOCIAD129:129:      0 |
+129:129:      0 |
++++++++++++++++++++++noERROR VELOCIAD1:1:      0 |
+1:1:      0 |
++++++++++++++++++++++noERROR VELOCIAD272:272:      0 |
+272:272:      0 |
++++++++++++++++++++++noERROR VELOCIAD149:149:      0 |
+149:149:      0 |
++++++++++++++++++++++noERROR VELOCIAD147:147:      0 |
+147:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+141:141:      0 |
+141:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD4:4:      0 |
+4:4:      0 |
++++++++++++++++++++++noERROR VELOCIAD10:10:      0 |
+10:10:      0 |
++++++++++++++++++++++noERROR VELOCIAD150:150:      0 |
+150:150:      0 |
++++++++++++++++++++++noERROR VELOCIAD2:2:      0 |
+2:2:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD142:142:      0 |
+142:142:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
++++++++++++++++++++++noERROR VELOCIAD [19496] Color (1) Envio mensaje POS_2-----> 142 | 142 : [19004]
+148:148:      0 |
+148:148:      0 |
+
+CAMBIO131:267:      0 |
++++++++++++++++++++++noERROR VELOCIAD153:153:      0 |
+153:153:      0 |
++++++++++++++++++++++noERROR VELOCIAD151:151:      0 |
+151:151:      0 |
++++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
++++++++++++++++++++++noERROR VELOCIAD5:5:      0 |
+5:5:      0 |
++++++++++++++++++++++noERROR VELOCIAD3:3:      0 |
+3:3:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD11:11:      0 |
+11:11:      0 |
++++++++++++++++++++++noERROR VELOCIAD149:149:      0 |
+149:149:      0 |
++++++++++++++++++++++noERROR VELOCIAD145:145:      0 |
+145:145:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 143 | 143 : [19004]
++++++++++++++++++++++noERROR VELOCIAD152:152:      0 |
+152:152:      0 |
++++++++++++++++++++++noERROR VELOCIAD137:137:      0 |
+137:137:      0 |
++++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
++++++++++++++++++++++noERROR VELOCIAD4:4:      0 |
+4:4:      0 |
++++++++++++++++++++++noERROR VELOCIAD150:150:      0 |
+150:150:      0 |
++++++++++++++++++++++noERROR VELOCIAD154:154:      0 |
+154:154:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 152 | 152 : [10012]
++++++++++++++++++++++noERROR VELOCIAD146:146:      0 |
+146:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD [19496] Color (1) Envio mensaje POS_2-----> 144 | 144 : [19004]
+
+CAMBIO266:132:      0 |
++++++++++++++++++++++noERROR VELOCIAD6:6:      0 |
+6:6:      0 |
++++++++++++++++++++++noERROR VELOCIAD [19644] Color (3) Envio mensaje POS_2-----> 4 | 4 : [13832]
+138:138:      0 |
+138:138:      0 |
++++++++++++++++++++++noERROR VELOCIAD134:134:      0 |
+134:134:      0 |
+ [15036] Color (3) Envio mensaje POS_2-----> 132 | 132 : [10632]
+133:133:      0 |
+133:133:      0 |
++++++++++++++++++++++noERROR VELOCIAD12:12:      0 |
+12:12:      0 |
++++++++++++++++++++++noERROR VELOCIAD145:145:      0 |
+145:145:      0 |
++++++++++++++++++++++noERROR VELOCIAD151:151:      0 |
+151:151:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD139:139:      0 |
+139:139:      0 |
+5:5:      0 |
+5:5:      0 |
++++++++++++++++++++++noERROR VELOCIAD153:153:      0 |
+153:153:      0 |
++++++++++++++++++++++noERROR VELOCIAD [10012] Color (1) Envio mensaje POS_2-----> 151 | 151 : [20152]
+147:147:      0 |
+147:147:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 145 | 145 : [19004]
++++++++++++++++++++++noERROR VELOCIAD270:270:      0 |
+270:270:      0 |
++++++++++++++++++++++noERROR VELOCIAD146:146:      0 |
+146:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD7:7:      0 |
+7:7:      0 |
+ [19644] Color (3) Envio mensaje POS_2-----> 5 | 5 : [13832]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD152:152:      0 |
+152:152:      0 |
++++++++++++++++++++++noERROR VELOCIAD140:140:      0 |
+140:140:      0 |
++++++++++++++++++++++noERROR VELOCIAD13:13:      0 |
+13:13:      0 |
+155:155:      0 |
+155:155:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 153 | 153 : [10012]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD148:148:      0 |
+148:148:      0 |
++++++++++++++++++++++noERROR VELOCIAD [19496] Color (1) Envio mensaje POS_2-----> 146 | 146 : [19004]
+
+CAMBIO131:267:      0 |
+6:6:      0 |
+6:6:      0 |
++++++++++++++++++++++noERROR VELOCIAD147:147:      0 |
+147:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD141:141:      0 |
+141:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD154:154:      0 |
+154:154:      0 |
+ [10012] Color (1) Envio mensaje POS_2-----> 152 | 152 : [20152]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO10:148:      0 |
++++++++++++++++++++++noERROR VELOCIAD8:8:      0 |
+8:8:      0 |
+ [19644] Color (3) Envio mensaje POS_2-----> 6 | 6 : [13832]
++++++++++++++++++++++noERROR VELOCIAD149:149:      0 |
+149:149:      0 |
++++++++++++++++++++++noERROR VELOCIAD7:7:      0 |
+7:7:      0 |
++++++++++++++++++++++noERROR VELOCIAD14:14:      0 |
+14:14:      0 |
++++++++++++++++++++++noERROR VELOCIAD142:142:      0 |
+142:142:      0 |
++++++++++++++++++++++noERROR VELOCIAD156:156:      0 |
+156:156:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 154 | 154 : [10012]
++++++++++++++++++++++noERROR VELOCIAD11:11:      0 |
+11:11:      0 |
++++++++++++++++++++++noERROR VELOCIAD153:153:      0 |
+153:153:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD132:132:      0 |
+132:132:      0 |
+ [13252] Color (6) Envio mensaje POS_2-----> 130 | 130 : [19088]
+150:150:      0 |
+150:150:      0 |
++++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO144:8:      0 |
++++++++++++++++++++++noERROR VELOCIAD9:9:      0 |
+9:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD12:12:      0 |
+12:12:      0 |
++++++++++++++++++++++noERROR VELOCIAD155:155:      0 |
+155:155:      0 |
+ [10012] Color (1) Envio mensaje POS_2-----> 153 | 153 : [20152]
++++++++++++++++++++++noERROR VELOCIAD15:15:      0 |
+15:15:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO268:134:      0 |
+
+CAMBIO6:144:      0 |
++++++++++++++++++++++noERROR VELOCIAD151:151:      0 |
+151:151:      0 |
++++++++++++++++++++++noERROR VELOCIAD131:131:      0 |
+131:131:      0 |
+ [19088] Color (6) Envio mensaje POS_2-----> 129 | 129 : [20144]
+130:130:      0 |
+130:130:      0 |
+
+CAMBIO129:262:      0 |
++++++++++++++++++++++noERROR VELOCIAD13:13:      0 |
+13:13:      0 |
++++++++++++++++++++++noERROR VELOCIAD145:145:      0 |
+145:145:      0 |
++++++++++++++++++++++noERROR VELOCIAD157:157:      0 |
+157:157:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 155 | 155 : [10012]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD10:10:      0 |
+10:10:      0 |
+7:7:      0 |
+7:7:      0 |
++++++++++++++++++++++noERROR VELOCIAD154:154:      0 |
+154:154:      0 |
++++++++++++++++++++++noERROR VELOCIAD133:133:      0 |
+133:133:      0 |
+ [13252] Color (6) Envio mensaje POS_2-----> 131 | 131 : [19088]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO261:130:      0 |
++++++++++++++++++++++noERROR VELOCIAD152:152:      0 |
+152:152:      0 |
++++++++++++++++++++++noERROR VELOCIAD14:14:      0 |
+14:14:      0 |
++++++++++++++++++++++noERROR VELOCIAD156:156:      0 |
+156:156:      0 |
+ [10012] Color (1) Envio mensaje POS_2-----> 154 | 154 : [20152]
++++++++++++++++++++++noERROR VELOCIAD146:146:      0 |
+146:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD135:135:      0 |
+135:135:      0 |
+ [15036] Color (3) Envio mensaje POS_2-----> 133 | 133 : [13252]
++++++++++++++++++++++noERROR VELOCIAD8:8:      0 |
+8:8:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO129:262:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD271:271:      0 |
+271:271:      0 |
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD158:158:      0 |
+[17088] Color (0) Entrada critica_salida critica -1 pajitas
+[17088] Color (0) Entrada Critica critica -1 pajitas
+158:158:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 156 | 156 : [10012]
++++++++++++++++++++++noERROR VELOCIAD11:11:      0 |
+11:11:      0 |
++++++++++++++++++++++noERROR VELOCIAD9:9:      0 |
+9:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD147:147:      0 |
+147:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO261:130:      0 |
++++++++++++++++++++++noERROR VELOCIAD16:16:      0 |
+16:16:      0 |
+ [15336] Color (5) Envio mensaje POS_2-----> 14 | 14 : [19004]
+15:15:      0 |
+15:15:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD134:134:      0 |
+134:134:      0 |
+155:155:      0 |
+155:155:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD157:157:      0 |
+157:157:      0 |
+ [10012] Color (1) Envio mensaje POS_2-----> 155 | 155 : [20152]
++++++++++++++++++++++noERROR VELOCIAD10:10:      0 |
+10:10:      0 |
++++++++++++++++++++++noERROR VELOCIAD153:153:      0 |
+153:153:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO129:262:      0 |
++++++++++++++++++++++noERROR VELOCIAD148:148:      0 |
+148:148:      0 |
++++++++++++++++++++++noERROR VELOCIAD12:12:      0 |
+12:12:      0 |
+ [19644] Color (3) Envio mensaje POS_2-----> 10 | 10 : [6688]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO132:268:      0 |
++++++++++++++++++++++noERROR VELOCIAD159:159:      0 |
+159:159:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 157 | 157 : [10012]
++++++++++++++++++++++noERROR VELOCIAD11:11:      0 |
+11:11:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO261:130:      0 |
++++++++++++++++++++++noERROR VELOCIAD265:265:      0 |
+265:265:      0 |
+ [17792] Color (6) Envio mensaje POS_2-----> 263 | 263 : [19824]
+264:264:      0 |
++++++++++++++++++++++noERROR VELOCIAD264:264:      0 |
+ [19824] Color (0) Envio mensaje POS_2-----> 262 | 262 : [20044]
+263:263:      0 |
+263:263:      0 |
++++++++++++++++++++++noERROR VELOCIAD [20044] Color (5) Envio mensaje POS_2-----> 261 | 261 : [20212]
+Limpiando Cola...
+269:269:      0 |
+269:269:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD149:149:      0 |
+149:149:      0 |
+158:158:      0 |
+[10012] Color (1) Entrada critica_salida critica -1 pajitas
+[10012] Color (1) Entrada Critica critica -1 pajitas
+158:158:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD262:262:      0 |
++++++++++++++++++++++noERROR VELOCIAD262:262:      0 |
+
+CAMBIO148:12:      0 |
++++++++++++++++++++++noERROR VELOCIAD156:156:      0 |
+156:156:      0 |
++++++++++++++++++++++noERROR VELOCIAD13:13:      0 |
+13:13:      0 |
++++++++++++++++++++++noERROR VELOCIAD154:154:      0 |
+154:154:      0 |
+
+CAMBIO153:16:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD160:160:      0 |
+160:160:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 158 | 158 : [10012]
+
+CAMBIO11:149:      0 |
++++++++++++++++++++++noERROR VELOCIAD150:150:      0 |
+150:150:      0 |
++++++++++++++++++++++noERROR VELOCIAD17:17:      0 |
+17:17:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD14:14:      0 |
+14:14:      0 |
++++++++++++++++++++++noERROR VELOCIAD12:12:      0 |
+12:12:      0 |
++++++++++++++++++++++noERROR VELOCIAD159:159:      0 |
+159:159:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD151:151:      0 |
+151:151:      0 |
++++++++++++++++++++++noERROR VELOCIAD157:157:      0 |
+157:157:      0 |
++++++++++++++++++++++noERROR VELOCIAD13:13:      0 |
+13:13:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO15:154:      0 |
++++++++++++++++++++++noERROR VELOCIAD161:161:      0 |
+161:161:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 159 | 159 : [10012]
++++++++++++++++++++++noERROR VELOCIAD272:272:      0 |
+272:272:      0 |
++++++++++++++++++++++noERROR VELOCIAD155:155:      0 |
+155:155:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO152:15:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD14:14:      0 |
+14:14:      0 |
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD160:160:      0 |
+160:160:      0 |
++++++++++++++++++++++noERROR VELOCIAD136:136:      0 |
+136:136:      0 |
+ [15036] Color (3) Envio mensaje POS_2-----> 134 | 134 : [13252]
+135:135:      0 |
+135:135:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD16:16:      0 |
+16:16:      0 |
+ [19004] Color (2) Envio mensaje POS_2-----> 14 | 14 : [6688]
++++++++++++++++++++++noERROR VELOCIAD15:15:      0 |
+15:15:      0 |
+158:158:      0 |
+[20152] Color (3) Entrada critica_salida critica -1 pajitas
++++++++++++++++++++++noERROR VELOCIAD[20152] Color (3) Entrada Critica critica -1 pajitas
+158:158:      0 |
+18:18:      0 |
+18:18:      0 |
+ [15336] Color (5) Envio mensaje POS_2-----> 16 | 16 : [19004]
++++++++++++++++++++++noERROR VELOCIAD162:162:      0 |
+162:162:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 160 | 160 : [10012]
++++++++++++++++++++++noERROR VELOCIAD270:270:      0 |
+270:270:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO266:132:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD161:161:      0 |
+161:161:      0 |
+156:156:      0 |
+156:156:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO271:136:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO153:16:      0 |
+17:17:      0 |
+17:17:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO15:153:      0 |
++++++++++++++++++++++noERROR VELOCIAD163:163:      0 |
+163:163:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 161 | 161 : [10012]
++++++++++++++++++++++noERROR VELOCIAD159:159:      0 |
+159:159:      0 |
++++++++++++++++++++++noERROR VELOCIAD0:0:      0 |
+0:0:      0 |
++++++++++++++++++++++noERROR VELOCIAD162:162:      0 |
+162:162:      0 |
++++++++++++++++++++++noERROR VELOCIAD19:19:      0 |
+19:19:      0 |
+ [15336] Color (5) Envio mensaje POS_2-----> 17 | 17 : [19004]
++++++++++++++++++++++noERROR VELOCIAD157:157:      0 |
+157:157:      0 |
++++++++++++++++++++++noERROR VELOCIAD154:154:      0 |
+154:154:      0 |
++++++++++++++++++++++noERROR VELOCIAD18:18:      0 |
+18:18:      0 |
++++++++++++++++++++++noERROR VELOCIAD164:164:      0 |
+164:164:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 162 | 162 : [10012]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO136:272:      0 |
++++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
++++++++++++++++++++++noERROR VELOCIAD160:160:      0 |
+160:160:      0 |
++++++++++++++++++++++noERROR VELOCIAD163:163:      0 |
+163:163:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO272:0:      0 |
++++++++++++++++++++++noERROR VELOCIAD16:16:      0 |
+16:16:      0 |
++++++++++++++++++++++noERROR VELOCIAD155:155:      0 |
+155:155:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO156:19:      0 |
++++++++++++++++++++++noERROR VELOCIAD165:165:      0 |
+165:165:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 163 | 163 : [10012]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD158:158:      0 |
+[19496] Color (1) Entrada critica_salida critica -1 pajitas
+271:271:      0 |
+271:271:      0 |
+[19496] Color (1) Entrada Critica critica -1 pajitas
+158:158:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 156 | 156 : [19004]
++++++++++++++++++++++noERROR VELOCIAD1:1:      0 |
+1:1:      0 |
++++++++++++++++++++++noERROR VELOCIAD164:164:      0 |
+164:164:      0 |
++++++++++++++++++++++noERROR VELOCIAD161:161:      0 |
+161:161:      0 |
++++++++++++++++++++++noERROR VELOCIAD20:20:      0 |
+[15336] Color (5) Entrada critica_salida critica -1 pajitas
+[15336] Color (5) Entrada Critica critica -1 pajitas
+20:20:      0 |
++++++++++++++++++++++noERROR VELOCIAD137:137:      0 |
+137:137:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 272 | 272 : [13252]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO17:156:      0 |
++++++++++++++++++++++noERROR VELOCIAD157:157:      0 |
+157:157:      0 |
++++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
+ [13252] Color (6) Envio mensaje POS_2-----> 271 | 271 : [10632]
++++++++++++++++++++++noERROR VELOCIAD133:133:      0 |
+133:133:      0 |
++++++++++++++++++++++noERROR VELOCIAD166:166:      0 |
+166:166:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 164 | 164 : [10012]
++++++++++++++++++++++noERROR VELOCIAD165:165:      0 |
+165:165:      0 |
++++++++++++++++++++++noERROR VELOCIAD159:159:      0 |
+159:159:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD [19496] Color (1) Envio mensaje POS_2-----> 157 | 157 : [19004]
+167:167:      0 |
+167:167:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 165 | 165 : [10012]
+
+CAMBIO136:137:      0 |
++++++++++++++++++++++noERROR VELOCIAD162:162:      0 |
+162:162:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO154:17:      0 |
++++++++++++++++++++++noERROR VELOCIAD18:18:      0 |
+18:18:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD158:158:      0 |
+[19004] Color (2) Entrada critica_salida critica -1 pajitas
+2:2:      0 |
+2:2:      0 |
+[19004] Color (2) Entrada Critica critica -1 pajitas
+158:158:      0 |
++++++++++++++++++++++noERROR VELOCIAD168:168:      0 |
+168:168:      0 |
++++++++++++++++++++++noERROR VELOCIAD138:138:      0 |
+138:138:      0 |
++++++++++++++++++++++noERROR VELOCIAD0:0:      0 |
+0:0:      0 |
++++++++++++++++++++++noERROR VELOCIAD21:21:      0 |
+21:21:      0 |
++++++++++++++++++++++noERROR VELOCIAD166:166:      0 |
+166:166:      0 |
++++++++++++++++++++++noERROR VELOCIAD169:169:      0 |
+169:169:      0 |
++++++++++++++++++++++noERROR VELOCIAD1:1:      0 |
+1:1:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD160:160:      0 |
+160:160:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 158 | 158 : [19004]
++++++++++++++++++++++noERROR VELOCIAD267:267:      0 |
++++++++++++++++++++++noERROR VELOCIAD267:267:      0 |
+ [19088] Color (6) Envio mensaje POS_2-----> 265 | 265 : [17792]
+163:163:      0 |
+163:163:      0 |
+167:167:      0 |
+167:167:      0 |
++++++++++++++++++++++noERROR VELOCIAD170:170:      0 |
+170:170:      0 |
++++++++++++++++++++++noERROR VELOCIAD19:19:      0 |
+19:19:      0 |
++++++++++++++++++++++noERROR VELOCIAD159:159:      0 |
+159:159:      0 |
++++++++++++++++++++++noERROR VELOCIAD272:272:      0 |
+272:272:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD168:168:      0 |
+168:168:      0 |
++++++++++++++++++++++noERROR VELOCIAD171:171:      0 |
+171:171:      0 |
++++++++++++++++++++++noERROR VELOCIAD139:139:      0 |
+139:139:      0 |
+
+CAMBIO138:2:      0 |
++++++++++++++++++++++noERROR VELOCIAD155:155:      0 |
+155:155:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD3:3:      0 |
+3:3:      0 |
+169:169:      0 |
+169:169:      0 |
++++++++++++++++++++++noERROR VELOCIAD172:172:      0 |
+172:172:      0 |
++++++++++++++++++++++noERROR VELOCIAD20:20:      0 |
+[6688] Color (0) Entrada critica_salida critica -1 pajitas
+[6688] Color (0) Entrada Critica critica -1 pajitas
+20:20:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO1:139:      0 |
+164:164:      0 |
+164:164:      0 |
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD161:161:      0 |
+161:161:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 159 | 159 : [19004]
+160:160:      0 |
+160:160:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD170:170:      0 |
+170:170:      0 |
+22:22:      0 |
+22:22:      0 |
+ [15336] Color (5) Envio mensaje POS_2-----> 20 | 20 : [6688]
++++++++++++++++++++++noERROR VELOCIAD173:173:      0 |
+173:173:      0 |
++++++++++++++++++++++noERROR VELOCIAD2:2:      0 |
+2:2:      0 |
++++++++++++++++++++++noERROR VELOCIAD171:171:      0 |
+171:171:      0 |
++++++++++++++++++++++noERROR VELOCIAD174:174:      0 |
+174:174:      0 |
++++++++++++++++++++++noERROR VELOCIAD140:140:      0 |
+140:140:      0 |
++++++++++++++++++++++noERROR VELOCIAD21:21:      0 |
+21:21:      0 |
++++++++++++++++++++++noERROR VELOCIAD172:172:      0 |
+172:172:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO139:3:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD165:165:      0 |
+165:165:      0 |
++++++++++++++++++++++noERROR VELOCIAD175:175:      0 |
+175:175:      0 |
+156:156:      0 |
+156:156:      0 |
++++++++++++++++++++++noERROR VELOCIAD162:162:      0 |
+162:162:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 160 | 160 : [19004]
+161:161:      0 |
+161:161:      0 |
++++++++++++++++++++++noERROR VELOCIAD173:173:      0 |
+173:173:      0 |
++++++++++++++++++++++noERROR VELOCIAD4:4:      0 |
+4:4:      0 |
++++++++++++++++++++++noERROR VELOCIAD176:176:      0 |
+176:176:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO2:140:      0 |
++++++++++++++++++++++noERROR VELOCIAD174:174:      0 |
+174:174:      0 |
++++++++++++++++++++++noERROR VELOCIAD23:23:      0 |
+23:23:      0 |
+ [15336] Color (5) Envio mensaje POS_2-----> 21 | 21 : [6688]
++++++++++++++++++++++noERROR VELOCIAD22:22:      0 |
+22:22:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
+177:177:      0 |
+177:177:      0 |
++++++++++++++++++++++noERROR VELOCIAD3:3:      0 |
+3:3:      0 |
++++++++++++++++++++++noERROR VELOCIAD141:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD141:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD175:175:      0 |
+175:175:      0 |
+166:166:      0 |
+166:166:      0 |
++++++++++++++++++++++noERROR VELOCIAD163:163:      0 |
+163:163:      0 |
+ [19496] Color (1) Envio mensaje POS_2-----> 161 | 161 : [19004]
+162:162:      0 |
+162:162:      0 |
++++++++++++++++++++++noERROR VELOCIAD178:178:      0 |
+178:178:      0 |
++++++++++++++++++++++noERROR VELOCIAD176:176:      0 |
+176:176:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO140:4:      0 |
+167:167:      0 |
+167:167:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO160:23:      0 |
++++++++++++++++++++++noERROR VELOCIAD157:157:      0 |
+157:157:      0 |
++++++++++++++++++++++noERROR VELOCIAD179:179:      0 |
+179:179:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD177:177:      0 |
+177:177:      0 |
+5:5:      0 |
+5:5:      0 |
++++++++++++++++++++++noERROR VELOCIAD168:168:      0 |
+168:168:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO3:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD137:137:      0 |
+137:137:      0 |
++++++++++++++++++++++noERROR VELOCIAD180:180:      0 |
+180:180:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO24:163:      0 |
++++++++++++++++++++++noERROR VELOCIAD178:178:      0 |
+178:178:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO161:24:      0 |
++++++++++++++++++++++noERROR VELOCIAD142:142:      0 |
+142:142:      0 |
++++++++++++++++++++++noERROR VELOCIAD164:164:      0 |
+164:164:      0 |
++++++++++++++++++++++noERROR VELOCIAD169:169:      0 |
+169:169:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD181:181:      0 |
+181:181:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO22:161:      0 |
+4:4:      0 |
+4:4:      0 |
++++++++++++++++++++++noERROR VELOCIAD179:179:      0 |
+179:179:      0 |
++++++++++++++++++++++noERROR VELOCIAD134:134:      0 |
+134:134:      0 |
++++++++++++++++++++++noERROR VELOCIAD266:266:      0 |
+266:266:      0 |
+ [17792] Color (6) Envio mensaje POS_2-----> 264 | 264 : [19824]
+265:265:      0 |
+265:265:      0 |
+ [19824] Color (0) Envio mensaje POS_2-----> 263 | 263 : [20044]
+264:264:      0 |
+264:264:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 262 | 262 : [20212]
+131:131:      0 |
+131:131:      0 |
++++++++++++++++++++++noERROR VELOCIAD263:263:      0 |
+263:263:      0 |
+268:268:      0 |
+268:268:      0 |
+ [19088] Color (6) Envio mensaje POS_2-----> 266 | 266 : [17792]
++++++++++++++++++++++noERROR VELOCIAD170:170:      0 |
+170:170:      0 |
++++++++++++++++++++++noERROR VELOCIAD182:182:      0 |
+182:182:      0 |
++++++++++++++++++++++noERROR VELOCIAD180:180:      0 |
+180:180:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO141:5:      0 |
++++++++++++++++++++++noERROR VELOCIAD25:25:      0 |
+25:25:      0 |
++++++++++++++++++++++noERROR VELOCIAD158:158:      0 |
+[19644] Color (3) Entrada critica_salida critica -1 pajitas
++++++++++++++++++++++noERROR VELOCIAD138:138:      0 |
+138:138:      0 |
++++++++++++++++++++++noERROR VELOCIAD183:183:      0 |
+183:183:      0 |
++++++++++++++++++++++noERROR VELOCIAD171:171:      0 |
+171:171:      0 |
++++++++++++++++++++++noERROR VELOCIAD181:181:      0 |
+181:181:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD6:6:      0 |
+6:6:      0 |
+23:23:      0 |
+23:23:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO4:142:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO130:265:      0 |
+165:165:      0 |
+165:165:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD264:264:      0 |
+264:264:      0 |
+143:143:      0 |
+143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD184:184:      0 |
+184:184:      0 |
++++++++++++++++++++++noERROR VELOCIAD182:182:      0 |
+182:182:      0 |
++++++++++++++++++++++noERROR VELOCIAD172:172:      0 |
+172:172:      0 |
++++++++++++++++++++++noERROR VELOCIAD162:162:      0 |
+162:162:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD132:132:      0 |
+132:132:      0 |
+ [20144] Color (1) Envio mensaje POS_2-----> 130 | 130 : [20044]
+26:26:      0 |
+26:26:      0 |
++++++++++++++++++++++noERROR VELOCIAD5:5:      0 |
+5:5:      0 |
++++++++++++++++++++++noERROR VELOCIAD185:185:      0 |
+185:185:      0 |
++++++++++++++++++++++noERROR VELOCIAD183:183:      0 |
+183:183:      0 |
++++++++++++++++++++++noERROR VELOCIAD173:173:      0 |
+173:173:      0 |
++++++++++++++++++++++noERROR VELOCIAD24:24:      0 |
+24:24:      0 |
++++++++++++++++++++++noERROR VELOCIAD131:131:      0 |
+131:131:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO130:265:      0 |
++++++++++++++++++++++noERROR VELOCIAD139:139:      0 |
+139:139:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO142:6:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD184:184:      0 |
+184:184:      0 |
+186:186:      0 |
+186:186:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 184 | 184 : [10012]
++++++++++++++++++++++noERROR VELOCIAD166:166:      0 |
+166:166:      0 |
++++++++++++++++++++++noERROR VELOCIAD174:174:      0 |
+174:174:      0 |
++++++++++++++++++++++noERROR VELOCIAD27:27:      0 |
+27:27:      0 |
++++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 142 | 142 : [13252]
++++++++++++++++++++++noERROR VELOCIAD185:185:      0 |
+185:185:      0 |
++++++++++++++++++++++noERROR VELOCIAD187:187:      0 |
+187:187:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 185 | 185 : [10012]
++++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD7:7:      0 |
+7:7:      0 |
++++++++++++++++++++++noERROR VELOCIAD133:133:      0 |
+133:133:      0 |
++++++++++++++++++++++noERROR VELOCIAD [20144] Color (1) Envio mensaje POS_2-----> 131 | 131 : [20044]
+132:132:      0 |
+132:132:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD [20044] Color (5) Envio mensaje POS_2-----> 130 | 130 : [20212]
+167:167:      0 |
+167:167:      0 |
+175:175:      0 |
+175:175:      0 |
++++++++++++++++++++++noERROR VELOCIAD25:25:      0 |
+25:25:      0 |
++++++++++++++++++++++noERROR VELOCIAD131:131:      0 |
+131:131:      0 |
++++++++++++++++++++++noERROR VELOCIAD186:186:      0 |
+186:186:      0 |
++++++++++++++++++++++noERROR VELOCIAD188:188:      0 |
+188:188:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 186 | 186 : [10012]
++++++++++++++++++++++noERROR VELOCIAD163:163:      0 |
+163:163:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO6:144:      0 |
++++++++++++++++++++++noERROR VELOCIAD140:140:      0 |
+140:140:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD176:176:      0 |
+176:176:      0 |
++++++++++++++++++++++noERROR VELOCIAD168:168:      0 |
+168:168:      0 |
+187:187:      0 |
+187:187:      0 |
+28:28:      0 |
+28:28:      0 |
+189:189:      0 |
+189:189:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 187 | 187 : [10012]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO267:133:      0 |
++++++++++++++++++++++noERROR VELOCIAD132:132:      0 |
+132:132:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO143:7:      0 |
++++++++++++++++++++++noERROR VELOCIAD145:145:      0 |
+145:145:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 143 | 143 : [13252]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD188:188:      0 |
+188:188:      0 |
+26:26:      0 |
+26:26:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD177:177:      0 |
+177:177:      0 |
+190:190:      0 |
+190:190:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 188 | 188 : [10012]
++++++++++++++++++++++noERROR VELOCIAD169:169:      0 |
+169:169:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
+189:189:      0 |
+189:189:      0 |
++++++++++++++++++++++noERROR VELOCIAD191:191:      0 |
+191:191:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 189 | 189 : [10012]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+178:178:      0 |
+Limpiando Cola...
+178:178:      0 |
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD29:29:      0 |
+29:29:      0 |
+8:8:      0 |
+8:8:      0 |
++++++++++++++++++++++noERROR VELOCIAD170:170:      0 |
+170:170:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD141:141:      0 |
+141:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD190:190:      0 |
+190:190:      0 |
++++++++++++++++++++++noERROR VELOCIAD192:192:      0 |
+192:192:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 190 | 190 : [10012]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO7:145:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD27:27:      0 |
+27:27:      0 |
+30:30:      0 |
+30:30:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD164:164:      0 |
+164:164:      0 |
+179:179:      0 |
+179:179:      0 |
++++++++++++++++++++++noERROR VELOCIAD171:171:      0 |
+171:171:      0 |
++++++++++++++++++++++noERROR VELOCIAD191:191:      0 |
+191:191:      0 |
++++++++++++++++++++++noERROR VELOCIAD146:146:      0 |
+146:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD193:193:      0 |
+193:193:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 191 | 191 : [10012]
++++++++++++++++++++++noERROR VELOCIAD31:31:      0 |
+31:31:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO144:8:      0 |
++++++++++++++++++++++noERROR VELOCIAD269:269:      0 |
+269:269:      0 |
+ [19088] Color (6) Envio mensaje POS_2-----> 267 | 267 : [20044]
+
+CAMBIO268:134:      0 |
++++++++++++++++++++++noERROR VELOCIAD180:180:      0 |
+180:180:      0 |
++++++++++++++++++++++noERROR VELOCIAD192:192:      0 |
+192:192:      0 |
++++++++++++++++++++++noERROR VELOCIAD172:172:      0 |
+172:172:      0 |
++++++++++++++++++++++noERROR VELOCIAD194:194:      0 |
+194:194:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 192 | 192 : [10012]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD32:32:      0 |
+32:32:      0 |
+28:28:      0 |
+28:28:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD181:181:      0 |
+181:181:      0 |
+145:145:      0 |
+145:145:      0 |
++++++++++++++++++++++noERROR VELOCIAD142:142:      0 |
+142:142:      0 |
++++++++++++++++++++++noERROR VELOCIAD193:193:      0 |
+193:193:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD195:195:      0 |
++++++++++++++++++++++noERROR VELOCIAD195:195:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 193 | 193 : [10012]
+173:173:      0 |
+173:173:      0 |
+9:9:      0 |
+9:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD33:33:      0 |
+33:33:      0 |
++++++++++++++++++++++noERROR VELOCIAD182:182:      0 |
+182:182:      0 |
++++++++++++++++++++++noERROR VELOCIAD194:194:      0 |
+194:194:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO8:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD147:147:      0 |
+147:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD196:196:      0 |
+196:196:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 194 | 194 : [10012]
++++++++++++++++++++++noERROR VELOCIAD165:165:      0 |
+165:165:      0 |
++++++++++++++++++++++noERROR VELOCIAD34:34:      0 |
+34:34:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD174:174:      0 |
+174:174:      0 |
+
+CAMBIO133:269:      0 |
++++++++++++++++++++++noERROR VELOCIAD29:29:      0 |
+29:29:      0 |
++++++++++++++++++++++noERROR VELOCIAD195:195:      0 |
+195:195:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD135:135:      0 |
+135:135:      0 |
+ [13040] Color (0) Envio mensaje POS_2-----> 133 | 133 : [20144]
+183:183:      0 |
+183:183:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO145:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD197:197:      0 |
+197:197:      0 |
+ [17088] Color (0) Envio mensaje POS_2-----> 195 | 195 : [10012]
++++++++++++++++++++++noERROR VELOCIAD35:35:      0 |
+35:35:      0 |
++++++++++++++++++++++noERROR VELOCIAD30:30:      0 |
+30:30:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD175:175:      0 |
+175:175:      0 |
+196:196:      0 |
+196:196:      0 |
++++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD184:184:      0 |
+184:184:      0 |
++++++++++++++++++++++noERROR VELOCIAD146:146:      0 |
+146:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD36:36:      0 |
+36:36:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD31:31:      0 |
+31:31:      0 |
+
+CAMBIO60:197:      0 |
++++++++++++++++++++++noERROR VELOCIAD176:176:      0 |
+176:176:      0 |
++++++++++++++++++++++noERROR VELOCIAD148:148:      0 |
+148:148:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 146 | 146 : [13252]
++++++++++++++++++++++noERROR VELOCIAD10:10:      0 |
+10:10:      0 |
++++++++++++++++++++++noERROR VELOCIAD185:185:      0 |
+185:185:      0 |
++++++++++++++++++++++noERROR VELOCIAD37:37:      0 |
+37:37:      0 |
++++++++++++++++++++++noERROR VELOCIAD198:198:      0 |
+198:198:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD32:32:      0 |
+32:32:      0 |
+147:147:      0 |
+147:147:      0 |
+134:134:      0 |
+134:134:      0 |
+ [20144] Color (1) Envio mensaje POS_2-----> 132 | 132 : [20212]
+133:133:      0 |
+133:133:      0 |
+268:268:      0 |
+268:268:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 266 | 266 : [17792]
++++++++++++++++++++++noERROR VELOCIAD177:177:      0 |
+177:177:      0 |
++++++++++++++++++++++noERROR VELOCIAD166:166:      0 |
+166:166:      0 |
++++++++++++++++++++++noERROR VELOCIAD38:38:      0 |
+38:38:      0 |
++++++++++++++++++++++noERROR VELOCIAD186:186:      0 |
+186:186:      0 |
++++++++++++++++++++++noERROR VELOCIAD33:33:      0 |
+33:33:      0 |
++++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
++++++++++++++++++++++noERROR VELOCIAD61:61:      0 |
+61:61:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD178:178:      0 |
+178:178:      0 |
++++++++++++++++++++++noERROR VELOCIAD39:39:      0 |
+39:39:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD187:187:      0 |
+187:187:      0 |
+199:199:      0 |
+199:199:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD34:34:      0 |
+34:34:      0 |
++++++++++++++++++++++noERROR VELOCIAD167:167:      0 |
+167:167:      0 |
++++++++++++++++++++++noERROR VELOCIAD149:149:      0 |
+149:149:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 147 | 147 : [13252]
+148:148:      0 |
+148:148:      0 |
++++++++++++++++++++++noERROR VELOCIAD40:40:      0 |
+40:40:      0 |
++++++++++++++++++++++noERROR VELOCIAD179:179:      0 |
+179:179:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD35:35:      0 |
+35:35:      0 |
+188:188:      0 |
+188:188:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD62:62:      0 |
+62:62:      0 |
++++++++++++++++++++++noERROR VELOCIAD11:11:      0 |
+11:11:      0 |
++++++++++++++++++++++noERROR VELOCIAD41:41:      0 |
+41:41:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD200:200:      0 |
+200:200:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD36:36:      0 |
+36:36:      0 |
+145:145:      0 |
+145:145:      0 |
++++++++++++++++++++++noERROR VELOCIAD168:168:      0 |
+168:168:      0 |
++++++++++++++++++++++noERROR VELOCIAD180:180:      0 |
+180:180:      0 |
++++++++++++++++++++++noERROR VELOCIAD189:189:      0 |
+189:189:      0 |
++++++++++++++++++++++noERROR VELOCIAD42:42:      0 |
+42:42:      0 |
++++++++++++++++++++++noERROR VELOCIAD37:37:      0 |
+37:37:      0 |
++++++++++++++++++++++noERROR VELOCIAD190:190:      0 |
+190:190:      0 |
++++++++++++++++++++++noERROR VELOCIAD181:181:      0 |
+181:181:      0 |
++++++++++++++++++++++noERROR VELOCIAD63:63:      0 |
+63:63:      0 |
++++++++++++++++++++++noERROR VELOCIAD150:150:      0 |
+150:150:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 148 | 148 : [13252]
+149:149:      0 |
+149:149:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD43:43:      0 |
+43:43:      0 |
+270:270:      0 |
+270:270:      0 |
+ [19088] Color (6) Envio mensaje POS_2-----> 268 | 268 : [20044]
+269:269:      0 |
+269:269:      0 |
+
+CAMBIO268:134:      0 |
+169:169:      0 |
+169:169:      0 |
++++++++++++++++++++++noERROR VELOCIAD38:38:      0 |
+38:38:      0 |
++++++++++++++++++++++noERROR VELOCIAD201:201:      0 |
+201:201:      0 |
++++++++++++++++++++++noERROR VELOCIAD191:191:      0 |
+191:191:      0 |
++++++++++++++++++++++noERROR VELOCIAD182:182:      0 |
+182:182:      0 |
++++++++++++++++++++++noERROR VELOCIAD44:44:      0 |
+44:44:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD39:39:      0 |
+39:39:      0 |
+146:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD146:146:      0 |
+
+CAMBIO12:150:      0 |
++++++++++++++++++++++noERROR VELOCIAD202:202:      0 |
+202:202:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD64:64:      0 |
+64:64:      0 |
+
+CAMBIO148:12:      0 |
++++++++++++++++++++++noERROR VELOCIAD192:192:      0 |
+192:192:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD170:170:      0 |
+170:170:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO133:269:      0 |
++++++++++++++++++++++noERROR VELOCIAD183:183:      0 |
+183:183:      0 |
++++++++++++++++++++++noERROR VELOCIAD45:45:      0 |
+45:45:      0 |
++++++++++++++++++++++noERROR VELOCIAD40:40:      0 |
+40:40:      0 |
++++++++++++++++++++++noERROR VELOCIAD203:203:      0 |
+203:203:      0 |
++++++++++++++++++++++noERROR VELOCIAD13:13:      0 |
+13:13:      0 |
++++++++++++++++++++++noERROR VELOCIAD193:193:      0 |
+193:193:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD46:46:      0 |
+46:46:      0 |
++++++++++++++++++++++noERROR VELOCIAD41:41:      0 |
+41:41:      0 |
++++++++++++++++++++++noERROR VELOCIAD184:184:      0 |
+184:184:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD204:204:      0 |
+204:204:      0 |
+65:65:      0 |
+65:65:      0 |
++++++++++++++++++++++noERROR VELOCIAD171:171:      0 |
+171:171:      0 |
++++++++++++++++++++++noERROR VELOCIAD14:14:      0 |
+14:14:      0 |
+
+CAMBIO13:151:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO268:134:      0 |
++++++++++++++++++++++noERROR VELOCIAD47:47:      0 |
+47:47:      0 |
++++++++++++++++++++++noERROR VELOCIAD194:194:      0 |
+194:194:      0 |
++++++++++++++++++++++noERROR VELOCIAD42:42:      0 |
+42:42:      0 |
++++++++++++++++++++++noERROR VELOCIAD147:147:      0 |
+147:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD205:205:      0 |
+205:205:      0 |
+185:185:      0 |
+185:185:      0 |
++++++++++++++++++++++noERROR VELOCIAD15:15:      0 |
+15:15:      0 |
+ [13252] Color (6) Envio mensaje POS_2-----> 13 | 13 : [20328]
++++++++++++++++++++++noERROR VELOCIAD48:48:      0 |
+48:48:      0 |
++++++++++++++++++++++noERROR VELOCIAD43:43:      0 |
+43:43:      0 |
++++++++++++++++++++++noERROR VELOCIAD195:195:      0 |
+195:195:      0 |
++++++++++++++++++++++noERROR VELOCIAD66:66:      0 |
+66:66:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD206:206:      0 |
+206:206:      0 |
+172:172:      0 |
+172:172:      0 |
++++++++++++++++++++++noERROR VELOCIAD149:149:      0 |
+149:149:      0 |
+ [15036] Color (3) Envio mensaje POS_2-----> 147 | 147 : [10632]
++++++++++++++++++++++noERROR VELOCIAD186:186:      0 |
+186:186:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO133:269:      0 |
++++++++++++++++++++++noERROR VELOCIAD49:49:      0 |
+49:49:      0 |
++++++++++++++++++++++noERROR VELOCIAD44:44:      0 |
+44:44:      0 |
++++++++++++++++++++++noERROR VELOCIAD267:267:      0 |
+267:267:      0 |
+ [17792] Color (6) Envio mensaje POS_2-----> 265 | 265 : [19824]
+266:266:      0 |
+266:266:      0 |
++++++++++++++++++++++noERROR VELOCIAD196:196:      0 |
+196:196:      0 |
++++++++++++++++++++++noERROR VELOCIAD207:207:      0 |
+207:207:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD14:14:      0 |
+14:14:      0 |
+187:187:      0 |
+187:187:      0 |
++++++++++++++++++++++noERROR VELOCIAD50:50:      0 |
+50:50:      0 |
++++++++++++++++++++++noERROR VELOCIAD45:45:      0 |
+45:45:      0 |
++++++++++++++++++++++noERROR VELOCIAD148:148:      0 |
+148:148:      0 |
++++++++++++++++++++++noERROR VELOCIAD173:173:      0 |
+173:173:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD208:208:      0 |
+208:208:      0 |
+197:197:      0 |
++++++++++++++++++++++noERROR VELOCIAD197:197:      0 |
+67:67:      0 |
+67:67:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO268:134:      0 |
++++++++++++++++++++++noERROR VELOCIAD16:16:      0 |
+16:16:      0 |
+ [13252] Color (6) Envio mensaje POS_2-----> 14 | 14 : [20328]
++++++++++++++++++++++noERROR VELOCIAD51:51:      0 |
+51:51:      0 |
++++++++++++++++++++++noERROR VELOCIAD46:46:      0 |
+46:46:      0 |
++++++++++++++++++++++noERROR VELOCIAD188:188:      0 |
+188:188:      0 |
++++++++++++++++++++++noERROR VELOCIAD209:209:      0 |
+209:209:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO131:267:      0 |
++++++++++++++++++++++noERROR VELOCIAD174:174:      0 |
+174:174:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD52:52:      0 |
+52:52:      0 |
+47:47:      0 |
+47:47:      0 |
++++++++++++++++++++++noERROR VELOCIAD150:150:      0 |
+150:150:      0 |
+ [15036] Color (3) Envio mensaje POS_2-----> 148 | 148 : [10632]
++++++++++++++++++++++noERROR VELOCIAD189:189:      0 |
++++++++++++++++++++++noERROR VELOCIAD189:189:      0 |
++++++++++++++++++++++noERROR VELOCIAD136:136:      0 |
+136:136:      0 |
++++++++++++++++++++++noERROR VELOCIAD [13040] Color (0) Envio mensaje POS_2-----> 134 | 134 : [20144]
+135:135:      0 |
+135:135:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO133:269:      0 |
+210:210:      0 |
+210:210:      0 |
+
+CAMBIO134:270:      0 |
+68:68:      0 |
+68:68:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD198:198:      0 |
+198:198:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD15:15:      0 |
+15:15:      0 |
+53:53:      0 |
+53:53:      0 |
+149:149:      0 |
+149:149:      0 |
+48:48:      0 |
+48:48:      0 |
++++++++++++++++++++++noERROR VELOCIAD17:17:      0 |
+17:17:      0 |
+ [13252] Color (6) Envio mensaje POS_2-----> 15 | 15 : [20328]
++++++++++++++++++++++noERROR VELOCIAD190:190:      0 |
+190:190:      0 |
++++++++++++++++++++++noERROR VELOCIAD211:211:      0 |
+211:211:      0 |
++++++++++++++++++++++noERROR VELOCIAD69:69:      0 |
+69:69:      0 |
++++++++++++++++++++++noERROR VELOCIAD175:175:      0 |
+175:175:      0 |
++++++++++++++++++++++noERROR VELOCIAD132:132:      0 |
+132:132:      0 |
++++++++++++++++++++++noERROR VELOCIAD54:54:      0 |
+54:54:      0 |
++++++++++++++++++++++noERROR VELOCIAD49:49:      0 |
+49:49:      0 |
+[19644] Color (3) Entrada Critica critica -1 pajitas
+158:158:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO268:134:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO269:135:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD212:212:      0 |
+212:212:      0 |
+70:70:      0 |
+70:70:      0 |
++++++++++++++++++++++noERROR VELOCIAD191:191:      0 |
+191:191:      0 |
++++++++++++++++++++++noERROR VELOCIAD55:55:      0 |
+55:55:      0 |
++++++++++++++++++++++noERROR VELOCIAD50:50:      0 |
+50:50:      0 |
++++++++++++++++++++++noERROR VELOCIAD199:199:      0 |
+199:199:      0 |
++++++++++++++++++++++noERROR VELOCIAD176:176:      0 |
+176:176:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD213:213:      0 |
+213:213:      0 |
+71:71:      0 |
+71:71:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO271:136:      0 |
++++++++++++++++++++++noERROR VELOCIAD192:192:      0 |
+192:192:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD56:56:      0 |
+56:56:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO13:151:      0 |
++++++++++++++++++++++noERROR VELOCIAD133:133:      0 |
+133:133:      0 |
+18:18:      0 |
++++++++++++++++++++++noERROR VELOCIAD18:18:      0 |
+150:150:      0 |
+150:150:      0 |
++++++++++++++++++++++noERROR VELOCIAD51:51:      0 |
+51:51:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO134:270:      0 |
++++++++++++++++++++++noERROR VELOCIAD72:72:      0 |
+72:72:      0 |
++++++++++++++++++++++noERROR VELOCIAD214:214:      0 |
+214:214:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO135:271:      0 |
++++++++++++++++++++++noERROR VELOCIAD57:57:      0 |
+57:57:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD193:193:      0 |
+193:193:      0 |
+177:177:      0 |
+177:177:      0 |
++++++++++++++++++++++noERROR VELOCIAD52:52:      0 |
+52:52:      0 |
++++++++++++++++++++++noERROR VELOCIAD73:73:      0 |
+73:73:      0 |
++++++++++++++++++++++noERROR VELOCIAD215:215:      0 |
+215:215:      0 |
++++++++++++++++++++++noERROR VELOCIAD200:200:      0 |
+200:200:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD58:58:      0 |
+58:58:      0 |
+
+CAMBIO269:135:      0 |
++++++++++++++++++++++noERROR VELOCIAD53:53:      0 |
+53:53:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD159:159:      0 |
+159:159:      0 |
+194:194:      0 |
+194:194:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD74:74:      0 |
+74:74:      0 |
+134:134:      0 |
+134:134:      0 |
++++++++++++++++++++++noERROR VELOCIAD216:216:      0 |
+216:216:      0 |
+
+CAMBIO133:269:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD178:178:      0 |
+178:178:      0 |
+19:19:      0 |
+19:19:      0 |
++++++++++++++++++++++noERROR VELOCIAD59:59:      0 |
+59:59:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD54:54:      0 |
+54:54:      0 |
++++++++++++++++++++++noERROR VELOCIAD272:272:      0 |
+272:272:      0 |
++++++++++++++++++++++noERROR VELOCIAD75:75:      0 |
+75:75:      0 |
++++++++++++++++++++++noERROR VELOCIAD217:217:      0 |
+217:217:      0 |
++++++++++++++++++++++noERROR VELOCIAD195:195:      0 |
+195:195:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD14:14:      0 |
+14:14:      0 |
+270:270:      0 |
+270:270:      0 |
+
+CAMBIO13:151:      0 |
++++++++++++++++++++++noERROR VELOCIAD16:16:      0 |
+16:16:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 14 | 14 : [15036]
++++++++++++++++++++++noERROR VELOCIAD60:60:      0 |
+60:60:      0 |
++++++++++++++++++++++noERROR VELOCIAD201:201:      0 |
+201:201:      0 |
++++++++++++++++++++++noERROR VELOCIAD55:55:      0 |
+55:55:      0 |
++++++++++++++++++++++noERROR VELOCIAD0:0:      0 |
+0:0:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD [13040] Color (0) Envio mensaje POS_2-----> 135 | 135 : [19088]
+
+CAMBIO268:134:      0 |
+76:76:      0 |
+76:76:      0 |
++++++++++++++++++++++noERROR VELOCIAD218:218:      0 |
+218:218:      0 |
++++++++++++++++++++++noERROR VELOCIAD179:179:      0 |
+179:179:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO269:135:      0 |
++++++++++++++++++++++noERROR VELOCIAD196:196:      0 |
+196:196:      0 |
++++++++++++++++++++++noERROR VELOCIAD56:56:      0 |
+56:56:      0 |
++++++++++++++++++++++noERROR VELOCIAD202:202:      0 |
+202:202:      0 |
++++++++++++++++++++++noERROR VELOCIAD77:77:      0 |
+77:77:      0 |
++++++++++++++++++++++noERROR VELOCIAD219:219:      0 |
+219:219:      0 |
++++++++++++++++++++++noERROR VELOCIAD20:20:      0 |
+[13252] Color (6) Entrada critica_salida critica -1 pajitas
+[13252] Color (6) Entrada Critica critica -1 pajitas
+20:20:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD271:271:      0 |
+271:271:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 269 | 269 : [19824]
+197:197:      0 |
+197:197:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD57:57:      0 |
+57:57:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO133:269:      0 |
++++++++++++++++++++++noERROR VELOCIAD78:78:      0 |
+78:78:      0 |
+160:160:      0 |
+160:160:      0 |
+61:61:      0 |
+61:61:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD180:180:      0 |
+180:180:      0 |
+203:203:      0 |
++++++++++++++++++++++noERROR VELOCIAD203:203:      0 |
+220:220:      0 |
+220:220:      0 |
++++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
+ [20144] Color (1) Envio mensaje POS_2-----> 271 | 271 : [20044]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO150:14:      0 |
++++++++++++++++++++++noERROR VELOCIAD270:270:      0 |
+270:270:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD58:58:      0 |
+58:58:      0 |
+79:79:      0 |
+79:79:      0 |
++++++++++++++++++++++noERROR VELOCIAD221:221:      0 |
+221:221:      0 |
++++++++++++++++++++++noERROR VELOCIAD204:204:      0 |
+204:204:      0 |
++++++++++++++++++++++noERROR VELOCIAD15:15:      0 |
+15:15:      0 |
++++++++++++++++++++++noERROR VELOCIAD134:134:      0 |
+134:134:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD59:59:      0 |
+59:59:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD181:181:      0 |
+181:181:      0 |
+272:272:      0 |
+272:272:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 270 | 270 : [19824]
+80:80:      0 |
+80:80:      0 |
++++++++++++++++++++++noERROR VELOCIAD137:137:      0 |
+137:137:      0 |
+ [20144] Color (1) Envio mensaje POS_2-----> 272 | 272 : [20044]
++++++++++++++++++++++noERROR VELOCIAD222:222:      0 |
+222:222:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD62:62:      0 |
+62:62:      0 |
+21:21:      0 |
+21:21:      0 |
++++++++++++++++++++++noERROR VELOCIAD205:205:      0 |
+205:205:      0 |
++++++++++++++++++++++noERROR VELOCIAD198:198:      0 |
+198:198:      0 |
++++++++++++++++++++++noERROR VELOCIAD60:60:      0 |
+60:60:      0 |
++++++++++++++++++++++noERROR VELOCIAD81:81:      0 |
+81:81:      0 |
++++++++++++++++++++++noERROR VELOCIAD223:223:      0 |
+223:223:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD206:206:      0 |
++++++++++++++++++++++noERROR VELOCIAD206:206:      0 |
++++++++++++++++++++++noERROR VELOCIAD138:138:      0 |
++++++++++++++++++++++noERROR VELOCIAD138:138:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO13:151:      0 |
+271:271:      0 |
+271:271:      0 |
+
+CAMBIO269:135:      0 |
+182:182:      0 |
+182:182:      0 |
++++++++++++++++++++++noERROR VELOCIAD82:82:      0 |
+82:82:      0 |
++++++++++++++++++++++noERROR VELOCIAD161:161:      0 |
+161:161:      0 |
++++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 271 | 271 : [19824]
++++++++++++++++++++++noERROR VELOCIAD224:224:      0 |
+224:224:      0 |
++++++++++++++++++++++noERROR VELOCIAD63:63:      0 |
+63:63:      0 |
++++++++++++++++++++++noERROR VELOCIAD17:17:      0 |
+17:17:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 15 | 15 : [15036]
++++++++++++++++++++++noERROR VELOCIAD207:207:      0 |
+207:207:      0 |
++++++++++++++++++++++noERROR VELOCIAD83:83:      0 |
+83:83:      0 |
++++++++++++++++++++++noERROR VELOCIAD199:199:      0 |
+199:199:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD61:61:      0 |
+61:61:      0 |
++++++++++++++++++++++noERROR VELOCIAD137:137:      0 |
+137:137:      0 |
+22:22:      0 |
+22:22:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD139:139:      0 |
+139:139:      0 |
+ [20144] Color (1) Envio mensaje POS_2-----> 137 | 137 : [20044]
+225:225:      0 |
+225:225:      0 |
++++++++++++++++++++++noERROR VELOCIAD183:183:      0 |
+183:183:      0 |
++++++++++++++++++++++noERROR VELOCIAD270:270:      0 |
+270:270:      0 |
++++++++++++++++++++++noERROR VELOCIAD84:84:      0 |
+84:84:      0 |
++++++++++++++++++++++noERROR VELOCIAD208:208:      0 |
+208:208:      0 |
++++++++++++++++++++++noERROR VELOCIAD1:1:      0 |
+1:1:      0 |
++++++++++++++++++++++noERROR VELOCIAD138:138:      0 |
+138:138:      0 |
++++++++++++++++++++++noERROR VELOCIAD226:226:      0 |
+226:226:      0 |
++++++++++++++++++++++noERROR VELOCIAD272:272:      0 |
+272:272:      0 |
+ [19824] Color (0) Envio mensaje POS_2-----> 270 | 270 : [20212]
++++++++++++++++++++++noERROR VELOCIAD64:64:      0 |
+64:64:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD14:14:      0 |
+14:14:      0 |
++++++++++++++++++++++noERROR VELOCIAD140:140:      0 |
+140:140:      0 |
+ [20144] Color (1) Envio mensaje POS_2-----> 138 | 138 : [20044]
+85:85:      0 |
+85:85:      0 |
++++++++++++++++++++++noERROR VELOCIAD209:209:      0 |
+209:209:      0 |
++++++++++++++++++++++noERROR VELOCIAD139:139:      0 |
+139:139:      0 |
++++++++++++++++++++++noERROR VELOCIAD227:227:      0 |
+227:227:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD184:184:      0 |
+184:184:      0 |
+62:62:      0 |
+62:62:      0 |
++++++++++++++++++++++noERROR VELOCIAD200:200:      0 |
+200:200:      0 |
++++++++++++++++++++++noERROR VELOCIAD271:271:      0 |
+271:271:      0 |
++++++++++++++++++++++noERROR VELOCIAD86:86:      0 |
+86:86:      0 |
++++++++++++++++++++++noERROR VELOCIAD162:162:      0 |
+162:162:      0 |
++++++++++++++++++++++noERROR VELOCIAD23:23:      0 |
+23:23:      0 |
++++++++++++++++++++++noERROR VELOCIAD136:136:      0 |
+136:136:      0 |
++++++++++++++++++++++noERROR VELOCIAD210:210:      0 |
+210:210:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO2:140:      0 |
++++++++++++++++++++++noERROR VELOCIAD228:228:      0 |
+228:228:      0 |
++++++++++++++++++++++noERROR VELOCIAD141:141:      0 |
+141:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD65:65:      0 |
+65:65:      0 |
++++++++++++++++++++++noERROR VELOCIAD87:87:      0 |
+87:87:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD185:185:      0 |
+185:185:      0 |
++++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
+ [19824] Color (0) Envio mensaje POS_2-----> 271 | 271 : [20212]
+3:3:      0 |
+3:3:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 1 | 1 : [13040]
++++++++++++++++++++++noERROR VELOCIAD229:229:      0 |
+229:229:      0 |
++++++++++++++++++++++noERROR VELOCIAD211:211:      0 |
+211:211:      0 |
++++++++++++++++++++++noERROR VELOCIAD63:63:      0 |
+63:63:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD88:88:      0 |
+88:88:      0 |
+
+CAMBIO152:15:      0 |
++++++++++++++++++++++noERROR VELOCIAD272:272:      0 |
+272:272:      0 |
++++++++++++++++++++++noERROR VELOCIAD142:142:      0 |
+142:142:      0 |
++++++++++++++++++++++noERROR VELOCIAD4:4:      0 |
+4:4:      0 |
++++++++++++++++++++++noERROR VELOCIAD230:230:      0 |
+230:230:      0 |
++++++++++++++++++++++noERROR VELOCIAD201:201:      0 |
+201:201:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD16:16:      0 |
+16:16:      0 |
+137:137:      0 |
+137:137:      0 |
+ [19824] Color (0) Envio mensaje POS_2-----> 272 | 272 : [20212]
++++++++++++++++++++++noERROR VELOCIAD212:212:      0 |
+212:212:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD66:66:      0 |
+66:66:      0 |
+89:89:      0 |
++++++++++++++++++++++noERROR VELOCIAD89:89:      0 |
+24:24:      0 |
+24:24:      0 |
++++++++++++++++++++++noERROR VELOCIAD186:186:      0 |
+186:186:      0 |
++++++++++++++++++++++noERROR VELOCIAD5:5:      0 |
+5:5:      0 |
++++++++++++++++++++++noERROR VELOCIAD231:231:      0 |
+231:231:      0 |
++++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD202:202:      0 |
+202:202:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD138:138:      0 |
+138:138:      0 |
+64:64:      0 |
+64:64:      0 |
++++++++++++++++++++++noERROR VELOCIAD90:90:      0 |
+90:90:      0 |
+213:213:      0 |
+213:213:      0 |
++++++++++++++++++++++noERROR VELOCIAD18:18:      0 |
+18:18:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 16 | 16 : [15036]
++++++++++++++++++++++noERROR VELOCIAD163:163:      0 |
+163:163:      0 |
++++++++++++++++++++++noERROR VELOCIAD273:273:      0 |
+273:273:      0 |
++++++++++++++++++++++noERROR VELOCIAD6:6:      0 |
+6:6:      0 |
++++++++++++++++++++++noERROR VELOCIAD232:232:      0 |
+232:232:      0 |
++++++++++++++++++++++noERROR VELOCIAD91:91:      0 |
+91:91:      0 |
++++++++++++++++++++++noERROR VELOCIAD187:187:      0 |
+187:187:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD203:203:      0 |
++++++++++++++++++++++noERROR VELOCIAD203:203:      0 |
+214:214:      0 |
+214:214:      0 |
+139:139:      0 |
+139:139:      0 |
++++++++++++++++++++++noERROR VELOCIAD67:67:      0 |
+67:67:      0 |
++++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
++++++++++++++++++++++noERROR VELOCIAD137:137:      0 |
+137:137:      0 |
++++++++++++++++++++++noERROR VELOCIAD7:7:      0 |
+7:7:      0 |
++++++++++++++++++++++noERROR VELOCIAD233:233:      0 |
+233:233:      0 |
++++++++++++++++++++++noERROR VELOCIAD25:25:      0 |
+25:25:      0 |
++++++++++++++++++++++noERROR VELOCIAD65:65:      0 |
+65:65:      0 |
++++++++++++++++++++++noERROR VELOCIAD92:92:      0 |
+92:92:      0 |
++++++++++++++++++++++noERROR VELOCIAD2:2:      0 |
+2:2:      0 |
++++++++++++++++++++++noERROR VELOCIAD215:215:      0 |
+215:215:      0 |
++++++++++++++++++++++noERROR VELOCIAD138:138:      0 |
+138:138:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD0:0:      0 |
+0:0:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD204:204:      0 |
+204:204:      0 |
+140:140:      0 |
+140:140:      0 |
+ [19824] Color (0) Envio mensaje POS_2-----> 138 | 138 : [20212]
+8:8:      0 |
+8:8:      0 |
++++++++++++++++++++++noERROR VELOCIAD234:234:      0 |
+[17088] Color (0) Entrada critica_salida critica -1 pajitas
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD145:145:      0 |
+145:145:      0 |
+188:188:      0 |
+188:188:      0 |
++++++++++++++++++++++noERROR VELOCIAD93:93:      0 |
+93:93:      0 |
++++++++++++++++++++++noERROR VELOCIAD139:139:      0 |
+139:139:      0 |
++++++++++++++++++++++noERROR VELOCIAD216:216:      0 |
+216:216:      0 |
++++++++++++++++++++++noERROR VELOCIAD68:68:      0 |
+68:68:      0 |
++++++++++++++++++++++noERROR VELOCIAD9:9:      0 |
+9:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD205:205:      0 |
+205:205:      0 |
+141:141:      0 |
+141:141:      0 |
+ [19824] Color (0) Envio mensaje POS_2-----> 139 | 139 : [20212]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD66:66:      0 |
+66:66:      0 |
+94:94:      0 |
+94:94:      0 |
++++++++++++++++++++++noERROR VELOCIAD164:164:      0 |
+164:164:      0 |
++++++++++++++++++++++noERROR VELOCIAD140:140:      0 |
+140:140:      0 |
++++++++++++++++++++++noERROR VELOCIAD146:146:      0 |
+146:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD69:69:      0 |
+69:69:      0 |
++++++++++++++++++++++noERROR VELOCIAD10:10:      0 |
+10:10:      0 |
++++++++++++++++++++++noERROR VELOCIAD217:217:      0 |
+217:217:      0 |
++++++++++++++++++++++noERROR VELOCIAD26:26:      0 |
+26:26:      0 |
+189:189:      0 |
+189:189:      0 |
++++++++++++++++++++++noERROR VELOCIAD153:153:      0 |
+153:153:      0 |
+ [10632] Color (1) Envio mensaje POS_2-----> 151 | 151 : [13832]
+152:152:      0 |
+152:152:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD142:142:      0 |
+142:142:      0 |
+ [19824] Color (0) Envio mensaje POS_2-----> 140 | 140 : [20212]
+206:206:      0 |
+206:206:      0 |
++++++++++++++++++++++noERROR VELOCIAD95:95:      0 |
+95:95:      0 |
++++++++++++++++++++++noERROR VELOCIAD141:141:      0 |
+141:141:      0 |
++++++++++++++++++++++noERROR VELOCIAD268:268:      0 |
+268:268:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD11:11:      0 |
+11:11:      0 |
+70:70:      0 |
+70:70:      0 |
++++++++++++++++++++++noERROR VELOCIAD218:218:      0 |
+218:218:      0 |
++++++++++++++++++++++noERROR VELOCIAD147:147:      0 |
+147:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD96:96:      0 |
+96:96:      0 |
++++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD [19824] Color (0) Envio mensaje POS_2-----> 141 | 141 : [20212]
+207:207:      0 |
+207:207:      0 |
+142:142:      0 |
+142:142:      0 |
++++++++++++++++++++++noERROR VELOCIAD67:67:      0 |
+67:67:      0 |
++++++++++++++++++++++noERROR VELOCIAD190:190:      0 |
+190:190:      0 |
++++++++++++++++++++++noERROR VELOCIAD12:12:      0 |
+12:12:      0 |
++++++++++++++++++++++noERROR VELOCIAD71:71:      0 |
+71:71:      0 |
++++++++++++++++++++++noERROR VELOCIAD219:219:      0 |
+219:219:      0 |
++++++++++++++++++++++noERROR VELOCIAD97:97:      0 |
+97:97:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO5:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD19:19:      0 |
+19:19:      0 |
++++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD148:148:      0 |
+148:148:      0 |
+208:208:      0 |
+208:208:      0 |
++++++++++++++++++++++noERROR VELOCIAD27:27:      0 |
+27:27:      0 |
++++++++++++++++++++++noERROR VELOCIAD13:13:      0 |
+13:13:      0 |
++++++++++++++++++++++noERROR VELOCIAD17:17:      0 |
+17:17:      0 |
++++++++++++++++++++++noERROR VELOCIAD72:72:      0 |
+72:72:      0 |
++++++++++++++++++++++noERROR VELOCIAD98:98:      0 |
+98:98:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO15:153:      0 |
++++++++++++++++++++++noERROR VELOCIAD220:220:      0 |
+220:220:      0 |
++++++++++++++++++++++noERROR VELOCIAD6:6:      0 |
+6:6:      0 |
++++++++++++++++++++++noERROR VELOCIAD165:165:      0 |
+165:165:      0 |
++++++++++++++++++++++noERROR VELOCIAD191:191:      0 |
+191:191:      0 |
++++++++++++++++++++++noERROR VELOCIAD68:68:      0 |
+68:68:      0 |
++++++++++++++++++++++noERROR VELOCIAD1:1:      0 |
+1:1:      0 |
++++++++++++++++++++++noERROR VELOCIAD145:145:      0 |
+145:145:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD14:14:      0 |
+14:14:      0 |
+209:209:      0 |
+209:209:      0 |
++++++++++++++++++++++noERROR VELOCIAD73:73:      0 |
+73:73:      0 |
++++++++++++++++++++++noERROR VELOCIAD99:99:      0 |
+99:99:      0 |
++++++++++++++++++++++noERROR VELOCIAD149:149:      0 |
+149:149:      0 |
++++++++++++++++++++++noERROR VELOCIAD7:7:      0 |
+7:7:      0 |
++++++++++++++++++++++noERROR VELOCIAD221:221:      0 |
+221:221:      0 |
++++++++++++++++++++++noERROR VELOCIAD69:69:      0 |
+69:69:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO152:15:      0 |
++++++++++++++++++++++noERROR VELOCIAD74:74:      0 |
+74:74:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD100:100:      0 |
+100:100:      0 |
+146:146:      0 |
+146:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD210:210:      0 |
+210:210:      0 |
++++++++++++++++++++++noERROR VELOCIAD192:192:      0 |
+192:192:      0 |
++++++++++++++++++++++noERROR VELOCIAD8:8:      0 |
++++++++++++++++++++++noERROR VELOCIAD8:8:      0 |
+3:3:      0 |
+3:3:      0 |
+ [13040] Color (0) Envio mensaje POS_2-----> 1 | 1 : [19088]
++++++++++++++++++++++noERROR VELOCIAD28:28:      0 |
+28:28:      0 |
++++++++++++++++++++++noERROR VELOCIAD222:222:      0 |
+222:222:      0 |
++++++++++++++++++++++noERROR VELOCIAD70:70:      0 |
+70:70:      0 |
++++++++++++++++++++++noERROR VELOCIAD150:150:      0 |
+150:150:      0 |
++++++++++++++++++++++noERROR VELOCIAD101:101:      0 |
+101:101:      0 |
++++++++++++++++++++++noERROR VELOCIAD75:75:      0 |
+75:75:      0 |
++++++++++++++++++++++noERROR VELOCIAD147:147:      0 |
+147:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD16:16:      0 |
+16:16:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD211:211:      0 |
+211:211:      0 |
+9:9:      0 |
+9:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD71:71:      0 |
+71:71:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD223:223:      0 |
+223:223:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD154:154:      0 |
+154:154:      0 |
+ [10632] Color (1) Envio mensaje POS_2-----> 152 | 152 : [20044]
+102:102:      0 |
+[10012] Color (1) Entrada critica_salida critica -1 pajitas
+153:153:      0 |
++++++++++++++++++++++noERROR VELOCIAD153:153:      0 |
+76:76:      0 |
+76:76:      0 |
+193:193:      0 |
+193:193:      0 |
+[17088] Color (0) Entrada Critica critica -1 pajitas
+234:234:      0 |
+[10012] Color (1) Entrada Critica critica -1 pajitas
+102:102:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD10:10:      0 |
+10:10:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD166:166:      0 |
+166:166:      0 |
+148:148:      0 |
+148:148:      0 |
+151:151:      0 |
+151:151:      0 |
++++++++++++++++++++++noERROR VELOCIAD212:212:      0 |
+212:212:      0 |
++++++++++++++++++++++noERROR VELOCIAD72:72:      0 |
+72:72:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD77:77:      0 |
+77:77:      0 |
+224:224:      0 |
+224:224:      0 |
++++++++++++++++++++++noERROR VELOCIAD103:103:      0 |
+103:103:      0 |
++++++++++++++++++++++noERROR VELOCIAD235:235:      0 |
+235:235:      0 |
++++++++++++++++++++++noERROR VELOCIAD29:29:      0 |
+29:29:      0 |
++++++++++++++++++++++noERROR VELOCIAD11:11:      0 |
+11:11:      0 |
++++++++++++++++++++++noERROR VELOCIAD149:149:      0 |
+149:149:      0 |
++++++++++++++++++++++noERROR VELOCIAD73:73:      0 |
+73:73:      0 |
++++++++++++++++++++++noERROR VELOCIAD213:213:      0 |
+213:213:      0 |
++++++++++++++++++++++noERROR VELOCIAD194:194:      0 |
+194:194:      0 |
++++++++++++++++++++++noERROR VELOCIAD152:152:      0 |
+152:152:      0 |
++++++++++++++++++++++noERROR VELOCIAD78:78:      0 |
+78:78:      0 |
++++++++++++++++++++++noERROR VELOCIAD104:104:      0 |
+104:104:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO15:154:      0 |
+167:167:      0 |
+167:167:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD236:236:      0 |
+236:236:      0 |
+225:225:      0 |
+225:225:      0 |
+12:12:      0 |
+12:12:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD20:20:      0 |
+[20328] Color (2) Entrada critica_salida critica -1 pajitas
++++++++++++++++++++++noERROR VELOCIAD30:30:      0 |
+30:30:      0 |
++++++++++++++++++++++noERROR VELOCIAD74:74:      0 |
+74:74:      0 |
++++++++++++++++++++++noERROR VELOCIAD2:2:      0 |
+2:2:      0 |
++++++++++++++++++++++noERROR VELOCIAD150:150:      0 |
+150:150:      0 |
++++++++++++++++++++++noERROR VELOCIAD214:214:      0 |
+214:214:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD105:105:      0 |
+105:105:      0 |
+79:79:      0 |
+79:79:      0 |
++++++++++++++++++++++noERROR VELOCIAD237:237:      0 |
+237:237:      0 |
++++++++++++++++++++++noERROR VELOCIAD13:13:      0 |
+13:13:      0 |
++++++++++++++++++++++noERROR VELOCIAD226:226:      0 |
+226:226:      0 |
++++++++++++++++++++++noERROR VELOCIAD75:75:      0 |
+75:75:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD195:195:      0 |
+195:195:      0 |
+31:31:      0 |
+31:31:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD168:168:      0 |
++++++++++++++++++++++noERROR VELOCIAD168:168:      0 |
+106:106:      0 |
+106:106:      0 |
+151:151:      0 |
+151:151:      0 |
++++++++++++++++++++++noERROR VELOCIAD80:80:      0 |
+80:80:      0 |
++++++++++++++++++++++noERROR VELOCIAD215:215:      0 |
+215:215:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO153:16:      0 |
++++++++++++++++++++++noERROR VELOCIAD238:238:      0 |
+238:238:      0 |
+14:14:      0 |
+14:14:      0 |
++++++++++++++++++++++noERROR VELOCIAD227:227:      0 |
+227:227:      0 |
++++++++++++++++++++++noERROR VELOCIAD76:76:      0 |
+76:76:      0 |
++++++++++++++++++++++noERROR VELOCIAD18:18:      0 |
+18:18:      0 |
+ [15036] Color (3) Envio mensaje POS_2-----> 16 | 16 : [13832]
+17:17:      0 |
+17:17:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD32:32:      0 |
+32:32:      0 |
+107:107:      0 |
+107:107:      0 |
++++++++++++++++++++++noERROR VELOCIAD81:81:      0 |
+81:81:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD15:15:      0 |
+15:15:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD239:239:      0 |
+239:239:      0 |
+Limpiando Cola...
+216:216:      0 |
+Limpiando Cola...
+216:216:      0 |
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD196:196:      0 |
+196:196:      0 |
++++++++++++++++++++++noERROR VELOCIAD228:228:      0 |
+228:228:      0 |
++++++++++++++++++++++noERROR VELOCIAD169:169:      0 |
+169:169:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD77:77:      0 |
+77:77:      0 |
++++++++++++++++++++++noERROR VELOCIAD108:108:      0 |
+108:108:      0 |
+82:82:      0 |
+82:82:      0 |
++++++++++++++++++++++noERROR VELOCIAD33:33:      0 |
+33:33:      0 |
++++++++++++++++++++++noERROR VELOCIAD4:4:      0 |
+4:4:      0 |
+ [13040] Color (0) Envio mensaje POS_2-----> 2 | 2 : [19088]
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD240:240:      0 |
+240:240:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD155:155:      0 |
+155:155:      0 |
+ [10632] Color (1) Envio mensaje POS_2-----> 153 | 153 : [20044]
+154:154:      0 |
+154:154:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 152 | 152 : [20144]
+217:217:      0 |
+217:217:      0 |
+153:153:      0 |
+153:153:      0 |
+ [20144] Color (1) Envio mensaje POS_2-----> 151 | 151 : [19824]
++++++++++++++++++++++noERROR VELOCIAD152:152:      0 |
+152:152:      0 |
+229:229:      0 |
+229:229:      0 |
++++++++++++++++++++++noERROR VELOCIAD109:109:      0 |
+109:109:      0 |
++++++++++++++++++++++noERROR VELOCIAD78:78:      0 |
+78:78:      0 |
++++++++++++++++++++++noERROR VELOCIAD83:83:      0 |
+83:83:      0 |
++++++++++++++++++++++noERROR VELOCIAD197:197:      0 |
+197:197:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD34:34:      0 |
+34:34:      0 |
+241:241:      0 |
+241:241:      0 |
+16:16:      0 |
+16:16:      0 |
++++++++++++++++++++++noERROR VELOCIAD170:170:      0 |
+170:170:      0 |
++++++++++++++++++++++noERROR VELOCIAD110:110:      0 |
+110:110:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD218:218:      0 |
+218:218:      0 |
++++++++++++++++++++++noERROR VELOCIAD79:79:      0 |
+79:79:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD230:230:      0 |
+230:230:      0 |
+84:84:      0 |
+84:84:      0 |
++++++++++++++++++++++noERROR VELOCIAD242:242:      0 |
+242:242:      0 |
++++++++++++++++++++++noERROR VELOCIAD35:35:      0 |
+35:35:      0 |
++++++++++++++++++++++noERROR VELOCIAD3:3:      0 |
+3:3:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD111:111:      0 |
+111:111:      0 |
++++++++++++++++++++++noERROR VELOCIAD80:80:      0 |
+80:80:      0 |
++++++++++++++++++++++noERROR VELOCIAD85:85:      0 |
+85:85:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD219:219:      0 |
+219:219:      0 |
+231:231:      0 |
+231:231:      0 |
++++++++++++++++++++++noERROR VELOCIAD243:243:      0 |
+243:243:      0 |
++++++++++++++++++++++noERROR VELOCIAD171:171:      0 |
+171:171:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO15:153:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD112:112:      0 |
+112:112:      0 |
++++++++++++++++++++++noERROR VELOCIAD36:36:      0 |
+36:36:      0 |
++++++++++++++++++++++noERROR VELOCIAD81:81:      0 |
+81:81:      0 |
++++++++++++++++++++++noERROR VELOCIAD86:86:      0 |
+86:86:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD232:232:      0 |
+232:232:      0 |
++++++++++++++++++++++noERROR VELOCIAD220:220:      0 |
+220:220:      0 |
++++++++++++++++++++++noERROR VELOCIAD244:244:      0 |
+244:244:      0 |
++++++++++++++++++++++noERROR VELOCIAD113:113:      0 |
+113:113:      0 |
++++++++++++++++++++++noERROR VELOCIAD82:82:      0 |
+82:82:      0 |
++++++++++++++++++++++noERROR VELOCIAD87:87:      0 |
+87:87:      0 |
++++++++++++++++++++++noERROR VELOCIAD37:37:      0 |
+37:37:      0 |
++++++++++++++++++++++noERROR VELOCIAD172:172:      0 |
+172:172:      0 |
++++++++++++++++++++++noERROR VELOCIAD198:198:      0 |
+198:198:      0 |
++++++++++++++++++++++noERROR VELOCIAD233:233:      0 |
+233:233:      0 |
++++++++++++++++++++++noERROR VELOCIAD245:245:      0 |
+245:245:      0 |
++++++++++++++++++++++noERROR VELOCIAD221:221:      0 |
+221:221:      0 |
++++++++++++++++++++++noERROR VELOCIAD114:114:      0 |
+114:114:      0 |
++++++++++++++++++++++noERROR VELOCIAD83:83:      0 |
+83:83:      0 |
++++++++++++++++++++++noERROR VELOCIAD88:88:      0 |
+88:88:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD38:38:      0 |
+38:38:      0 |
++++++++++++++++++++++noERROR VELOCIAD246:246:      0 |
+246:246:      0 |
++++++++++++++++++++++noERROR VELOCIAD234:234:      0 |
+[20152] Color (3) Entrada critica_salida critica -1 pajitas
+[20152] Color (3) Entrada Critica critica -1 pajitas
+234:234:      0 |
++++++++++++++++++++++noERROR VELOCIAD115:115:      0 |
+115:115:      0 |
++++++++++++++++++++++noERROR VELOCIAD222:222:      0 |
+222:222:      0 |
++++++++++++++++++++++noERROR VELOCIAD84:84:      0 |
+84:84:      0 |
++++++++++++++++++++++noERROR VELOCIAD173:173:      0 |
+173:173:      0 |
++++++++++++++++++++++noERROR VELOCIAD89:89:      0 |
+89:89:      0 |
++++++++++++++++++++++noERROR VELOCIAD156:156:      0 |
+156:156:      0 |
+ [10632] Color (1) Envio mensaje POS_2-----> 154 | 154 : [20044]
+155:155:      0 |
+155:155:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 153 | 153 : [20144]
+154:154:      0 |
+154:154:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO153:16:      0 |
+247:247:      0 |
+247:247:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD39:39:      0 |
+39:39:      0 |
++++++++++++++++++++++noERROR VELOCIAD116:116:      0 |
+116:116:      0 |
+Limpiando Cola...
+235:235:      0 |
+Limpiando Cola...
+235:235:      0 |
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD85:85:      0 |
+85:85:      0 |
++++++++++++++++++++++noERROR VELOCIAD5:5:      0 |
+5:5:      0 |
+ [13040] Color (0) Envio mensaje POS_2-----> 3 | 3 : [19088]
++++++++++++++++++++++noERROR VELOCIAD223:223:      0 |
+223:223:      0 |
++++++++++++++++++++++noERROR VELOCIAD90:90:      0 |
+90:90:      0 |
++++++++++++++++++++++noERROR VELOCIAD4:4:      0 |
+4:4:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD174:174:      0 |
+174:174:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD248:248:      0 |
+248:248:      0 |
+117:117:      0 |
+117:117:      0 |
+199:199:      0 |
+199:199:      0 |
++++++++++++++++++++++noERROR VELOCIAD86:86:      0 |
+86:86:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD40:40:      0 |
+40:40:      0 |
+236:236:      0 |
+236:236:      0 |
++++++++++++++++++++++noERROR VELOCIAD91:91:      0 |
+91:91:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD224:224:      0 |
+224:224:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD118:118:      0 |
+118:118:      0 |
+249:249:      0 |
+249:249:      0 |
++++++++++++++++++++++noERROR VELOCIAD87:87:      0 |
+87:87:      0 |
++++++++++++++++++++++noERROR VELOCIAD237:237:      0 |
+237:237:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO15:154:      0 |
++++++++++++++++++++++noERROR VELOCIAD41:41:      0 |
+41:41:      0 |
++++++++++++++++++++++noERROR VELOCIAD92:92:      0 |
+92:92:      0 |
++++++++++++++++++++++noERROR VELOCIAD175:175:      0 |
+175:175:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD225:225:      0 |
+225:225:      0 |
+119:119:      0 |
+119:119:      0 |
++++++++++++++++++++++noERROR VELOCIAD250:250:      0 |
+250:250:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD88:88:      0 |
+88:88:      0 |
++++++++++++++++++++++noERROR VELOCIAD238:238:      0 |
+238:238:      0 |
++++++++++++++++++++++noERROR VELOCIAD93:93:      0 |
+93:93:      0 |
++++++++++++++++++++++noERROR VELOCIAD42:42:      0 |
+42:42:      0 |
++++++++++++++++++++++noERROR VELOCIAD120:120:      0 |
+120:120:      0 |
++++++++++++++++++++++noERROR VELOCIAD251:251:      0 |
+251:251:      0 |
++++++++++++++++++++++noERROR VELOCIAD89:89:      0 |
+89:89:      0 |
++++++++++++++++++++++noERROR VELOCIAD226:226:      0 |
+226:226:      0 |
++++++++++++++++++++++noERROR VELOCIAD200:200:      0 |
+200:200:      0 |
++++++++++++++++++++++noERROR VELOCIAD94:94:      0 |
+94:94:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD176:176:      0 |
+176:176:      0 |
+239:239:      0 |
+239:239:      0 |
++++++++++++++++++++++noERROR VELOCIAD43:43:      0 |
+43:43:      0 |
++++++++++++++++++++++noERROR VELOCIAD121:121:      0 |
+121:121:      0 |
++++++++++++++++++++++noERROR VELOCIAD252:252:      0 |
+252:252:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO153:16:      0 |
++++++++++++++++++++++noERROR VELOCIAD90:90:      0 |
+90:90:      0 |
++++++++++++++++++++++noERROR VELOCIAD227:227:      0 |
+227:227:      0 |
++++++++++++++++++++++noERROR VELOCIAD95:95:      0 |
+95:95:      0 |
++++++++++++++++++++++noERROR VELOCIAD240:240:      0 |
+240:240:      0 |
++++++++++++++++++++++noERROR VELOCIAD122:122:      0 |
+122:122:      0 |
++++++++++++++++++++++noERROR VELOCIAD44:44:      0 |
+44:44:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD253:253:      0 |
+253:253:      0 |
++++++++++++++++++++++noERROR VELOCIAD91:91:      0 |
+91:91:      0 |
+157:157:      0 |
+157:157:      0 |
+ [10632] Color (1) Envio mensaje POS_2-----> 155 | 155 : [20044]
+156:156:      0 |
+156:156:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 154 | 154 : [20144]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO155:18:      0 |
+177:177:      0 |
+177:177:      0 |
++++++++++++++++++++++noERROR VELOCIAD96:96:      0 |
+96:96:      0 |
++++++++++++++++++++++noERROR VELOCIAD123:123:      0 |
+123:123:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD228:228:      0 |
+228:228:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO141:5:      0 |
+241:241:      0 |
+241:241:      0 |
++++++++++++++++++++++noERROR VELOCIAD254:254:      0 |
+254:254:      0 |
++++++++++++++++++++++noERROR VELOCIAD92:92:      0 |
+92:92:      0 |
++++++++++++++++++++++noERROR VELOCIAD45:45:      0 |
+45:45:      0 |
++++++++++++++++++++++noERROR VELOCIAD124:124:      0 |
+124:124:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD97:97:      0 |
+97:97:      0 |
+
+CAMBIO15:154:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD6:6:      0 |
+6:6:      0 |
+229:229:      0 |
+229:229:      0 |
++++++++++++++++++++++noERROR VELOCIAD242:242:      0 |
+242:242:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD178:178:      0 |
+178:178:      0 |
++++++++++++++++++++++noERROR VELOCIAD93:93:      0 |
+93:93:      0 |
+255:255:      0 |
+255:255:      0 |
+201:201:      0 |
+201:201:      0 |
++++++++++++++++++++++noERROR VELOCIAD46:46:      0 |
+46:46:      0 |
++++++++++++++++++++++noERROR VELOCIAD125:125:      0 |
+125:125:      0 |
++++++++++++++++++++++noERROR VELOCIAD98:98:      0 |
+98:98:      0 |
++++++++++++++++++++++noERROR VELOCIAD230:230:      0 |
+230:230:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD94:94:      0 |
++++++++++++++++++++++noERROR VELOCIAD94:94:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO17:156:      0 |
+256:256:      0 |
+256:256:      0 |
+243:243:      0 |
+243:243:      0 |
++++++++++++++++++++++noERROR VELOCIAD126:126:      0 |
+126:126:      0 |
++++++++++++++++++++++noERROR VELOCIAD47:47:      0 |
+47:47:      0 |
++++++++++++++++++++++noERROR VELOCIAD99:99:      0 |
+99:99:      0 |
++++++++++++++++++++++noERROR VELOCIAD179:179:      0 |
+179:179:      0 |
++++++++++++++++++++++noERROR VELOCIAD202:202:      0 |
+202:202:      0 |
++++++++++++++++++++++noERROR VELOCIAD269:269:      0 |
+269:269:      0 |
++++++++++++++++++++++noERROR VELOCIAD95:95:      0 |
+95:95:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD257:257:      0 |
+257:257:      0 |
+
+CAMBIO153:16:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD231:231:      0 |
+231:231:      0 |
+127:127:      0 |
+127:127:      0 |
++++++++++++++++++++++noERROR VELOCIAD244:244:      0 |
+244:244:      0 |
++++++++++++++++++++++noERROR VELOCIAD100:100:      0 |
+100:100:      0 |
++++++++++++++++++++++noERROR VELOCIAD48:48:      0 |
+48:48:      0 |
++++++++++++++++++++++noERROR VELOCIAD96:96:      0 |
+96:96:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD258:258:      0 |
+258:258:      0 |
+128:128:      0 |
+128:128:      0 |
++++++++++++++++++++++noERROR VELOCIAD232:232:      0 |
+232:232:      0 |
++++++++++++++++++++++noERROR VELOCIAD101:101:      0 |
+101:101:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD245:245:      0 |
+245:245:      0 |
+180:180:      0 |
+180:180:      0 |
++++++++++++++++++++++noERROR VELOCIAD203:203:      0 |
+203:203:      0 |
++++++++++++++++++++++noERROR VELOCIAD49:49:      0 |
+49:49:      0 |
++++++++++++++++++++++noERROR VELOCIAD97:97:      0 |
+97:97:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD129:129:      0 |
+129:129:      0 |
++++++++++++++++++++++noERROR VELOCIAD259:259:      0 |
+259:259:      0 |
+
+CAMBIO155:18:      0 |
++++++++++++++++++++++noERROR VELOCIAD102:102:      0 |
+[19004] Color (2) Entrada critica_salida critica -1 pajitas
+[19004] Color (2) Entrada Critica critica -1 pajitas
+102:102:      0 |
++++++++++++++++++++++noERROR VELOCIAD142:142:      0 |
+142:142:      0 |
++++++++++++++++++++++noERROR VELOCIAD158:158:      0 |
+[10632] Color (1) Entrada critica_salida critica -1 pajitas
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD233:233:      0 |
+233:233:      0 |
+246:246:      0 |
+246:246:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO15:154:      0 |
++++++++++++++++++++++noERROR VELOCIAD50:50:      0 |
+50:50:      0 |
++++++++++++++++++++++noERROR VELOCIAD98:98:      0 |
+98:98:      0 |
++++++++++++++++++++++noERROR VELOCIAD130:130:      0 |
+130:130:      0 |
++++++++++++++++++++++noERROR VELOCIAD260:260:      0 |
+260:260:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD181:181:      0 |
+181:181:      0 |
+204:204:      0 |
+204:204:      0 |
++++++++++++++++++++++noERROR VELOCIAD103:103:      0 |
+103:103:      0 |
++++++++++++++++++++++noERROR VELOCIAD247:247:      0 |
+247:247:      0 |
++++++++++++++++++++++noERROR VELOCIAD234:234:      0 |
+[19496] Color (1) Entrada critica_salida critica -1 pajitas
+[19496] Color (1) Entrada Critica critica -1 pajitas
+234:234:      0 |
++++++++++++++++++++++noERROR VELOCIAD99:99:      0 |
+99:99:      0 |
++++++++++++++++++++++noERROR VELOCIAD51:51:      0 |
+51:51:      0 |
++++++++++++++++++++++noERROR VELOCIAD261:261:      0 |
+261:261:      0 |
++++++++++++++++++++++noERROR VELOCIAD104:104:      0 |
+104:104:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD248:248:      0 |
+248:248:      0 |
++++++++++++++++++++++noERROR VELOCIAD100:100:      0 |
+100:100:      0 |
++++++++++++++++++++++noERROR VELOCIAD205:205:      0 |
+205:205:      0 |
+182:182:      0 |
+182:182:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD262:262:      0 |
+262:262:      0 |
++++++++++++++++++++++noERROR VELOCIAD235:235:      0 |
+235:235:      0 |
+
+CAMBIO17:156:      0 |
+131:131:      0 |
+131:131:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD105:105:      0 |
+105:105:      0 |
+7:7:      0 |
+7:7:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO153:16:      0 |
+52:52:      0 |
+52:52:      0 |
++++++++++++++++++++++noERROR VELOCIAD101:101:      0 |
+101:101:      0 |
++++++++++++++++++++++noERROR VELOCIAD249:249:      0 |
+249:249:      0 |
++++++++++++++++++++++noERROR VELOCIAD263:263:      0 |
+263:263:      0 |
++++++++++++++++++++++noERROR VELOCIAD106:106:      0 |
+106:106:      0 |
++++++++++++++++++++++noERROR VELOCIAD236:236:      0 |
+236:236:      0 |
++++++++++++++++++++++noERROR VELOCIAD53:53:      0 |
+53:53:      0 |
++++++++++++++++++++++noERROR VELOCIAD206:206:      0 |
+206:206:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD102:102:      0 |
+[6688] Color (0) Entrada critica_salida critica -1 pajitas
+183:183:      0 |
+183:183:      0 |
+[6688] Color (0) Entrada Critica critica -1 pajitas
+102:102:      0 |
++++++++++++++++++++++noERROR VELOCIAD132:132:      0 |
+132:132:      0 |
++++++++++++++++++++++noERROR VELOCIAD250:250:      0 |
+250:250:      0 |
++++++++++++++++++++++noERROR VELOCIAD107:107:      0 |
+107:107:      0 |
++++++++++++++++++++++noERROR VELOCIAD237:237:      0 |
+237:237:      0 |
++++++++++++++++++++++noERROR VELOCIAD54:54:      0 |
+54:54:      0 |
++++++++++++++++++++++noERROR VELOCIAD103:103:      0 |
+103:103:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO15:154:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD143:143:      0 |
+143:143:      0 |
++++++++++++++++++++++noERROR VELOCIAD108:108:      0 |
+108:108:      0 |
++++++++++++++++++++++noERROR VELOCIAD251:251:      0 |
+251:251:      0 |
+
+CAMBIO155:18:      0 |
++++++++++++++++++++++noERROR VELOCIAD264:264:      0 |
+264:264:      0 |
++++++++++++++++++++++noERROR VELOCIAD207:207:      0 |
+207:207:      0 |
++++++++++++++++++++++noERROR VELOCIAD184:184:      0 |
+184:184:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD104:104:      0 |
+104:104:      0 |
+238:238:      0 |
+238:238:      0 |
++++++++++++++++++++++noERROR VELOCIAD133:133:      0 |
+133:133:      0 |
++++++++++++++++++++++noERROR VELOCIAD55:55:      0 |
+55:55:      0 |
++++++++++++++++++++++noERROR VELOCIAD109:109:      0 |
+109:109:      0 |
++++++++++++++++++++++noERROR VELOCIAD252:252:      0 |
+252:252:      0 |
++++++++++++++++++++++noERROR VELOCIAD105:105:      0 |
+105:105:      0 |
++++++++++++++++++++++noERROR VELOCIAD239:239:      0 |
+239:239:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD208:208:      0 |
+208:208:      0 |
+56:56:      0 |
+56:56:      0 |
++++++++++++++++++++++noERROR VELOCIAD110:110:      0 |
+110:110:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD185:185:      0 |
++++++++++++++++++++++noERROR VELOCIAD185:185:      0 |
+253:253:      0 |
+253:253:      0 |
+265:265:      0 |
+265:265:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO153:16:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD134:134:      0 |
+134:134:      0 |
+106:106:      0 |
+106:106:      0 |
++++++++++++++++++++++noERROR VELOCIAD111:111:      0 |
+111:111:      0 |
++++++++++++++++++++++noERROR VELOCIAD240:240:      0 |
+240:240:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO17:156:      0 |
++++++++++++++++++++++noERROR VELOCIAD57:57:      0 |
+57:57:      0 |
++++++++++++++++++++++noERROR VELOCIAD254:254:      0 |
+254:254:      0 |
++++++++++++++++++++++noERROR VELOCIAD107:107:      0 |
+107:107:      0 |
++++++++++++++++++++++noERROR VELOCIAD209:209:      0 |
+209:209:      0 |
++++++++++++++++++++++noERROR VELOCIAD112:112:      0 |
+112:112:      0 |
++++++++++++++++++++++noERROR VELOCIAD186:186:      0 |
+186:186:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD266:266:      0 |
+266:266:      0 |
+241:241:      0 |
+241:241:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD135:135:      0 |
+135:135:      0 |
+58:58:      0 |
+58:58:      0 |
++++++++++++++++++++++noERROR VELOCIAD255:255:      0 |
+255:255:      0 |
++++++++++++++++++++++noERROR VELOCIAD108:108:      0 |
+108:108:      0 |
++++++++++++++++++++++noERROR VELOCIAD8:8:      0 |
+8:8:      0 |
++++++++++++++++++++++noERROR VELOCIAD113:113:      0 |
+113:113:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO15:154:      0 |
++++++++++++++++++++++noERROR VELOCIAD210:210:      0 |
+210:210:      0 |
++++++++++++++++++++++noERROR VELOCIAD242:242:      0 |
+242:242:      0 |
++++++++++++++++++++++noERROR VELOCIAD109:109:      0 |
+109:109:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD59:59:      0 |
+59:59:      0 |
+256:256:      0 |
+256:256:      0 |
++++++++++++++++++++++noERROR VELOCIAD187:187:      0 |
+187:187:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD144:144:      0 |
+144:144:      0 |
+114:114:      0 |
+114:114:      0 |
++++++++++++++++++++++noERROR VELOCIAD267:267:      0 |
+267:267:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO155:18:      0 |
++++++++++++++++++++++noERROR VELOCIAD136:136:      0 |
+136:136:      0 |
++++++++++++++++++++++noERROR VELOCIAD110:110:      0 |
+110:110:      0 |
++++++++++++++++++++++noERROR VELOCIAD243:243:      0 |
+243:243:      0 |
++++++++++++++++++++++noERROR VELOCIAD257:257:      0 |
+257:257:      0 |
++++++++++++++++++++++noERROR VELOCIAD60:60:      0 |
+60:60:      0 |
++++++++++++++++++++++noERROR VELOCIAD115:115:      0 |
+115:115:      0 |
++++++++++++++++++++++noERROR VELOCIAD211:211:      0 |
+211:211:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD0:0:      0 |
+0:0:      0 |
+188:188:      0 |
+188:188:      0 |
++++++++++++++++++++++noERROR VELOCIAD111:111:      0 |
+111:111:      0 |
+[20328] Color (2) Entrada Critica critica -1 pajitas
+20:20:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 18 | 18 : [15036]
+19:19:      0 |
+19:19:      0 |
+[10632] Color (1) Entrada Critica critica -1 pajitas
+158:158:      0 |
+ [10632] Color (1) Envio mensaje POS_2-----> 156 | 156 : [20044]
+157:157:      0 |
+157:157:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 155 | 155 : [13832]
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO153:16:      0 |
++++++++++++++++++++++noERROR VELOCIAD258:258:      0 |
+258:258:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD116:116:      0 |
+116:116:      0 |
+244:244:      0 |
+244:244:      0 |
++++++++++++++++++++++noERROR VELOCIAD268:268:      0 |
+268:268:      0 |
++++++++++++++++++++++noERROR VELOCIAD1:1:      0 |
+1:1:      0 |
++++++++++++++++++++++noERROR VELOCIAD112:112:      0 |
+112:112:      0 |
++++++++++++++++++++++noERROR VELOCIAD212:212:      0 |
+212:212:      0 |
++++++++++++++++++++++noERROR VELOCIAD117:117:      0 |
+117:117:      0 |
++++++++++++++++++++++noERROR VELOCIAD259:259:      0 |
+259:259:      0 |
++++++++++++++++++++++noERROR VELOCIAD245:245:      0 |
+245:245:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD156:156:      0 |
+156:156:      0 |
+ [13832] Color (5) Envio mensaje POS_2-----> 154 | 154 : [20144]
+189:189:      0 |
+189:189:      0 |
+155:155:      0 |
+155:155:      0 |
+ [20144] Color (1) Envio mensaje POS_2-----> 153 | 153 : [19824]
++++++++++++++++++++++noERROR VELOCIAD17:17:      0 |
+17:17:      0 |
+2:2:      0 |
+2:2:      0 |
++++++++++++++++++++++noERROR VELOCIAD113:113:      0 |
+113:113:      0 |
++++++++++++++++++++++noERROR VELOCIAD61:61:      0 |
+61:61:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD118:118:      0 |
+118:118:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO133:269:      0 |
++++++++++++++++++++++noERROR VELOCIAD260:260:      0 |
+260:260:      0 |
++++++++++++++++++++++noERROR VELOCIAD3:3:      0 |
+3:3:      0 |
++++++++++++++++++++++noERROR VELOCIAD246:246:      0 |
+246:246:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD154:154:      0 |
+154:154:      0 |
+114:114:      0 |
+114:114:      0 |
++++++++++++++++++++++noERROR VELOCIAD213:213:      0 |
+213:213:      0 |
++++++++++++++++++++++noERROR VELOCIAD119:119:      0 |
+119:119:      0 |
++++++++++++++++++++++noERROR VELOCIAD190:190:      0 |
+190:190:      0 |
++++++++++++++++++++++noERROR VELOCIAD4:4:      0 |
+4:4:      0 |
++++++++++++++++++++++noERROR VELOCIAD261:261:      0 |
+261:261:      0 |
++++++++++++++++++++++noERROR VELOCIAD18:18:      0 |
+18:18:      0 |
++++++++++++++++++++++noERROR VELOCIAD115:115:      0 |
+115:115:      0 |
++++++++++++++++++++++noERROR VELOCIAD247:247:      0 |
+247:247:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD145:145:      0 |
+145:145:      0 |
+134:134:      0 |
+134:134:      0 |
++++++++++++++++++++++noERROR VELOCIAD120:120:      0 |
+120:120:      0 |
++++++++++++++++++++++noERROR VELOCIAD5:5:      0 |
+5:5:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD214:214:      0 |
+214:214:      0 |
++++++++++++++++++++++noERROR VELOCIAD262:262:      0 |
+262:262:      0 |
++++++++++++++++++++++noERROR VELOCIAD62:62:      0 |
+62:62:      0 |
++++++++++++++++++++++noERROR VELOCIAD116:116:      0 |
+116:116:      0 |
++++++++++++++++++++++noERROR VELOCIAD9:9:      0 |
+9:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO17:156:      0 |
++++++++++++++++++++++noERROR VELOCIAD191:191:      0 |
+191:191:      0 |
++++++++++++++++++++++noERROR VELOCIAD121:121:      0 |
+121:121:      0 |
++++++++++++++++++++++noERROR VELOCIAD248:248:      0 |
+248:248:      0 |
++++++++++++++++++++++noERROR VELOCIAD6:6:      0 |
+6:6:      0 |
++++++++++++++++++++++noERROR VELOCIAD155:155:      0 |
+155:155:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD263:263:      0 |
+263:263:      0 |
++++++++++++++++++++++noERROR VELOCIAD117:117:      0 |
+117:117:      0 |
++++++++++++++++++++++noERROR VELOCIAD135:135:      0 |
+135:135:      0 |
++++++++++++++++++++++noERROR VELOCIAD122:122:      0 |
+122:122:      0 |
++++++++++++++++++++++noERROR VELOCIAD7:7:      0 |
+7:7:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD215:215:      0 |
+215:215:      0 |
+249:249:      0 |
+249:249:      0 |
++++++++++++++++++++++noERROR VELOCIAD159:159:      0 |
+159:159:      0 |
+ [10632] Color (1) Envio mensaje POS_2-----> 157 | 157 : [20044]
+158:158:      0 |
+[20044] Color (5) Entrada critica_salida critica -1 pajitas
+[20044] Color (5) Entrada Critica critica -1 pajitas
+158:158:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 156 | 156 : [13832]
+157:157:      0 |
+157:157:      0 |
++++++++++++++++++++++noERROR VELOCIAD [13832] Color (5) Envio mensaje POS_2-----> 155 | 155 : [19824]
+
+CAMBIO156:19:      0 |
+192:192:      0 |
+192:192:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD118:118:      0 |
+118:118:      0 |
+21:21:      0 |
+21:21:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 19 | 19 : [15036]
++++++++++++++++++++++noERROR VELOCIAD123:123:      0 |
+123:123:      0 |
++++++++++++++++++++++noERROR VELOCIAD8:8:      0 |
+8:8:      0 |
++++++++++++++++++++++noERROR VELOCIAD63:63:      0 |
+63:63:      0 |
++++++++++++++++++++++noERROR VELOCIAD250:250:      0 |
+250:250:      0 |
++++++++++++++++++++++noERROR VELOCIAD119:119:      0 |
+119:119:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD124:124:      0 |
+124:124:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+216:216:      0 |
+216:216:      0 |
++++++++++++++++++++++noERROR VELOCIAD136:136:      0 |
+136:136:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD18:18:      0 |
+18:18:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO17:156:      0 |
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+264:264:      0 |
+Limpiando Cola...
+264:264:      0 |
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD193:193:      0 |
+193:193:      0 |
++++++++++++++++++++++noERROR VELOCIAD20:20:      0 |
+[15036] Color (3) Entrada critica_salida critica -1 pajitas
+[15036] Color (3) Entrada Critica critica -1 pajitas
+20:20:      0 |
+ [15036] Color (3) Envio mensaje POS_2-----> 18 | 18 : [20144]
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD251:251:      0 |
+251:251:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD120:120:      0 |
+120:120:      0 |
++++++++++++++++++++++noERROR VELOCIAD125:125:      0 |
+125:125:      0 |
++++++++++++++++++++++noERROR VELOCIAD0:0:      0 |
+0:0:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO19:158:      0 |
++++++++++++++++++++++noERROR VELOCIAD121:121:      0 |
+121:121:      0 |
++++++++++++++++++++++noERROR VELOCIAD217:217:      0 |
+217:217:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD146:146:      0 |
+146:146:      0 |
+
+CAMBIO145:9:      0 |
+64:64:      0 |
+64:64:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD126:126:      0 |
+126:126:      0 |
+252:252:      0 |
+252:252:      0 |
++++++++++++++++++++++noERROR VELOCIAD1:1:      0 |
+1:1:      0 |
++++++++++++++++++++++noERROR VELOCIAD194:194:      0 |
+194:194:      0 |
++++++++++++++++++++++noERROR VELOCIAD122:122:      0 |
+122:122:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO8:146:      0 |
+265:265:      0 |
+265:265:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD127:127:      0 |
+127:127:      0 |
+
+CAMBIO155:18:      0 |
++++++++++++++++++++++noERROR VELOCIAD2:2:      0 |
+2:2:      0 |
++++++++++++++++++++++noERROR VELOCIAD253:253:      0 |
+253:253:      0 |
++++++++++++++++++++++noERROR VELOCIAD218:218:      0 |
+218:218:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD123:123:      0 |
+123:123:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO145:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD195:195:      0 |
+195:195:      0 |
++++++++++++++++++++++noERROR VELOCIAD128:128:      0 |
+128:128:      0 |
++++++++++++++++++++++noERROR VELOCIAD3:3:      0 |
+3:3:      0 |
++++++++++++++++++++++noERROR VELOCIAD65:65:      0 |
+65:65:      0 |
++++++++++++++++++++++noERROR VELOCIAD254:254:      0 |
+254:254:      0 |
++++++++++++++++++++++noERROR VELOCIAD10:10:      0 |
+10:10:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO8:146:      0 |
++++++++++++++++++++++noERROR VELOCIAD124:124:      0 |
+124:124:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO157:20:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD4:4:      0 |
+4:4:      0 |
+129:129:      0 |
+129:129:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD266:266:      0 |
+266:266:      0 |
+160:160:      0 |
+160:160:      0 |
+ [10632] Color (1) Envio mensaje POS_2-----> 158 | 158 : [20044]
+159:159:      0 |
+159:159:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 157 | 157 : [13832]
++++++++++++++++++++++noERROR VELOCIAD219:219:      0 |
+219:219:      0 |
++++++++++++++++++++++noERROR VELOCIAD9:9:      0 |
+9:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD270:270:      0 |
++++++++++++++++++++++noERROR VELOCIAD270:270:      0 |
+255:255:      0 |
+255:255:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD196:196:      0 |
++++++++++++++++++++++noERROR VELOCIAD196:196:      0 |
+22:22:      0 |
+22:22:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 20 | 20 : [15036]
+125:125:      0 |
+125:125:      0 |
+
+CAMBIO17:156:      0 |
++++++++++++++++++++++noERROR VELOCIAD5:5:      0 |
+5:5:      0 |
++++++++++++++++++++++noERROR VELOCIAD130:130:      0 |
+130:130:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD66:66:      0 |
+66:66:      0 |
+126:126:      0 |
+126:126:      0 |
++++++++++++++++++++++noERROR VELOCIAD256:256:      0 |
+256:256:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD6:6:      0 |
+6:6:      0 |
+220:220:      0 |
+220:220:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO21:160:      0 |
++++++++++++++++++++++noERROR VELOCIAD267:267:      0 |
+267:267:      0 |
++++++++++++++++++++++noERROR VELOCIAD197:197:      0 |
+197:197:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD158:158:      0 |
+[13832] Color (5) Entrada critica_salida critica -1 pajitas
+147:147:      0 |
+147:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO146:10:      0 |
++++++++++++++++++++++noERROR VELOCIAD127:127:      0 |
+127:127:      0 |
+[13832] Color (5) Entrada Critica critica -1 pajitas
+158:158:      0 |
+ [13832] Color (5) Envio mensaje POS_2-----> 156 | 156 : [20212]
+7:7:      0 |
+7:7:      0 |
+157:157:      0 |
+157:157:      0 |
+19:19:      0 |
+19:19:      0 |
+ [20144] Color (1) Envio mensaje POS_2-----> 17 | 17 : [19824]
++++++++++++++++++++++noERROR VELOCIAD257:257:      0 |
+257:257:      0 |
++++++++++++++++++++++noERROR VELOCIAD131:131:      0 |
+131:131:      0 |
++++++++++++++++++++++noERROR VELOCIAD18:18:      0 |
+18:18:      0 |
++++++++++++++++++++++noERROR VELOCIAD221:221:      0 |
+221:221:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO9:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD128:128:      0 |
+128:128:      0 |
++++++++++++++++++++++noERROR VELOCIAD8:8:      0 |
+8:8:      0 |
++++++++++++++++++++++noERROR VELOCIAD258:258:      0 |
+258:258:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO159:22:      0 |
++++++++++++++++++++++noERROR VELOCIAD67:67:      0 |
+67:67:      0 |
++++++++++++++++++++++noERROR VELOCIAD268:268:      0 |
+268:268:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO146:10:      0 |
++++++++++++++++++++++noERROR VELOCIAD129:129:      0 |
+129:129:      0 |
++++++++++++++++++++++noERROR VELOCIAD9:9:      0 |
+9:9:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD132:132:      0 |
+132:132:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD259:259:      0 |
+259:259:      0 |
+222:222:      0 |
+222:222:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+130:130:      0 |
+Limpiando Cola...
+130:130:      0 |
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO156:19:      0 |
++++++++++++++++++++++noERROR VELOCIAD198:198:      0 |
+198:198:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO21:160:      0 |
++++++++++++++++++++++noERROR VELOCIAD161:161:      0 |
+161:161:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD269:269:      0 |
+269:269:      0 |
+260:260:      0 |
+260:260:      0 |
++++++++++++++++++++++noERROR VELOCIAD133:133:      0 |
+133:133:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD68:68:      0 |
+68:68:      0 |
+11:11:      0 |
+11:11:      0 |
++++++++++++++++++++++noERROR VELOCIAD [13040] Color (0) Envio mensaje POS_2-----> 9 | 9 : [17088]
+10:10:      0 |
+10:10:      0 |
+223:223:      0 |
+223:223:      0 |
+
+CAMBIO9:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD23:23:      0 |
+23:23:      0 |
+ [20328] Color (2) Envio mensaje POS_2-----> 21 | 21 : [20044]
++++++++++++++++++++++noERROR VELOCIAD261:261:      0 |
+261:261:      0 |
++++++++++++++++++++++noERROR VELOCIAD131:131:      0 |
+131:131:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO146:10:      0 |
++++++++++++++++++++++noERROR VELOCIAD69:69:      0 |
+69:69:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD22:22:      0 |
+22:22:      0 |
+ [20044] Color (5) Envio mensaje POS_2-----> 20 | 20 : [15036]
++++++++++++++++++++++noERROR VELOCIAD21:21:      0 |
+21:21:      0 |
+ [15036] Color (3) Envio mensaje POS_2-----> 19 | 19 : [20144]
+20:20:      0 |
+[20144] Color (1) Entrada critica_salida critica -1 pajitas
+159:159:      0 |
+159:159:      0 |
+ [13832] Color (5) Envio mensaje POS_2-----> 157 | 157 : [20212]
+158:158:      0 |
+
+CAMBIO18:157:      0 |
++++++++++++++++++++++noERROR VELOCIAD148:148:      0 |
+148:148:      0 |
+ [19088] Color (6) Envio mensaje POS_2-----> 146 | 146 : [10012]
+[20144] Color (1) Entrada Critica critica -1 pajitas
+[20212] Color (2) Entrada critica_salida critica -1 pajitas
+20:20:      0 |
+ [20144] Color (1) Envio mensaje POS_2-----> 18 | 18 : [19824]
+
+CAMBIO147:11:      0 |
+134:134:      0 |
+134:134:      0 |
++++++++++++++++++++++noERROR VELOCIADLimpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
+Limpiando Cola...
++++++++++++++++++++++noERROR VELOCIAD224:224:      0 |
+224:224:      0 |
++++++++++++++++++++++noERROR VELOCIAD262:262:      0 |
+262:262:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO9:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD199:199:      0 |
+199:199:      0 |
++++++++++++++++++++++noERROR VELOCIAD70:70:      0 |
+70:70:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO10:148:      0 |
++++++++++++++++++++++noERROR VELOCIAD132:132:      0 |
+132:132:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO146:10:      0 |
++++++++++++++++++++++noERROR VELOCIAD263:263:      0 |
+263:263:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO160:23:      0 |
++++++++++++++++++++++noERROR VELOCIAD135:135:      0 |
+135:135:      0 |
+
+CAMBIO134:270:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO147:11:      0 |
++++++++++++++++++++++noERROR VELOCIAD225:225:      0 |
+225:225:      0 |
+71:71:      0 |
+71:71:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO9:147:      0 |
++++++++++++++++++++++noERROR VELOCIAD19:19:      0 |
+19:19:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD133:133:      0 |
+133:133:      0 |
+
+CAMBIO10:148:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD
+CAMBIO146:10:      0 |
+72:72:      0 |
+72:72:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO158:21:      0 |
++++++++++++++++++++++noERROR VELOCIAD226:226:      0 |
+226:226:      0 |
++++++++++++++++++++++noERROR VELOCIAD
+CAMBIO22:161:      0 |
++++++++++++++++++++++noERROR VELOCIAD136:136:      0 |
+136:136:      0 |
+ [19004] Color (2) Envio mensaje POS_2-----> 134 | 134 : [20152]
++++++++++++++++++++++noERROR VELOCIAD135:135:      0 |
+135:135:      0 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD [20152] Color (3) Envio mensaje POS_2-----> 133 | 133 : [6688]
+
+CAMBIO147:11:      0 |
+
+CAMBIO9:147:      0 |
+200:200:      0 |
+200:200:      0 |
++++++++++++++++++++++noERROR VELOCIAD264:264:      0 |
+264:264:      0 |
++++++++++++++++++++++noERROR VELOCIAD162:162:      0 |
+162:162:      0 |
+[20212] Color (2) Entrada Critica critica -1 pajitas
+158:158:  20144 |
++++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIAD+++++++++++++++++++++noERROR VELOCIADEn DllMain
+^C
