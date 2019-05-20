@@ -20,6 +20,7 @@ typedef void (*DLL1Argvoid)(const char*);
 
 CRITICAL_SECTION sc1, critica_salida, critica, critica_sem;
 DWORD WINAPI funcionHilos(LPVOID pEstruct);
+DWORD WINAPI hiloContador(LPVOID pContador);
 DWORD arrayPosiciones[274];
 SECURITY_ATTRIBUTES test;
 HANDLE sem_cruze = CreateSemaphore(
@@ -34,8 +35,7 @@ HANDLE semH = CreateEvent(NULL, TRUE, FALSE, NULL);
 
 HANDLE semV = CreateEvent(NULL, TRUE, FALSE, NULL);
 
-
-unsigned int  contador = 0;
+int  contador = 0;
 typedef struct Coche {
 	int posicion;
 	int carril;
@@ -640,7 +640,8 @@ int main(int argc, char const* argv[]) {
 
 		//fprintf(stderr, "PRE-CreaHijos\n");
 		creaNhijos(numCoches, vel); //DESCOMENTAR CUANDO ESTE DEPURADO
-
+		if(CreateThread(NULL, 0, hiloContador, NULL, 0, NULL)==NULL)
+			PERROR("Create Hilo Contador");
 		//fprintf(stderr, "POST-CreaHijos\n");
 
 		while (1) { //Alterdor Semaforos
@@ -665,3 +666,9 @@ int main(int argc, char const* argv[]) {
 		return 0;
 	}
 } //Fin Main
+DWORD WINAPI hiloContador(LPVOID pContador){
+	Sleep(30000);
+	EnterCriticalSection(&critica);
+	f_fin(&contador);
+	raise(SIGINT);
+}
