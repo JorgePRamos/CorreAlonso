@@ -155,6 +155,10 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 	int pos_2 = ((((*desp) + 136) % 137) + ((*carril) * 137));//calculo posicion anterior preAvance
 
 	if (!(posOcup(*carril, (*desp + 1) % 137))) {
+<<<<<<< HEAD
+=======
+       // if((arrayPosiciones[(((*desp) + 1) % 137)+(*carril)*137])==0){
+>>>>>>> 7ce66495aee87b8278e2f41e4581b35d3a023a42
 		//fprintf(stderr, " [%d] Color (%d)  #### Posicion LIBRE: [%d] ####\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
 
 		if (*desp == 20 && *carril) {//dep =21 y CArril = Izquierdo
