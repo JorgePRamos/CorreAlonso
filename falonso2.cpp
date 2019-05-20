@@ -154,8 +154,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 	int pos_2 = ((((*desp) + 136) % 137) + ((*carril) * 137));//calculo posicion anterior preAvance
 
-	//if (!(posOcup(*carril, (*desp + 1) % 137))) {
-	if(!arrayPosiciones[(*desp + 1) % 137+*carril*137]){
+	if (!(posOcup(*carril, (*desp + 1) % 137))) {
 		//fprintf(stderr, " [%d] Color (%d)  #### Posicion LIBRE: [%d] ####\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
 
 		if (*desp == 20 && *carril) {//dep =21 y CArril = Izquierdo
@@ -434,8 +433,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			 fprintf(stderr,"Limpiando Cola...\n");
 		 }*/
 
-		//if (!posOcup(!*carril, cambio_carril_cal(*desp, *carril))) {//Efectuo cambio carril Si es posible
-		if(!arrayPosiciones[cambio_carril_cal(*desp, *carril)+!*carril*137]){
+		if (!posOcup(!*carril, cambio_carril_cal(*desp, *carril))) {//Efectuo cambio carril Si es posible
 			if (cambioCarril(carril, desp, color) == -1) {
 				PERROR("ERROR AL CAMBIAR CARRIL");
 			}
@@ -480,7 +478,7 @@ int creaNhijos(int n, int v) {
 		//fprintf(stderr, "%d %d**Soy el padre creando al hijo--> %d\n", (sizeof(hThreadArray)/sizeof(* hThreadArray )) ,n, i);
 		arrayParam[i] = (pParam)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sizeof(Param));
 		arrayParam[i]->indice = i;
-		arrayParam[i]->velocidad = (rand() +10)% 100 ;
+		arrayParam[i]->velocidad = rand() % 100 + 1;;
 		arrayParam[i]->nCoches = n;
 		//if ((hThreadArray[i] = CreateThread(NULL, 0, funcionHilos, arrayParam[i], 0, &idHilo[i])) == NULL) {
 		if ((CreateThread(NULL, 0, funcionHilos, arrayParam[i], 0, &idHilo[i])) == NULL) {
