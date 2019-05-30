@@ -86,7 +86,89 @@ int cambio_carril_cal(int desp, int carril) {
 
 	return dep_temp;
 }//Fin Cambio_carril_cal
+/*
+#define CARRIL_DERECHO       0
+#define CARRIL_IZQUIERDO     1
+*/
+void sendMess(int desp, int carril) {
+    if ((carril && desp == 15) || (!carril && desp == 60)) {
+        if (arrayPosiciones[desp - 1 + !carril * 137])
+            if (PostThreadMessageA(arrayPosiciones[desp - 1 + !carril * 137], WM_USER + 3, 3, 3) == 0) {
+                PERROR("ERROR AL MSGSND (pos -2 )a");
+                raise(SIGINT);
+            }
+    } else if (carril && desp == 134) {
+        if (arrayPosiciones[desp + 1 + !carril * 137])
+            if (PostThreadMessageA(arrayPosiciones[135], WM_USER + 3, 3, 3) == 0) { //135 0
+                PERROR("ERROR AL MSGSND (pos -2 )b");
+                raise(SIGINT);
+            }
+    } else if ((!carril && desp == 14) || (carril && desp == 59)) {
+        if (arrayPosiciones[desp + !carril * 137])
+            if (PostThreadMessageA(arrayPosiciones[desp + !carril * 137], WM_USER + 3, 3, 3) == 0) {
+                PERROR("ERROR AL MSGSND (pos -2 )c");
+                raise(SIGINT);
+            }
+    } else if (carril && desp == 63) {
+        if (arrayPosiciones[65])
+            if (PostThreadMessageA(arrayPosiciones[65], WM_USER + 3, 3, 3) == 0) {
+                PERROR("ERROR AL MSGSND (pos -2 )d");
+                raise(SIGINT);
+            }
+        if (arrayPosiciones[66])
+            if (PostThreadMessageA(arrayPosiciones[66], WM_USER + 3, 3, 3) == 0) {
+                PERROR("ERROR AL MSGSND (pos -2 )e");
+                raise(SIGINT);
+            }
+    } else if (!carril && desp == 67) {
+        if (arrayPosiciones[63 + 137])
+            if (PostThreadMessageA(arrayPosiciones[63 + 137], WM_USER + 3, 3, 3) == 0) {
+                PERROR("ERROR AL MSGSND (pos -2 )f");
+                raise(SIGINT);
+            }
+    } else if (!carril && desp == 135) {
+        if (arrayPosiciones[133 + 137])
+            if (PostThreadMessageA(arrayPosiciones[133 + 137], WM_USER + 3, 3, 3) == 0) {
+                PERROR("ERROR AL MSGSND (pos -2 )g");
+                raise(SIGINT);
+            }
+    } else if (carril && desp == 134) {
+        if (arrayPosiciones[135])
+            if (PostThreadMessageA(arrayPosiciones[135], WM_USER + 3, 3, 3) == 0) {
+                PERROR("ERROR AL MSGSND (pos -2 )h");
+                raise(SIGINT);
+            }
+    } else {
+        if (arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !  carril * 137])
+            if (PostThreadMessageA(arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !  carril * 137], WM_USER + 3, 3, 3) == 0) {
+                PERROR("ERROR AL MSGSND (post cambio carril)");
+                raise(SIGINT);
+            }
+        if ((!carril && (desp == 15) || (desp == 131) || (desp == 130)) || (desp == 136) || (carril && (desp == 29) || (desp == 60) || (desp == 64) || (desp == 61) || (desp == 31))) {
+            if (arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !(  carril) * 137 - 1])
+                if (PostThreadMessageA(arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !(  carril) * 137 - 1], WM_USER + 3, 3, 3) == 0) {
+                    PERROR("ERROR AL MSGSND (post cambio carril)");
+                    raise(SIGINT);
+                }
+            if ((!carril && (desp == 136) || (carril && (desp == 64)))) {
+                if (arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !(  carril) * 137 + 1])
+                    if (PostThreadMessageA(arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !(  carril) * 137 + 1], WM_USER + 3, 3, 3) == 0) {
+                        PERROR("ERROR AL MSGSND (post cambio carril)");
+                        raise(SIGINT);
+                    }
+            }
+            if ((!carril && (desp == 130))) {
+                if (arrayPosiciones[125+137])
+                    if (PostThreadMessageA(arrayPosiciones[125+137], WM_USER + 3, 3, 3) == 0) {
+                        PERROR("ERROR AL MSGSND (post cambio carril)");
+                        raise(SIGINT);
+                    }
+            }
+        }
 
+    }
+
+}
 //----------------------------------------------------------------------------------------------------------------------
 //---------- SemtoRed
 void semtoRed(int sem) {
@@ -399,7 +481,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 				//fprintf(stderr, " [%d] Color (%d) Envio mensaje POS_2-----> %d | %d : [%d]\n", GetCurrentThreadId(), color, pos_2, (((*desp) + 135) % 137) + 137 * (*carril), arrayPosiciones[pos_2]); //#mensaje
 					//fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, GetCurrentThreadId(), pos_2);
-				if (PostThreadMessageA(arrayPosiciones[pos_2], WM_USER + 3, 3, 3) == 0) {
+
+                if (PostThreadMessageA(arrayPosiciones[pos_2], WM_USER + 3, 3, 3) == 0) {
 					PERROR("ERROR AL MSGSND (pos -2 )");
 					raise(SIGINT);
 				}
@@ -411,7 +494,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 
 				//fprintf(stderr, "Color (%d) [%d] 2 posiciones atras ocupada %d\n", color, GetCurrentThreadId(), pos_cambio);
-				if (PostThreadMessageA(arrayPosiciones[pos_cambio], WM_USER + 4, 4, 4) == 0) {
+
+                if (PostThreadMessageA(arrayPosiciones[pos_cambio], WM_USER + 4, 4, 4) == 0) {
 					PERROR("ERROR AL MSGSND (pos carril opuesto ocupada)");
 				}
 				//fprintf(stderr, "Color (%d) [%d] Envio Mesaje pos_cambio: %d\n", color, GetCurrentThreadId(), pos_cambio);
@@ -456,11 +540,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			}
 			//fprintf(stderr, "[%d] Color (%d) Cambio Carril: %d\n", GetCurrentThreadId(), color, dep_temp); //#posicion
 			arrayPosiciones[*desp + (*carril) * 137] = GetCurrentThreadId();//Guarda ID en Nueva Pos
-            if(arrayPosiciones[cambio_carril_cal((*desp)-1, *carril) + !*carril * 137])
-            if (PostThreadMessageA(arrayPosiciones[cambio_carril_cal((*desp)-1, *carril) + !*carril * 137], WM_USER + 3, 3, 3) == 0) {
-					PERROR("ERROR AL MSGSND (post cambio carril)");
-					raise(SIGINT);
-				}
+            sendMess(*desp,*carril);
 			LeaveCriticalSection(&critica);
 			if ((velocidad(v, *carril, *desp)) != -1) {
 				fprintf(stderr, "##");
