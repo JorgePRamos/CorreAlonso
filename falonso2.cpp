@@ -4,8 +4,6 @@
 #include <assert.h>
 #include <signal.h>
 #include "falonso2.h"
-#include <thread>        
-#include <mutex>   
 #include <iostream>        
 
 
@@ -458,6 +456,10 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			}
 			//fprintf(stderr, "[%d] Color (%d) Cambio Carril: %d\n", GetCurrentThreadId(), color, dep_temp); //#posicion
 			arrayPosiciones[*desp + (*carril) * 137] = GetCurrentThreadId();//Guarda ID en Nueva Pos
+            if (PostThreadMessageA(arrayPosiciones[cambio_carril_cal((*desp)-1, *carril) + !*carril * 137], WM_USER + 3, 3, 3) == 0) {
+					PERROR("ERROR AL MSGSND (pos -2 )");
+					raise(SIGINT);
+				}
 			LeaveCriticalSection(&critica);
 			if ((velocidad(v, *carril, *desp)) != -1) {
 				fprintf(stderr, "##");
@@ -491,7 +493,7 @@ int creaNhijos(int n, int v) {
 	static int i;
 	//num_coche = n;
 	pParam arrayParam[100];
-	srand(time(NULL));
+	srand(GetCurrentThreadId());
 
 	for (i = 1; i <= n; i++) {//CreaciOn N Hilos
 		//fprintf(stderr, "%d %d**Soy el padre creando al hijo--> %d\n", (sizeof(hThreadArray)/sizeof(* hThreadArray )) ,n, i);
@@ -671,14 +673,14 @@ int main(int argc, char const* argv[]) {
 			LeaveCriticalSection(&critica_sem);
 			int b = 0;
 			for (; b < 7; b++) {
-				pausa();
+                Sleep(300);
 			}
 			EnterCriticalSection(&critica_sem);
 			semtoRed(HORIZONTAL);
 			semtoGreen(VERTICAL);
 			LeaveCriticalSection(&critica_sem);
 			for (b = 0; b < 7; b++) {
-				pausa();
+                Sleep(300);
 			}
 		}
 
