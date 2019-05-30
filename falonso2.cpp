@@ -456,8 +456,9 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			}
 			//fprintf(stderr, "[%d] Color (%d) Cambio Carril: %d\n", GetCurrentThreadId(), color, dep_temp); //#posicion
 			arrayPosiciones[*desp + (*carril) * 137] = GetCurrentThreadId();//Guarda ID en Nueva Pos
+            if(arrayPosiciones[cambio_carril_cal((*desp)-1, *carril) + !*carril * 137])
             if (PostThreadMessageA(arrayPosiciones[cambio_carril_cal((*desp)-1, *carril) + !*carril * 137], WM_USER + 3, 3, 3) == 0) {
-					PERROR("ERROR AL MSGSND (pos -2 )");
+					PERROR("ERROR AL MSGSND (post cambio carril)");
 					raise(SIGINT);
 				}
 			LeaveCriticalSection(&critica);
@@ -470,16 +471,18 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 		}
 		else {
 
-			LeaveCriticalSection(&critica);
 			//fprintf(stderr, "[%d] Color (%d) Salida Critica critica +1 pajitas: %d\n", GetCurrentThreadId(), color); //#critica 
+			LeaveCriticalSection(&critica);
 
 			//fprintf(stderr, " [%d] Color (%d) ESPERANDO Mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
 			if (GetMessage(&uMsg, NULL, WM_USER + 3, WM_USER + 4) == -1) {
 				PERROR("GetMessage");
 			}
+            EnterCriticalSection(&critica);
 			while (PeekMessage(&clMsg, NULL, WM_USER, WM_USER + 4, PM_REMOVE)) {
 				fprintf(stderr, "Limpiando Cola...\n");
 			}
+			LeaveCriticalSection(&critica);
 			//fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
 		}
 	}
