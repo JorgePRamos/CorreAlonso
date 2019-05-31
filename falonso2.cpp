@@ -139,7 +139,7 @@ void sendMess(int desp, int carril) {
                 raise(SIGINT);
             }
     } else {
-        int t_cambio = cambio_carril_cal(desp,carril) + (!carril) * 137
+        int t_cambio = cambio_carril_cal(desp,carril) + (!carril) * 137;
         if (arrayPosiciones[t_cambio])
             if (PostThreadMessageA(arrayPosiciones[t_cambio], WM_USER + 3, 3, 3) == 0) {
                 PERROR("ERROR AL MSGSND (post cambio carril)");
