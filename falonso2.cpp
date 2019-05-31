@@ -139,20 +139,20 @@ void sendMess(int desp, int carril) {
                 raise(SIGINT);
             }
     } else {
-        if (arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !  carril * 137])
-            if (PostThreadMessageA(arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !  carril * 137], WM_USER + 3, 3, 3) == 0) {
+        if (arrayPosiciones[(  desp) - 1 + !  carril * 137])
+            if (PostThreadMessageA(arrayPosiciones[(  desp) - 1 + !  carril * 137], WM_USER + 3, 3, 3) == 0) {
                 PERROR("ERROR AL MSGSND (post cambio carril)");
                 raise(SIGINT);
             }
         if ((!carril && (desp == 15) || (desp == 131) || (desp == 130)) || (desp == 136) || (carril && (desp == 29) || (desp == 60) || (desp == 64) || (desp == 61) || (desp == 31))) {
-            if (arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !(  carril) * 137 - 1])
-                if (PostThreadMessageA(arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !(  carril) * 137 - 1], WM_USER + 3, 3, 3) == 0) {
+            if (arrayPosiciones[(  desp) - 1 + (!carril) * 137 - 1])
+                if (PostThreadMessageA(arrayPosiciones[(  desp) - 1 + (!carril) * 137 - 1], WM_USER + 3, 3, 3) == 0) {//
                     PERROR("ERROR AL MSGSND (post cambio carril)");
                     raise(SIGINT);
                 }
             if ((!carril && (desp == 136) || (carril && (desp == 64)))) {
-                if (arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !(  carril) * 137 + 1])
-                    if (PostThreadMessageA(arrayPosiciones[cambio_carril_cal((  desp) - 1,  carril) + !(  carril) * 137 + 1], WM_USER + 3, 3, 3) == 0) {
+                if (arrayPosiciones[(  desp) - 1 + (!carril) * 137 + 1])
+                    if (PostThreadMessageA(arrayPosiciones[(  desp) - 1 + (!carril) * 137 + 1], WM_USER + 3, 3, 3) == 0) {
                         PERROR("ERROR AL MSGSND (post cambio carril)");
                         raise(SIGINT);
                     }
@@ -189,13 +189,26 @@ void semtoRed(int sem) {
 	//fprintf(stderr, "[%d]-Padre Enter critica_salida critica -1 pajitas\n", GetCurrentThreadId());
 	luzSem(sem, AMARILLO);
 	LeaveCriticalSection(&critica_sem);
-	//fprintf(stderr, "[%d]-Padre Salida Sem_Salida critica +1 pajitas\n", GetCurrentThreadId());
+	fprintf(stderr, "--------------      Comienzo a pillar pajitas\n");
 	for (int a = 0; a < 6; a++) {
-		if ((WaitForSingleObject(sem_cruze, INFINITE)) == WAIT_FAILED)
+		switch (WaitForSingleObject(sem_cruze, INFINITE))
+		{
+		case WAIT_FAILED:
 			PERROR("WaitForSingleObject SEM RED");
+			break;
+		case WAIT_OBJECT_0:
+			PERROR("WaitForSingleObject W0 SEM RED");
+			break;
+
+		default:
+			break;
+		}
+		//if ((WaitForSingleObject(sem_cruze, INFINITE)) == WAIT_FAILED)
+            fprintf(stderr,"PAJITA %d\n", a+1);
 	}
-	//fprintf(stderr, "[%d]-Padre Enter Sem_Cruze critica -6 pajitas\n", GetCurrentThreadId());
+	fprintf(stderr, "[%d]-Padre Enter Sem_Cruze -6 pajitas\n", GetCurrentThreadId());
 	EnterCriticalSection(&critica_sem);
+	fprintf(stderr, "[%d]-Padre Enter Sem_Cruze critica \n", GetCurrentThreadId());
 	luzSem(sem, ROJO);
 
 
@@ -223,6 +236,7 @@ void semtoGreen(int sem) {
 //----------------------------------------------------------------------------------------------------------------------
 //---------- Avance_controlado
 void avance_controlado(int* carril, int* desp, int color, int v) {
+    int flag = 0;
 	EnterCriticalSection(&critica);
 	//fprintf(stderr, "[%d] Color (%d)Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);
 	arrayPosiciones[*desp + (*carril) * 137] = GetCurrentThreadId();
@@ -241,7 +255,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 		}
 		*/
 		//fprintf(stderr, "%d:%d: %6d |\n", (((*desp) + 1) % 137) + ((*carril) * 137), ((*desp + 1) % 137) + ((*carril) * 137), arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)]);
-		//fprintf(stderr, " [%d] Color (%d)  #### Posicion LIBRE: [%d] ####\n", GetCurrentThreadId(), color, (((*desp)+1)%137)+((*carril)*137)); //#mensaje
+		fprintf(stderr, " [%d] Color (%d)  #### Posicion LIBRE: [%d] ####\n", GetCurrentThreadId(), color, (((*desp)+1)%137)+((*carril)*137)); //#mensaje
 
 		if (*desp == 20 && *carril) {//dep =21 y CArril = Izquierdo
 			LeaveCriticalSection(&critica);
@@ -269,7 +283,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 				if ((WaitForSingleObject(sem_cruze, INFINITE)) == WAIT_FAILED)
 					PERROR("WaitForSingleObject Vertical 1");
 
-				//fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
+                flag = 1;
+				fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
 
 				EnterCriticalSection(&critica);
 				fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
@@ -289,7 +304,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 				if ((WaitForSingleObject(sem_cruze, INFINITE)) == WAIT_FAILED)
 					PERROR("WaitForSingleObject vertical 2");
-				//fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
+                    flag = 1;
+				fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
 
 				EnterCriticalSection(&critica);
 
@@ -324,7 +340,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 				if ((WaitForSingleObject(sem_cruze, INFINITE)) == WAIT_FAILED)
 					PERROR("WaitForSingleObject vertical 3");
-				//fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
+                    flag = 1;
+				fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
 
 				EnterCriticalSection(&critica);
 				fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
@@ -343,7 +360,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 				if ((WaitForSingleObject(sem_cruze, INFINITE)) == WAIT_FAILED)
 					PERROR("WaitForSingleObject vertical 4");
-				//fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
+                    flag = 1;
+				fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
 
 				EnterCriticalSection(&critica);
 				fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
@@ -373,7 +391,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 				if ((WaitForSingleObject(sem_cruze, INFINITE)) == WAIT_FAILED)
 					PERROR("WaitForSingleObject HORIZONTAL 1");
-				//fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
+                    flag = 1;
+				fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
 
 				EnterCriticalSection(&critica);
 				fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);//#critica
@@ -393,7 +412,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 				if ((WaitForSingleObject(sem_cruze, INFINITE)) == WAIT_FAILED)
 					PERROR("WaitForSingleObject HORIZONTAL 2");
-				//fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+                    flag = 1;
+				fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
 				EnterCriticalSection(&critica);
 				fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
@@ -424,7 +444,8 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 				if ((WaitForSingleObject(sem_cruze, INFINITE)) == WAIT_FAILED)
 					PERROR("WaitForSingleObject HORIZONTAL 3");
-				//fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+                    flag = 1;
+				fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
 				EnterCriticalSection(&critica);
 				fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
@@ -443,19 +464,22 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 
 				if ((WaitForSingleObject(sem_cruze, INFINITE)) == WAIT_FAILED)
 					PERROR("WaitForSingleObject HORIZONTAL 4");
-				//fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
+                    flag = 1;
+				fprintf(stderr, "[%d] Color (%d) Entrada sem_cruze critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
 				EnterCriticalSection(&critica);
 				fprintf(stderr, "[%d] Color (%d) Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color); //#critica
 
 			}
-			else {}
+			else {raise(SIGINT);}
 		}
-		//fprintf(stderr, "[%d] Color (%d) Avanzo a posicion (%d)\n", GetCurrentThreadId(), color, * desp + 1 % 137 + * carril * 137); //#posicion
+
+
 		arrayPosiciones[*desp + (*carril) * 137] = 0;//Limpia pos Array
 		//fprintf(stderr, "%d:%d: %6d |\n", (((*desp) + 1) % 137) + ((*carril) * 137), ((*desp + 1) % 137) + ((*carril) * 137), arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)]);
 		//if (!(arrayPosiciones[(((*desp) + 1) % 137) + ((*carril) * 137)])) {
 		if (!(posOcup(*carril, (*desp + 1) % 137))) {
+		//fprintf(stderr, "[%d] Color (%d) Avanzo a posicion (%d)\n", GetCurrentThreadId(), color, * desp + 1 % 137 + * carril * 137); //#posicion
 			if (avanceCoche(carril, desp, color) == -1) {
 				PERROR("ERROR AL AVANZAR COCHE");
 				raise(SIGINT);
@@ -463,13 +487,39 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			arrayPosiciones[*desp + (*carril) * 137] = GetCurrentThreadId();//Guarda ID en Nueva Pos
 
 			int pos_cambio = (cambio_carril_cal(((*desp) + 136) % 137, *carril) + ((!*carril) * 137));//Obtencion pos -1 cambio de carril bien
-			if ((*desp == 111 && !*carril) || (*desp == 24 && !*carril) || (*desp == 106 && *carril) || (*desp == 25 && *carril)) {//Salida del semaforo
 
-				if (!(ReleaseSemaphore(sem_cruze, 1, NULL)))//Dejamos pagita
+
+
+
+
+
+			/*if (((*desp )== 111 && !(*carril)) || 
+            ((*desp )== 24 && !(*carril)) || 
+            (*desp == 106 && *carril) || 
+            (*desp == 25 && *carril)) {//Salida del semaforo*/
+
+            if ((((*desp )>= 111 && (*desp )<= 118 && !(*carril)) || 
+            ((*desp )>= 24 && (*desp )<= 28 &&!(*carril)) || 
+            (*desp >= 106 && *desp <= 108 && *carril) || 
+            (*desp >= 25 && *desp <= 28 && *carril))&& flag) {//Salida del semaforo
+
+            //if((posOcup(1, 111)&&(arrayPosiciones[111+137]==GetCurrentThreadId())) || (posOcup(1, 24)&&(arrayPosiciones[24+137]==GetCurrentThreadId())) || (posOcup(0, 106)&&(arrayPosiciones[106]==GetCurrentThreadId())) || (posOcup(0, 25)&&(arrayPosiciones[25]==GetCurrentThreadId()))){
+            
+                if (!(ReleaseSemaphore(sem_cruze, 1, NULL))){//Dejamos pagita
 					PERROR("ReleaseSemaphore");
-				//fprintf(stderr, "[%d] Color (%d) Salida sem_cruze critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
+					raise(SIGINT);
+					}
 
-			}
+				fprintf(stderr, "[%d] Color (%d) Salida sem_cruze critica +1 pajitas\n", GetCurrentThreadId(), color); //#critica
+                flag = 0;
+
+            }
+
+
+
+
+
+
 
 			if ((*desp == 131 && *carril) || (*desp == 133 && !*carril)) {//Paso por meta
 				(contador)++;
@@ -511,7 +561,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			}
 			LeaveCriticalSection(&critica);
 			if ((velocidad(v, *carril, *desp)) != -1) {
-				fprintf(stderr, "##");
+				//fprintf(stderr, "##");
 			}
 		}
 		else{
@@ -525,7 +575,9 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 		
 	}
 	else {//Entra la que SIG pos esta ocupada
-	 //fprintf(stderr, "[%d] Color (%d) Posicion ocupada, compruebo cambio de carril: %d\n", GetCurrentThreadId(), color, * desp); //#posicion
+
+
+	    fprintf(stderr, "[%d] Color (%d) Posicion ocupada  , compruebo cambio de carril:        %d\n", GetCurrentThreadId(), color, * desp); //#posicion
 	   //Limpieza Cola
 		 /*while(PeekMessage( & clMsg, NULL, WM_USER, WM_USER+4, PM_REMOVE)){
 			 fprintf(stderr,"Limpiando Cola...\n");
@@ -534,13 +586,13 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 		if (!posOcup(!*carril, cambio_carril_cal(*desp, *carril))) {//Efectuo cambio carril Si es posible
 			arrayPosiciones[*desp + (*carril) * 137] = 0;//Guarda ID en Nueva Pos
 			//fprintf(stderr, "\nCAMBIO%d:%d: %6d |\n", cambio_carril_cal(*desp, *carril) + !*carril * 137, ((*desp + 1) % 137) + ((*carril) * 137), arrayPosiciones[cambio_carril_cal(*desp, *carril) + !*carril * 137]);
-
+            int tdesp=*desp;
 			if (cambioCarril(carril, desp, color) == -1) {
 				PERROR("ERROR AL CAMBIAR CARRIL");
 			}
 			//fprintf(stderr, "[%d] Color (%d) Cambio Carril: %d\n", GetCurrentThreadId(), color, dep_temp); //#posicion
 			arrayPosiciones[*desp + (*carril) * 137] = GetCurrentThreadId();//Guarda ID en Nueva Pos
-            sendMess(*desp,*carril);
+            sendMess(tdesp,!*carril);
 			LeaveCriticalSection(&critica);
 			if ((velocidad(v, *carril, *desp)) != -1) {
 				fprintf(stderr, "##");
@@ -560,7 +612,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 			}
             EnterCriticalSection(&critica);
 			while (PeekMessage(&clMsg, NULL, WM_USER, WM_USER + 4, PM_REMOVE)) {
-				fprintf(stderr, "Limpiando Cola...\n");
+				//fprintf(stderr, "Limpiando Cola...\n");
 			}
 			LeaveCriticalSection(&critica);
 			//fprintf(stderr, " [%d] Color (%d) Recojo mensaje [%d]\n", GetCurrentThreadId(), color, ( * desp + * carril * 137) + 1); //#mensaje
@@ -597,7 +649,7 @@ int creaNhijos(int n, int v) {
 //---------- FuncionHilos
 DWORD WINAPI funcionHilos(LPVOID pEstruct_2) {
 	pParam pEstruct = (pParam)pEstruct_2;
-	int colores[] = { 0,0,1,2,3,5,6,7 };
+	int colores[] = { 0,0,2,2,3,5,6,7 };
 	int n = pEstruct->nCoches;
 	int miIndice = pEstruct->indice;
 	int v = pEstruct->velocidad;
@@ -755,14 +807,14 @@ int main(int argc, char const* argv[]) {
 			semtoGreen(HORIZONTAL);
 			LeaveCriticalSection(&critica_sem);
 			int b = 0;
-			for (; b < 7; b++) {
+			for (; b < 5; b++) {
                 Sleep(300);
 			}
 			EnterCriticalSection(&critica_sem);
 			semtoRed(HORIZONTAL);
 			semtoGreen(VERTICAL);
 			LeaveCriticalSection(&critica_sem);
-			for (b = 0; b < 7; b++) {
+			for (b = 0; b < 5; b++) {
                 Sleep(300);
 			}
 		}
