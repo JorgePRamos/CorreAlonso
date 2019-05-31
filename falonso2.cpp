@@ -250,9 +250,7 @@ void avance_controlado(int* carril, int* desp, int color, int v) {
 	EnterCriticalSection(&critica);
 	//fprintf(stderr, "[%d] Color (%d)Entrada Critica critica -1 pajitas\n", GetCurrentThreadId(), color);
 	arrayPosiciones[*desp + (*carril) * 137] = GetCurrentThreadId();
-	if (*desp > 137 || *desp < 0 || *carril < 0 || *carril > 1 || color < 0 || color > 7) {
-		LeaveCriticalSection(&critica);
-	} //Error en el paso de argumentos
+	
 
 	//fprintf(stderr, "[%d] Color (%d) *%d+(*%d)*137 = %d \n", GetCurrentThreadId(), color, * desp, * carril, * desp + ( * carril) * 137);
 
