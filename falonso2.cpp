@@ -139,20 +139,21 @@ void sendMess(int desp, int carril) {
                 raise(SIGINT);
             }
     } else {
-        if (arrayPosiciones[(  desp) - 1 + !  carril * 137])
-            if (PostThreadMessageA(arrayPosiciones[(  desp) - 1 + !  carril * 137], WM_USER + 3, 3, 3) == 0) {
+        int t_cambio = cambio_carril_cal(desp,carril) + (!carril) * 137
+        if (arrayPosiciones[t_cambio])
+            if (PostThreadMessageA(arrayPosiciones[t_cambio], WM_USER + 3, 3, 3) == 0) {
                 PERROR("ERROR AL MSGSND (post cambio carril)");
                 raise(SIGINT);
             }
         if ((!carril && (desp == 15) || (desp == 131) || (desp == 130)) || (desp == 136) || (carril && (desp == 29) || (desp == 60) || (desp == 64) || (desp == 61) || (desp == 31))) {
-            if (arrayPosiciones[(  desp) - 1 + (!carril) * 137 - 1])
-                if (PostThreadMessageA(arrayPosiciones[(  desp) - 1 + (!carril) * 137 - 1], WM_USER + 3, 3, 3) == 0) {//
+            if (arrayPosiciones[t_cambio-1])
+                if (PostThreadMessageA(arrayPosiciones[t_cambio-1], WM_USER + 3, 3, 3) == 0) {//
                     PERROR("ERROR AL MSGSND (post cambio carril)");
                     raise(SIGINT);
                 }
             if ((!carril && (desp == 136) || (carril && (desp == 64)))) {
-                if (arrayPosiciones[(  desp) - 1 + (!carril) * 137 + 1])
-                    if (PostThreadMessageA(arrayPosiciones[(  desp) - 1 + (!carril) * 137 + 1], WM_USER + 3, 3, 3) == 0) {
+                if (arrayPosiciones[t_cambio+1])
+                    if (PostThreadMessageA(arrayPosiciones[t_cambio-1], WM_USER + 3, 3, 3) == 0) {
                         PERROR("ERROR AL MSGSND (post cambio carril)");
                         raise(SIGINT);
                     }
