@@ -154,6 +154,7 @@ void sendMess(int desp, int carril) {
             if ((!carril && (desp == 136) || (carril && (desp == 64)))) {
                 if (arrayPosiciones[t_cambio+1])
                     if (PostThreadMessageA(arrayPosiciones[t_cambio-1], WM_USER + 3, 3, 3) == 0) {
+                        fprintf(stderr, "\n[%d] ",t_cambio+1 ); //#critica
                         PERROR("ERROR AL MSGSND (post cambio carril)");
                         raise(SIGINT);
                     }
